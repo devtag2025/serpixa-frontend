@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+/* =========================================
+   🌗 BASE TOKENS
+   White & Blue Modern Theme
+========================================= */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 220 80% 60%;
+}
+
+/* =========================================
+   🎨 THEME TOKENS
+========================================= */
+@theme inline {
+  /* Base */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  /* Core surfaces */
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(222 47% 11%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(222 47% 11%);
+
+  /* Brand colors */
+  --color-primary: hsl(217 90% 55%);
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  --color-secondary: hsl(220 15% 96%);
+  --color-secondary-foreground: hsl(222 47% 11%);
+
+  --color-muted: hsl(220 15% 96%);
+  --color-muted-foreground: hsl(220 10% 45%);
+
+  --color-accent: hsl(217 100% 65%);
+  --color-accent-foreground: hsl(0 0% 100%);
+
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+
+  /* Borders and inputs */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* Sidebar / UI sections */
+  --color-sidebar: hsl(0 0% 99%);
+  --color-sidebar-foreground: hsl(222 47% 11%);
+  --color-sidebar-primary: hsl(217 90% 55%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(220 15% 96%);
+  --color-sidebar-accent-foreground: hsl(222 47% 11%);
+  --color-sidebar-border: hsl(220 13% 91%);
+  --color-sidebar-ring: hsl(217 90% 55%);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(217 90% 55%), hsl(217 100% 70%));
+  --gradient-blue-glow: linear-gradient(135deg, hsl(215 95% 60%), hsl(220 95% 50%));
+  --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 20% 98%));
+
+  /* Shadows */
+  --shadow-blue: 0 10px 30px hsl(217 90% 55% / 0.25);
+  --shadow-soft: 0 8px 30px hsl(220 10% 80% / 0.2);
+  --shadow-glow: 0 0 60px hsl(217 90% 55% / 0.25);
+
+  /* Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Satoshi", sans-serif;
+  --radius: 0.6rem;
+}
+
+/* =========================================
+   🌙 DARK MODE (Optional)
+========================================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 222 47% 5%;
+    --foreground: 0 0% 100%;
+    --border: 222 20% 25%;
+    --input: 222 20% 25%;
+    --ring: 217 90% 60%;
+  }
+}
+
+/* =========================================
+   🧩 BASE STYLES
+========================================= */
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   🖱 SCROLLBAR STYLING
+========================================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(220 15% 96%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(217 20% 80%);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(217 25% 70%);
+}
+
+/* =========================================
+   ✨ UTILITY CLASSES
+========================================= */
+.bg-gradient-primary {
+  background-image: var(--gradient-primary);
+}
+.text-gradient-blue {
+  background: var(--gradient-blue-glow);
+  -webkit-text-fill-color: transparent;
+}
+.shadow-blue {
+  box-shadow: var(--shadow-blue);
+}
