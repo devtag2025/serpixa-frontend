@@ -4,33 +4,33 @@ import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import Sidebar from "@/components/layout/Sidebar";
-import { SEOAuditService } from "@/services/seoAuditService";
+import { GBPAuditService } from "@/services/gbpAuditService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
-import { HiPlus, HiDocumentReport } from "react-icons/hi";
+import { HiPlus, HiOfficeBuilding } from "react-icons/hi";
 import { toast } from "react-hot-toast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import SEOAuditListHeader from "@/components/seo-audit/list/SEOAuditListHeader";
-import SEOAuditTable from "@/components/seo-audit/list/SEOAuditTable";
+import GBPAuditListHeader from "@/components/gbp-audit/list/GBPAuditListHeader";
+import GBPAuditTable from "@/components/gbp-audit/list/GBPAuditTable";
 
-export default function SEOAuditListPage() {
+export default function GBPAuditListPage() {
   const router = useRouter();
   const queryClient = useQueryClient();
   const [searchQuery, setSearchQuery] = useState("");
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["seo-audits"],
+    queryKey: ["gbp-audits"],
     queryFn: async () => {
-      const response = await SEOAuditService.getUserAudits({ page: 1, limit: 50 });
+      const response = await GBPAuditService.getUserAudits({ page: 1, limit: 50 });
       const { data } = handleResponse(response);
       return data;
     },
   });
 
   const { mutate: deleteAudit } = useMutation({
-    mutationFn: SEOAuditService.deleteAudit,
+    mutationFn: GBPAuditService.deleteAudit,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["seo-audits"] });
+      queryClient.invalidateQueries({ queryKey: ["gbp-audits"] });
       toast.success("Audit deleted successfully");
     },
     onError: (error) => {
@@ -81,10 +81,7 @@ export default function SEOAuditListPage() {
   const filteredAudits = audits.filter((audit) => {
     if (!searchQuery) return true;
     const query = searchQuery.toLowerCase();
-    return (
-      audit.url?.toLowerCase().includes(query) ||
-      audit.keyword?.toLowerCase().includes(query)
-    );
+    return audit.businessName?.toLowerCase().includes(query);
   });
 
   return (
@@ -92,17 +89,17 @@ export default function SEOAuditListPage() {
       <div className="min-h-screen bg-gray-50 flex">
         <Sidebar />
         <div className="flex-1 overflow-y-auto">
-          <SEOAuditListHeader audits={audits} />
+          <GBPAuditListHeader audits={audits} />
 
           {/* Main Content */}
           <div className="max-w-7xl mx-auto px-6 py-8">
             {audits.length === 0 ? (
               <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-12 text-center">
-                <HiDocumentReport className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                <HiOfficeBuilding className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">No audits yet</h3>
-                <p className="text-gray-600 mb-6">Get started by creating your first SEO audit</p>
+                <p className="text-gray-600 mb-6">Get started by creating your first GBP audit</p>
                 <button
-                  onClick={() => router.push("/dashboard/seo-audit/new")}
+                  onClick={() => router.push("/dashboard/gbp-audit/new")}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
                 >
                   <HiPlus className="w-5 h-5" />
@@ -116,7 +113,7 @@ export default function SEOAuditListPage() {
                   <div className="relative">
                     <input
                       type="text"
-                      placeholder="Search by URL or keyword..."
+                      placeholder="Search by business name..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       className="w-full px-4 py-2.5 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
@@ -129,7 +126,7 @@ export default function SEOAuditListPage() {
                   </div>
                 </div>
 
-                <SEOAuditTable audits={filteredAudits} onDelete={handleDelete} />
+                <GBPAuditTable audits={filteredAudits} onDelete={handleDelete} />
               </>
             )}
           </div>
@@ -138,3 +135,4 @@ export default function SEOAuditListPage() {
     </ProtectedRoute>
   );
 }
+

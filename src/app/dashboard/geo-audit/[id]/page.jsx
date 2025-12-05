@@ -4,29 +4,30 @@ import { useParams, useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import Sidebar from "@/components/layout/Sidebar";
-import { SEOAuditService } from "@/services/seoAuditService";
+import { GeoAuditService } from "@/services/geoAuditService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
 import { toast } from "react-hot-toast";
 import { HiXCircle } from "react-icons/hi";
-import SEOAuditHeader from "@/components/seo-audit/view/SEOAuditHeader";
-import SEOAuditStats from "@/components/seo-audit/view/SEOAuditStats";
-import OnPageAnalysis from "@/components/seo-audit/view/OnPageAnalysis";
-import SERPInfo from "@/components/seo-audit/view/SERPInfo";
-import AuditInfo from "@/components/seo-audit/view/AuditInfo";
-import RecommendationsTable from "@/components/seo-audit/view/RecommendationsTable";
-import CompetitorsTable from "@/components/seo-audit/view/CompetitorsTable";
+import GeoAuditHeader from "@/components/geo-audit/view/GeoAuditHeader";
+import GeoAuditStats from "@/components/geo-audit/view/GeoAuditStats";
+import AuditInfo from "@/components/geo-audit/view/AuditInfo";
+import NAPConsistency from "@/components/geo-audit/view/NAPConsistency";
+import CitationAnalysis from "@/components/geo-audit/view/CitationAnalysis";
+import BusinessInformation from "@/components/geo-audit/view/BusinessInformation";
+import RecommendationsTable from "@/components/geo-audit/view/RecommendationsTable";
+import CompetitorsTable from "@/components/geo-audit/view/CompetitorsTable";
 
-export default function SEOAuditResultsPage() {
+export default function GeoAuditResultsPage() {
   const params = useParams();
   const router = useRouter();
   const auditId = params.id;
   const [isDownloadingPDF, setIsDownloadingPDF] = useState(false);
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["seo-audit", auditId],
+    queryKey: ["geo-audit", auditId],
     queryFn: async () => {
-      const response = await SEOAuditService.getAuditWithRawData(auditId);
+      const response = await GeoAuditService.getAuditById(auditId);
       const { data } = handleResponse(response);
       return data.audit;
     },
@@ -36,12 +37,12 @@ export default function SEOAuditResultsPage() {
   const handleDownloadPDF = async () => {
     setIsDownloadingPDF(true);
     try {
-      const response = await SEOAuditService.downloadPDF(auditId);
+      const response = await GeoAuditService.downloadPDF(auditId);
       const blob = new Blob([response.data], { type: "application/pdf" });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `seo-audit-${auditId}.pdf`;
+      a.download = `geo-audit-${auditId}.pdf`;
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);
@@ -64,8 +65,8 @@ export default function SEOAuditResultsPage() {
     }
   };
 
-  const handleRerun = () => {
-    router.push(`/dashboard/seo-audit?url=${encodeURIComponent(audit.url)}&keyword=${encodeURIComponent(audit.keyword || '')}`);
+  const handleRerun = (audit) => {
+    router.push(`/dashboard/geo-audit/new?keyword=${encodeURIComponent(audit?.keyword || '')}&location=${encodeURIComponent(audit?.location || '')}`);
   };
 
   if (isLoading) {
@@ -97,7 +98,7 @@ export default function SEOAuditResultsPage() {
               <h2 className="text-xl font-semibold text-gray-900 mb-2">Failed to Load Audit</h2>
               <p className="text-gray-600 mb-6">{handleError(error) || "An error occurred while loading the audit"}</p>
               <button
-                onClick={() => router.push("/dashboard/seo-audit")}
+                onClick={() => router.push("/dashboard/geo-audit")}
                 className="px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
               >
                 Back to Audits
@@ -118,9 +119,9 @@ export default function SEOAuditResultsPage() {
       <div className="min-h-screen bg-gray-50 flex">
         <Sidebar />
         <div className="flex-1 overflow-y-auto">
-          <SEOAuditHeader
+          <GeoAuditHeader
             audit={audit}
-            onRerun={handleRerun}
+            onRerun={() => handleRerun(audit)}
             onDownloadPDF={handleDownloadPDF}
             isDownloadingPDF={isDownloadingPDF}
           />
@@ -140,30 +141,24 @@ export default function SEOAuditResultsPage() {
               </div>
             )}
 
-            <SEOAuditStats audit={audit} />
+            <GeoAuditStats audit={audit} />
 
-            {/* Row 1: On-Page Analysis | Audit Info + SERP Info */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
-              {/* LEFT SIDE - 8 Columns: On-Page Analysis */}
-              <div className="lg:col-span-8">
-                <OnPageAnalysis checks={audit.checks} onCopyToClipboard={handleCopyToClipboard} />
-              </div>
-
-              {/* RIGHT SIDE - 4 Columns: SERP Info + Audit Info */}
-              <div className="lg:col-span-4 space-y-6">
-                <SERPInfo serpInfo={audit.serpInfo} />
-                <AuditInfo audit={audit} onCopyToClipboard={handleCopyToClipboard} />
-              </div>
+            {/* Info Grid: Audit Info, NAP, Citation */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+              <AuditInfo audit={audit} onCopyToClipboard={handleCopyToClipboard} />
+              <NAPConsistency napIssues={audit.napIssues} />
+              <CitationAnalysis citationIssues={audit.citationIssues} />
             </div>
 
-            {/* Row 2: Recommendations - Full Width */}
+            <BusinessInformation businessInfo={audit.businessInfo} onCopyToClipboard={handleCopyToClipboard} />
+
             <RecommendationsTable recommendations={audit.recommendations} />
 
-            {/* Row 3: Competitor Analysis - Full Width */}
-            <CompetitorsTable competitors={audit.competitors} keyword={audit.keyword} />
+            <CompetitorsTable competitors={audit.competitors} />
           </div>
         </div>
       </div>
     </ProtectedRoute>
   );
 }
+
