@@ -1,0 +1,47 @@
+{
+  "landing": {
+    "hero": {
+      "title": "Tous les outils dont vous avez besoin pour perfectionner votre visibilité SEO et IA",
+      "subtitle": "Maîtrisez la recherche traditionnelle et l'IA avec une plateforme puissante, des données fiables et une UX exceptionnelle",
+      "startTrial": "Commencer l'essai gratuit",
+      "seeTour": "Voir la visite du produit",
+      "noCreditCard": "Aucune carte de crédit requise",
+      "trustedBy": "Approuvé par",
+      "professionals": "professionnels du SEO depuis 2013"
+    },
+    "features": {
+      "title": "Précis. Crédible. Prêt pour l'IA.",
+      "subtitle": "Tout est question de nos données uniques.",
+      "countryDatabases": "188 BASES DE DONNÉES DE PAYS",
+      "aiAlgorithms": "ALGORITHMES ALIMENTÉS PAR L'IA",
+      "keywordDatabase": "BASE DE DONNÉES DE 5,4 MILLIARDS DE MOTS-CLÉS",
+      "domainProfiles": "2,2 MILLIARDS DE PROFILS DE DOMAINES",
+      "accurateRankings": "CLASSEMENTS DE MOTS-CLÉS 100% PRÉCIS",
+      "awardsTitle": "Très bien noté par les grandes équipes qui gèrent le SEO à grande échelle",
+      "awardsSubtitle": "Ne vous contentez pas de nous croire sur parole, découvrez nos derniers prix de G2",
+      "startTrial": "Commencer l'essai gratuit"
+    },
+    "pricing": {
+      "title": "Tarification équitable et flexible qui évolue avec vous",
+      "subtitle": "Choisissez un plan qui évolue avec vos objectifs. Rempli de plus que vous ne le pensiez.",
+      "loadingPlans": "Chargement des plans...",
+      "from": "À partir de",
+      "perMonth": "par mois",
+      "perYear": "par an",
+      "oneTime": "unique",
+      "startTrial": "Commencer l'essai gratuit",
+      "processing": "Traitement en cours...",
+      "purchase": "Acheter",
+      "agenciesChoice": "Choix des agences",
+      "needMore": "Besoin de plus ? Améliorez avec des modules complémentaires !",
+      "seoAudits": "Audits SEO",
+      "geoAudits": "Audits GEO",
+      "gbpAudits": "Audits GBP",
+      "aiGenerations": "Générations IA",
+      "searchesPerMonth": "Recherches par mois",
+      "apiCallsPerMonth": "Appels API par mois",
+      "signInRequired": "Veuillez vous inscrire ou vous connecter pour continuer"
+    }
+  }
+}
+
