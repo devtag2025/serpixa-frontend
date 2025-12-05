@@ -1,0 +1,47 @@
+{
+  "landing": {
+    "hero": {
+      "title": "All the tools you need to perfect your SEO and AI visibility",
+      "subtitle": "Own traditional and AI search with a powerful platform, trusted data, and exceptional UX",
+      "startTrial": "Start free trial",
+      "seeTour": "See product tour",
+      "noCreditCard": "No credit card required",
+      "trustedBy": "Trusted by",
+      "professionals": "SEO professionals since 2013"
+    },
+    "features": {
+      "title": "Precise. Credible. AI-Ready.",
+      "subtitle": "It's all about our unique data.",
+      "countryDatabases": "188 COUNTRY DATABASES",
+      "aiAlgorithms": "AI POWERED ALGORITHMS",
+      "keywordDatabase": "5.4B KEYWORD DATABASE",
+      "domainProfiles": "2.2B DOMAIN PROFILES",
+      "accurateRankings": "100% ACCURATE KEYWORD RANKINGS",
+      "awardsTitle": "Highly rated by large teams running SEO at scale",
+      "awardsSubtitle": "Don't just take our word for it, check out our latest awards from G2",
+      "startTrial": "Start free trial"
+    },
+    "pricing": {
+      "title": "Fair and flexible pricing that scales with you",
+      "subtitle": "Choose a plan that grows with your goals. Packed with more than you'd expect.",
+      "loadingPlans": "Loading plans...",
+      "from": "From",
+      "perMonth": "per month",
+      "perYear": "per year",
+      "oneTime": "one-time",
+      "startTrial": "Start free trial",
+      "processing": "Processing...",
+      "purchase": "Purchase",
+      "agenciesChoice": "Agencies' Choice",
+      "needMore": "Need more? Upgrade with add-ons!",
+      "seoAudits": "SEO Audits",
+      "geoAudits": "GEO Audits",
+      "gbpAudits": "GBP Audits",
+      "aiGenerations": "AI Generations",
+      "searchesPerMonth": "Searches per month",
+      "apiCallsPerMonth": "API Calls per month",
+      "signInRequired": "Please sign up or log in to continue"
+    }
+  }
+}
+

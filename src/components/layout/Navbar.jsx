@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth, useLogout } from "@/hooks/useAuth";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -120,6 +121,7 @@ export default function Navbar() {
 
           {/* Right Side Actions */}
           <div className="hidden md:flex md:items-center md:space-x-4">
+            <LanguageSwitcher />
             {isLoading ? (
               <div className="w-8 h-8 border-2 border-gray-300 border-t-primary rounded-full animate-spin"></div>
             ) : user ? (
@@ -247,6 +249,9 @@ export default function Navbar() {
                 </div>
               ))}
               <div className="pt-4 border-t border-gray-200 space-y-2">
+                <div className="px-4">
+                  <LanguageSwitcher />
+                </div>
                 {user ? (
                   <>
                     <Link

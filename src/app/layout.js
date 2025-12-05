@@ -2,7 +2,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReactQueryProvider from "@/lib/react-query-provider";
 import ToastProvider from "@/lib/toastProvider";
+import { I18nProvider } from "@/i18n/context";
 import Navbar from "@/components/layout/Navbar";
+import { defaultLocale } from "@/i18n/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,12 +27,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ReactQueryProvider>
-          <ToastProvider />
-          <Navbar />
-          {children}
-        </ReactQueryProvider>
-     
+        <I18nProvider locale={defaultLocale}>
+          <ReactQueryProvider>
+            <ToastProvider />
+            <Navbar />
+            {children}
+          </ReactQueryProvider>
+        </I18nProvider>
       </body>
     </html>
   );

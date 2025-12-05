@@ -65,7 +65,13 @@ export function useLogin() {
   return useMutation({
     mutationFn: AuthService.login,
     onSuccess: (response) => {
-      const { message } = handleResponse(response);
+      const { message, data } = handleResponse(response);
+      
+      // Store accessToken in localStorage if provided (for API interceptor)
+      if (data?.accessToken && typeof window !== "undefined") {
+        localStorage.setItem("token", data.accessToken);
+      }
+      
       toast.success(message || "Login successful!");
       // Invalidate and refetch auth query to get user profile
       queryClient.invalidateQueries({ queryKey: authKeys.all });
@@ -87,6 +93,10 @@ export function useLogout() {
   return useMutation({
     mutationFn: AuthService.logout,
     onSuccess: () => {
+      // Clear token from localStorage
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("token");
+      }
       // Clear all auth-related queries
       queryClient.removeQueries({ queryKey: authKeys.all });
       toast.success("Logged out successfully");
@@ -96,6 +106,9 @@ export function useLogout() {
       const message = handleError(error);
       toast.error(message || "Logout failed.");
       // Even if logout fails on server, clear local state
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("token");
+      }
       queryClient.removeQueries({ queryKey: authKeys.all });
       router.push("/login");
     },
