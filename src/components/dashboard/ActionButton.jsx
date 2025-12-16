@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useTranslation } from "@/i18n/context";
 
 /**
  * ActionButton - Modern action button with white background and colored accents
@@ -13,6 +14,7 @@ export default function ActionButton({
   textColor,
   onClick,
 }) {
+  const { t } = useTranslation();
   // Extract color from gradient for icon background
   const getColorFromGradient = (gradient) => {
     if (gradient.includes("blue")) return "#3b82f6";
@@ -57,7 +59,7 @@ export default function ActionButton({
           className="mt-4 flex items-center text-sm font-medium"
           style={{ color: accentColor }}
         >
-          Get started
+          {t("dashboard.page.getStarted")}
           <svg
             className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
             fill="none"

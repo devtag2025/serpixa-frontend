@@ -1,26 +1,28 @@
 "use client";
 import { HiStar, HiExternalLink } from "react-icons/hi";
+import { useTranslation } from "@/i18n/context";
 
 export default function CompetitorsTable({ competitors }) {
+  const { t } = useTranslation();
   if (!competitors || competitors.length === 0) return null;
 
   return (
     <div className="mb-6 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
       <div className="px-6 py-4 border-b border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-900">Nearby Competitors</h2>
+        <h2 className="text-lg font-semibold text-gray-900">{t("dashboard.geoAudit.view.nearbyCompetitors")}</h2>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Rank</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Name</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Rating</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Reviews</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Distance</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Address</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Phone</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Website</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.rank")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.name")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.rating")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.reviews")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.distance")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.address")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.phone")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.website")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -75,7 +77,7 @@ export default function CompetitorsTable({ competitors }) {
                       className="text-sm text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      Visit
+                      {t("dashboard.geoAudit.view.visit")}
                       <HiExternalLink className="w-3.5 h-3.5" />
                     </a>
                   ) : (

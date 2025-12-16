@@ -1,19 +1,44 @@
 "use client";
 import Link from "next/link";
-import { HiSearch } from "react-icons/hi";
+import { useRouter } from "next/navigation";
+import { HiSearch, HiLocationMarker, HiOfficeBuilding } from "react-icons/hi";
+import { useTranslation } from "@/i18n/context";
 
 /**
  * RecentAudits - Displays list of recent audits
  */
 export default function RecentAudits({ audits = [], viewAllLink = "/dashboard/reports" }) {
-  // Default mock data if no audits provided
-  const defaultAudits = [
-    { id: 1, type: "SEO", name: "SEO Audit #1", time: "1 hour ago", status: "Completed" },
-    { id: 2, type: "SEO", name: "SEO Audit #2", time: "2 hours ago", status: "Completed" },
-    { id: 3, type: "SEO", name: "SEO Audit #3", time: "3 hours ago", status: "Completed" },
-  ];
+  const { t } = useTranslation();
+  const router = useRouter();
 
-  const displayAudits = audits.length > 0 ? audits : defaultAudits;
+  const getAuditIcon = (type) => {
+    switch (type?.toLowerCase()) {
+      case "seo":
+        return HiSearch;
+      case "geo":
+        return HiLocationMarker;
+      case "gbp":
+        return HiOfficeBuilding;
+      default:
+        return HiSearch;
+    }
+  };
+
+  const getAuditLink = (audit) => {
+    const type = audit.type?.toLowerCase();
+    switch (type) {
+      case "seo":
+        return `/dashboard/seo-audit/${audit.id}`;
+      case "geo":
+        return `/dashboard/geo-audit/${audit.id}`;
+      case "gbp":
+        return `/dashboard/gbp-audit/${audit.id}`;
+      default:
+        return "#";
+    }
+  };
+
+  const displayAudits = audits.length > 0 ? audits : [];
 
   const getStatusColor = (status) => {
     switch (status?.toLowerCase()) {
@@ -31,23 +56,30 @@ export default function RecentAudits({ audits = [], viewAllLink = "/dashboard/re
   return (
     <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-lg font-bold text-gray-900">Recent Audits</h2>
-        <Link
+        <h2 className="text-lg font-bold text-gray-900">{t("dashboard.page.recentAudits")}</h2>
+        {/* <Link
           href={viewAllLink}
           className="text-sm text-primary hover:underline font-medium"
         >
-          View all →
-        </Link>
+          {t("dashboard.page.viewAll")} →
+        </Link> */}
       </div>
       <div className="space-y-4">
-        {displayAudits.map((audit) => (
+        {displayAudits.length > 0 ? (
+          displayAudits.map((audit) => {
+            const Icon = getAuditIcon(audit.type);
+            const auditLink = getAuditLink(audit);
+            return (
           <div
             key={audit.id}
-            className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group"
+                onClick={() => auditLink !== "#" && router.push(auditLink)}
+                className={`flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group ${
+                  auditLink !== "#" ? "cursor-pointer" : ""
+                }`}
           >
             <div className="flex items-center space-x-4">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                <HiSearch className="w-5 h-5 text-primary" />
+                    <Icon className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <p className="font-semibold text-gray-900">{audit.name}</p>
@@ -62,7 +94,13 @@ export default function RecentAudits({ audits = [], viewAllLink = "/dashboard/re
               {audit.status}
             </div>
           </div>
-        ))}
+            );
+          })
+        ) : (
+          <div className="text-center py-8 text-gray-500">
+            <p>{t("dashboard.page.noRecentAudits") || "No recent audits"}</p>
+          </div>
+        )}
       </div>
     </div>
   );

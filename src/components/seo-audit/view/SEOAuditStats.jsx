@@ -1,8 +1,10 @@
 "use client";
 import { HiLightningBolt, HiExclamationCircle, HiLink, HiDocumentText } from "react-icons/hi";
 import { getScoreColor } from "@/utils/colors";
+import { useTranslation } from "@/i18n/context";
 
 export default function SEOAuditStats({ audit }) {
+  const { t } = useTranslation();
   const scoreColors = getScoreColor(audit.score);
   const totalIssues = audit.recommendations?.length || 0;
   const totalLinks = (audit.checks?.links?.internal || 0) + (audit.checks?.links?.external || 0);
@@ -17,7 +19,7 @@ export default function SEOAuditStats({ audit }) {
           <div className={`p-2.5 rounded-lg ${scoreColors.bg}`}>
             <HiLightningBolt className={`w-5 h-5 ${scoreColors.text}`} />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">SEO Score</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.seoScore")}</span>
         </div>
         <div className="flex items-baseline gap-2 mb-2">
           <span className={`text-3xl font-bold ${scoreColors.text}`}>{audit.score}</span>
@@ -37,7 +39,7 @@ export default function SEOAuditStats({ audit }) {
           <div className="p-2.5 rounded-lg bg-red-50">
             <HiExclamationCircle className="w-5 h-5 text-red-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Total Issues</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.totalIssues")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-3xl font-bold text-gray-900">{totalIssues}</span>
@@ -50,12 +52,12 @@ export default function SEOAuditStats({ audit }) {
           <div className="p-2.5 rounded-lg bg-blue-50">
             <HiLink className="w-5 h-5 text-blue-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Total Links</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.totalLinks")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-3xl font-bold text-gray-900">{totalLinks}</span>
           {brokenLinks > 0 && (
-            <span className="text-sm text-red-600 font-medium">({brokenLinks} broken)</span>
+            <span className="text-sm text-red-600 font-medium">({brokenLinks} {t("dashboard.seoAudit.view.broken")})</span>
           )}
         </div>
       </div>
@@ -67,7 +69,7 @@ export default function SEOAuditStats({ audit }) {
             <div className="p-2.5 rounded-lg bg-purple-50">
               <HiDocumentText className="w-5 h-5 text-purple-600" />
             </div>
-            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Competitors</span>
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.competitorsLabel")}</span>
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-bold text-gray-900">{competitorsCount}</span>

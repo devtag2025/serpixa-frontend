@@ -1,13 +1,7 @@
 "use client";
-import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { useQuery } from "@tanstack/react-query";
-import ProtectedRoute from "@/components/auth/ProtectedRoute";
-import Sidebar from "@/components/layout/Sidebar";
-import { GeoAuditService } from "@/services/geoAuditService";
+import DashboardLayout from "@/components/layout/DashboardLayout";
 import { handleError } from "@/utils/handleError";
-import { handleResponse } from "@/utils/handleResponse";
-import { toast } from "react-hot-toast";
 import { HiXCircle } from "react-icons/hi";
 import GeoAuditHeader from "@/components/geo-audit/view/GeoAuditHeader";
 import GeoAuditStats from "@/components/geo-audit/view/GeoAuditStats";
@@ -17,43 +11,18 @@ import CitationAnalysis from "@/components/geo-audit/view/CitationAnalysis";
 import BusinessInformation from "@/components/geo-audit/view/BusinessInformation";
 import RecommendationsTable from "@/components/geo-audit/view/RecommendationsTable";
 import CompetitorsTable from "@/components/geo-audit/view/CompetitorsTable";
+import { useGeoAuditRaw, useDownloadGeoAuditPDF } from "@/hooks/geoAuditHooks";
 
 export default function GeoAuditResultsPage() {
   const params = useParams();
   const router = useRouter();
   const auditId = params.id;
-  const [isDownloadingPDF, setIsDownloadingPDF] = useState(false);
 
-  const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["geo-audit", auditId],
-    queryFn: async () => {
-      const response = await GeoAuditService.getAuditById(auditId);
-      const { data } = handleResponse(response);
-      return data.audit;
-    },
-    enabled: !!auditId,
-  });
+  const { data, isLoading, isError, error } = useGeoAuditRaw(auditId);
+  const { mutate: downloadPDF, isPending: isDownloadingPDF } = useDownloadGeoAuditPDF();
 
-  const handleDownloadPDF = async () => {
-    setIsDownloadingPDF(true);
-    try {
-      const response = await GeoAuditService.downloadPDF(auditId);
-      const blob = new Blob([response.data], { type: "application/pdf" });
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `geo-audit-${auditId}.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
-      toast.success("PDF downloaded successfully!");
-    } catch (error) {
-      const message = handleError(error);
-      toast.error(message || "Failed to download PDF");
-    } finally {
-      setIsDownloadingPDF(false);
-    }
+  const handleDownloadPDF = () => {
+    downloadPDF(auditId);
   };
 
   const handleCopyToClipboard = async (text, label = "Text") => {
@@ -65,48 +34,38 @@ export default function GeoAuditResultsPage() {
     }
   };
 
-  const handleRerun = (audit) => {
-    router.push(`/dashboard/geo-audit/new?keyword=${encodeURIComponent(audit?.keyword || '')}&location=${encodeURIComponent(audit?.location || '')}`);
-  };
-
   if (isLoading) {
     return (
-      <ProtectedRoute>
-        <div className="min-h-screen bg-gray-50 flex">
-          <Sidebar />
-          <div className="flex-1 flex items-center justify-center">
-            <div className="text-center">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
-              <p className="mt-4 text-gray-600 font-medium">Loading audit results...</p>
-            </div>
+      <DashboardLayout>
+        <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
+          <div className="text-center">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
+            <p className="mt-4 text-gray-600 font-medium">Loading audit results...</p>
           </div>
         </div>
-      </ProtectedRoute>
+      </DashboardLayout>
     );
   }
 
   if (isError) {
     return (
-      <ProtectedRoute>
-        <div className="min-h-screen bg-gray-50 flex">
-          <Sidebar />
-          <div className="flex-1 flex items-center justify-center px-4">
-            <div className="text-center max-w-md">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-4">
-                <HiXCircle className="w-8 h-8 text-red-600" />
-              </div>
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">Failed to Load Audit</h2>
-              <p className="text-gray-600 mb-6">{handleError(error) || "An error occurred while loading the audit"}</p>
-              <button
-                onClick={() => router.push("/dashboard/geo-audit")}
-                className="px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
-              >
-                Back to Audits
-              </button>
+      <DashboardLayout>
+        <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)] px-4">
+          <div className="text-center max-w-md">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-4">
+              <HiXCircle className="w-8 h-8 text-red-600" />
             </div>
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">Failed to Load Audit</h2>
+            <p className="text-gray-600 mb-6">{handleError(error) || "An error occurred while loading the audit"}</p>
+            <button
+              onClick={() => router.push("/dashboard/geo-audit")}
+              className="px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
+            >
+              Back to Audits
+            </button>
           </div>
         </div>
-      </ProtectedRoute>
+      </DashboardLayout>
     );
   }
 
@@ -115,19 +74,15 @@ export default function GeoAuditResultsPage() {
   const audit = data;
 
   return (
-    <ProtectedRoute>
-      <div className="min-h-screen bg-gray-50 flex">
-        <Sidebar />
-        <div className="flex-1 overflow-y-auto">
-          <GeoAuditHeader
-            audit={audit}
-            onRerun={() => handleRerun(audit)}
-            onDownloadPDF={handleDownloadPDF}
-            isDownloadingPDF={isDownloadingPDF}
-          />
+    <DashboardLayout>
+      <GeoAuditHeader
+        audit={audit}
+        onDownloadPDF={handleDownloadPDF}
+        isDownloadingPDF={isDownloadingPDF}
+      />
 
-          {/* Main Content */}
-          <div className="max-w-7xl mx-auto px-6 py-8">
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-6 py-8">
             {/* Error Alert */}
             {audit.status === "failed" && audit.error_message && (
               <div className="mb-6 bg-red-50 border border-red-200 rounded-xl p-4">
@@ -156,9 +111,7 @@ export default function GeoAuditResultsPage() {
 
             <CompetitorsTable competitors={audit.competitors} />
           </div>
-        </div>
-      </div>
-    </ProtectedRoute>
+    </DashboardLayout>
   );
 }
 

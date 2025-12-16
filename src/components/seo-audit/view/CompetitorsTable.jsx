@@ -1,7 +1,9 @@
 "use client";
 import { HiExternalLink } from "react-icons/hi";
+import { useTranslation } from "@/i18n/context";
 
 export default function CompetitorsTable({ competitors, keyword }) {
+  const { t } = useTranslation();
   if (!keyword || !competitors || competitors.length === 0) return null;
 
   const competitorsCount = competitors.length;
@@ -10,21 +12,21 @@ export default function CompetitorsTable({ competitors, keyword }) {
     <div>
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-200">
-          <h2 className="text-lg font-semibold text-gray-900">Competitor Analysis</h2>
-          <p className="text-sm text-gray-500 mt-1">Top {Math.min(competitorsCount, 10)} competitors</p>
+          <h2 className="text-lg font-semibold text-gray-900">{t("dashboard.seoAudit.view.competitorAnalysis")}</h2>
+          <p className="text-sm text-gray-500 mt-1">{t("dashboard.seoAudit.view.topCompetitors")} {Math.min(competitorsCount, 10)} {t("dashboard.seoAudit.view.competitors")}</p>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 <th className="px-6 py-3 text-left">
-                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Rank</span>
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.rank")}</span>
                 </th>
                 <th className="px-6 py-3 text-left">
-                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Title</span>
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.title")}</span>
                 </th>
                 <th className="px-6 py-3 text-left">
-                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Domain</span>
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.domain")}</span>
                 </th>
               </tr>
             </thead>
@@ -41,7 +43,7 @@ export default function CompetitorsTable({ competitors, keyword }) {
                       rel="noopener noreferrer"
                       className="text-sm text-gray-900 hover:text-primary transition-colors line-clamp-2 flex items-start gap-1"
                     >
-                      {competitor.title || "No title"}
+                      {competitor.title || t("dashboard.seoAudit.view.noTitle")}
                       <HiExternalLink className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 opacity-60" />
                     </a>
                   </td>

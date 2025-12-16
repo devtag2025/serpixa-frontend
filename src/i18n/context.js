@@ -1,5 +1,18 @@
 "use client";
 import { createContext, useContext, useState, useEffect } from "react";
+import enTranslations from "./locales/en.json";
+import frTranslations from "./locales/fr.json";
+import nlTranslations from "./locales/nl.json";
+import nlBeTranslations from "./locales/nl-be.json";
+import beFrTranslations from "./locales/be-fr.json";
+
+const translationsMap = {
+  en: enTranslations,
+  fr: frTranslations,
+  nl: nlTranslations,
+  'nl-be': nlBeTranslations,
+  'be-fr': beFrTranslations,
+};
 
 const I18nContext = createContext();
 
@@ -14,28 +27,9 @@ export function I18nProvider({ children, locale: initialLocale = "en" }) {
   };
 
   const [locale, setLocale] = useState(() => getInitialLocale());
-  const [translations, setTranslations] = useState({});
-
-  useEffect(() => {
-    // Load translations for the current locale
-    import(`./locales/${locale}.json`)
-      .then((module) => {
-        setTranslations(module.default);
-      })
-      .catch((error) => {
-        console.error(`Failed to load translations for locale: ${locale}`, error);
-        // Fallback to English
-        if (locale !== "en") {
-          import(`./locales/en.json`)
-            .then((module) => {
-              setTranslations(module.default);
-            })
-            .catch(() => {
-              setTranslations({});
-            });
-        }
-      });
-  }, [locale]);
+  
+  // Get translations synchronously from the map
+  const translations = translationsMap[locale] || translationsMap.en;
 
   const changeLocale = (newLocale) => {
     setLocale(newLocale);
@@ -64,6 +58,10 @@ export function useTranslation() {
   const { translations } = useI18n();
 
   const t = (key, params = {}) => {
+    if (!translations || Object.keys(translations).length === 0) {
+      return key;
+    }
+
     const keys = key.split(".");
     let value = translations;
 
@@ -71,6 +69,10 @@ export function useTranslation() {
       if (value && typeof value === "object" && k in value) {
         value = value[k];
       } else {
+        // Log missing translation in development
+        if (process.env.NODE_ENV === "development") {
+          console.warn(`Translation missing for key: ${key}`);
+        }
         return key; // Return key if translation not found
       }
     }

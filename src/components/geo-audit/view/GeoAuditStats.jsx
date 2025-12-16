@@ -1,8 +1,10 @@
 "use client";
 import { HiLightningBolt, HiUsers, HiExclamationCircle } from "react-icons/hi";
 import { getScoreColor } from "@/utils/colors";
+import { useTranslation } from "@/i18n/context";
 
 export default function GeoAuditStats({ audit }) {
+  const { t } = useTranslation();
   const totalCompetitors = audit.competitors?.length || 0;
   const totalRecommendations = audit.recommendations?.length || 0;
   const napIssuesCount = audit.napIssues?.issues?.length || 0;
@@ -16,7 +18,7 @@ export default function GeoAuditStats({ audit }) {
           <div className={`p-2.5 rounded-lg ${scoreColors.bg}`}>
             <HiLightningBolt className={`w-5 h-5 ${scoreColors.text}`} />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Visibility Score</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.visibilityScore")}</span>
         </div>
         <div className="flex items-baseline gap-2 mb-2">
           <span className={`text-3xl font-bold ${scoreColors.text}`}>{audit.localVisibilityScore || 0}</span>
@@ -36,7 +38,7 @@ export default function GeoAuditStats({ audit }) {
           <div className="p-2.5 rounded-lg bg-purple-50">
             <HiUsers className="w-5 h-5 text-purple-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Competitors</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.competitors")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-3xl font-bold text-gray-900">{totalCompetitors}</span>
@@ -49,7 +51,7 @@ export default function GeoAuditStats({ audit }) {
           <div className="p-2.5 rounded-lg bg-red-50">
             <HiExclamationCircle className="w-5 h-5 text-red-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">NAP Issues</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.napIssues")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-3xl font-bold text-gray-900">{napIssuesCount}</span>
@@ -62,7 +64,7 @@ export default function GeoAuditStats({ audit }) {
           <div className="p-2.5 rounded-lg bg-blue-50">
             <HiExclamationCircle className="w-5 h-5 text-blue-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Recommendations</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.recommendations")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-3xl font-bold text-gray-900">{totalRecommendations}</span>

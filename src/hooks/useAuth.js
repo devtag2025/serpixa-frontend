@@ -32,8 +32,10 @@ export function useAuth() {
       }
       return failureCount < 1;
     },
-    staleTime: 5 * 60 * 1000, // 
-    refetchOnWindowFocus: false, // Don't refetch on window focuConsider data fresh for 5 minutess to avoid unnecessary checks
+    staleTime: 5 * 60 * 1000, // Consider data fresh for 5 minutes
+    refetchOnWindowFocus: false, // Don't refetch on window focus to avoid unnecessary checks
+    refetchOnMount: false, // Don't refetch on mount if data exists in cache
+    refetchOnReconnect: false, // Don't refetch on reconnect
   });
 }
 
@@ -144,6 +146,30 @@ export function useResetPassword() {
       const message = handleError(error);
       toast.error(message || "Password reset failed.");
       console.error("Reset password failed:", message);
+    },
+  });
+}
+
+export function useVerifyEmail() {
+  const router = useRouter();
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: AuthService.verifyEmail,
+    onSuccess: (response) => {
+      const { message } = handleResponse(response);
+      toast.success(message || "Email verified successfully!");
+      // Invalidate auth query to refetch user profile
+      queryClient.invalidateQueries({ queryKey: authKeys.all });
+      // Redirect to login after a short delay
+      setTimeout(() => {
+        router.push("/login");
+      }, 2000);
+    },
+    onError: (error) => {
+      const message = handleError(error);
+      toast.error(message || "Email verification failed.");
+      console.error("Verify email failed:", message);
     },
   });
 }

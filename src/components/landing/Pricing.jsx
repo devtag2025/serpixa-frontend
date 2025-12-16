@@ -99,62 +99,85 @@ export default function Pricing() {
   };
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
-      <div className="w-full max-w-7xl mx-auto">
+    <section id="pricing" className="relative py-24 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-5">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="relative w-full max-w-7xl mx-auto z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            {t("landing.pricing.title")}
+          <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wide">Pricing</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+              {t("landing.pricing.title")}
+            </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t("landing.pricing.subtitle")}
           </p>
         </div>
 
         {/* Main Pricing Plans */}
         {isLoading ? (
-          <div className="text-center py-12">
-            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-            <p className="mt-4 text-gray-600">{t("landing.pricing.loadingPlans")}</p>
+          <div className="text-center py-16">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent"></div>
+            <p className="mt-6 text-gray-600 text-lg">{t("landing.pricing.loadingPlans")}</p>
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-20 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24 max-w-5xl mx-auto">
               {subscriptionPlans.map((plan) => {
                 const highlighted = isPopular(plan);
                 return (
                   <div
                     key={plan.id}
-                    className={`bg-white rounded-2xl p-8 shadow-sm ${
+                    className={`group relative bg-white rounded-3xl p-8 md:p-10 ${
                       highlighted
-                        ? "border-2 border-primary ring-2 ring-primary/20"
-                        : "border border-gray-200"
-                    } transition-all hover:shadow-lg`}
+                        ? "border-2 border-primary shadow-2xl shadow-primary/20 scale-105 md:scale-110"
+                        : "border border-gray-200 shadow-lg"
+                    } transition-all duration-300 hover:shadow-2xl hover:scale-105`}
                   >
+                    {/* Gradient overlay for popular plan */}
+                    {highlighted && (
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 rounded-3xl -z-10"></div>
+                    )}
+                    
                     {/* Badge */}
                     {plan.is_popular && (
-                      <div className="mb-4">
-                        <span className="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-semibold rounded-full">
+                      <div className="mb-6">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary to-purple-600 text-white text-xs font-bold rounded-full shadow-lg">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
                           {t("landing.pricing.agenciesChoice")}
                         </span>
                       </div>
                     )}
 
                     {/* Plan Name */}
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{plan.name}</h3>
 
                     {/* Price */}
-                    <div className="mb-4">
-                      <span className="text-gray-600 text-sm">{t("landing.pricing.from")} </span>
-                      <span className="text-4xl font-bold text-gray-900">
-                        ${formatPrice(plan.price, plan.currency)}
-                      </span>
-                      <span className="text-gray-600 text-lg">/{getBillingPeriod(plan.billing_period)}</span>
+                    <div className="mb-6">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                        €{formatPrice(plan.price, plan.currency)}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-gray-500 text-lg">/{getBillingPeriod(plan.billing_period)}</span>
+                        <span className="text-gray-500 text-xs">HTVA</span>
+                      </div>
                     </div>
 
                     {/* Description */}
                     {plan.description && (
-                      <p className="text-gray-600 mb-6 text-sm">{plan.description}</p>
+                      <p className="text-gray-600 mb-8 text-base leading-relaxed">{plan.description}</p>
                     )}
 
                     {/* Limits/Features */}
@@ -166,43 +189,51 @@ export default function Pricing() {
                       if (!hasLimits && !hasFeatures) return null;
                       
                       return (
-                        <ul className="space-y-3 mb-8">
+                        <ul className="space-y-4 mb-10">
                           {hasLimits ? (
                             limitItems.map((limit, limitIndex) => (
-                              <li key={limitIndex} className="flex items-start">
-                                <svg
-                                  className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M5 13l4 4L19 7"
-                                  />
-                                </svg>
-                                <span className="text-gray-700 text-sm font-medium">{limit}</span>
+                              <li key={limitIndex} className="flex items-start group/item">
+                                <div className="flex-shrink-0 mt-1 mr-4">
+                                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
+                                    <svg
+                                      className="w-4 h-4 text-white"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={3}
+                                        d="M5 13l4 4L19 7"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                                <span className="text-gray-700 text-base font-medium leading-relaxed">{limit}</span>
                               </li>
                             ))
                           ) : (
                             plan.features.map((feature, featureIndex) => (
-                              <li key={featureIndex} className="flex items-start">
-                                <svg
-                                  className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M5 13l4 4L19 7"
-                                  />
-                                </svg>
-                                <span className="text-gray-700 text-sm">{feature}</span>
+                              <li key={featureIndex} className="flex items-start group/item">
+                                <div className="flex-shrink-0 mt-1 mr-4">
+                                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
+                                    <svg
+                                      className="w-4 h-4 text-white"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={3}
+                                        d="M5 13l4 4L19 7"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                                <span className="text-gray-700 text-base leading-relaxed">{feature}</span>
                               </li>
                             ))
                           )}
@@ -215,24 +246,30 @@ export default function Pricing() {
                       <button
                         onClick={() => handleCheckout(plan.stripe_price_id, plan.name)}
                         disabled={createCheckout.isPending}
-                        className={`block w-full text-center py-3 px-6 rounded-md font-medium transition-colors ${
+                        className={`group/btn relative w-full text-center py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 ${
                           highlighted
-                            ? "bg-primary text-white hover:bg-primary/90"
-                            : "bg-primary text-white hover:bg-primary/90"
-                        } disabled:opacity-50 disabled:cursor-not-allowed`}
+                            ? "bg-gradient-to-r from-primary to-purple-600 text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-105"
+                            : "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:scale-105"
+                        } disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100`}
                       >
-                        {createCheckout.isPending ? t("landing.pricing.processing") : t("landing.pricing.startTrial")}
+                        <span className="relative z-10">
+                          {createCheckout.isPending ? t("landing.pricing.processing") : t("landing.pricing.startTrial")}
+                        </span>
+                        {!createCheckout.isPending && (
+                          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-purple-600/90 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                        )}
                       </button>
                     ) : (
                       <Link
                         href="/signup"
-                        className={`block w-full text-center py-3 px-6 rounded-md font-medium transition-colors ${
+                        className={`group/btn relative block w-full text-center py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 ${
                           highlighted
-                            ? "bg-primary text-white hover:bg-primary/90"
-                            : "bg-primary text-white hover:bg-primary/90"
+                            ? "bg-gradient-to-r from-primary to-purple-600 text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-105"
+                            : "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:scale-105"
                         }`}
                       >
-                        {t("landing.pricing.startTrial")}
+                        <span className="relative z-10">{t("landing.pricing.startTrial")}</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-purple-600/90 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                       </Link>
                     )}
                   </div>
@@ -243,47 +280,56 @@ export default function Pricing() {
             {/* Add-ons Section */}
             {addonPlans.length > 0 && (
               <div className="text-center">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                   {t("landing.pricing.needMore")}
                 </h3>
+                <p className="text-gray-600 mb-12 text-lg">Enhance your plan with powerful add-ons</p>
 
                 {/* Add-ons Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-6 mt-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
                   {addonPlans.map((addon) => {
                     const creditItems = formatCredits(addon.credits);
                     return (
                       <div
                         key={addon.id}
-                        className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm transition-all hover:shadow-lg"
+                        className="group bg-white rounded-2xl p-6 border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-primary/30"
                       >
-                        <h4 className="text-lg font-bold text-gray-900 mb-4">{addon.name}</h4>
-                        <div className="mb-4">
-                          <span className="text-gray-600 text-sm">{t("landing.pricing.from")} </span>
-                          <span className="text-2xl font-bold text-gray-900">
-                            ${formatPrice(addon.price, addon.currency)}
-                          </span>
-                          <span className="text-gray-600 text-lg">/{getBillingPeriod(addon.billing_period)}</span>
+                        <h4 className="text-xl text-start font-bold text-gray-900 mb-4">{addon.name}</h4>
+                        <div className="mb-6">
+                          <div className="flex items-baseline gap-1">
+                            <span className="text-3xl font-bold text-gray-900">
+                            €{formatPrice(addon.price, addon.currency)}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 mt-1">
+                            <span className="text-gray-500 text-sm">/{getBillingPeriod(addon.billing_period)}</span>
+                            <span className="text-gray-500 text-xs">HTVA</span>
+                          </div>
                         </div>
                         
                         {/* Show credits for addons */}
                         {creditItems.length > 0 && (
                           <div className="mb-6">
-                            <ul className="space-y-2">
+                            <ul className="space-y-3">
                               {creditItems.map((credit, creditIndex) => (
                                 <li key={creditIndex} className="flex items-start">
-                                  <svg
-                                    className="w-4 h-4 text-primary mt-0.5 mr-2 flex-shrink-0"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth={2}
-                                      d="M5 13l4 4L19 7"
-                                    />
-                                  </svg>
+                                  <div className="flex-shrink-0 mt-0.5 mr-3">
+                                    <div className="w-5 h-5 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
+                                      <svg
+                                        className="w-3 h-3 text-white"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth={3}
+                                          d="M5 13l4 4L19 7"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </div>
                                   <span className="text-gray-700 text-sm font-medium">{credit}</span>
                                 </li>
                               ))}
@@ -295,14 +341,14 @@ export default function Pricing() {
                           <button
                             onClick={() => handleCheckout(addon.stripe_price_id, addon.name)}
                             disabled={createCheckout.isPending}
-                            className="block w-full text-center py-3 px-6 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full text-center py-3 px-6 bg-gradient-to-r from-primary to-primary/90 text-white rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                           >
                             {createCheckout.isPending ? t("landing.pricing.processing") : t("landing.pricing.purchase")}
                           </button>
                         ) : (
                           <Link
                             href="/signup"
-                            className="block w-full text-center py-3 px-6 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors"
+                            className="block w-full text-center py-3 px-6 bg-gradient-to-r from-primary to-primary/90 text-white rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
                           >
                             {t("landing.pricing.purchase")}
                           </Link>

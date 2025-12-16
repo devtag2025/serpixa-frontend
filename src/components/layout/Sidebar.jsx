@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import {
   HiHome,
   HiSearch,
@@ -14,8 +15,12 @@ import {
   HiTicket,
   HiChevronLeft,
   HiChevronRight,
+  HiGift,
+  HiChatAlt,
 } from "react-icons/hi";
 import SidebarItem from "./SidebarItem";
+import SupportModal from "../support/SupportModal";
+import { useTranslation } from "@/i18n/context";
 
 /**
  * Sidebar Component - Modular and reusable with collapsible functionality
@@ -23,7 +28,9 @@ import SidebarItem from "./SidebarItem";
  */
 export default function Sidebar() {
   const pathname = usePathname();
+  const { t } = useTranslation();
   const [openMenus, setOpenMenus] = useState({});
+  const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
   
   // Collapsible sidebar state
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -45,80 +52,86 @@ export default function Sidebar() {
     {
       key: "dashboard",
       icon: HiHome,
-      label: "Dashboard",
+      label: t("dashboard.sidebar.dashboard"),
       href: "/dashboard",
     },
     {
       key: "seo",
       icon: HiSearch,
-      label: "SEO Audits",
+      label: t("dashboard.sidebar.seoAudits"),
       submenu: [
-        { label: "New Audit", href: "/dashboard/seo-audit/new" },
-        { label: "History", href: "/dashboard/seo-audit" },
+        { label: t("dashboard.sidebar.newAudit"), href: "/dashboard/seo-audit/new" },
+        { label: t("dashboard.sidebar.history"), href: "/dashboard/seo-audit" },
       ],
     },
     {
       key: "geo",
       icon: HiLocationMarker,
-      label: "GEO Audits",
+      label: t("dashboard.sidebar.geoAudits"),
       submenu: [
-        { label: "New Audit", href: "/dashboard/geo-audit/new" },
-        { label: "History", href: "/dashboard/geo-audit" },
+        { label: t("dashboard.sidebar.newAudit"), href: "/dashboard/geo-audit/new" },
+        { label: t("dashboard.sidebar.history"), href: "/dashboard/geo-audit" },
       ],
     },
     {
       key: "gbp",
       icon: HiOfficeBuilding,
-      label: "GBP Audits",
+      label: t("dashboard.sidebar.gbpAudits"),
       submenu: [
-        { label: "New Audit", href: "/dashboard/gbp-audit/new" },
-        { label: "History", href: "/dashboard/gbp-audit" },
+        { label: t("dashboard.sidebar.newAudit"), href: "/dashboard/gbp-audit/new" },
+        { label: t("dashboard.sidebar.history"), href: "/dashboard/gbp-audit" },
       ],
     },
     {
       key: "ai",
       icon: HiSparkles,
-      label: "AI Content",
+      label: t("dashboard.sidebar.aiContent"),
       submenu: [
-        { label: "Generator", href: "/dashboard/ai-content/new" },
-        { label: "History", href: "/dashboard/ai-content" },
+        { label: t("dashboard.sidebar.generator"), href: "/dashboard/ai-content/new" },
+        { label: t("dashboard.sidebar.history"), href: "/dashboard/ai-content" },
       ],
     },
     {
-      key: "reports",
-      icon: HiDocumentReport,
-      label: "Reports",
-      href: "/dashboard/reports",
+      key: "extras",
+      icon: HiGift,
+      label: t("dashboard.sidebar.extras"),
+      href: "/dashboard/extras",
     },
-    {
-      key: "profile",
-      icon: HiUser,
-      label: "Profile",
-      href: "/dashboard/profile",
-    },
-    {
-      key: "settings",
-      icon: HiCog,
-      label: "Settings",
-      href: "/dashboard/settings",
-    },
-    {
-      key: "billing",
-      icon: HiCreditCard,
-      label: "Billing",
-      submenu: [
-        { label: "Plan", href: "/dashboard/billing" },
-        { label: "Payment", href: "/dashboard/billing/payment" },
-        { label: "History", href: "/dashboard/billing/history" },
-        { label: "Add-ons", href: "/dashboard/billing/add-ons" },
-      ],
-    },
-    {
-      key: "credits",
-      icon: HiTicket,
-      label: "Credits",
-      href: "/dashboard/credits",
-    },
+    // {
+    //   key: "reports",
+    //   icon: HiDocumentReport,
+    //   label: t("dashboard.sidebar.reports"),
+    //   href: "/dashboard/reports",
+    // },
+    // {
+    //   key: "profile",
+    //   icon: HiUser,
+    //   label: t("dashboard.sidebar.profile"),
+    //   href: "/dashboard/profile",
+    // },
+    // {
+    //   key: "settings",
+    //   icon: HiCog,
+    //   label: t("dashboard.sidebar.settings"),
+    //   href: "/dashboard/settings",
+    // },
+    // {
+    //   key: "billing",
+    //   icon: HiCreditCard,
+    //   label: t("dashboard.sidebar.billing"),
+    //   submenu: [
+    //     { label: t("dashboard.sidebar.plan"), href: "/dashboard/billing" },
+    //     { label: t("dashboard.sidebar.payment"), href: "/dashboard/billing/payment" },
+    //     { label: t("dashboard.sidebar.history"), href: "/dashboard/billing/history" },
+    //     { label: t("dashboard.sidebar.addOns"), href: "/dashboard/billing/add-ons" },
+    //   ],
+    // },
+    // {
+    //   key: "credits",
+    //   icon: HiTicket,
+    //   label: t("dashboard.sidebar.credits"),
+    //   href: "/dashboard/credits",
+    // },
   ];
 
   // Auto-open submenu if current path matches any submenu item
@@ -160,7 +173,7 @@ export default function Sidebar() {
       <aside
         className={`${
           isExpanded ? "w-64" : "w-16"
-        } bg-white border-r border-gray-200 h-screen sticky top-0 overflow-y-auto transition-all duration-300 ease-in-out`}
+        } bg-white border-r border-gray-200 shadow-md h-screen sticky top-0 flex flex-col transition-all duration-300 ease-in-out`}
         onMouseEnter={() => {
           if (isCollapsed) {
             setIsHovered(true);
@@ -170,54 +183,83 @@ export default function Sidebar() {
           setIsHovered(false);
         }}
       >
-        <div className="p-4">
+        <div className="flex-1 overflow-y-auto p-4">
+          {/* Logo/Brand */}
+          <Link 
+            href="/" 
+            className={`flex items-center ${isExpanded ? "space-x-2" : "justify-center"} mb-8 px-4 hover:opacity-80 transition-opacity cursor-pointer`}
+          >
+            <div className="w-8 h-8 bg-primary rounded flex items-center justify-center flex-shrink-0">
+              <svg
+                className="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            {isExpanded && (
+              <span className="text-xl font-semibold text-gray-900 whitespace-nowrap">
+                Serpixa
+              </span>
+            )}
+          </Link>
 
-        {/* Logo/Brand */}
-        <div className={`flex items-center ${isExpanded ? "space-x-2" : "justify-center"} mb-8 px-4`}>
-          <div className="w-8 h-8 bg-primary rounded flex items-center justify-center flex-shrink-0">
-            <svg
-              className="w-5 h-5 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 10V3L4 14h7v7l9-11h-7z"
+          {/* Navigation Menu */}
+          <nav className="space-y-1">
+            {menuItems.map((item) => (
+              <SidebarItem
+                key={item.key}
+                icon={item.icon}
+                label={item.label}
+                href={item.href}
+                submenu={item.submenu}
+                isOpen={openMenus[item.key] || shouldOpenMenu(item)}
+                onToggle={() => toggleMenu(item.key)}
+                isExpanded={isExpanded}
               />
-            </svg>
-          </div>
-          {isExpanded && (
-            <span className="text-xl font-semibold text-gray-900 whitespace-nowrap">
-              Serpixa
-            </span>
-          )}
+            ))}
+          </nav>
         </div>
 
-        {/* Navigation Menu */}
-        <nav className="space-y-1">
-          {menuItems.map((item) => (
-            <SidebarItem
-              key={item.key}
-              icon={item.icon}
-              label={item.label}
-              href={item.href}
-              submenu={item.submenu}
-              isOpen={openMenus[item.key] || shouldOpenMenu(item)}
-              onToggle={() => toggleMenu(item.key)}
-              isExpanded={isExpanded}
-            />
-          ))}
-        </nav>
-      </div>
+        {/* Support Button - Fixed at bottom */}
+        <div className="border-t border-blue-200 bg-white p-4">
+          <button
+            onClick={() => setIsSupportModalOpen(true)}
+            className={`relative w-full shadow-md flex items-center
+              ${isExpanded ? "justify-start px-4 space-x-3" : "justify-center px-2"}
+              py-3 text-sm font-medium rounded-lg transition-all duration-300
+              text-white
+              bg-gradient-to-r from-primary via-blue-500 to-primary
+              hover:shadow-lg hover:brightness-110
+            `}
+            
+            title={!isExpanded ? t("dashboard.support.title") : ""}
+          >
+            <HiChatAlt className="w-5 h-5 flex-shrink-0" />
+            {isExpanded && (
+              <span className="whitespace-nowrap font-bold">{t("dashboard.support.title")}</span>
+            )}
+          </button>
+        </div>
       </aside>
+      
+      {/* Support Modal */}
+      <SupportModal
+        isOpen={isSupportModalOpen}
+        onClose={() => setIsSupportModalOpen(false)}
+      />
       
       {/* Toggle Button - Positioned on the edge, outside aside to avoid overflow clipping */}
       <button
         onClick={toggleCollapse}
-        className="absolute top-4 w-6 h-6 bg-white border border-gray-300 rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-all duration-300 text-gray-600 hover:text-gray-900 z-50"
+        className="fixed top-4 w-6 h-6 bg-white border border-gray-300 rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-all duration-300 text-gray-600 hover:text-gray-900 z-60"
         style={{
           left: isExpanded ? 'calc(256px - 12px)' : 'calc(64px - 12px)'
         }}

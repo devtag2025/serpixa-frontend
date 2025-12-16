@@ -1,13 +1,15 @@
 "use client";
 import { HiLocationMarker, HiPhone, HiGlobe, HiStar, HiOfficeBuilding, HiClipboardCopy, HiExternalLink } from "react-icons/hi";
+import { useTranslation } from "@/i18n/context";
 
 export default function BusinessInformation({ businessInfo, onCopyToClipboard }) {
+  const { t } = useTranslation();
   if (!businessInfo) return null;
 
   return (
     <div className="mb-6 bg-white rounded-xl border border-gray-200 shadow-sm">
       <div className="px-6 py-4 border-b border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-900">Business Information</h2>
+        <h2 className="text-lg font-semibold text-gray-900">{t("dashboard.geoAudit.view.businessInformation")}</h2>
       </div>
       <div className="px-6 py-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -15,7 +17,7 @@ export default function BusinessInformation({ businessInfo, onCopyToClipboard })
             <div className="flex items-start gap-3">
               <HiOfficeBuilding className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
               <div className="flex-1">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Name</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{t("dashboard.geoAudit.view.name")}</p>
                 <p className="text-sm text-gray-900">{businessInfo.name}</p>
               </div>
             </div>
@@ -24,7 +26,7 @@ export default function BusinessInformation({ businessInfo, onCopyToClipboard })
             <div className="flex items-start gap-3">
               <HiLocationMarker className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
               <div className="flex-1">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Address</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{t("dashboard.geoAudit.view.address")}</p>
                 <p className="text-sm text-gray-900">{businessInfo.address}</p>
               </div>
             </div>
@@ -33,13 +35,13 @@ export default function BusinessInformation({ businessInfo, onCopyToClipboard })
             <div className="flex items-start gap-3">
               <HiPhone className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
               <div className="flex-1">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Phone</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{t("dashboard.geoAudit.view.phone")}</p>
                 <div className="flex items-center gap-2">
                   <p className="text-sm text-gray-900">{businessInfo.phone}</p>
                   <button
                     onClick={() => onCopyToClipboard(businessInfo.phone, "Phone")}
                     className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
-                    title="Copy phone"
+                    title={t("dashboard.geoAudit.view.copyPhone")}
                   >
                     <HiClipboardCopy className="w-3.5 h-3.5" />
                   </button>
@@ -51,7 +53,7 @@ export default function BusinessInformation({ businessInfo, onCopyToClipboard })
             <div className="flex items-start gap-3">
               <HiGlobe className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
               <div className="flex-1">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Website</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{t("dashboard.geoAudit.view.website")}</p>
                 <a
                   href={businessInfo.website}
                   target="_blank"
@@ -68,7 +70,7 @@ export default function BusinessInformation({ businessInfo, onCopyToClipboard })
             <div className="flex items-start gap-3">
               <HiStar className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
               <div className="flex-1">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rating & Reviews</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{t("dashboard.geoAudit.view.ratingAndReviews")}</p>
                 <div className="flex items-center gap-2">
                   {businessInfo.rating && (
                     <span className="text-sm font-semibold text-gray-900">
@@ -77,7 +79,7 @@ export default function BusinessInformation({ businessInfo, onCopyToClipboard })
                   )}
                   {businessInfo.reviews && (
                     <span className="text-sm text-gray-600">
-                      ({businessInfo.reviews} reviews)
+                      ({businessInfo.reviews} {t("dashboard.geoAudit.view.reviews")})
                     </span>
                   )}
                 </div>
@@ -88,7 +90,7 @@ export default function BusinessInformation({ businessInfo, onCopyToClipboard })
             <div className="flex items-start gap-3">
               <HiOfficeBuilding className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
               <div className="flex-1">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Category</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{t("dashboard.geoAudit.view.category")}</p>
                 <p className="text-sm text-gray-900">{businessInfo.category}</p>
               </div>
             </div>

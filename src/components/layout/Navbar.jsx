@@ -20,27 +20,26 @@ export default function Navbar() {
   const navLinks = [
     {
       label: "Why Serpixa",
-      href: "#why",
-      hasDropdown: true,
-      items: ["Feature 1", "Feature 2", "Feature 3"],
-    },
-    {
-      label: "Features",
-      href: "#features",
-      hasDropdown: true,
-      items: ["Feature 1", "Feature 2", "Feature 3"],
-    },
-    {
-      label: "Plans & pricing",
-      href: "#pricing",
+      href: "/why-serpixa",
       hasDropdown: false,
     },
     {
-      label: "Resources",
-      href: "#resources",
-      hasDropdown: true,
-      items: ["Resource 1", "Resource 2", "Resource 3"],
+      label: "About Us",
+      href: "/about-us",
+      hasDropdown: false,
     },
+    {
+      label: "Features",
+      href: "/features",
+      hasDropdown: false,
+    },
+   
+    // {
+    //   label: "Resources",
+    //   href: "#resources",
+    //   hasDropdown: true,
+    //   items: ["Resource 1", "Resource 2", "Resource 3"],
+    // },
   ];
 
   const toggleDropdown = (label) => {
@@ -79,12 +78,12 @@ export default function Navbar() {
           <div className="hidden md:flex md:items-center md:space-x-6">
             {navLinks.map((link) => (
               <div key={link.label} className="relative group">
-                <button
-                  onClick={() => link.hasDropdown && toggleDropdown(link.label)}
-                  className="flex items-center text-gray-700 hover:text-gray-900 font-medium text-sm transition-colors"
-                >
-                  {link.label}
-                  {link.hasDropdown && (
+                {link.hasDropdown ? (
+                  <button
+                    onClick={() => toggleDropdown(link.label)}
+                    className="flex items-center text-gray-700 hover:text-gray-900 font-medium text-sm transition-colors"
+                  >
+                    {link.label}
                     <svg
                       className="ml-1 w-4 h-4"
                       fill="none"
@@ -98,8 +97,15 @@ export default function Navbar() {
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
-                  )}
-                </button>
+                  </button>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="flex items-center text-gray-700 hover:text-gray-900 font-medium text-sm transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                )}
 
                 {/* Dropdown Menu */}
                 {link.hasDropdown && dropdownOpen === link.label && (

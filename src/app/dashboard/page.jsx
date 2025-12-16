@@ -1,11 +1,12 @@
 "use client";
-import ProtectedRoute from "@/components/auth/ProtectedRoute";
-import Sidebar from "@/components/layout/Sidebar";
+import DashboardLayout from "@/components/layout/DashboardLayout";
 import CreditCard from "@/components/dashboard/CreditCard";
 import ActionButton from "@/components/dashboard/ActionButton";
 import RecentAudits from "@/components/dashboard/RecentAudits";
 import OverviewStats from "@/components/dashboard/OverviewStats";
 import { useAuth } from "@/hooks/useAuth";
+import { useDashboard } from "@/hooks/useDashboardStats";
+import { useTranslation } from "@/i18n/context";
 import {
   HiSearch,
   HiLocationMarker,
@@ -14,93 +15,101 @@ import {
 } from "react-icons/hi";
 
 export default function Dashboard() {
-  const { data: user, isLoading } = useAuth();
+  const { data: user, isLoading: isAuthLoading } = useAuth();
+  const { t } = useTranslation();
+  const {
+    credits,
+    overviewStats,
+    recentAudits,
+    subscriptionInfo,
+    isLoading: isDashboardLoading,
+    isError,
+  } = useDashboard(t);
 
-  // Mock credit data - Replace with real data from API
-  const credits = [
-    {
-      title: "SEO Audits",
-      used: 5,
-      total: 50,
-      color: "#3b82f6", // blue
-      icon: HiSearch,
-    },
-    {
-      title: "GEO Audits",
-      used: 2,
-      total: 10,
-      color: "#10b981", // green
-      icon: HiLocationMarker,
-    },
-    {
-      title: "GBP Audits",
-      used: 2,
-      total: 5,
-      color: "#8b5cf6", // purple
-      icon: HiOfficeBuilding,
-    },
-    {
-      title: "AI Content",
-      used: 38,
-      total: 50,
-      color: "#f59e0b", // amber
-      icon: HiSparkles,
-    },
-  ];
+  const isLoading = isAuthLoading || isDashboardLoading;
 
   const actions = [
     {
       href: "/dashboard/seo-audit/new",
       icon: HiSearch,
-      title: "New SEO Audit",
-      description: "Analyze website SEO performance",
+      title: t("dashboard.page.newSeoAudit"),
+      description: t("dashboard.page.newSeoAuditDesc"),
       gradient: "from-blue-500 to-blue-600",
       textColor: "#3b82f6", // Blue
     },
     {
       href: "/dashboard/geo-audit/new",
       icon: HiLocationMarker,
-      title: "New GEO Audit",
-      description: "Check local search visibility",
+      title: t("dashboard.page.newGeoAudit"),
+      description: t("dashboard.page.newGeoAuditDesc"),
       gradient: "from-green-500 to-emerald-600",
       textColor: "#10b981", // Green
     },
     {
       href: "/dashboard/gbp-audit/new",
       icon: HiOfficeBuilding,
-      title: "New GBP Audit",
-      description: "Audit Google Business Profile",
+      title: t("dashboard.page.newGbpAudit"),
+      description: t("dashboard.page.newGbpAuditDesc"),
       gradient: "from-purple-500 to-purple-600",
       textColor: "#8b5cf6", // Purple
     },
     {
       href: "/dashboard/ai-content/new",
       icon: HiSparkles,
-      title: "AI Content",
-      description: "Generate optimized content",
+      title: t("dashboard.page.aiContent"),
+      description: t("dashboard.page.aiContentDesc"),
       gradient: "from-amber-500 to-orange-600",
       textColor: "#f59e0b", // Amber
     },
   ];
 
-  // Mock subscription plan - Replace with real data
-  const subscriptionPlan = "Premium Plan";
+  // Get subscription plan name
+  const subscriptionPlan = subscriptionInfo.planName || t("dashboard.page.noSubscription") || "No Plan";
+
+  if (isLoading) {
+    return (
+      <DashboardLayout>
+        <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
+          <div className="text-center">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
+            <p className="mt-4 text-gray-600 font-medium">Loading dashboard...</p>
+          </div>
+        </div>
+      </DashboardLayout>
+    );
+  }
+
+  if (isError) {
+    return (
+      <DashboardLayout>
+        <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)] px-4">
+          <div className="text-center max-w-md">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-4">
+              <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">Failed to Load Dashboard</h2>
+            <p className="text-gray-600 mb-6">Please try refreshing the page</p>
+          </div>
+        </div>
+      </DashboardLayout>
+    );
+  }
 
   return (
-    <ProtectedRoute>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex">
-        <Sidebar />
-        <div className="flex-1 overflow-y-auto">
+    <DashboardLayout>
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-full">
       {/* Header */}
-          <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-40">
+        <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div>
                   <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-                    Welcome back{user?.name ? `, ${user.name.split(" ")[0]}` : ""}! 👋
+                    {t("dashboard.page.welcomeBack")}{user?.name ? `, ${user.name.split(" ")[0]}` : ""}! 👋
                   </h1>
                   <div className="flex items-center space-x-3 mt-2">
-                    <span className="text-sm text-gray-600">Subscription:</span>
+                    <span className="text-sm text-gray-600">{t("dashboard.page.subscription")}:</span>
                     <span className="px-3 py-1 bg-gradient-to-r from-primary to-blue-600 text-white text-sm font-semibold rounded-full shadow-sm">
                       {subscriptionPlan}
                     </span>
@@ -115,7 +124,7 @@ export default function Dashboard() {
             {/* Credits Section */}
             <div className="mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-6">
-                Your Credits
+                {t("dashboard.page.yourCredits")}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {credits.map((credit, index) => (
@@ -127,9 +136,9 @@ export default function Dashboard() {
             {/* Quick Actions */}
             <div className="mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-4">
-                Quick Actions
+                {t("dashboard.page.quickActions")}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {actions.map((action, index) => (
                   <ActionButton key={index} {...action} />
                 ))}
@@ -138,12 +147,11 @@ export default function Dashboard() {
 
             {/* Recent Activity Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <RecentAudits />
-              <OverviewStats />
+            <RecentAudits audits={recentAudits} />
+            <OverviewStats stats={overviewStats} />
             </div>
           </div>
         </div>
-      </div>
-    </ProtectedRoute>
+    </DashboardLayout>
   );
 }

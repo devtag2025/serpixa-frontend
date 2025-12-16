@@ -1,8 +1,10 @@
 "use client";
 import { HiLightningBolt, HiCheckCircle, HiExclamationCircle } from "react-icons/hi";
 import { getScoreColor } from "@/utils/colors";
+import { useTranslation } from "@/i18n/context";
 
 export default function GBPAuditStats({ audit }) {
+  const { t } = useTranslation();
   const scoreColors = getScoreColor(audit.score || 0);
   const totalRecommendations = audit.recommendations?.length || 0;
   const completedItems = audit.checklist?.filter((item) => item.completed).length || 0;
@@ -16,7 +18,7 @@ export default function GBPAuditStats({ audit }) {
           <div className={`p-2.5 rounded-lg ${scoreColors.bg}`}>
             <HiLightningBolt className={`w-5 h-5 ${scoreColors.text}`} />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Optimization Score</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.gbpAudit.view.optimizationScore")}</span>
         </div>
         <div className="flex items-baseline gap-2 mb-2">
           <span className={`text-3xl font-bold ${scoreColors.text}`}>{audit.score || 0}</span>
@@ -36,7 +38,7 @@ export default function GBPAuditStats({ audit }) {
           <div className="p-2.5 rounded-lg bg-blue-50">
             <HiCheckCircle className="w-5 h-5 text-blue-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Checklist</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.gbpAudit.view.checklist")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-3xl font-bold text-gray-900">{completedItems}</span>
@@ -50,7 +52,7 @@ export default function GBPAuditStats({ audit }) {
           <div className="p-2.5 rounded-lg bg-red-50">
             <HiExclamationCircle className="w-5 h-5 text-red-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Recommendations</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.gbpAudit.view.recommendations")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-3xl font-bold text-gray-900">{totalRecommendations}</span>
@@ -64,7 +66,7 @@ export default function GBPAuditStats({ audit }) {
             <div className="p-2.5 rounded-lg bg-amber-50">
               <HiCheckCircle className="w-5 h-5 text-amber-600" />
             </div>
-            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Google Rating</span>
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.gbpAudit.view.googleRating")}</span>
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-bold text-gray-900">{audit.businessInfo.rating.toFixed(1)}</span>

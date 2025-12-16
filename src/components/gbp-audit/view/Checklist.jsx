@@ -1,13 +1,15 @@
 "use client";
 import { HiCheckCircle, HiXCircle } from "react-icons/hi";
+import { useTranslation } from "@/i18n/context";
 
 export default function Checklist({ checklist }) {
+  const { t } = useTranslation();
   if (!checklist || checklist.length === 0) return null;
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
       <div className="px-6 py-4 border-b border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-900">Optimization Checklist</h2>
+        <h2 className="text-lg font-semibold text-gray-900">{t("dashboard.gbpAudit.view.checklist")}</h2>
       </div>
       <div className="divide-y divide-gray-200">
         {checklist.map((item, index) => (
@@ -34,7 +36,7 @@ export default function Checklist({ checklist }) {
                   : "bg-red-100 text-red-700"
               }`}
             >
-              {item.completed ? "Complete" : "Missing"}
+              {item.completed ? t("dashboard.gbpAudit.view.complete") : t("dashboard.gbpAudit.view.missing")}
             </span>
           </div>
         ))}

@@ -1,10 +1,12 @@
 "use client";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { useTranslation } from "@/i18n/context";
 
 /**
  * CreditCard - Modern credit display with donut chart
  */
 export default function CreditCard({ title, used, total, color, icon: Icon }) {
+  const { t } = useTranslation();
   const remaining = total - used;
   const percentage = total > 0 ? Math.round((used / total) * 100) : 0;
 
@@ -36,7 +38,7 @@ export default function CreditCard({ title, used, total, color, icon: Icon }) {
               <span className="text-2xl font-bold text-gray-900">{remaining}</span>
               <span className="text-sm text-gray-500">/ {total}</span>
             </div>
-            <p className="text-xs text-gray-500 mt-1">Remaining</p>
+            <p className="text-xs text-gray-500 mt-1">{t("dashboard.page.remaining")}</p>
           </div>
           <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
             <div
@@ -85,8 +87,8 @@ export default function CreditCard({ title, used, total, color, icon: Icon }) {
 
       <div className="mt-4 pt-4 border-t border-gray-100">
         <div className="flex items-center justify-between text-xs">
-          <span className="text-gray-500">Used: {used}</span>
-          <span className="text-gray-500">Available: {remaining}</span>
+          <span className="text-gray-500">{t("dashboard.page.used")}: {used}</span>
+          <span className="text-gray-500">{t("dashboard.page.available")}: {remaining}</span>
         </div>
       </div>
     </div>

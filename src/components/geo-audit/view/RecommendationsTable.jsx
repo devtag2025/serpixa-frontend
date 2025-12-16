@@ -1,21 +1,23 @@
 "use client";
 import { getPriorityColor } from "@/utils/colors";
+import { useTranslation } from "@/i18n/context";
 
 export default function RecommendationsTable({ recommendations }) {
+  const { t } = useTranslation();
   if (!recommendations || recommendations.length === 0) return null;
 
   return (
     <div className="mb-6 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
       <div className="px-6 py-4 border-b border-gray-200 sticky top-0 bg-white z-10">
-        <h2 className="text-lg font-semibold text-gray-900">Recommendations</h2>
+        <h2 className="text-lg font-semibold text-gray-900">{t("dashboard.geoAudit.view.recommendations")}</h2>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Severity</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Issue</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Action</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.severity")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.issue")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.action")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">

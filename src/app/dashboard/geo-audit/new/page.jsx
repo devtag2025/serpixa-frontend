@@ -1,85 +1,72 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { useMutation } from "@tanstack/react-query";
-import ProtectedRoute from "@/components/auth/ProtectedRoute";
-import Sidebar from "@/components/layout/Sidebar";
-import { GeoAuditService } from "@/services/geoAuditService";
-import { handleError } from "@/utils/handleError";
-import { handleResponse } from "@/utils/handleResponse";
-import { toast } from "react-hot-toast";
+import DashboardLayout from "@/components/layout/DashboardLayout";
 import GeoAuditForm from "@/components/geo-audit/new/GeoAuditForm";
+import { useTranslation } from "@/i18n/context";
+import { useRunGeoAudit } from "@/hooks/geoAuditHooks";
 
 export default function NewGeoAuditPage() {
-  const router = useRouter();
-
-  const { mutate: runAudit, isPending } = useMutation({
-    mutationFn: GeoAuditService.runAudit,
-    onSuccess: (response) => {
-      const { data } = handleResponse(response);
-      toast.success("GEO audit completed successfully!");
-      router.push(`/dashboard/geo-audit/${data.audit._id}`);
-    },
-    onError: (error) => {
-      const message = handleError(error);
-      toast.error(message || "Failed to run GEO audit");
-    },
-  });
+  const { t } = useTranslation();
+  const { mutate: runAudit, isPending } = useRunGeoAudit();
 
   const handleFormSubmit = (payload) => {
     runAudit(payload);
   };
 
   return (
-    <ProtectedRoute>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex">
-        <Sidebar />
-        <div className="flex-1 overflow-y-auto">
-          {/* Header */}
-          <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-40">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-                New GEO Audit
-              </h1>
-              <p className="text-gray-600 mt-2">
-                Analyze local search visibility and competitor rankings
-              </p>
-            </div>
+    <DashboardLayout>
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-full">
+        {/* Header */}
+        <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+              {t("dashboard.geoAudit.new.title")}
+            </h1>
+            <p className="text-gray-600 mt-2">
+              {t("dashboard.geoAudit.new.subtitle")}
+            </p>
           </div>
+        </div>
 
-          {/* Main Content */}
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-              <GeoAuditForm onSubmit={handleFormSubmit} isPending={isPending} />
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto px-4  py-2 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Form Section - Takes 2 columns on large screens */}
+            <div className="lg:col-span-2">
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+                <GeoAuditForm onSubmit={handleFormSubmit} isPending={isPending} />
+              </div>
             </div>
 
-            {/* Info Section */}
-            <div className="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6">
-              <h3 className="text-sm font-semibold text-blue-900 mb-2">
-                What will be analyzed?
-              </h3>
-              <ul className="space-y-2 text-sm text-blue-800">
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Local visibility score based on your position in local pack</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Nearby competitors with ratings, reviews, and distances</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>NAP (Name, Address, Phone) consistency analysis</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Citation issues and recommendations for improvement</span>
-                </li>
-              </ul>
+            {/* Info Section - Takes 1 column on large screens */}
+            <div className="lg:col-span-1">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <h3 className="text-sm font-semibold text-blue-900 mb-2">
+                  {t("dashboard.geoAudit.new.whatWillBeAnalyzed")}
+                </h3>
+                <ul className="space-y-2 text-sm text-blue-800">
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>{t("dashboard.geoAudit.new.localVisibility")}</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>{t("dashboard.geoAudit.new.nearbyCompetitors")}</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>{t("dashboard.geoAudit.new.citationAnalysis")}</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>{t("dashboard.geoAudit.new.recommendations")}</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </ProtectedRoute>
+    </DashboardLayout>
   );
 }
 

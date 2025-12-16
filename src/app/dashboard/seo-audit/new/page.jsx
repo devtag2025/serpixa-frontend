@@ -1,85 +1,84 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { useMutation } from "@tanstack/react-query";
-import ProtectedRoute from "@/components/auth/ProtectedRoute";
-import Sidebar from "@/components/layout/Sidebar";
-import { SEOAuditService } from "@/services/seoAuditService";
-import { handleError } from "@/utils/handleError";
-import { handleResponse } from "@/utils/handleResponse";
-import { toast } from "react-hot-toast";
+import DashboardLayout from "@/components/layout/DashboardLayout";
 import SEOAuditForm from "@/components/seo-audit/new/SEOAuditForm";
+import { useTranslation, useI18n } from "@/i18n/context";
+import { mapI18nLocaleToAuditLocale } from "@/utils/localeMapper";
+import { useRunSEOAudit } from "@/hooks/seoAuditHooks";
 
 export default function NewSEOAuditPage() {
-  const router = useRouter();
-
-  const { mutate: runAudit, isPending } = useMutation({
-    mutationFn: SEOAuditService.runAudit,
-    onSuccess: (response) => {
-      const { data } = handleResponse(response);
-      toast.success("SEO audit completed successfully!");
-      router.push(`/dashboard/seo-audit/${data.audit._id}`);
-    },
-    onError: (error) => {
-      const message = handleError(error);
-      toast.error(message || "Failed to run SEO audit");
-    },
-  });
+  const { t } = useTranslation();
+  const { locale: i18nLocale } = useI18n();
+  const { mutate: runAudit, isPending } = useRunSEOAudit();
 
   const handleFormSubmit = (data) => {
-    runAudit(data);
+    // Map form locale (i18n format) to backend audit locale format
+    const formLocale = data.locale || i18nLocale;
+    const backendLocale = mapI18nLocaleToAuditLocale(formLocale);
+    
+    const payload = {
+      url: data.url.trim(),
+      keyword: data.keyword?.trim() || "",
+      locale: backendLocale,
+      ...(data.device && { device: data.device }),
+    };
+    runAudit(payload);
   };
 
   return (
-    <ProtectedRoute>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex">
-        <Sidebar />
-        <div className="flex-1 overflow-y-auto">
-          {/* Header */}
-          <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-40">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-                New SEO Audit
-              </h1>
-              <p className="text-gray-600 mt-2">
-                Analyze your website's SEO performance and get actionable insights
-              </p>
-            </div>
+    <DashboardLayout>
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100">
+        {/* Header */}
+        <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+              {t("dashboard.seoAudit.new.title")}
+            </h1>
+            <p className="text-gray-600 mt-2">
+              {t("dashboard.seoAudit.new.subtitle")}
+            </p>
           </div>
+        </div>
 
-          {/* Main Content */}
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-              <SEOAuditForm onSubmit={handleFormSubmit} isPending={isPending} />
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 ">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Form Section - Takes 2 columns on large screens */}
+            <div className="lg:col-span-2">
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+                <SEOAuditForm onSubmit={handleFormSubmit} isPending={isPending} />
+              </div>
             </div>
 
-            {/* Info Section */}
-            <div className="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6">
-              <h3 className="text-sm font-semibold text-blue-900 mb-2">
-                What will be analyzed?
-              </h3>
-              <ul className="space-y-2 text-sm text-blue-800">
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>On-page SEO elements (title, meta, headings)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Keyword optimization and density</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Technical SEO checks</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Competitor analysis and rankings</span>
-                </li>
-              </ul>
+            {/* Info Section - Takes 1 column on large screens */}
+            <div className="lg:col-span-1">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <h3 className="text-sm font-semibold text-blue-900 mb-2">
+                  {t("dashboard.seoAudit.new.whatWillBeAnalyzed")}
+                </h3>
+                <ul className="space-y-2 text-sm text-blue-800">
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>{t("dashboard.seoAudit.new.onPageElements")}</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>{t("dashboard.seoAudit.new.keywordOptimization")}</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>{t("dashboard.seoAudit.new.technicalSeo")}</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>{t("dashboard.seoAudit.new.competitorAnalysis")}</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </ProtectedRoute>
+    </DashboardLayout>
   );
 }
 

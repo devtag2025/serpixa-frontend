@@ -43,19 +43,29 @@ export const getScoreColor = (score) => {
 
 /**
  * Get color classes for priority level
- * @param {string} priority - Priority level: 'high', 'medium', 'low'
+ * @param {string} priority - Priority level: 'critical', 'high', 'medium', 'low'
  * @returns {Object} Object with bg, border, text, badge, dot, and label
  */
 export const getPriorityColor = (priority) => {
   switch (priority) {
-    case "high":
+    case "critical":
       return {
         bg: "bg-red-50",
         border: "border-red-200",
         text: "text-red-700",
         badge: "bg-red-100 text-red-700",
-        dot: "bg-red-500",
+        dot: "bg-red-600",
         icon: "text-red-600",
+        label: "Critical",
+      };
+    case "high":
+      return {
+        bg: "bg-orange-50",
+        border: "border-orange-200",
+        text: "text-orange-700",
+        badge: "bg-orange-100 text-orange-700",
+        dot: "bg-orange-500",
+        icon: "text-orange-600",
         label: "High",
       };
     case "medium":
@@ -86,6 +96,66 @@ export const getPriorityColor = (priority) => {
         badge: "bg-gray-100 text-gray-700",
         dot: "bg-gray-500",
         icon: "text-gray-600",
+        label: "Unknown",
+      };
+  }
+};
+
+/**
+ * Get color classes for impact level
+ * @param {string} impact - Impact level: 'high', 'medium', 'low'
+ * @returns {Object} Object with badge and label
+ */
+export const getImpactColor = (impact) => {
+  switch (impact) {
+    case "high":
+      return {
+        badge: "bg-red-100 text-red-700",
+        label: "High",
+      };
+    case "medium":
+      return {
+        badge: "bg-amber-100 text-amber-700",
+        label: "Medium",
+      };
+    case "low":
+      return {
+        badge: "bg-blue-100 text-blue-700",
+        label: "Low",
+      };
+    default:
+      return {
+        badge: "bg-gray-100 text-gray-700",
+        label: "Unknown",
+      };
+  }
+};
+
+/**
+ * Get color classes for effort level
+ * @param {string} effort - Effort level: 'easy', 'moderate', 'difficult'
+ * @returns {Object} Object with badge and label
+ */
+export const getEffortColor = (effort) => {
+  switch (effort) {
+    case "easy":
+      return {
+        badge: "bg-emerald-100 text-emerald-700",
+        label: "Easy",
+      };
+    case "moderate":
+      return {
+        badge: "bg-amber-100 text-amber-700",
+        label: "Moderate",
+      };
+    case "difficult":
+      return {
+        badge: "bg-red-100 text-red-700",
+        label: "Difficult",
+      };
+    default:
+      return {
+        badge: "bg-gray-100 text-gray-700",
         label: "Unknown",
       };
   }

@@ -1,10 +1,13 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { HiOfficeBuilding, HiLink, HiLocationMarker, HiGlobe } from "react-icons/hi";
+import { HiOfficeBuilding, HiLink, HiGlobe } from "react-icons/hi";
+import { useTranslation } from "@/i18n/context";
+import LocaleSelect from "@/components/common/LocaleSelect";
 
 export default function GBPAuditForm({ onSubmit, isPending }) {
-  const [showAdvanced, setShowAdvanced] = useState(false);
+  const { t } = useTranslation();
+  // const [showAdvanced, setShowAdvanced] = useState(false);
   const {
     register,
     handleSubmit,
@@ -19,8 +22,7 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
     const payload = {
       businessName: data.businessName?.trim() || null,
       gbpLink: data.gbpLink?.trim() || null,
-      location: data.location?.trim() || "United States",
-      languageCode: data.languageCode || "en",
+      ...(data.locale && { locale: data.locale }),
     };
 
     onSubmit(payload);
@@ -31,7 +33,7 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
       {/* Business Name */}
       <div>
         <label className="block text-sm font-semibold text-gray-900 mb-2">
-          Business Name <span className="text-gray-400">(Optional if GBP Link provided)</span>
+          {t("dashboard.gbpAudit.form.businessName")} 
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -39,17 +41,17 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
           </div>
           <input
             type="text"
-            placeholder="e.g., My Restaurant"
+            placeholder={t("dashboard.gbpAudit.form.businessNamePlaceholder")}
             {...register("businessName", {
               validate: (value) => {
                 if (!value && !gbpLink) {
-                  return "Business name or GBP link is required";
+                  return t("dashboard.gbpAudit.form.businessNameOrGbpRequired");
                 }
                 return true;
               },
               maxLength: {
                 value: 200,
-                message: "Business name must be less than 200 characters",
+                message: t("dashboard.gbpAudit.form.businessName") + " must be less than 200 characters",
               },
             })}
             className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
@@ -61,14 +63,14 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
           </p>
         )}
         <p className="mt-2 text-xs text-gray-500">
-          The name of your business as it appears on Google Business Profile
+          {t("dashboard.gbpAudit.form.businessNameHelpDetailed")}
         </p>
       </div>
 
       {/* GBP Link */}
       <div>
         <label className="block text-sm font-semibold text-gray-900 mb-2">
-          GBP Link <span className="text-gray-400">(Optional if Business Name provided)</span>
+          {t("dashboard.gbpAudit.form.gbpLink")} 
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -76,17 +78,17 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
           </div>
           <input
             type="url"
-            placeholder="https://www.google.com/maps/place/..."
+            placeholder={t("dashboard.gbpAudit.form.gbpLinkPlaceholder")}
             {...register("gbpLink", {
               validate: (value) => {
                 if (!value && !businessName) {
-                  return "Business name or GBP link is required";
+                  return t("dashboard.gbpAudit.form.businessNameOrGbpRequired");
                 }
                 return true;
               },
               pattern: {
                 value: /^https?:\/\/.+/,
-                message: "Please enter a valid URL",
+                message: t("dashboard.gbpAudit.form.validUrlRequired"),
               },
             })}
             className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
@@ -98,84 +100,40 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
           </p>
         )}
         <p className="mt-2 text-xs text-gray-500">
-          Direct link to your Google Business Profile (optional, but helps find your business faster)
+          {t("dashboard.gbpAudit.form.gbpLinkHelp")}
         </p>
       </div>
 
-      {/* Advanced Options */}
+      {/* Locale */}
+      <div>
+        {/* <label className="block text-sm font-semibold text-gray-900 mb-2">
+          {t("dashboard.gbpAudit.form.locale")} <span className="text-gray-400">({t("dashboard.common.optional")})</span>
+        </label> */}
+        <LocaleSelect register={register} />
+        <p className="mt-2 text-xs text-gray-500">
+          {t("dashboard.gbpAudit.form.localeHelp")}
+        </p>
+      </div>
+
+      {/* Advanced Options - Commented out */}
+      {/* 
       <div>
         <button
           type="button"
           onClick={() => setShowAdvanced(!showAdvanced)}
           className="text-sm font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
         >
-          {showAdvanced ? "Hide" : "Show"} Advanced Options
+          {showAdvanced ? t("dashboard.gbpAudit.form.hideAdvanced") : t("dashboard.gbpAudit.form.showAdvanced")}
           <span className="ml-1">{showAdvanced ? "−" : "+"}</span>
         </button>
 
         {showAdvanced && (
           <div className="mt-4 space-y-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
-            {/* Location */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">
-                Location
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <HiLocationMarker className="h-5 w-5 text-gray-400" />
-                </div>
-                <input
-                  type="text"
-                  placeholder="e.g., United States, New York"
-                  {...register("location", {
-                    maxLength: {
-                      value: 200,
-                      message: "Location must be less than 200 characters",
-                    },
-                  })}
-                  defaultValue="United States"
-                  className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
-                />
-              </div>
-              {errors.location && (
-                <p className="mt-2 text-sm text-red-600">
-                  {errors.location.message}
-                </p>
-              )}
-              <p className="mt-2 text-xs text-gray-500">
-                Location for business search (defaults to "United States")
-              </p>
-            </div>
-
-            {/* Language Code */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">
-                Language Code
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <HiGlobe className="h-5 w-5 text-gray-400" />
-                </div>
-                <select
-                  {...register("languageCode")}
-                  className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 bg-white"
-                  defaultValue="en"
-                >
-                  <option value="en">English (en)</option>
-                  <option value="fr">French (fr)</option>
-                  <option value="de">German (de)</option>
-                  <option value="es">Spanish (es)</option>
-                  <option value="nl">Dutch (nl)</option>
-                  <option value="it">Italian (it)</option>
-                </select>
-              </div>
-              <p className="mt-2 text-xs text-gray-500">
-                Language code for the business information
-              </p>
-            </div>
+            Advanced options can be added here in the future
           </div>
         )}
       </div>
+      */}
 
       {/* Submit Button */}
       <div className="pt-4">
@@ -205,12 +163,12 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 />
               </svg>
-              <span>Running Audit...</span>
+              <span>{t("dashboard.gbpAudit.form.runningAudit")}</span>
             </>
           ) : (
             <>
               <HiOfficeBuilding className="h-5 w-5" />
-              <span>Run GBP Audit</span>
+              <span>{t("dashboard.gbpAudit.form.runAudit")}</span>
             </>
           )}
         </button>

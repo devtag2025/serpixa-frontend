@@ -6,7 +6,10 @@ export const GBPAuditService = {
   getAuditWithRawData: (auditId) => api.get(`/gbp-audits/${auditId}/raw`),
   getUserAudits: (params) => api.get("/gbp-audits", { params }),
   deleteAudit: (auditId) => api.delete(`/gbp-audits/${auditId}`),
-  downloadPDF: (auditId) =>
-    api.get(`/gbp-audits/${auditId}/pdf`, { responseType: "blob" }),
+  downloadPDF: (auditId, view = false) =>
+    api.get(`/gbp-audits/${auditId}/pdf`, { 
+      responseType: "blob",
+      params: view ? { view: true } : undefined,
+    }),
 };
 

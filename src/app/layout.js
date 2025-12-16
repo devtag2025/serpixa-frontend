@@ -4,6 +4,7 @@ import ReactQueryProvider from "@/lib/react-query-provider";
 import ToastProvider from "@/lib/toastProvider";
 import { I18nProvider } from "@/i18n/context";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/landing/Footer";
 import { defaultLocale } from "@/i18n/config";
 
 const geistSans = Geist({
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
             <ToastProvider />
             <Navbar />
             {children}
+            <Footer />
           </ReactQueryProvider>
         </I18nProvider>
       </body>

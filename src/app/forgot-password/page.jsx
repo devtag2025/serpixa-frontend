@@ -1,14 +1,15 @@
 "use client";
 import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
 import { useForgotPassword } from "@/hooks/useAuth";
+import PublicRoute from "@/components/auth/PublicRoute";
+import Link from "next/link";
+import { HiMail, HiLockClosed } from "react-icons/hi";
 
 export default function ForgotPasswordPage() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm();
 
   const { mutate, isPending } = useForgotPassword();
@@ -18,63 +19,187 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-indigo-50 to-white px-3">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-md border border-indigo-100 p-8 text-center">
-        <h1 className="text-2xl font-semibold text-gray-900 mb-2">
-          Reset your password
-        </h1>
-        <p className="text-gray-500 text-sm mb-6">
-          Enter the email address associated with your account, and we’ll send
-          you a link to reset your password.
-        </p>
-
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-left">
-          <div>
-            <label className="text-sm font-medium text-gray-700">Email</label>
-            <input
-              type="email"
-              placeholder="you@example.com"
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: "Invalid email format",
-                },
-              })}
-              className="w-full border border-gray-300 rounded-md p-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
-            />
-            {errors.email && (
-              <p className="text-red-500 text-xs mt-1">
-                {errors.email.message}
-              </p>
-            )}
+    <PublicRoute>
+      <main className="h-[calc(100vh-4rem)] flex">
+        {/* Left Panel - Branding Section */}
+        <div className="hidden lg:flex lg:w-[45%] relative overflow-hidden bg-gradient-to-br from-[hsl(217,90%,55%)] via-[hsl(217,100%,60%)] to-[hsl(220,95%,50%)]">
+          {/* Background Pattern - Grid */}
+          <div 
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: '60px 60px',
+            }}
+          />
+          
+          {/* Wave Pattern Overlay */}
+          <div 
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='1200' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z' fill='%23ffffff'/%3E%3C/svg%3E")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+          
+          {/* Geometric Shapes - Network Nodes */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
+            <div className="absolute top-40 right-20 w-24 h-24 bg-white/15 rounded-full blur-lg"></div>
+            <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-white/10 rounded-full blur-md"></div>
+            <div className="absolute bottom-20 right-1/3 w-16 h-16 bg-white/15 rounded-full blur-md"></div>
           </div>
 
-          <button
-            type="submit"
-            disabled={isPending}
-            className="w-full bg-primary text-white py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition disabled:opacity-70"
-          >
-            {isPending ? "Sending..." : "Continue"}
-          </button>
-        </form>
+          {/* Content */}
+          <div className="relative z-10 flex flex-col justify-between p-12 text-white">
+            {/* Logo */}
+            <div className="flex items-center space-x-3 mb-8">
+              <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <span className="text-2xl font-bold">Serpixa</span>
+            </div>
 
-        <div className="mt-6 text-sm text-gray-600">
-          <a
-            href="/login"
-            className="text-primary hover:underline font-medium"
-          >
-            Return to sign in
-          </a>
+            {/* Welcome Content */}
+            <div className="space-y-6">
+              <div>
+                <p className="text-white/80 text-sm mb-2">Need to reset your password?</p>
+                <h1 className="text-5xl font-bold mb-4 tracking-tight">FORGOT PASSWORD</h1>
+                <div className="w-16 h-1 bg-white/30 mb-6"></div>
+                <p className="text-white/70 text-base leading-relaxed max-w-md">
+                  Don't worry! Enter your email address and we'll send you a link to reset your password. 
+                  You'll be back to optimizing your SEO in no time.
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom decorative element */}
+            <div className="mt-8">
+              <div className="flex items-center space-x-2 text-white/60 text-sm">
+                <div className="w-2 h-2 bg-white/40 rounded-full"></div>
+                <span>Secure password reset process</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-4 text-xs text-gray-500">
-          New here?{" "}
-          <a href="/signup" className="text-primary hover:underline">
-            Create account
-          </a>
+        {/* Right Panel - Forgot Password Form */}
+        <div className="flex-1 flex items-center justify-center bg-white px-4 sm:px-6 lg:px-12">
+          <div className="w-full max-w-md">
+            {/* Mobile Logo - Only visible on small screens */}
+            <div className="lg:hidden flex items-center justify-center mb-8">
+              <Link href="/" className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <span className="text-xl font-semibold text-gray-900">Serpixa</span>
+              </Link>
+            </div>
+
+            {/* Form Header */}
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Reset Password</h2>
+              <p className="text-gray-600 text-sm">
+                Enter the email address associated with your account, and we'll send you a link to reset your password.
+              </p>
+            </div>
+
+            {/* Forgot Password Form */}
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+              {/* Email Field */}
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email ID
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <HiMail className="h-5 w-5 text-gray-400" />
+                  </div>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: "Invalid email format",
+                      },
+                    })}
+                    className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  />
+                </div>
+                {errors.email && (
+                  <p className="text-red-500 text-xs mt-1.5">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isPending}
+                className="w-full bg-primary text-white py-3 rounded-lg text-sm font-semibold hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all disabled:opacity-70 disabled:cursor-not-allowed shadow-sm hover:shadow-md"
+              >
+                {isPending ? (
+                  <span className="flex items-center justify-center">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending reset link...
+                  </span>
+                ) : (
+                  "Send Reset Link"
+                )}
+              </button>
+            </form>
+
+            {/* Links */}
+            <div className="mt-6 space-y-3">
+              <div className="text-center">
+                <Link
+                  href="/login"
+                  className="text-sm text-primary hover:underline font-medium"
+                >
+                  ← Return to sign in
+                </Link>
+              </div>
+              <p className="text-center text-gray-600 text-sm">
+                Don't have an account?{" "}
+                <Link href="/signup" className="text-primary hover:underline font-medium">
+                  Sign up
+                </Link>
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </PublicRoute>
   );
 }

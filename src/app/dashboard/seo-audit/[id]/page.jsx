@@ -1,14 +1,12 @@
 "use client";
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { useQuery } from "@tanstack/react-query";
-import ProtectedRoute from "@/components/auth/ProtectedRoute";
-import Sidebar from "@/components/layout/Sidebar";
+import DashboardLayout from "@/components/layout/DashboardLayout";
 import { SEOAuditService } from "@/services/seoAuditService";
 import { handleError } from "@/utils/handleError";
-import { handleResponse } from "@/utils/handleResponse";
 import { toast } from "react-hot-toast";
 import { HiXCircle } from "react-icons/hi";
+import { useSEOAudit } from "@/hooks/seoAuditHooks";
 import SEOAuditHeader from "@/components/seo-audit/view/SEOAuditHeader";
 import SEOAuditStats from "@/components/seo-audit/view/SEOAuditStats";
 import OnPageAnalysis from "@/components/seo-audit/view/OnPageAnalysis";
@@ -23,15 +21,7 @@ export default function SEOAuditResultsPage() {
   const auditId = params.id;
   const [isDownloadingPDF, setIsDownloadingPDF] = useState(false);
 
-  const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["seo-audit", auditId],
-    queryFn: async () => {
-      const response = await SEOAuditService.getAuditWithRawData(auditId);
-      const { data } = handleResponse(response);
-      return data.audit;
-    },
-    enabled: !!auditId,
-  });
+  const { data: audit, isLoading, isError, error } = useSEOAudit(auditId);
 
   const handleDownloadPDF = async () => {
     setIsDownloadingPDF(true);
@@ -64,69 +54,53 @@ export default function SEOAuditResultsPage() {
     }
   };
 
-  const handleRerun = () => {
-    router.push(`/dashboard/seo-audit?url=${encodeURIComponent(audit.url)}&keyword=${encodeURIComponent(audit.keyword || '')}`);
-  };
-
   if (isLoading) {
     return (
-      <ProtectedRoute>
-        <div className="min-h-screen bg-gray-50 flex">
-          <Sidebar />
-          <div className="flex-1 flex items-center justify-center">
-            <div className="text-center">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
-              <p className="mt-4 text-gray-600 font-medium">Loading audit results...</p>
-            </div>
+      <DashboardLayout>
+        <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
+          <div className="text-center">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
+            <p className="mt-4 text-gray-600 font-medium">Loading audit results...</p>
           </div>
         </div>
-      </ProtectedRoute>
+      </DashboardLayout>
     );
   }
 
   if (isError) {
     return (
-      <ProtectedRoute>
-        <div className="min-h-screen bg-gray-50 flex">
-          <Sidebar />
-          <div className="flex-1 flex items-center justify-center px-4">
-            <div className="text-center max-w-md">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-4">
-                <HiXCircle className="w-8 h-8 text-red-600" />
-              </div>
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">Failed to Load Audit</h2>
-              <p className="text-gray-600 mb-6">{handleError(error) || "An error occurred while loading the audit"}</p>
-              <button
-                onClick={() => router.push("/dashboard/seo-audit")}
-                className="px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
-              >
-                Back to Audits
-              </button>
+      <DashboardLayout>
+        <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)] px-4">
+          <div className="text-center max-w-md">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-4">
+              <HiXCircle className="w-8 h-8 text-red-600" />
             </div>
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">Failed to Load Audit</h2>
+            <p className="text-gray-600 mb-6">{handleError(error) || "An error occurred while loading the audit"}</p>
+            <button
+              onClick={() => router.push("/dashboard/seo-audit")}
+              className="px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
+            >
+              Back to Audits
+            </button>
           </div>
         </div>
-      </ProtectedRoute>
+      </DashboardLayout>
     );
   }
 
-  if (!data) return null;
-
-  const audit = data;
+  if (!audit) return null;
 
   return (
-    <ProtectedRoute>
-      <div className="min-h-screen bg-gray-50 flex">
-        <Sidebar />
-        <div className="flex-1 overflow-y-auto">
-          <SEOAuditHeader
-            audit={audit}
-            onRerun={handleRerun}
-            onDownloadPDF={handleDownloadPDF}
-            isDownloadingPDF={isDownloadingPDF}
-          />
+    <DashboardLayout>
+      <SEOAuditHeader
+        audit={audit}
+        onDownloadPDF={handleDownloadPDF}
+        isDownloadingPDF={isDownloadingPDF}
+      />
 
-          {/* Main Content */}
-          <div className="max-w-7xl mx-auto px-6 py-8">
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-6 py-8">
             {/* Error Alert */}
             {audit.status === "failed" && audit.error_message && (
               <div className="mb-6 bg-red-50 border border-red-200 rounded-xl p-4">
@@ -162,8 +136,6 @@ export default function SEOAuditResultsPage() {
             {/* Row 3: Competitor Analysis - Full Width */}
             <CompetitorsTable competitors={audit.competitors} keyword={audit.keyword} />
           </div>
-        </div>
-      </div>
-    </ProtectedRoute>
+    </DashboardLayout>
   );
 }
