@@ -7,16 +7,36 @@
       "seeTour": "Bekijk producttour",
       "noCreditCard": "Geen creditcard vereist",
       "trustedBy": "Vertrouwd door",
-      "professionals": "SEO-professionals sinds 2013"
+      "professionals": "SEO-professionals sinds 2013",
+      "aiPowered": "AI Aangedreven",
+      "contentGeneration": "Content Generatie",
+      "quickStart": "Snelle Start",
+      "quickStartDescription": "Voer uw eerste audit uit in minuten"
     },
     "features": {
+      "badge": "Functies",
       "title": "Precies. Geloofwaardig. AI-klaar.",
       "subtitle": "Het gaat allemaal om onze unieke data.",
-      "countryDatabases": "188 LANDENDATABANKEN",
-      "aiAlgorithms": "AI-AANGEDREVEN ALGORITMEN",
-      "keywordDatabase": "5,4 MILJARD ZOEKWOORDENDATABANK",
-      "domainProfiles": "2,2 MILJARD DOMEINPROFIELEN",
-      "accurateRankings": "100% ACCURATE ZOEKWOORDENRANKINGEN",
+      "countryDatabases": {
+        "value": "188",
+        "description": "LANDENDATABANKEN"
+      },
+      "keywordDatabase": {
+        "value": "5.4B",
+        "description": "ZOEKWOORDENDATABANK"
+      },
+      "domainProfiles": {
+        "value": "2.2B",
+        "description": "DOMEINPROFIELEN"
+      },
+      "accurateRankings": {
+        "value": "100%",
+        "description": "ACCURATE ZOEKWOORDENRANKINGEN"
+      },
+      "aiAlgorithms": {
+        "value": "AI",
+        "description": "AANGEDREVEN ALGORITMEN"
+      },
       "trustedBadge": "Vertrouwd platform",
       "trustedTitle": "Vertrouwd door grote teams die SEO op schaal uitvoeren",
       "trustedSubtitle": "Sluit je aan bij duizenden SEO-professionals die vertrouwen op ons krachtige platform voor nauwkeurige gegevens en inzichten",
@@ -35,13 +55,42 @@
       "purchase": "Kopen",
       "agenciesChoice": "Keuze van agentschappen",
       "needMore": "Meer nodig? Upgrade met add-ons!",
+      "enhancePlan": "Verbeter uw plan met krachtige add-ons",
       "seoAudits": "SEO-audits",
       "geoAudits": "GEO-audits",
       "gbpAudits": "GBP-audits",
       "aiGenerations": "AI-generaties",
       "searchesPerMonth": "Zoekopdrachten per maand",
       "apiCallsPerMonth": "API-aanroepen per maand",
-      "signInRequired": "Meld u aan of log in om door te gaan"
+      "signInRequired": "Meld u aan of log in om door te gaan",
+      "badge": "Prijzen",
+      "exclVat": "HTVA"
+    },
+    "plans": {
+      "starterPlan": {
+        "name": "Starter Plan",
+        "description": "Perfect om te beginnen met SEO-audits"
+      },
+      "premiumPlan": {
+        "name": "Premium Plan",
+        "description": "Geavanceerde functies met meer audits en AI-generaties"
+      },
+      "extra10SeoAudits": {
+        "name": "Extra 10 SEO-audits",
+        "description": "Eenmalige aankoop van 10 extra SEO-audits"
+      },
+      "extra10GeoAudits": {
+        "name": "Extra 10 GEO-audits",
+        "description": "Eenmalige aankoop van 10 extra GEO-audits"
+      },
+      "extra5GbpAudits": {
+        "name": "Extra 5 GBP-audits",
+        "description": "Eenmalige aankoop van 5 extra GBP-audits"
+      },
+      "extra50AiGenerations": {
+        "name": "Extra 50 AI-generaties",
+        "description": "Eenmalige aankoop van 50 extra AI-generaties"
+      }
     },
     "testimonials": {
       "badge": "Getuigenissen",
@@ -389,6 +438,7 @@
     "page": {
       "welcomeBack": "Welkom terug",
       "subscription": "Abonnement",
+      "noSubscription": "Geen abonnement",
       "yourCredits": "Uw credits",
       "quickActions": "Snelle acties",
       "recentAudits": "Recente audits",
@@ -410,6 +460,24 @@
       "aiContent": "AI-inhoud",
       "aiContentDesc": "Genereer geoptimaliseerde inhoud"
     },
+    "extras": {
+      "title": "Extras en add-ons",
+      "subtitle": "Beheer uw add-on credits en koop extra extras",
+      "myExtras": "Mijn Extras",
+      "totalCredits": "totaal credits",
+      "noExtras": "Nog geen extras gekocht",
+      "noExtrasTitle": "Nog geen extras",
+      "noExtrasDescription": "U heeft nog geen add-ons gekocht. Blader door beschikbare extras hieronder om uw plan te verbeteren.",
+      "browseExtras": "Blader door extras",
+      "purchaseHistory": "Aankoopgeschiedenis",
+      "credits": "credits",
+      "remaining": "resterend",
+      "noCredits": "Geen credits beschikbaar",
+      "buyMore": "Meer extras kopen",
+      "buyMoreDescription": "Verbeter uw plan met extra credits voor SEO, GEO, GBP audits en AI-contentgeneratie.",
+      "noAddonsAvailable": "Er zijn momenteel geen add-ons beschikbaar",
+      "historyNote": "Aankoopgeschiedenis wordt weergegeven als referentie. Werkelijke aankoopgegevens kunnen variëren."
+    },
     "sidebar": {
       "dashboard": "Dashboard",
       "seoAudits": "SEO-audits",
@@ -426,7 +494,27 @@
       "generator": "Generator",
       "plan": "Plan",
       "payment": "Betaling",
-      "addOns": "Add-ons"
+      "addOns": "Add-ons",
+      "extras": "Extras"
+    },
+    "support": {
+      "title": "Ondersteuning",
+      "subtitle": "Krijg hulp van ons ondersteuningsteam",
+      "subject": "Onderwerp",
+      "subjectPlaceholder": "Korte beschrijving van uw probleem",
+      "subjectRequired": "Onderwerp is verplicht",
+      "subjectMinLength": "Onderwerp moet minimaal 3 tekens bevatten",
+      "subjectMaxLength": "Onderwerp moet minder dan 200 tekens bevatten",
+      "email": "E-mail",
+      "emailPlaceholder": "uw.email@voorbeeld.com",
+      "emailRequired": "E-mail is verplicht",
+      "emailInvalid": "Voer een geldig e-mailadres in",
+      "message": "Bericht",
+      "messagePlaceholder": "Beschrijf uw probleem of vraag in detail...",
+      "messageRequired": "Bericht is verplicht",
+      "messageMinLength": "Bericht moet minimaal 10 tekens bevatten",
+      "messageMaxLength": "Bericht moet minder dan 2000 tekens bevatten",
+      "send": "Bericht verzenden"
     },
     "common": {
       "newAudit": "Nieuwe audit",
@@ -438,6 +526,7 @@
       "edit": "Bewerken",
       "save": "Opslaan",
       "cancel": "Annuleren",
+      "close": "Sluiten",
       "search": "Zoeken",
       "filter": "Filteren",
       "export": "Exporteren",
@@ -544,7 +633,38 @@
         "totalLinks": "Totaal aantal links",
         "competitorsLabel": "Concurrenten",
         "viewAudit": "Audit bekijken",
-        "deleteAudit": "Audit verwijderen"
+        "deleteAudit": "Audit verwijderen",
+        "priority": "Prioriteit",
+        "category": "Categorie",
+        "impact": "Impact",
+        "effort": "Inspanning",
+        "filters": "Filters",
+        "clearFilters": "Filters wissen",
+        "all": "Alle",
+        "critical": "Kritiek",
+        "high": "Hoog",
+        "medium": "Gemiddeld",
+        "low": "Laag",
+        "easy": "Makkelijk",
+        "moderate": "Matig",
+        "difficult": "Moeilijk",
+        "of": "van",
+        "noRecommendationsMatch": "Geen aanbevelingen komen overeen met de geselecteerde filters",
+        "categoryMeta": "Meta-tags",
+        "categoryContent": "Inhoud",
+        "categoryTechnical": "Technisch",
+        "categoryKeyword": "Zoekwoord",
+        "categoryCompetitor": "Concurrent",
+        "categorySuccess": "Succes",
+        "pdfDownloaded": "PDF succesvol gedownload!",
+        "failedToDownloadPdf": "PDF downloaden mislukt",
+        "copiedToClipboard": "{label} gekopieerd naar klembord!",
+        "failedToCopy": "Kopiëren naar klembord mislukt",
+        "loadingAuditResults": "Auditresultaten laden...",
+        "failedToLoadAudit": "Audit laden mislukt",
+        "errorLoadingAudit": "Er is een fout opgetreden bij het laden van de audit",
+        "backToAudits": "Terug naar audits",
+        "auditFailed": "Audit mislukt"
       }
     },
     "geoAudit": {
@@ -753,6 +873,17 @@
         "generateContent": "Inhoud genereren",
         "generating": "Genereren..."
       },
+      "progress": {
+        "generating": "Inhoud genereren",
+        "keyword": "Zoekwoord",
+        "processing": "Verwerken...",
+        "pleaseWait": "Even geduld terwijl we uw SEO-geoptimaliseerde inhoud genereren",
+        "analyzingKeyword": "Zoekwoord analyseren...",
+        "generatingSeoContent": "SEO-inhoud genereren...",
+        "optimizingMetaTags": "Meta-tags optimaliseren...",
+        "structuringContent": "Inhoud structureren...",
+        "finalizing": "Afronden..."
+      },
       "view": {
         "title": "Gegenereerde inhoud",
         "metaTitle": "Meta-titel",
@@ -815,6 +946,103 @@
         "createNewAudit": "Nieuwe inhoud maken"
       }
     }
+  },
+  "login": {
+    "greeting": "Leuk je weer te zien",
+    "title": "WELKOM TERUG",
+    "description": "Alle tools die u nodig heeft om uw SEO- en AI-zichtbaarheid te perfectioneren. Beheer traditioneel en AI-zoeken met een krachtig platform, betrouwbare data en uitzonderlijke UX.",
+    "trustedBy": "Vertrouwd door SEO-professionals sinds 2013",
+    "formTitle": "Inloggen",
+    "formSubtitle": "Voer uw inloggegevens in om toegang te krijgen tot uw account en uw SEO-strategie te optimaliseren.",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "Voer uw e-mailadres in",
+    "emailRequired": "E-mailadres is verplicht",
+    "emailInvalid": "Ongeldig e-mailformaat",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "Voer uw wachtwoord in",
+    "passwordRequired": "Wachtwoord is verplicht",
+    "showPassword": "Wachtwoord tonen",
+    "hidePassword": "Wachtwoord verbergen",
+    "rememberMe": "Ingelogd blijven",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "loginButton": "Inloggen",
+    "loggingIn": "Inloggen...",
+    "noAccount": "Heeft u nog geen account?",
+    "signUp": "Aanmelden"
+  },
+  "signup": {
+    "greeting": "Begin vandaag uw reis",
+    "title": "ACCOUNT AANMAKEN",
+    "description": "Sluit u aan bij duizenden SEO-professionals die vertrouwen op Serpixa voor hun SEO- en AI-contentbehoeften. Begin met een gratis proefperiode en ontgrendel krachtige tools om uw SEO-strategie te perfectioneren.",
+    "noCreditCard": "Geen creditcard vereist • 14 dagen gratis proefperiode",
+    "formTitle": "Account aanmaken",
+    "formSubtitle": "Meld u aan om te beginnen met Serpixa en transformeer uw SEO-strategie vandaag nog.",
+    "nameLabel": "Volledige naam",
+    "namePlaceholder": "Voer uw volledige naam in",
+    "nameRequired": "Naam is verplicht",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "Voer uw e-mailadres in",
+    "emailRequired": "E-mailadres is verplicht",
+    "emailInvalid": "Ongeldig e-mailformaat",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "Maak een wachtwoord",
+    "passwordRequired": "Wachtwoord is verplicht",
+    "passwordMinLength": "Wachtwoord moet minimaal 8 tekens bevatten",
+    "confirmPasswordLabel": "Bevestig wachtwoord",
+    "confirmPasswordPlaceholder": "Bevestig uw wachtwoord",
+    "confirmPasswordRequired": "Bevestig uw wachtwoord",
+    "passwordsDoNotMatch": "Wachtwoorden komen niet overeen",
+    "showPassword": "Wachtwoord tonen",
+    "hidePassword": "Wachtwoord verbergen",
+    "signUpButton": "Aanmelden",
+    "creatingAccount": "Account aanmaken...",
+    "alreadyHaveAccount": "Heeft u al een account?",
+    "logIn": "Inloggen"
+  },
+  "forgotPassword": {
+    "greeting": "Wachtwoord opnieuw instellen?",
+    "title": "WACHTWOORD VERGETEN",
+    "description": "Geen zorgen! Voer uw e-mailadres in en we sturen u een link om uw wachtwoord opnieuw in te stellen. U bent zo weer bezig met het optimaliseren van uw SEO.",
+    "secureProcess": "Veilig wachtwoordherstelproces",
+    "formTitle": "Wachtwoord opnieuw instellen",
+    "formSubtitle": "Voer het e-mailadres in dat aan uw account is gekoppeld, en we sturen u een link om uw wachtwoord opnieuw in te stellen.",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "Voer uw e-mail in",
+    "emailRequired": "E-mail is verplicht",
+    "emailInvalid": "Ongeldig e-mailformaat",
+    "sendResetLink": "Herstel link verzenden",
+    "sendingResetLink": "Herstel link verzenden...",
+    "returnToSignIn": "← Terug naar inloggen",
+    "noAccount": "Heeft u geen account?",
+    "signUp": "Aanmelden"
+  },
+  "resetPassword": {
+    "title": "Nieuw wachtwoord instellen",
+    "subtitle": "Voer hieronder uw nieuwe wachtwoord in en bevestig het om uw account opnieuw in te stellen.",
+    "newPasswordLabel": "Nieuw wachtwoord",
+    "newPasswordPlaceholder": "Voer nieuw wachtwoord in",
+    "passwordRequired": "Wachtwoord is verplicht",
+    "passwordMinLength": "Minimaal 6 tekens",
+    "confirmPasswordLabel": "Bevestig wachtwoord",
+    "confirmPasswordPlaceholder": "Bevestig wachtwoord",
+    "confirmPasswordRequired": "Bevestig uw wachtwoord",
+    "passwordsDoNotMatch": "Wachtwoorden komen niet overeen",
+    "resetButton": "Wachtwoord opnieuw instellen",
+    "resetting": "Opnieuw instellen...",
+    "returnToSignIn": "Terug naar inloggen",
+    "invalidToken": "Ongeldige of ontbrekende hersteltoken",
+    "loading": "Laden..."
+  },
+  "navbar": {
+    "whySerpixa": "Waarom Serpixa",
+    "aboutUs": "Over ons",
+    "features": "Functies",
+    "dashboard": "Dashboard",
+    "profile": "Profiel",
+    "signOut": "Uitloggen",
+    "signIn": "Inloggen",
+    "signUp": "Aanmelden",
+    "startFreeTrial": "Start gratis proefperiode"
   }
 }
 

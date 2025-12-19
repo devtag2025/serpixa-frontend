@@ -82,7 +82,7 @@ export default function GeoAuditListPage() {
             ) : (
               <>
                 {/* Search Bar */}
-                <div className="mb-6">
+                {/* <div className="mb-6">
                   <div className="relative">
                     <input
                       type="text"
@@ -97,7 +97,7 @@ export default function GeoAuditListPage() {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <GeoAuditTable audits={filteredAudits} onDelete={handleDelete} />
               </>

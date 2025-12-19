@@ -15,6 +15,7 @@ export default function SidebarItem({
   isOpen,
   onToggle,
   isExpanded = true,
+  onNavigate,
 }) {
   const pathname = usePathname();
   const isActive = href && pathname === href;
@@ -63,6 +64,7 @@ export default function SidebarItem({
               <Link
                 key={index}
                 href={item.href}
+                onClick={onNavigate}
                 className={`block px-4 py-2 text-sm rounded-lg transition-colors ${
                   pathname === item.href
                     ? "bg-primary/10 text-primary font-medium"
@@ -82,6 +84,7 @@ export default function SidebarItem({
   return (
     <Link
       href={href}
+      onClick={onNavigate}
       className={`flex items-center ${
         isExpanded ? "space-x-3 px-4" : "justify-center px-2"
       } py-3 text-sm font-medium rounded-lg transition-colors ${

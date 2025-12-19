@@ -87,7 +87,7 @@ export default function SEOAuditTable({ audits, onDelete }) {
                         {audit.recommendations && audit.recommendations.length > 0 ? (
                           <>
                             <span className="text-sm text-gray-700">{audit.recommendations.length}</span>
-                            {criticalHighCount > 0 && (
+                            {criticalHighCount > 0 && criticalHighCount < audit.recommendations.length && (
                               <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-semibold">
                                 {criticalHighCount} {criticalHighCount === 1 ? "Urgent" : "Urgent"}
                               </span>

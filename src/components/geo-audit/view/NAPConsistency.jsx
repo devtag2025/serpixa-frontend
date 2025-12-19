@@ -6,35 +6,35 @@ export default function NAPConsistency({ napIssues }) {
   const { t } = useTranslation();
   
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
-      <div className="px-6 py-4 border-b border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-900">{t("dashboard.geoAudit.view.napConsistency")}</h2>
+    <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm">
+      <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-gray-200">
+        <h2 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900">{t("dashboard.geoAudit.view.napConsistency")}</h2>
       </div>
-      <div className="px-6 py-4 space-y-4">
+      <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 space-y-2 sm:space-y-3 lg:space-y-4">
         {napIssues ? (
           <>
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-900">{t("dashboard.geoAudit.view.nameConsistency")}</span>
+              <span className="text-xs sm:text-sm font-medium text-gray-900">{t("dashboard.geoAudit.view.nameConsistency")}</span>
               {napIssues.nameConsistency ? (
-                <HiCheckCircle className="w-5 h-5 text-emerald-600" />
+                <HiCheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 flex-shrink-0" />
               ) : (
-                <HiXCircle className="w-5 h-5 text-red-600" />
+                <HiXCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 flex-shrink-0" />
               )}
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-900">{t("dashboard.geoAudit.view.addressConsistency")}</span>
+              <span className="text-xs sm:text-sm font-medium text-gray-900">{t("dashboard.geoAudit.view.addressConsistency")}</span>
               {napIssues.addressConsistency ? (
-                <HiCheckCircle className="w-5 h-5 text-emerald-600" />
+                <HiCheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 flex-shrink-0" />
               ) : (
-                <HiXCircle className="w-5 h-5 text-red-600" />
+                <HiXCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 flex-shrink-0" />
               )}
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-900">{t("dashboard.geoAudit.view.phoneConsistency")}</span>
+              <span className="text-xs sm:text-sm font-medium text-gray-900">{t("dashboard.geoAudit.view.phoneConsistency")}</span>
               {napIssues.phoneConsistency ? (
-                <HiCheckCircle className="w-5 h-5 text-emerald-600" />
+                <HiCheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 flex-shrink-0" />
               ) : (
-                <HiXCircle className="w-5 h-5 text-red-600" />
+                <HiXCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 flex-shrink-0" />
               )}
             </div>
             {napIssues.issues && napIssues.issues.length > 0 && (

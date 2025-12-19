@@ -3,9 +3,9 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useAuth, useLogout } from "@/hooks/useAuth";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { HiUser, HiLogout } from "react-icons/hi";
+import { HiUser, HiLogout, HiMenu } from "react-icons/hi";
 
-export default function DashboardTopBar() {
+export default function DashboardTopBar({ onMenuClick = () => {} }) {
   const { data: user, isLoading } = useAuth();
   const { mutate: logout } = useLogout();
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
@@ -42,8 +42,18 @@ export default function DashboardTopBar() {
 
   return (
     <header className="sticky top-0 h-14 bg-white border-b border-gray-200 z-50">
-      <div className="h-full flex items-center justify-end px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3">
+      <div className="h-full flex items-center px-4 sm:px-6 lg:px-8">
+        {/* Mobile Menu Button */}
+        <button
+          onClick={onMenuClick}
+          className="lg:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors mr-3"
+          aria-label="Open menu"
+        >
+          <HiMenu className="w-6 h-6" />
+        </button>
+
+        {/* Right side content - always aligned to the right */}
+        <div className="flex items-center gap-3 ml-auto">
           {/* Language Switcher */}
           <LanguageSwitcher />
 

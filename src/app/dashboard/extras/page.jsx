@@ -18,20 +18,20 @@ export default function ExtrasPage() {
       <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-full">
         {/* Header */}
         <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+              <div className="flex-1 min-w-0">
+                <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                   {t("dashboard.extras.title")}
                 </h1>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 mt-1 sm:mt-2 text-sm sm:text-base">
                   {t("dashboard.extras.subtitle")}
                 </p>
               </div>
               {!creditsLoading && hasActiveSubscription && (
-                <div className="flex items-center space-x-3">
-                  <span className="text-sm text-gray-600">{t("dashboard.page.subscription")}:</span>
-                  <span className="px-3 py-1 bg-gradient-to-r from-primary to-blue-600 text-white text-sm font-semibold rounded-full shadow-sm">
+                <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+                  <span className="text-xs sm:text-sm text-gray-600">{t("dashboard.page.subscription")}:</span>
+                  <span className="px-2.5 sm:px-3 py-1 bg-gradient-to-r from-primary to-blue-600 text-white text-xs sm:text-sm font-semibold rounded-full shadow-sm whitespace-nowrap">
                     {currentPlan}
                   </span>
                 </div>
@@ -41,7 +41,7 @@ export default function ExtrasPage() {
         </div>
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8 space-y-6 sm:space-y-8">
           {/* My Extras Section */}
           <MyExtras />
 

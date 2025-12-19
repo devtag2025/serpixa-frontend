@@ -5,10 +5,12 @@ import { useRegister } from "@/hooks/useAuth";
 import PublicRoute from "@/components/auth/PublicRoute";
 import Link from "next/link";
 import { HiUser, HiLockClosed, HiEye, HiEyeOff, HiMail } from "react-icons/hi";
+import { useTranslation } from "@/i18n/context";
 
 export default function SignupPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -84,12 +86,11 @@ export default function SignupPage() {
             {/* Welcome Content */}
             <div className="space-y-6">
               <div>
-                <p className="text-white/80 text-sm mb-2">Start your journey today</p>
-                <h1 className="text-5xl font-bold mb-4 tracking-tight">CREATE ACCOUNT</h1>
+                <p className="text-white/80 text-sm mb-2">{t("signup.greeting")}</p>
+                <h1 className="text-5xl font-bold mb-4 tracking-tight">{t("signup.title")}</h1>
                 <div className="w-16 h-1 bg-white/30 mb-6"></div>
                 <p className="text-white/70 text-base leading-relaxed max-w-md">
-                  Join thousands of SEO professionals who trust Serpixa for their SEO and AI content needs. 
-                  Get started with a free trial and unlock powerful tools to perfect your SEO strategy.
+                  {t("signup.description")}
                 </p>
               </div>
             </div>
@@ -98,7 +99,7 @@ export default function SignupPage() {
             <div className="mt-8">
               <div className="flex items-center space-x-2 text-white/60 text-sm">
                 <div className="w-2 h-2 bg-white/40 rounded-full"></div>
-                <span>No credit card required • 14-day free trial</span>
+                <span>{t("signup.noCreditCard")}</span>
               </div>
             </div>
           </div>
@@ -131,9 +132,9 @@ export default function SignupPage() {
 
             {/* Form Header */}
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">{t("signup.formTitle")}</h2>
               <p className="text-gray-600 text-sm">
-                Sign up to get started with Serpixa and transform your SEO strategy today.
+                {t("signup.formSubtitle")}
               </p>
             </div>
 
@@ -142,7 +143,7 @@ export default function SignupPage() {
               {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name
+                  {t("signup.nameLabel")}
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -151,8 +152,8 @@ export default function SignupPage() {
                   <input
                     id="name"
                     type="text"
-                    placeholder="Enter your full name"
-                    {...register("name", { required: "Name is required" })}
+                    placeholder={t("signup.namePlaceholder")}
+                    {...register("name", { required: t("signup.nameRequired") })}
                     className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   />
                 </div>
@@ -166,7 +167,7 @@ export default function SignupPage() {
               {/* Email Field */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email ID
+                  {t("signup.emailLabel")}
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -175,12 +176,12 @@ export default function SignupPage() {
                   <input
                     id="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder={t("signup.emailPlaceholder")}
                     {...register("email", {
-                      required: "Email is required",
+                      required: t("signup.emailRequired"),
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        message: "Invalid email format",
+                        message: t("signup.emailInvalid"),
                       },
                     })}
                     className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
@@ -196,7 +197,7 @@ export default function SignupPage() {
               {/* Password Field */}
               <div>
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                  Password
+                  {t("signup.passwordLabel")}
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -205,10 +206,10 @@ export default function SignupPage() {
                   <input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    placeholder="Create a password"
+                    placeholder={t("signup.passwordPlaceholder")}
                     {...register("password", {
-                      required: "Password is required",
-                      minLength: { value: 8, message: "Password must be at least 8 characters" },
+                      required: t("signup.passwordRequired"),
+                      minLength: { value: 8, message: t("signup.passwordMinLength") },
                     })}
                     className="w-full pl-12 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   />
@@ -216,7 +217,7 @@ export default function SignupPage() {
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none transition-colors"
-                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    aria-label={showPassword ? t("signup.hidePassword") : t("signup.showPassword")}
                   >
                     {showPassword ? (
                       <HiEyeOff className="h-5 w-5" />
@@ -235,7 +236,7 @@ export default function SignupPage() {
               {/* Confirm Password Field */}
               <div>
                 <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
-                  Confirm Password
+                  {t("signup.confirmPasswordLabel")}
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -244,11 +245,11 @@ export default function SignupPage() {
                   <input
                     id="confirmPassword"
                     type={showConfirmPassword ? "text" : "password"}
-                    placeholder="Confirm your password"
+                    placeholder={t("signup.confirmPasswordPlaceholder")}
                     {...register("confirmPassword", {
-                      required: "Please confirm your password",
+                      required: t("signup.confirmPasswordRequired"),
                       validate: (value) =>
-                        value === password || "Passwords do not match",
+                        value === password || t("signup.passwordsDoNotMatch"),
                     })}
                     className="w-full pl-12 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   />
@@ -256,7 +257,7 @@ export default function SignupPage() {
                     type="button"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none transition-colors"
-                    aria-label={showConfirmPassword ? "Hide password" : "Show password"}
+                    aria-label={showConfirmPassword ? t("signup.hidePassword") : t("signup.showPassword")}
                   >
                     {showConfirmPassword ? (
                       <HiEyeOff className="h-5 w-5" />
@@ -284,19 +285,19 @@ export default function SignupPage() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Creating account...
+                    {t("signup.creatingAccount")}
                   </span>
                 ) : (
-                  "Sign Up"
+                  t("signup.signUpButton")
                 )}
               </button>
             </form>
 
             {/* Login Link */}
             <p className="text-center text-gray-600 text-sm mt-6">
-              Already have an account?{" "}
+              {t("signup.alreadyHaveAccount")}{" "}
               <Link href="/login" className="text-primary hover:underline font-medium">
-                Log in
+                {t("signup.logIn")}
               </Link>
             </p>
           </div>

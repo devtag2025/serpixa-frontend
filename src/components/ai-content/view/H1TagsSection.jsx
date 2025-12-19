@@ -27,38 +27,54 @@ export default function H1TagsSection({ htmlContent }) {
 
   if (h1Tags.length === 0) {
     return (
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
-        <div className="px-6 py-4 border-b border-gray-200">
-          <div className="flex items-center gap-3">
-            <span className="text-sm font-semibold text-gray-900">
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm">
+        <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-gray-200">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <span className="text-xs sm:text-sm font-semibold text-gray-900">
               {t("dashboard.aiContent.view.h1Tags")}
             </span>
-            <HiXCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+            <HiXCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 flex-shrink-0" />
           </div>
         </div>
-        <div className="px-6 py-4">
-          <p className="text-sm text-gray-500">{t("dashboard.aiContent.view.noH1Tags")}</p>
+        <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
+          <p className="text-xs sm:text-sm text-gray-500">{t("dashboard.aiContent.view.noH1Tags")}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
-      <div className="px-6 py-4 border-b border-gray-200">
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-semibold text-gray-900">
+    <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm">
+      <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-gray-200">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+          <span className="text-xs sm:text-sm font-semibold text-gray-900">
             {t("dashboard.aiContent.view.h1Tags")}
           </span>
-          <HiCheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-          <span className="text-sm text-gray-500">
+          <HiCheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 flex-shrink-0" />
+          <span className="text-xs sm:text-sm text-gray-500">
             {h1Tags.length} {t("dashboard.aiContent.view.found")}
           </span>
         </div>
       </div>
       
-      <div className="overflow-x-auto">
-        <table className="w-full">
+      {/* Mobile Card View */}
+      <div className="lg:hidden divide-y divide-gray-200">
+        {h1Tags.map((h1, index) => (
+          <div
+            key={h1.id}
+            className={`px-3 sm:px-4 py-3 sm:py-4 ${index % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}
+          >
+            <div className="flex items-start gap-3">
+              <span className="text-xs sm:text-sm font-medium text-gray-900">#{h1.id}</span>
+              <p className="text-xs sm:text-sm text-gray-700 break-words flex-1">{h1.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop Table View */}
+      <div className="hidden lg:block overflow-x-auto">
+        <table className="w-full min-w-[400px]">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">
@@ -75,7 +91,7 @@ export default function H1TagsSection({ htmlContent }) {
                 <td className="px-6 py-4 text-sm font-medium text-gray-900">
                   {h1.id}
                 </td>
-                <td className="px-6 py-4 text-sm text-gray-700">
+                <td className="px-6 py-4 text-sm text-gray-700 break-words">
                   {h1.text}
                 </td>
               </tr>

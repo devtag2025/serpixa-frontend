@@ -7,36 +7,21 @@ export default function Features() {
 
   const features = [
     {
-      value: "188",
       titleKey: "landing.features.countryDatabases",
-      extractValue: (text) => text.split(" ")[0],
     },
     {
-      value: "5.4B",
       titleKey: "landing.features.keywordDatabase",
-      extractValue: (text) => text.split(" ")[0],
     },
     {
-      value: "2.2B",
       titleKey: "landing.features.domainProfiles",
-      extractValue: (text) => text.split(" ")[0],
     },
     {
-      value: "100%",
       titleKey: "landing.features.accurateRankings",
-      extractValue: (text) => text.split(" ")[0],
     },
     {
-      value: "AI",
       titleKey: "landing.features.aiAlgorithms",
-      extractValue: (text) => text.split(" ")[0],
     },
   ];
-
-  // Helper function to extract description from full text
-  const getDescription = (fullText, value) => {
-    return fullText.replace(value, "").trim();
-  };
 
   return (
     <section id="features" className="relative py-24 px-4 bg-gradient-to-b from-white via-gray-50 to-white">
@@ -44,7 +29,7 @@ export default function Features() {
         {/* Main Headline */}
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wide">Features</span>
+            <span className="text-primary font-semibold text-sm uppercase tracking-wide">{t("landing.features.badge")}</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
@@ -59,9 +44,8 @@ export default function Features() {
         {/* Statistics Grid - 2 rows × 3 columns (exact match to design) */}
         <div className="grid grid-cols-3 gap-0 mb-24 bg-gradient-to-r from-transparent from-40% via-blue-100 via-50% to-transparent to-60%">
           {features.map((feature, index) => {
-            const fullText = t(feature.titleKey);
-            const value = feature.extractValue ? feature.extractValue(fullText) : feature.value;
-            const description = getDescription(fullText, value);
+            const value = t(`${feature.titleKey}.value`);
+            const description = t(`${feature.titleKey}.description`);
             
             // Calculate row and column position (0-based)
             const row = Math.floor(index / 3);

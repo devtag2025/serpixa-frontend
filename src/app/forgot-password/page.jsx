@@ -4,8 +4,10 @@ import { useForgotPassword } from "@/hooks/useAuth";
 import PublicRoute from "@/components/auth/PublicRoute";
 import Link from "next/link";
 import { HiMail, HiLockClosed } from "react-icons/hi";
+import { useTranslation } from "@/i18n/context";
 
 export default function ForgotPasswordPage() {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -75,12 +77,11 @@ export default function ForgotPasswordPage() {
             {/* Welcome Content */}
             <div className="space-y-6">
               <div>
-                <p className="text-white/80 text-sm mb-2">Need to reset your password?</p>
-                <h1 className="text-5xl font-bold mb-4 tracking-tight">FORGOT PASSWORD</h1>
+                <p className="text-white/80 text-sm mb-2">{t("forgotPassword.greeting")}</p>
+                <h1 className="text-5xl font-bold mb-4 tracking-tight">{t("forgotPassword.title")}</h1>
                 <div className="w-16 h-1 bg-white/30 mb-6"></div>
                 <p className="text-white/70 text-base leading-relaxed max-w-md">
-                  Don't worry! Enter your email address and we'll send you a link to reset your password. 
-                  You'll be back to optimizing your SEO in no time.
+                  {t("forgotPassword.description")}
                 </p>
               </div>
             </div>
@@ -89,7 +90,7 @@ export default function ForgotPasswordPage() {
             <div className="mt-8">
               <div className="flex items-center space-x-2 text-white/60 text-sm">
                 <div className="w-2 h-2 bg-white/40 rounded-full"></div>
-                <span>Secure password reset process</span>
+                <span>{t("forgotPassword.secureProcess")}</span>
               </div>
             </div>
           </div>
@@ -122,9 +123,9 @@ export default function ForgotPasswordPage() {
 
             {/* Form Header */}
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Reset Password</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">{t("forgotPassword.formTitle")}</h2>
               <p className="text-gray-600 text-sm">
-                Enter the email address associated with your account, and we'll send you a link to reset your password.
+                {t("forgotPassword.formSubtitle")}
               </p>
             </div>
 
@@ -133,7 +134,7 @@ export default function ForgotPasswordPage() {
               {/* Email Field */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email ID
+                  {t("forgotPassword.emailLabel")}
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -142,12 +143,12 @@ export default function ForgotPasswordPage() {
                   <input
                     id="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder={t("forgotPassword.emailPlaceholder")}
                     {...register("email", {
-                      required: "Email is required",
+                      required: t("forgotPassword.emailRequired"),
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        message: "Invalid email format",
+                        message: t("forgotPassword.emailInvalid"),
                       },
                     })}
                     className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
@@ -172,10 +173,10 @@ export default function ForgotPasswordPage() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Sending reset link...
+                    {t("forgotPassword.sendingResetLink")}
                   </span>
                 ) : (
-                  "Send Reset Link"
+                  t("forgotPassword.sendResetLink")
                 )}
               </button>
             </form>
@@ -187,13 +188,13 @@ export default function ForgotPasswordPage() {
                   href="/login"
                   className="text-sm text-primary hover:underline font-medium"
                 >
-                  ← Return to sign in
+                  {t("forgotPassword.returnToSignIn")}
                 </Link>
               </div>
               <p className="text-center text-gray-600 text-sm">
-                Don't have an account?{" "}
+                {t("forgotPassword.noAccount")}{" "}
                 <Link href="/signup" className="text-primary hover:underline font-medium">
-                  Sign up
+                  {t("forgotPassword.signUp")}
                 </Link>
               </p>
             </div>

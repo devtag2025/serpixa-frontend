@@ -51,8 +51,8 @@ export default function CreditCard({ title, used, total, color, icon: Icon }) {
           </div>
         </div>
 
-        <div className="ml-4 relative w-20 h-20 flex items-center justify-center">
-          <ResponsiveContainer width="100%" height="100%">
+        <div className="ml-4 relative w-20 h-20 flex items-center justify-center min-w-[80px] min-h-[80px]">
+          <ResponsiveContainer width="100%" height="100%" minWidth={80} minHeight={80}>
             <PieChart>
               <Pie
                 data={data}

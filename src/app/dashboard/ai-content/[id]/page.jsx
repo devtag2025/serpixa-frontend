@@ -111,8 +111,8 @@ export default function AIContentViewPage() {
       <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-full">
           {/* SEO Disclaimer Banner */}
           <div className="bg-primary border-b border-primary/20 opacity-0 animate-fadeInSlideDown animation-delay-2000">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <p className="text-sm text-white text-start font-medium">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-2 sm:py-3">
+            <p className="text-xs sm:text-sm text-white text-start font-medium break-words">
               {t("dashboard.aiContent.view.seoDisclaimer")}
             </p>
           </div>
@@ -128,27 +128,27 @@ export default function AIContentViewPage() {
           isDeleting={isDeleting}
         />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8">
             {/* SEO Stats */}
             <SEOStats content={content} />
 
             {/* Meta Info */}
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-6">
               <MetaInfo content={content} />
             </div>
 
             {/* Headings Section (H1-H6) */}
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-6">
               <HeadingsSection htmlContent={content.htmlContent} />
             </div>
 
             {/* Lists Section */}
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-6">
               <ListsSection htmlContent={content.htmlContent} />
             </div>
 
             {/* Paragraphs Section */}
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-6">
               <ParagraphsSection htmlContent={content.htmlContent} />
             </div>
 
@@ -159,20 +159,20 @@ export default function AIContentViewPage() {
 
             {/* FAQ Section */}
             {content.faq && content.faq.length > 0 && (
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <FAQSection faq={content.faq} />
               </div>
             )}
 
             {/* CTA Section */}
             {content.cta && (
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <CTASection cta={content.cta} />
               </div>
             )}
 
             {/* Generated Info */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 text-center text-sm text-gray-500">
+            <div className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-gray-200 p-3 sm:p-4 text-center text-xs sm:text-sm text-gray-500">
               {t("dashboard.aiContent.view.generatedAt")}: {new Date(content.createdAt || Date.now()).toLocaleString()}
             </div>
           </div>

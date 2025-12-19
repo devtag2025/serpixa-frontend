@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import { usePlans, useCreateCheckout } from "@/hooks/useSubscription";
 import { useAuth } from "@/hooks/useAuth";
@@ -11,6 +12,7 @@ export default function Pricing() {
   const { data: subscriptionPlans = [], isLoading: plansLoading } = usePlans("subscription");
   const { data: addonPlans = [], isLoading: addonsLoading } = usePlans("addon");
   const createCheckout = useCreateCheckout();
+  const [purchasingPriceId, setPurchasingPriceId] = useState(null);
 
   const isLoading = plansLoading || addonsLoading;
 
@@ -41,10 +43,14 @@ export default function Pricing() {
       return;
     }
 
+    setPurchasingPriceId(priceId);
     try {
       await createCheckout.mutateAsync({ price_id: priceId });
     } catch (error) {
       console.error("Checkout error:", error);
+    } finally {
+      // Reset after a delay to allow redirect to Stripe
+      setTimeout(() => setPurchasingPriceId(null), 1000);
     }
   };
 
@@ -98,6 +104,30 @@ export default function Pricing() {
     return creditItems;
   };
 
+  // Get translated plan name or description
+  const getPlanTranslation = (planName, type = 'name') => {
+    // Map database plan names to translation keys
+    const planKeyMap = {
+      'Starter Plan': 'plans.starterPlan',
+      'Premium Plan': 'plans.premiumPlan',
+      'Extra 10 SEO Audits': 'plans.extra10SeoAudits',
+      'Extra 10 GEO Audits': 'plans.extra10GeoAudits',
+      'Extra 5 GBP Audits': 'plans.extra5GbpAudits',
+      'Extra 50 AI Generations': 'plans.extra50AiGenerations',
+    };
+    
+    const key = planKeyMap[planName];
+    if (key) {
+      const translation = t(`${key}.${type}`);
+      // If translation exists and is different from key (not a fallback), return it
+      if (translation && !translation.startsWith('plans.')) {
+        return translation;
+      }
+    }
+    // Fallback to original value if no translation found
+    return planName;
+  };
+
   return (
     <section id="pricing" className="relative py-24 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
       {/* Background decoration */}
@@ -110,7 +140,7 @@ export default function Pricing() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wide">Pricing</span>
+            <span className="text-primary font-semibold text-sm uppercase tracking-wide">{t("landing.pricing.badge")}</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
@@ -160,7 +190,7 @@ export default function Pricing() {
                     )}
 
                     {/* Plan Name */}
-                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{plan.name}</h3>
+                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{getPlanTranslation(plan.name, 'name')}</h3>
 
                     {/* Price */}
                     <div className="mb-6">
@@ -171,13 +201,13 @@ export default function Pricing() {
                       </div>
                       <div className="flex items-center gap-2 mt-1">
                         <span className="text-gray-500 text-lg">/{getBillingPeriod(plan.billing_period)}</span>
-                        <span className="text-gray-500 text-xs">HTVA</span>
+                        <span className="text-gray-500 text-xs">{t("landing.pricing.exclVat")}</span>
                       </div>
                     </div>
 
                     {/* Description */}
                     {plan.description && (
-                      <p className="text-gray-600 mb-8 text-base leading-relaxed">{plan.description}</p>
+                      <p className="text-gray-600 mb-8 text-base leading-relaxed">{getPlanTranslation(plan.name, 'description')}</p>
                     )}
 
                     {/* Limits/Features */}
@@ -245,7 +275,7 @@ export default function Pricing() {
                     {user ? (
                       <button
                         onClick={() => handleCheckout(plan.stripe_price_id, plan.name)}
-                        disabled={createCheckout.isPending}
+                        disabled={purchasingPriceId === plan.stripe_price_id && createCheckout.isPending}
                         className={`group/btn relative w-full text-center py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 ${
                           highlighted
                             ? "bg-gradient-to-r from-primary to-purple-600 text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-105"
@@ -253,9 +283,9 @@ export default function Pricing() {
                         } disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100`}
                       >
                         <span className="relative z-10">
-                          {createCheckout.isPending ? t("landing.pricing.processing") : t("landing.pricing.startTrial")}
+                          {(purchasingPriceId === plan.stripe_price_id && createCheckout.isPending) ? t("landing.pricing.processing") : t("landing.pricing.startTrial")}
                         </span>
-                        {!createCheckout.isPending && (
+                        {!(purchasingPriceId === plan.stripe_price_id && createCheckout.isPending) && (
                           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-purple-600/90 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                         )}
                       </button>
@@ -283,7 +313,7 @@ export default function Pricing() {
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                   {t("landing.pricing.needMore")}
                 </h3>
-                <p className="text-gray-600 mb-12 text-lg">Enhance your plan with powerful add-ons</p>
+                <p className="text-gray-600 mb-12 text-lg">{t("landing.pricing.enhancePlan")}</p>
 
                 {/* Add-ons Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -294,7 +324,7 @@ export default function Pricing() {
                         key={addon.id}
                         className="group bg-white rounded-2xl p-6 border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-primary/30"
                       >
-                        <h4 className="text-xl text-start font-bold text-gray-900 mb-4">{addon.name}</h4>
+                        <h4 className="text-xl text-start font-bold text-gray-900 mb-4">{getPlanTranslation(addon.name, 'name')}</h4>
                         <div className="mb-6">
                           <div className="flex items-baseline gap-1">
                             <span className="text-3xl font-bold text-gray-900">
@@ -303,7 +333,7 @@ export default function Pricing() {
                           </div>
                           <div className="flex items-center gap-2 mt-1">
                             <span className="text-gray-500 text-sm">/{getBillingPeriod(addon.billing_period)}</span>
-                            <span className="text-gray-500 text-xs">HTVA</span>
+                            <span className="text-gray-500 text-xs">{t("landing.pricing.exclVat")}</span>
                           </div>
                         </div>
                         
@@ -340,10 +370,10 @@ export default function Pricing() {
                         {user ? (
                           <button
                             onClick={() => handleCheckout(addon.stripe_price_id, addon.name)}
-                            disabled={createCheckout.isPending}
+                            disabled={purchasingPriceId === addon.stripe_price_id && createCheckout.isPending}
                             className="w-full text-center py-3 px-6 bg-gradient-to-r from-primary to-primary/90 text-white rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                           >
-                            {createCheckout.isPending ? t("landing.pricing.processing") : t("landing.pricing.purchase")}
+                            {(purchasingPriceId === addon.stripe_price_id && createCheckout.isPending) ? t("landing.pricing.processing") : t("landing.pricing.purchase")}
                           </button>
                         ) : (
                           <Link

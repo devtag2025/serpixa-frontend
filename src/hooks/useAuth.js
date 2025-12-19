@@ -4,6 +4,7 @@ import { AuthService } from "@/services/authService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
 import { toast } from "react-hot-toast";
+import { useI18n } from "@/i18n/context";
 
 // Query keys
 export const authKeys = {
@@ -42,9 +43,10 @@ export function useAuth() {
 export function useRegister() {
   const queryClient = useQueryClient();
   const router = useRouter();
+  const { locale } = useI18n();
 
   return useMutation({
-    mutationFn: AuthService.register,
+    mutationFn: (data) => AuthService.register({ ...data, locale }),
     onSuccess: (response) => {
       const { message } = handleResponse(response);
       toast.success(message || "Account created successfully!");
@@ -118,8 +120,10 @@ export function useLogout() {
 }
 
 export function useForgotPassword() {
+  const { locale } = useI18n();
+
   return useMutation({
-    mutationFn: AuthService.forgotPassword,
+    mutationFn: (data) => AuthService.forgotPassword({ ...data, locale }),
     onSuccess: (response) => {
       const { message } = handleResponse(response);
       toast.success(message || "Password reset email sent!");
@@ -134,9 +138,10 @@ export function useForgotPassword() {
 
 export function useResetPassword() {
   const router = useRouter();
+  const { locale } = useI18n();
 
   return useMutation({
-    mutationFn: AuthService.resetPassword,
+    mutationFn: (data) => AuthService.resetPassword({ ...data, locale }),
     onSuccess: (response) => {
       const { message } = handleResponse(response);
       toast.success(message || "Password reset successful!");
@@ -170,6 +175,23 @@ export function useVerifyEmail() {
       const message = handleError(error);
       toast.error(message || "Email verification failed.");
       console.error("Verify email failed:", message);
+    },
+  });
+}
+
+export function useResendVerification() {
+  const { locale } = useI18n();
+
+  return useMutation({
+    mutationFn: (data) => AuthService.resendVerification({ ...data, locale }),
+    onSuccess: (response) => {
+      const { message } = handleResponse(response);
+      toast.success(message || "Verification email sent!");
+    },
+    onError: (error) => {
+      const message = handleError(error);
+      toast.error(message || "Failed to send verification email.");
+      console.error("Resend verification failed:", message);
     },
   });
 }

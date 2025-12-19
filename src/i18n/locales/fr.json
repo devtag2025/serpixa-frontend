@@ -7,16 +7,36 @@
       "seeTour": "Voir la visite du produit",
       "noCreditCard": "Aucune carte de crédit requise",
       "trustedBy": "Approuvé par",
-      "professionals": "professionnels du SEO depuis 2013"
+      "professionals": "professionnels du SEO depuis 2013",
+      "aiPowered": "Alimenté par l'IA",
+      "contentGeneration": "Génération de contenu",
+      "quickStart": "Démarrage rapide",
+      "quickStartDescription": "Effectuez votre premier audit en quelques minutes"
     },
     "features": {
+      "badge": "Fonctionnalités",
       "title": "Précis. Crédible. Prêt pour l'IA.",
       "subtitle": "Tout est question de nos données uniques.",
-      "countryDatabases": "188 BASES DE DONNÉES DE PAYS",
-      "aiAlgorithms": "ALGORITHMES ALIMENTÉS PAR L'IA",
-      "keywordDatabase": "BASE DE DONNÉES DE 5,4 MILLIARDS DE MOTS-CLÉS",
-      "domainProfiles": "2,2 MILLIARDS DE PROFILS DE DOMAINES",
-      "accurateRankings": "CLASSEMENTS DE MOTS-CLÉS 100% PRÉCIS",
+      "countryDatabases": {
+        "value": "188",
+        "description": "BASES DE DONNÉES DE PAYS"
+      },
+      "keywordDatabase": {
+        "value": "5.4B",
+        "description": "BASE DE DONNÉES DE MOTS-CLÉS"
+      },
+      "domainProfiles": {
+        "value": "2.2B",
+        "description": "PROFILS DE DOMAINES"
+      },
+      "accurateRankings": {
+        "value": "100%",
+        "description": "CLASSEMENTS DE MOTS-CLÉS PRÉCIS"
+      },
+      "aiAlgorithms": {
+        "value": "AI",
+        "description": "ALGORITHMES ALIMENTÉS"
+      },
       "trustedBadge": "Plateforme de confiance",
       "trustedTitle": "Approuvé par les grandes équipes qui gèrent le SEO à grande échelle",
       "trustedSubtitle": "Rejoignez des milliers de professionnels SEO qui font confiance à notre plateforme puissante pour des données et des insights précis",
@@ -35,13 +55,42 @@
       "purchase": "Acheter",
       "agenciesChoice": "Choix des agences",
       "needMore": "Besoin de plus ? Améliorez avec des modules complémentaires !",
+      "enhancePlan": "Améliorez votre plan avec des modules complémentaires puissants",
       "seoAudits": "Audits SEO",
       "geoAudits": "Audits GEO",
       "gbpAudits": "Audits GBP",
       "aiGenerations": "Générations IA",
       "searchesPerMonth": "Recherches par mois",
       "apiCallsPerMonth": "Appels API par mois",
-      "signInRequired": "Veuillez vous inscrire ou vous connecter pour continuer"
+      "signInRequired": "Veuillez vous inscrire ou vous connecter pour continuer",
+      "badge": "Tarification",
+      "exclVat": "HTVA"
+    },
+    "plans": {
+      "starterPlan": {
+        "name": "Plan Starter",
+        "description": "Parfait pour commencer avec les audits SEO"
+      },
+      "premiumPlan": {
+        "name": "Plan Premium",
+        "description": "Fonctionnalités avancées avec plus d'audits et de générations IA"
+      },
+      "extra10SeoAudits": {
+        "name": "10 audits SEO supplémentaires",
+        "description": "Achat unique de 10 audits SEO supplémentaires"
+      },
+      "extra10GeoAudits": {
+        "name": "10 audits GEO supplémentaires",
+        "description": "Achat unique de 10 audits GEO supplémentaires"
+      },
+      "extra5GbpAudits": {
+        "name": "5 audits GBP supplémentaires",
+        "description": "Achat unique de 5 audits GBP supplémentaires"
+      },
+      "extra50AiGenerations": {
+        "name": "50 générations IA supplémentaires",
+        "description": "Achat unique de 50 générations IA supplémentaires"
+      }
     },
     "testimonials": {
       "badge": "Témoignages",
@@ -389,6 +438,7 @@
     "page": {
       "welcomeBack": "Bon retour",
       "subscription": "Abonnement",
+      "noSubscription": "Aucun abonnement",
       "yourCredits": "Vos crédits",
       "quickActions": "Actions rapides",
       "recentAudits": "Audits récents",
@@ -410,6 +460,24 @@
       "aiContent": "Contenu IA",
       "aiContentDesc": "Générer du contenu optimisé"
     },
+    "extras": {
+      "title": "Extras et modules complémentaires",
+      "subtitle": "Gérez vos crédits de modules complémentaires et achetez des extras supplémentaires",
+      "myExtras": "Mes Extras",
+      "totalCredits": "crédits au total",
+      "noExtras": "Aucun extra acheté pour le moment",
+      "noExtrasTitle": "Aucun extra pour le moment",
+      "noExtrasDescription": "Vous n'avez pas encore acheté de modules complémentaires. Parcourez les extras disponibles ci-dessous pour améliorer votre plan.",
+      "browseExtras": "Parcourir les extras",
+      "purchaseHistory": "Historique des achats",
+      "credits": "crédits",
+      "remaining": "restants",
+      "noCredits": "Aucun crédit disponible",
+      "buyMore": "Acheter plus d'extras",
+      "buyMoreDescription": "Améliorez votre plan avec des crédits supplémentaires pour les audits SEO, GEO, GBP et la génération de contenu IA.",
+      "noAddonsAvailable": "Aucun module complémentaire disponible pour le moment",
+      "historyNote": "L'historique des achats est affiché à titre de référence. Les enregistrements d'achat réels peuvent varier."
+    },
     "sidebar": {
       "dashboard": "Tableau de bord",
       "seoAudits": "Audits SEO",
@@ -426,7 +494,27 @@
       "generator": "Générateur",
       "plan": "Plan",
       "payment": "Paiement",
-      "addOns": "Modules complémentaires"
+      "addOns": "Modules complémentaires",
+      "extras": "Extras"
+    },
+    "support": {
+      "title": "Support",
+      "subtitle": "Obtenez de l'aide de notre équipe de support",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Brève description de votre problème",
+      "subjectRequired": "Le sujet est requis",
+      "subjectMinLength": "Le sujet doit contenir au moins 3 caractères",
+      "subjectMaxLength": "Le sujet doit contenir moins de 200 caractères",
+      "email": "E-mail",
+      "emailPlaceholder": "votre.email@exemple.com",
+      "emailRequired": "L'e-mail est requis",
+      "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+      "message": "Message",
+      "messagePlaceholder": "Décrivez votre problème ou votre question en détail...",
+      "messageRequired": "Le message est requis",
+      "messageMinLength": "Le message doit contenir au moins 10 caractères",
+      "messageMaxLength": "Le message doit contenir moins de 2000 caractères",
+      "send": "Envoyer le message"
     },
     "common": {
       "newAudit": "Nouvel audit",
@@ -438,6 +526,7 @@
       "edit": "Modifier",
       "save": "Enregistrer",
       "cancel": "Annuler",
+      "close": "Fermer",
       "search": "Rechercher",
       "filter": "Filtrer",
       "export": "Exporter",
@@ -544,7 +633,38 @@
         "totalLinks": "Total des liens",
         "competitorsLabel": "Concurrents",
         "viewAudit": "Voir l'audit",
-        "deleteAudit": "Supprimer l'audit"
+        "deleteAudit": "Supprimer l'audit",
+        "priority": "Priorité",
+        "category": "Catégorie",
+        "impact": "Impact",
+        "effort": "Difficulté",
+        "filters": "Filtres",
+        "clearFilters": "Effacer les filtres",
+        "all": "Tous",
+        "critical": "Critique",
+        "high": "Élevé",
+        "medium": "Moyen",
+        "low": "Faible",
+        "easy": "Facile",
+        "moderate": "Modéré",
+        "difficult": "Difficile",
+        "of": "sur",
+        "noRecommendationsMatch": "Aucune recommandation ne correspond aux filtres sélectionnés",
+        "categoryMeta": "Balises Meta",
+        "categoryContent": "Contenu",
+        "categoryTechnical": "Technique",
+        "categoryKeyword": "Mot-clé",
+        "categoryCompetitor": "Concurrent",
+        "categorySuccess": "Succès",
+        "pdfDownloaded": "PDF téléchargé avec succès !",
+        "failedToDownloadPdf": "Échec du téléchargement du PDF",
+        "copiedToClipboard": "{label} copié dans le presse-papiers !",
+        "failedToCopy": "Échec de la copie dans le presse-papiers",
+        "loadingAuditResults": "Chargement des résultats de l'audit...",
+        "failedToLoadAudit": "Échec du chargement de l'audit",
+        "errorLoadingAudit": "Une erreur s'est produite lors du chargement de l'audit",
+        "backToAudits": "Retour aux audits",
+        "auditFailed": "Échec de l'audit"
       }
     },
     "geoAudit": {
@@ -753,6 +873,17 @@
         "generateContent": "Générer le contenu",
         "generating": "Génération..."
       },
+      "progress": {
+        "generating": "Génération du contenu",
+        "keyword": "Mot-clé",
+        "processing": "Traitement...",
+        "pleaseWait": "Veuillez patienter pendant que nous générons votre contenu optimisé SEO",
+        "analyzingKeyword": "Analyse du mot-clé...",
+        "generatingSeoContent": "Génération du contenu SEO...",
+        "optimizingMetaTags": "Optimisation des balises meta...",
+        "structuringContent": "Structuration du contenu...",
+        "finalizing": "Finalisation..."
+      },
       "view": {
         "title": "Contenu généré",
         "metaTitle": "Titre meta",
@@ -815,6 +946,103 @@
         "createNewAudit": "Créer un nouveau contenu"
       }
     }
+  },
+  "login": {
+    "greeting": "Ravi de vous revoir",
+    "title": "BIENVENUE",
+    "description": "Tous les outils dont vous avez besoin pour perfectionner votre visibilité SEO et IA. Maîtrisez la recherche traditionnelle et l'IA avec une plateforme puissante, des données fiables et une UX exceptionnelle.",
+    "trustedBy": "Approuvé par les professionnels du SEO depuis 2013",
+    "formTitle": "Connexion",
+    "formSubtitle": "Entrez vos identifiants pour accéder à votre compte et commencer à optimiser votre stratégie SEO.",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "emailRequired": "L'adresse e-mail est requise",
+    "emailInvalid": "Format d'e-mail invalide",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "passwordRequired": "Le mot de passe est requis",
+    "showPassword": "Afficher le mot de passe",
+    "hidePassword": "Masquer le mot de passe",
+    "rememberMe": "Rester connecté",
+    "forgotPassword": "Mot de passe oublié ?",
+    "loginButton": "Se connecter",
+    "loggingIn": "Connexion en cours...",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire"
+  },
+  "signup": {
+    "greeting": "Commencez votre parcours aujourd'hui",
+    "title": "CRÉER UN COMPTE",
+    "description": "Rejoignez des milliers de professionnels SEO qui font confiance à Serpixa pour leurs besoins en SEO et contenu IA. Commencez avec un essai gratuit et débloquez des outils puissants pour perfectionner votre stratégie SEO.",
+    "noCreditCard": "Aucune carte de crédit requise • Essai gratuit de 14 jours",
+    "formTitle": "Créer un compte",
+    "formSubtitle": "Inscrivez-vous pour commencer avec Serpixa et transformer votre stratégie SEO dès aujourd'hui.",
+    "nameLabel": "Nom complet",
+    "namePlaceholder": "Entrez votre nom complet",
+    "nameRequired": "Le nom est requis",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "emailRequired": "L'adresse e-mail est requise",
+    "emailInvalid": "Format d'e-mail invalide",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Créez un mot de passe",
+    "passwordRequired": "Le mot de passe est requis",
+    "passwordMinLength": "Le mot de passe doit contenir au moins 8 caractères",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+    "confirmPasswordRequired": "Veuillez confirmer votre mot de passe",
+    "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
+    "showPassword": "Afficher le mot de passe",
+    "hidePassword": "Masquer le mot de passe",
+    "signUpButton": "S'inscrire",
+    "creatingAccount": "Création du compte...",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "logIn": "Se connecter"
+  },
+  "forgotPassword": {
+    "greeting": "Besoin de réinitialiser votre mot de passe ?",
+    "title": "MOT DE PASSE OUBLIÉ",
+    "description": "Ne vous inquiétez pas ! Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe. Vous serez de retour à optimiser votre référencement en un rien de temps.",
+    "secureProcess": "Processus de réinitialisation sécurisé",
+    "formTitle": "Réinitialiser le mot de passe",
+    "formSubtitle": "Entrez l'adresse e-mail associée à votre compte, et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "emailRequired": "L'e-mail est requis",
+    "emailInvalid": "Format d'e-mail invalide",
+    "sendResetLink": "Envoyer le lien de réinitialisation",
+    "sendingResetLink": "Envoi du lien de réinitialisation...",
+    "returnToSignIn": "← Retour à la connexion",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire"
+  },
+  "resetPassword": {
+    "title": "Définir un nouveau mot de passe",
+    "subtitle": "Entrez votre nouveau mot de passe ci-dessous et confirmez-le pour réinitialiser votre compte.",
+    "newPasswordLabel": "Nouveau mot de passe",
+    "newPasswordPlaceholder": "Entrez le nouveau mot de passe",
+    "passwordRequired": "Le mot de passe est requis",
+    "passwordMinLength": "Au moins 6 caractères",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmez le mot de passe",
+    "confirmPasswordRequired": "Veuillez confirmer votre mot de passe",
+    "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
+    "resetButton": "Réinitialiser le mot de passe",
+    "resetting": "Réinitialisation...",
+    "returnToSignIn": "Retour à la connexion",
+    "invalidToken": "Jeton de réinitialisation invalide ou manquant",
+    "loading": "Chargement..."
+  },
+  "navbar": {
+    "whySerpixa": "Pourquoi Serpixa",
+    "aboutUs": "À propos de nous",
+    "features": "Fonctionnalités",
+    "dashboard": "Tableau de bord",
+    "profile": "Profil",
+    "signOut": "Se déconnecter",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "startFreeTrial": "Commencer l'essai gratuit"
   }
 }
 

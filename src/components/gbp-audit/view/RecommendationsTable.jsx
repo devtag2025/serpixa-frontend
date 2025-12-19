@@ -298,7 +298,7 @@ export default function RecommendationsTable({ recommendations }) {
                         <span className="text-sm font-medium text-gray-900">{rec.issue || "—"}</span>
                       </td>
                       <td className="px-6 py-4">
-                        <span className="text-sm text-gray-700 line-clamp-2">{rec.action || "—"}</span>
+                        <span className="text-sm text-gray-700 ">{rec.action || "—"}</span>
                       </td>
                       <td className="px-6 py-4">
                         {rec.impact && (

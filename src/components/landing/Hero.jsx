@@ -71,8 +71,8 @@ export default function Hero() {
               <HiCheckCircle className="w-5 h-5 text-green-600" />
             </div>
             <div>
-              <div className="text-sm font-semibold text-gray-800">AI Powered</div>
-              <div className="text-xs text-gray-600">Content Generation</div>
+              <div className="text-sm font-semibold text-gray-800">{t("landing.hero.aiPowered")}</div>
+              <div className="text-xs text-gray-600">{t("landing.hero.contentGeneration")}</div>
             </div>
           </div>
         </div>
@@ -83,9 +83,9 @@ export default function Hero() {
         <div className="bg-white/60 backdrop-blur-sm border border-blue-200/50 rounded-xl p-4 shadow-lg max-w-[200px] transform ">
           <div className="flex items-center gap-2 mb-2">
             <HiSparkles className="w-5 h-5 text-purple-600" />
-            <div className="text-xs font-semibold text-gray-700">Quick Start</div>
+            <div className="text-xs font-semibold text-gray-700">{t("landing.hero.quickStart")}</div>
           </div>
-          <p className="text-xs text-gray-700">Run your first audit in minutes</p>
+          <p className="text-xs text-gray-700">{t("landing.hero.quickStartDescription")}</p>
         </div>
       </div>
 
@@ -105,13 +105,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-3">
           <Link
             href="/signup"
-            className="w-full sm:w-auto px-8 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors text-sm md:text-base"
+            className="w-full sm:w-auto px-8 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 text-sm md:text-base hover:scale-105 transition-all duration-300"
           >
             {t("landing.hero.startTrial")}
           </Link>
           <Link
             href="#tour"
-            className="w-full sm:w-auto px-8 py-3 bg-white text-gray-700 border border-gray-300 rounded-md font-medium hover:bg-gray-50 transition-colors text-sm md:text-base"
+            className="w-full sm:w-auto px-8 py-3 bg-white text-gray-700 border border-gray-300 rounded-md font-medium hover:bg-gray-50 transition-all duration-300 hover:scale-105 text-sm md:text-base"
           >
             {t("landing.hero.seeTour")}
           </Link>

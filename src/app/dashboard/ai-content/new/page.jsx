@@ -14,6 +14,15 @@ export default function NewAIContentPage() {
   const { mutate: generateContent, isPending } = useGenerateAIContent();
   const [currentKeyword, setCurrentKeyword] = useState("");
 
+  // Translated status messages for progress
+  const statusMessages = [
+    t("dashboard.aiContent.progress.analyzingKeyword"),
+    t("dashboard.aiContent.progress.generatingSeoContent"),
+    t("dashboard.aiContent.progress.optimizingMetaTags"),
+    t("dashboard.aiContent.progress.structuringContent"),
+    t("dashboard.aiContent.progress.finalizing"),
+  ];
+
   // Progress hook
   const {
     progress,
@@ -21,7 +30,7 @@ export default function NewAIContentPage() {
     startProgress,
     completeProgress,
     resetProgress,
-  } = useContentGenerationProgress();
+  } = useContentGenerationProgress({ statusMessages });
 
   // Start progress when generation begins
   useEffect(() => {

@@ -5,9 +5,11 @@ import { useLogin } from "@/hooks/useAuth";
 import PublicRoute from "@/components/auth/PublicRoute";
 import Link from "next/link";
 import { HiUser, HiLockClosed, HiEye, HiEyeOff } from "react-icons/hi";
+import { useTranslation } from "@/i18n/context";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -81,12 +83,11 @@ export default function LoginPage() {
             {/* Welcome Content */}
             <div className="space-y-6">
               <div>
-                <p className="text-white/80 text-sm mb-2">Nice to see you again</p>
-                <h1 className="text-5xl font-bold mb-4 tracking-tight">WELCOME BACK</h1>
+                <p className="text-white/80 text-sm mb-2">{t("login.greeting")}</p>
+                <h1 className="text-5xl font-bold mb-4 tracking-tight">{t("login.title")}</h1>
                 <div className="w-16 h-1 bg-white/30 mb-6"></div>
                 <p className="text-white/70 text-base leading-relaxed max-w-md">
-                  All the tools you need to perfect your SEO and AI visibility. 
-                  Own traditional and AI search with a powerful platform, trusted data, and exceptional UX.
+                  {t("login.description")}
                 </p>
               </div>
             </div>
@@ -95,7 +96,7 @@ export default function LoginPage() {
             <div className="mt-8">
               <div className="flex items-center space-x-2 text-white/60 text-sm">
                 <div className="w-2 h-2 bg-white/40 rounded-full"></div>
-                <span>Trusted by SEO professionals since 2013</span>
+                <span>{t("login.trustedBy")}</span>
               </div>
             </div>
           </div>
@@ -128,9 +129,9 @@ export default function LoginPage() {
 
             {/* Form Header */}
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Login Account</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">{t("login.formTitle")}</h2>
               <p className="text-gray-600 text-sm">
-                Enter your credentials to access your account and start optimizing your SEO strategy.
+                {t("login.formSubtitle")}
               </p>
             </div>
 
@@ -139,7 +140,7 @@ export default function LoginPage() {
               {/* Email Field */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email ID
+                  {t("login.emailLabel")}
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -148,12 +149,12 @@ export default function LoginPage() {
                   <input
                     id="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder={t("login.emailPlaceholder")}
                     {...register("email", {
-                      required: "Email is required",
+                      required: t("login.emailRequired"),
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        message: "Invalid email format",
+                        message: t("login.emailInvalid"),
                       },
                     })}
                     className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
@@ -169,7 +170,7 @@ export default function LoginPage() {
               {/* Password Field */}
               <div>
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                  Password
+                  {t("login.passwordLabel")}
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -178,9 +179,9 @@ export default function LoginPage() {
                   <input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    placeholder="Enter your password"
+                    placeholder={t("login.passwordPlaceholder")}
                     {...register("password", {
-                      required: "Password is required",
+                      required: t("login.passwordRequired"),
                     })}
                     className="w-full pl-12 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   />
@@ -188,7 +189,7 @@ export default function LoginPage() {
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none transition-colors"
-                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    aria-label={showPassword ? t("login.hidePassword") : t("login.showPassword")}
                   >
                     {showPassword ? (
                       <HiEyeOff className="h-5 w-5" />
@@ -207,17 +208,17 @@ export default function LoginPage() {
               {/* Remember Me & Forgot Password */}
               <div className="flex items-center justify-between">
                 <label className="flex items-center">
-                  <input
+                  {/* <input
                     type="checkbox"
                     className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary focus:ring-2"
                   />
-                  <span className="ml-2 text-sm text-gray-600">Keep me signed in</span>
+                  <span className="ml-2 text-sm text-gray-600">{t("login.rememberMe")}</span> */}
                 </label>
                 <a
                   href="/forgot-password"
                   className="text-sm text-primary hover:underline font-medium"
                 >
-                  Forgot Password?
+                  {t("login.forgotPassword")}
                 </a>
               </div>
 
@@ -233,19 +234,19 @@ export default function LoginPage() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Logging in...
+                    {t("login.loggingIn")}
                   </span>
                 ) : (
-                  "Login"
+                  t("login.loginButton")
                 )}
               </button>
             </form>
 
             {/* Sign Up Link */}
             <p className="text-center text-gray-600 text-sm mt-6">
-              Don't have an account?{" "}
+              {t("login.noAccount")}{" "}
               <Link href="/signup" className="text-primary hover:underline font-medium">
-                Sign up
+                {t("login.signUp")}
               </Link>
             </p>
           </div>

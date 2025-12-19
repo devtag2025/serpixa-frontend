@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import { useCredits } from "@/hooks/useSubscription";
 import { useTranslation } from "@/i18n/context";
 import {
@@ -7,12 +7,12 @@ import {
   HiLocationMarker,
   HiOfficeBuilding,
   HiSparkles,
-  HiChevronDown,
-  HiChevronUp,
-  HiClock,
+  // HiChevronDown,
+  // HiChevronUp,
+  // HiClock,
 } from "react-icons/hi";
 import ExtraCreditCard from "./ExtraCreditCard";
-import PurchaseHistory from "./PurchaseHistory";
+// import PurchaseHistory from "./PurchaseHistory";
 
 const CREDIT_TYPES = [
   {
@@ -44,15 +44,15 @@ const CREDIT_TYPES = [
 export default function MyExtras() {
   const { t } = useTranslation();
   const { data: creditsData, isLoading, isError } = useCredits();
-  const [showHistory, setShowHistory] = useState(false);
+  // const [showHistory, setShowHistory] = useState(false);
 
   if (isLoading) {
     return (
-      <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-        <div className="flex items-center justify-center py-12">
+      <div className="bg-white rounded-lg sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-sm border border-gray-100">
+        <div className="flex items-center justify-center py-8 sm:py-12">
           <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-primary/30 border-t-primary"></div>
-            <p className="mt-4 text-gray-600 text-sm">{t("dashboard.common.loading")}</p>
+            <div className="inline-block animate-spin rounded-full h-6 w-6 sm:h-8 sm:w-8 border-4 border-primary/30 border-t-primary"></div>
+            <p className="mt-3 sm:mt-4 text-gray-600 text-xs sm:text-sm">{t("dashboard.common.loading")}</p>
           </div>
         </div>
       </div>
@@ -61,16 +61,16 @@ export default function MyExtras() {
 
   if (isError) {
     return (
-      <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-        <div className="text-center py-8">
-          <p className="text-red-600">{t("dashboard.common.errorLoading")}</p>
+      <div className="bg-white rounded-lg sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-sm border border-gray-100">
+        <div className="text-center py-6 sm:py-8">
+          <p className="text-red-600 text-sm sm:text-base">{t("dashboard.common.errorLoading")}</p>
         </div>
       </div>
     );
   }
 
-  // Extract addon credits
-  const extras = CREDIT_TYPES.map((type) => {
+  // Extract addon credits and filter to only show purchased extras
+  const allExtras = CREDIT_TYPES.map((type) => {
     const creditInfo = creditsData?.[type.key];
     return {
       ...type,
@@ -79,25 +79,29 @@ export default function MyExtras() {
     };
   });
 
+  // Filter to only show extras that were actually purchased (credits > 0)
+  const extras = allExtras.filter((extra) => extra.credits > 0);
+
   // Check if user has any extras
-  const hasExtras = extras.some((extra) => extra.credits > 0);
+  const hasExtras = extras.length > 0;
   const totalExtras = extras.reduce((sum, extra) => sum + extra.credits, 0);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Section Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
+        <div className="flex-1 min-w-0">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
             {t("dashboard.extras.myExtras")}
           </h2>
-          <p className="text-gray-600 mt-1 text-sm">
+          <p className="text-gray-600 mt-1 text-xs sm:text-sm">
             {totalExtras > 0
               ? `${totalExtras} ${t("dashboard.extras.totalCredits")}`
               : t("dashboard.extras.noExtras")}
           </p>
         </div>
-        {hasExtras && (
+        {/* Purchase History Button - Commented out for now */}
+        {/* {hasExtras && (
           <button
             onClick={() => setShowHistory(!showHistory)}
             className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
@@ -110,29 +114,30 @@ export default function MyExtras() {
               <HiChevronDown className="w-4 h-4" />
             )}
           </button>
-        )}
+        )} */}
       </div>
 
-      {/* Purchase History (Dummy Data) */}
-      {showHistory && hasExtras && <PurchaseHistory extras={extras} />}
+      {/* Purchase History (Dummy Data) - Commented out for now */}
+      {/* {showHistory && hasExtras && <PurchaseHistory extras={extras} />} */}
 
-      {/* Extras Cards */}
+      {/* Extras Cards - Only show purchased extras */}
       {hasExtras ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {extras.map((extra) => (
-            <ExtraCreditCard key={extra.key} {...extra} />
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {extras.map((extra) => {
+            const { key, ...extraProps } = extra;
+            return <ExtraCreditCard key={key} {...extraProps} />;
+          })}
         </div>
       ) : (
-        <div className="bg-white rounded-2xl p-12 shadow-sm border border-gray-100 text-center">
+        <div className="bg-white rounded-lg sm:rounded-2xl p-6 sm:p-8 lg:p-12 shadow-sm border border-gray-100 text-center">
           <div className="max-w-md mx-auto">
-            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <HiSparkles className="w-8 h-8 text-gray-400" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <HiSparkles className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
               {t("dashboard.extras.noExtrasTitle")}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
               {t("dashboard.extras.noExtrasDescription")}
             </p>
            

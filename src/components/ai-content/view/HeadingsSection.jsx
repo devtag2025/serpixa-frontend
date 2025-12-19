@@ -63,17 +63,17 @@ export default function HeadingsSection({ htmlContent }) {
 
   if (totalHeadings === 0) {
     return (
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
-        <div className="px-6 py-4 border-b border-gray-200">
-          <div className="flex items-center gap-3">
-            <span className="text-sm font-semibold text-gray-900">
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm">
+        <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-gray-200">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <span className="text-xs sm:text-sm font-semibold text-gray-900">
               {t("dashboard.aiContent.view.headings")}
             </span>
-            <HiXCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+            <HiXCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 flex-shrink-0" />
           </div>
         </div>
-        <div className="px-6 py-4">
-          <p className="text-sm text-gray-500">{t("dashboard.aiContent.view.noHeadings")}</p>
+        <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
+          <p className="text-xs sm:text-sm text-gray-500">{t("dashboard.aiContent.view.noHeadings")}</p>
         </div>
       </div>
     );
@@ -81,14 +81,14 @@ export default function HeadingsSection({ htmlContent }) {
 
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
-      <div className="px-6 py-4 border-b border-gray-200">
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-semibold text-gray-900">
+    <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm">
+      <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-gray-200">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+          <span className="text-xs sm:text-sm font-semibold text-gray-900">
             {t("dashboard.aiContent.view.headings")}
           </span>
-          <HiCheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-          <span className="text-sm text-gray-500">
+          <HiCheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 flex-shrink-0" />
+          <span className="text-xs sm:text-sm text-gray-500">
             {totalHeadings} {t("dashboard.aiContent.view.found")}
           </span>
         </div>
@@ -106,34 +106,34 @@ export default function HeadingsSection({ htmlContent }) {
               {/* Section Header - Clickable */}
               <button
                 onClick={() => toggleSection(tagType)}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors text-left"
+                className="w-full px-3 sm:px-4 lg:px-6 py-3 sm:py-4 flex items-center justify-between hover:bg-gray-50 transition-colors text-left"
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-sm font-semibold text-gray-900">
+                <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                  <span className="text-xs sm:text-sm font-semibold text-gray-900">
                     {t(`dashboard.aiContent.view.${tagType}Tags`)}
                   </span>
-                  <span className="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-semibold">
+                  <span className="px-1.5 sm:px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-[10px] sm:text-xs font-semibold flex-shrink-0">
                     {headings.length}
                   </span>
                 </div>
                 {isExpanded ? (
-                  <HiChevronUp className="w-5 h-5 text-gray-400" />
+                  <HiChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0" />
                 ) : (
-                  <HiChevronDown className="w-5 h-5 text-gray-400" />
+                  <HiChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0" />
                 )}
               </button>
 
               {/* Section Content - Expandable */}
               {isExpanded && (
-                <div className="px-6 pb-4">
+                <div className="px-3 sm:px-4 lg:px-6 pb-3 sm:pb-4">
                   <div className="overflow-x-auto">
-                    <table className="w-full">
+                    <table className="w-full min-w-[300px]">
                       <thead className="bg-gray-50 border-b border-gray-200">
                         <tr>
-                          <th className="px-4 py-2 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                          <th className="px-3 sm:px-4 py-2 text-left text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">
                             #
                           </th>
-                          <th className="px-4 py-2 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                          <th className="px-3 sm:px-4 py-2 text-left text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">
                             {t(`dashboard.aiContent.view.${tagType}Content`)}
                           </th>
                         </tr>
@@ -144,10 +144,10 @@ export default function HeadingsSection({ htmlContent }) {
                             key={heading.id}
                             className={index % 2 === 0 ? "bg-white" : "bg-gray-50/50"}
                           >
-                            <td className="px-4 py-3 text-sm font-medium text-gray-900">
+                            <td className="px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-medium text-gray-900">
                               {heading.id}
                             </td>
-                            <td className="px-4 py-3 text-sm text-gray-700">
+                            <td className="px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-700 break-words">
                               {heading.text}
                             </td>
                           </tr>

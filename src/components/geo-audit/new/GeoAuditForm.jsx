@@ -33,26 +33,54 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
   //   }
   // };
 
+  /**
+   * Automatically determine locale based on country
+   * For Belgium, France, Netherlands: use their specific locale
+   * For all other countries: default to English
+   */
+  const getLocaleFromCountry = (country) => {
+    if (!country) return 'en';
+    
+    const countryLower = country.toLowerCase().trim();
+    
+    const countryLocaleMap = {
+      'belgium': 'fr_be',      // Belgium defaults to French
+      'france': 'fr_fr',       // France uses French
+      'netherlands': 'nl_nl',  // Netherlands uses Dutch
+    };
+    
+    return countryLocaleMap[countryLower] || 'en'; // Default to English for any other country
+  };
+
   const handleFormSubmit = (data) => {
-    // Send location - prioritize city name for better backend parsing
-    // The backend has location codes for major cities, so city name works better
-    // If only country is provided, use country. Backend will handle the parsing.
-    let location = "";
-    if (data.city) {
-      // Use city name only - backend can match it to location codes
-      location = data.city.trim();
-    } else if (data.country) {
-      // Fallback to country if no city provided
-      location = data.country.trim();
+    // Convert googleDomain from ".be" format to "google.be" format
+    let normalizedGoogleDomain = null;
+    if (data.googleDomain) {
+      if (data.googleDomain.startsWith('.')) {
+        // Convert ".be" to "google.be"
+        const tld = data.googleDomain.substring(1); // Remove the dot
+        normalizedGoogleDomain = `google.${tld}`;
+      } else {
+        // Already in correct format or use as is
+        normalizedGoogleDomain = data.googleDomain;
+      }
     }
+
+    // Automatically determine locale based on country
+    const country = data.country.trim();
+    const locale = getLocaleFromCountry(country);
 
     const payload = {
       keyword: data.keyword.trim(),
-      location: location,
+      city: data.city.trim(),
+      country: country,
+      locale: locale, // Add locale to payload
       // Only include businessName if it has a value (omit if empty)
       ...(data.businessName?.trim() && { businessName: data.businessName.trim() }),
-      googleDomain: data.googleDomain,
-      ...(data.device && { device: data.device }),
+      // Only include googleDomain if it has a value (omit if empty)
+      ...(normalizedGoogleDomain && { googleDomain: normalizedGoogleDomain }),
+      // Only include language if it has a value (omit if empty)
+      ...(data.language && { language: data.language }),
     };
 
     onSubmit(payload);
@@ -196,16 +224,14 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
       {/* Row 3: Google Domain */}
       <div>
         <label className="block text-sm font-semibold text-gray-900 mb-2">
-          {t("dashboard.geoAudit.form.googleDomain")} <span className="text-red-500">*</span>
+          {t("dashboard.geoAudit.form.googleDomain")}
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <HiLink className="h-5 w-5 text-gray-400" />
           </div>
           <select
-            {...register("googleDomain", {
-              required: t("dashboard.geoAudit.form.googleDomain") + " is required",
-            })}
+            {...register("googleDomain")}
             className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 bg-white"
           >
             <option value="">{t("dashboard.geoAudit.form.googleDomainPlaceholder")}</option>

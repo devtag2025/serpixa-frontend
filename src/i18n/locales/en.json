@@ -7,16 +7,36 @@
       "seeTour": "See product tour",
       "noCreditCard": "No credit card required",
       "trustedBy": "Trusted by",
-      "professionals": "SEO professionals since 2013"
+      "professionals": "SEO professionals since 2013",
+      "aiPowered": "AI Powered",
+      "contentGeneration": "Content Generation",
+      "quickStart": "Quick Start",
+      "quickStartDescription": "Run your first audit in minutes"
     },
     "features": {
+      "badge": "Features",
       "title": "Precise. Credible. AI-Ready.",
       "subtitle": "It's all about our unique data.",
-      "countryDatabases": "188 COUNTRY DATABASES",
-      "aiAlgorithms": "AI POWERED ALGORITHMS",
-      "keywordDatabase": "5.4B KEYWORD DATABASE",
-      "domainProfiles": "2.2B DOMAIN PROFILES",
-      "accurateRankings": "100% ACCURATE KEYWORD RANKINGS",
+      "countryDatabases": {
+        "value": "188",
+        "description": "COUNTRY DATABASES"
+      },
+      "keywordDatabase": {
+        "value": "5.4B",
+        "description": "KEYWORD DATABASE"
+      },
+      "domainProfiles": {
+        "value": "2.2B",
+        "description": "DOMAIN PROFILES"
+      },
+      "accurateRankings": {
+        "value": "100%",
+        "description": "ACCURATE KEYWORD RANKINGS"
+      },
+      "aiAlgorithms": {
+        "value": "AI",
+        "description": "POWERED ALGORITHMS"
+      },
       "trustedBadge": "Trusted Platform",
       "trustedTitle": "Trusted by large teams running SEO at scale",
       "trustedSubtitle": "Join thousands of SEO professionals who rely on our powerful platform for accurate data and insights",
@@ -35,13 +55,42 @@
       "purchase": "Purchase",
       "agenciesChoice": "Agencies' Choice",
       "needMore": "Need more? Upgrade with add-ons!",
+      "enhancePlan": "Enhance your plan with powerful add-ons",
       "seoAudits": "SEO Audits",
       "geoAudits": "GEO Audits",
       "gbpAudits": "GBP Audits",
       "aiGenerations": "AI Generations",
       "searchesPerMonth": "Searches per month",
       "apiCallsPerMonth": "API Calls per month",
-      "signInRequired": "Please sign up or log in to continue"
+      "signInRequired": "Please sign up or log in to continue",
+      "badge": "Pricing",
+      "exclVat": "HTVA"
+    },
+    "plans": {
+      "starterPlan": {
+        "name": "Starter Plan",
+        "description": "Perfect for getting started with SEO audits"
+      },
+      "premiumPlan": {
+        "name": "Premium Plan",
+        "description": "Advanced features with more audits and AI generations"
+      },
+      "extra10SeoAudits": {
+        "name": "Extra 10 SEO Audits",
+        "description": "One-time purchase of 10 additional SEO audits"
+      },
+      "extra10GeoAudits": {
+        "name": "Extra 10 GEO Audits",
+        "description": "One-time purchase of 10 additional GEO audits"
+      },
+      "extra5GbpAudits": {
+        "name": "Extra 5 GBP Audits",
+        "description": "One-time purchase of 5 additional GBP audits"
+      },
+      "extra50AiGenerations": {
+        "name": "Extra 50 AI Generations",
+        "description": "One-time purchase of 50 additional AI generations"
+      }
     },
     "testimonials": {
       "badge": "Testimonials",
@@ -389,6 +438,7 @@
     "page": {
       "welcomeBack": "Welcome back",
       "subscription": "Subscription",
+      "noSubscription": "No Subscription",
       "yourCredits": "Your Credits",
       "quickActions": "Quick Actions",
       "recentAudits": "Recent Audits",
@@ -476,6 +526,7 @@
       "edit": "Edit",
       "save": "Save",
       "cancel": "Cancel",
+      "close": "Close",
       "search": "Search",
       "filter": "Filter",
       "export": "Export",
@@ -606,7 +657,16 @@
         "categoryTechnical": "Technical",
         "categoryKeyword": "Keyword",
         "categoryCompetitor": "Competitor",
-        "categorySuccess": "Success"
+        "categorySuccess": "Success",
+        "pdfDownloaded": "PDF downloaded successfully!",
+        "failedToDownloadPdf": "Failed to download PDF",
+        "copiedToClipboard": "{label} copied to clipboard!",
+        "failedToCopy": "Failed to copy to clipboard",
+        "loadingAuditResults": "Loading audit results...",
+        "failedToLoadAudit": "Failed to Load Audit",
+        "errorLoadingAudit": "An error occurred while loading the audit",
+        "backToAudits": "Back to Audits",
+        "auditFailed": "Audit Failed"
       }
     },
     "geoAudit": {
@@ -826,7 +886,12 @@
         "generating": "Generating Content",
         "keyword": "Keyword",
         "processing": "Processing...",
-        "pleaseWait": "Please wait while we generate your SEO-optimized content"
+        "pleaseWait": "Please wait while we generate your SEO-optimized content",
+        "analyzingKeyword": "Analyzing keyword...",
+        "generatingSeoContent": "Generating SEO content...",
+        "optimizingMetaTags": "Optimizing meta tags...",
+        "structuringContent": "Structuring content...",
+        "finalizing": "Finalizing..."
       },
       "view": {
         "title": "Generated Content",
@@ -890,6 +955,103 @@
         "createNewAudit": "Create New Content"
       }
     }
+  },
+  "login": {
+    "greeting": "Nice to see you again",
+    "title": "WELCOME BACK",
+    "description": "All the tools you need to perfect your SEO and AI visibility. Own traditional and AI search with a powerful platform, trusted data, and exceptional UX.",
+    "trustedBy": "Trusted by SEO professionals since 2013",
+    "formTitle": "Login Account",
+    "formSubtitle": "Enter your credentials to access your account and start optimizing your SEO strategy.",
+    "emailLabel": "Email ID",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "passwordRequired": "Password is required",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "rememberMe": "Keep me signed in",
+    "forgotPassword": "Forgot Password?",
+    "loginButton": "Login",
+    "loggingIn": "Logging in...",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up"
+  },
+  "signup": {
+    "greeting": "Start your journey today",
+    "title": "CREATE ACCOUNT",
+    "description": "Join thousands of SEO professionals who trust Serpixa for their SEO and AI content needs. Get started with a free trial and unlock powerful tools to perfect your SEO strategy.",
+    "noCreditCard": "No credit card required • 14-day free trial",
+    "formTitle": "Create Account",
+    "formSubtitle": "Sign up to get started with Serpixa and transform your SEO strategy today.",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "nameRequired": "Name is required",
+    "emailLabel": "Email ID",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Create a password",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 8 characters",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "confirmPasswordRequired": "Please confirm your password",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "signUpButton": "Sign Up",
+    "creatingAccount": "Creating account...",
+    "alreadyHaveAccount": "Already have an account?",
+    "logIn": "Log in"
+  },
+  "forgotPassword": {
+    "greeting": "Need to reset your password?",
+    "title": "FORGOT PASSWORD",
+    "description": "Don't worry! Enter your email address and we'll send you a link to reset your password. You'll be back to optimizing your SEO in no time.",
+    "secureProcess": "Secure password reset process",
+    "formTitle": "Reset Password",
+    "formSubtitle": "Enter the email address associated with your account, and we'll send you a link to reset your password.",
+    "emailLabel": "Email ID",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "sendResetLink": "Send Reset Link",
+    "sendingResetLink": "Sending reset link...",
+    "returnToSignIn": "← Return to sign in",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up"
+  },
+  "resetPassword": {
+    "title": "Set new password",
+    "subtitle": "Enter your new password below and confirm it to reset your account.",
+    "newPasswordLabel": "New Password",
+    "newPasswordPlaceholder": "Enter new password",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "At least 6 characters",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm password",
+    "confirmPasswordRequired": "Please confirm your password",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "resetButton": "Reset Password",
+    "resetting": "Resetting...",
+    "returnToSignIn": "Return to sign in",
+    "invalidToken": "Invalid or missing reset token",
+    "loading": "Loading..."
+  },
+  "navbar": {
+    "whySerpixa": "Why Serpixa",
+    "aboutUs": "About Us",
+    "features": "Features",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "signOut": "Sign out",
+    "signIn": "Sign in",
+    "signUp": "Sign Up",
+    "startFreeTrial": "Start free trial"
   }
 }
 

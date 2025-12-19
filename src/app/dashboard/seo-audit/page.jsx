@@ -81,7 +81,7 @@ export default function SEOAuditListPage() {
             ) : (
               <>
                 {/* Search Bar */}
-                <div className="mb-6">
+                {/* <div className="mb-6">
                   <div className="relative">
                     <input
                       type="text"
@@ -96,7 +96,7 @@ export default function SEOAuditListPage() {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <SEOAuditTable audits={filteredAudits} onDelete={handleDelete} />
               </>

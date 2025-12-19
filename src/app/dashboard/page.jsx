@@ -100,58 +100,58 @@ export default function Dashboard() {
   return (
     <DashboardLayout>
       <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-full">
-      {/* Header */}
+        {/* Header */}
         <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
-            <div>
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-                    {t("dashboard.page.welcomeBack")}{user?.name ? `, ${user.name.split(" ")[0]}` : ""}! 👋
-                  </h1>
-                  <div className="flex items-center space-x-3 mt-2">
-                    <span className="text-sm text-gray-600">{t("dashboard.page.subscription")}:</span>
-                    <span className="px-3 py-1 bg-gradient-to-r from-primary to-blue-600 text-white text-sm font-semibold rounded-full shadow-sm">
-                      {subscriptionPlan}
-                    </span>
-      </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                  {t("dashboard.page.welcomeBack")}{user?.name ? `, ${user.name.split(" ")[0]}` : ""}! 👋
+                </h1>
+                <div className="flex items-center space-x-3 mt-2">
+                  <span className="text-sm text-gray-600">{t("dashboard.page.subscription")}:</span>
+                  <span className="px-3 py-1 bg-gradient-to-r from-primary to-blue-600 text-white text-sm font-semibold rounded-full shadow-sm">
+                    {subscriptionPlan}
+                  </span>
                 </div>
               </div>
             </div>
+          </div>
         </div>
 
-          {/* Main Content */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            {/* Credits Section */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">
-                {t("dashboard.page.yourCredits")}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {credits.map((credit, index) => (
-                  <CreditCard key={index} {...credit} />
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Credits Section */}
+          <div className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-6">
+              {t("dashboard.page.yourCredits")}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {credits.map((credit, index) => (
+                <CreditCard key={index} {...credit} />
               ))}
             </div>
           </div>
 
-            {/* Quick Actions */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">
-                {t("dashboard.page.quickActions")}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {actions.map((action, index) => (
-                  <ActionButton key={index} {...action} />
-                ))}
-              </div>
-            </div>
-
-            {/* Recent Activity Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <RecentAudits audits={recentAudits} />
-            <OverviewStats stats={overviewStats} />
+          {/* Quick Actions */}
+          <div className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">
+              {t("dashboard.page.quickActions")}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {actions.map((action, index) => (
+                <ActionButton key={index} {...action} />
+              ))}
             </div>
           </div>
+
+          {/* Recent Activity Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <RecentAudits audits={recentAudits} />
+            <OverviewStats stats={overviewStats} />
+          </div>
         </div>
+      </div>
     </DashboardLayout>
   );
 }

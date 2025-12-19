@@ -7,12 +7,20 @@ import { useState, useEffect, useRef } from "react";
  * @param {number} options.estimatedDuration - Estimated generation time in ms (default: 5500)
  * @param {number} options.updateInterval - Progress update interval in ms (default: 100)
  * @param {number} options.maxProgress - Maximum progress before completion (default: 90)
+ * @param {Array<string>} options.statusMessages - Array of status messages to rotate through
  * @returns {Object} Progress state and control functions
  */
 export function useContentGenerationProgress({
   estimatedDuration = 9000,
   updateInterval = 150,
   maxProgress = 90,
+  statusMessages = [
+    "Analyzing keyword...",
+    "Generating SEO content...",
+    "Optimizing meta tags...",
+    "Structuring content...",
+    "Finalizing...",
+  ],
 } = {}) {
   const [progress, setProgress] = useState(0);
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
@@ -22,16 +30,7 @@ export function useContentGenerationProgress({
   const stepIntervalRef = useRef(null);
   const startTimeRef = useRef(null);
 
-  // Status messages that rotate during generation
-  const statusMessages = [
-    "Analyzing keyword...",
-    "Generating SEO content...",
-    "Optimizing meta tags...",
-    "Structuring content...",
-    "Finalizing...",
-  ];
-
-  const currentStep = statusMessages[currentStepIndex];
+  const currentStep = statusMessages[currentStepIndex] || statusMessages[0];
 
   /**
    * Start progress simulation

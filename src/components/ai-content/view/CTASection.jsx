@@ -9,12 +9,12 @@ export default function CTASection({ cta }) {
   }
 
   return (
-    <div className="bg-gradient-to-r from-primary to-primary/80 rounded-xl shadow-sm border border-primary/20 p-6 text-white">
-      <h2 className="text-lg font-semibold mb-2">
+    <div className="bg-gradient-to-r from-primary to-primary/80 rounded-lg sm:rounded-xl shadow-sm border border-primary/20 p-4 sm:p-6 text-white">
+      <h2 className="text-base sm:text-lg font-semibold mb-2">
         {t("dashboard.aiContent.view.cta")}
       </h2>
       <div 
-        className="text-white/90"
+        className="text-xs sm:text-sm text-white/90 break-words"
         dangerouslySetInnerHTML={{ __html: cta }}
       />
     </div>

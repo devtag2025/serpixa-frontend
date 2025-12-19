@@ -1,17 +1,21 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth, useLogout } from "@/hooks/useAuth";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "@/i18n/context";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { t } = useTranslation();
   
   // Hide navbar on dashboard pages
   if (pathname?.startsWith("/dashboard")) {
     return null;
   }
+
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const { data: user, isLoading } = useAuth();
@@ -19,17 +23,17 @@ export default function Navbar() {
 
   const navLinks = [
     {
-      label: "Why Serpixa",
+      label: t("navbar.whySerpixa"),
       href: "/why-serpixa",
       hasDropdown: false,
     },
     {
-      label: "About Us",
+      label: t("navbar.aboutUs"),
       href: "/about-us",
       hasDropdown: false,
     },
     {
-      label: "Features",
+      label: t("navbar.features"),
       href: "/features",
       hasDropdown: false,
     },
@@ -46,8 +50,26 @@ export default function Navbar() {
     setDropdownOpen(dropdownOpen === label ? null : label);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <nav 
+    className={`
+      sticky top-0 z-50 transition-all duration-300
+      ${
+        isScrolled
+          ? "backdrop-blur-xl bg-white/60 border-b border-white/20 shadow-sm backdrop-saturate-150"
+          : "bg-white border-b border-gray-200"
+      }
+    `}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -81,7 +103,7 @@ export default function Navbar() {
                 {link.hasDropdown ? (
                   <button
                     onClick={() => toggleDropdown(link.label)}
-                    className="flex items-center text-gray-700 hover:text-gray-900 font-medium text-sm transition-colors"
+                    className="flex items-center text-gray-700 hover:text-primary font-medium text-sm transition-colors"
                   >
                     {link.label}
                     <svg
@@ -136,7 +158,7 @@ export default function Navbar() {
                   href="/dashboard"
                   className="text-gray-700 hover:text-gray-900 font-medium text-sm"
                 >
-                  Dashboard
+                  {t("navbar.dashboard")}
                 </Link>
                 <div className="relative group">
                   <button className="flex items-center space-x-2 text-gray-700 hover:text-gray-900">
@@ -164,13 +186,13 @@ export default function Navbar() {
                       href="/dashboard"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                     >
-                      Profile
+                      {t("navbar.profile")}
                     </Link>
                     <button
                       onClick={() => logout()}
                       className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                     >
-                      Sign out
+                      {t("navbar.signOut")}
                     </button>
                   </div>
                 </div>
@@ -181,13 +203,13 @@ export default function Navbar() {
                   href="/login"
                   className="px-4 py-2 text-sm font-medium text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
                 >
-                  Sign in
+                  {t("navbar.signIn")}
                 </Link>
                 <Link
                   href="/signup"
                   className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary/90 transition-colors"
                 >
-                  Start free trial
+                 {t("navbar.signUp")}
                 </Link>
               </>
             )}
@@ -265,7 +287,7 @@ export default function Navbar() {
                       className="block px-4 py-2 text-sm font-medium text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 text-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Dashboard
+                      {t("navbar.dashboard")}
                     </Link>
                     <button
                       onClick={() => {
@@ -274,7 +296,7 @@ export default function Navbar() {
                       }}
                       className="w-full px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-md"
                     >
-                      Sign out
+                      {t("navbar.signOut")}
                     </button>
                   </>
                 ) : (
@@ -284,14 +306,14 @@ export default function Navbar() {
                       className="block px-4 py-2 text-sm font-medium text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 text-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Sign in
+                      {t("navbar.signIn")}
                     </Link>
                     <Link
                       href="/signup"
                       className="block px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary/90 text-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Start free trial
+                      {t("navbar.startFreeTrial")}
                     </Link>
                   </>
                 )}

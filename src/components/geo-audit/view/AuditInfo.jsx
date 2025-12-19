@@ -6,11 +6,11 @@ export default function AuditInfo({ audit, onCopyToClipboard }) {
   const { t } = useTranslation();
   
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
-      <div className="px-6 py-4 border-b border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-900">{t("dashboard.geoAudit.view.auditInfo")}</h2>
+    <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm">
+      <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-gray-200">
+        <h2 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900">{t("dashboard.geoAudit.view.auditInfo")}</h2>
       </div>
-      <div className="px-6 py-4 space-y-4">
+      <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 space-y-2 sm:space-y-3 lg:space-y-4">
         <div>
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{t("dashboard.geoAudit.view.keyword")}</p>
           <div className="flex items-center gap-2">
