@@ -6,6 +6,7 @@ import { handleError } from "@/utils/handleError";
 import { HiPlus, HiOfficeBuilding } from "react-icons/hi";
 import GBPAuditListHeader from "@/components/gbp-audit/list/GBPAuditListHeader";
 import GBPAuditTable from "@/components/gbp-audit/list/GBPAuditTable";
+import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
 import { useTranslation } from "@/i18n/context";
 import { useGBPAudits, useDeleteGBPAudit } from "@/hooks/gbpAuditHooks";
 
@@ -13,14 +14,33 @@ export default function GBPAuditListPage() {
   const router = useRouter();
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [auditToDelete, setAuditToDelete] = useState(null);
 
   const { data, isLoading, isError, error } = useGBPAudits({ page: 1, limit: 50 });
-  const { mutate: deleteAudit } = useDeleteGBPAudit();
+  const { mutate: deleteAudit, isPending: isDeleting } = useDeleteGBPAudit();
 
   const handleDelete = (auditId, e) => {
     e.stopPropagation();
-    if (confirm("Are you sure you want to delete this audit?")) {
-      deleteAudit(auditId);
+    setAuditToDelete(auditId);
+    setDeleteModalOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
+    if (auditToDelete) {
+      deleteAudit(auditToDelete, {
+        onSuccess: () => {
+          setDeleteModalOpen(false);
+          setAuditToDelete(null);
+        },
+      });
+    }
+  };
+
+  const handleCloseModal = () => {
+    if (!isDeleting) {
+      setDeleteModalOpen(false);
+      setAuditToDelete(null);
     }
   };
 
@@ -56,6 +76,8 @@ export default function GBPAuditListPage() {
     return audit.businessName?.toLowerCase().includes(query);
   });
 
+  const auditToDeleteData = audits.find((a) => a._id === auditToDelete);
+
   return (
     <DashboardLayout>
       <GBPAuditListHeader audits={audits} />
@@ -78,7 +100,7 @@ export default function GBPAuditListPage() {
         ) : (
           <>
             {/* Search Bar */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <div className="relative">
                 <input
                   type="text"
@@ -93,12 +115,22 @@ export default function GBPAuditListPage() {
                   </svg>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <GBPAuditTable audits={filteredAudits} onDelete={handleDelete} />
           </>
         )}
       </div>
+
+      {/* Delete Confirmation Modal */}
+      <DeleteConfirmationModal
+        isOpen={deleteModalOpen}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmDelete}
+        itemName={auditToDeleteData ? `${auditToDeleteData.businessName || "Audit"}` : null}
+        isDeleting={isDeleting}
+        type="audit"
+      />
     </DashboardLayout>
   );
 }

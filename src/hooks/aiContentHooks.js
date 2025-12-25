@@ -4,6 +4,7 @@ import { ContentService } from "@/services/contentService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
 import { toast } from "react-hot-toast";
+import { useTranslation } from "@/i18n/context";
 
 // Query keys for AI Content
 export const aiContentKeys = {
@@ -21,12 +22,13 @@ export const aiContentKeys = {
 export function useGenerateAIContent() {
   const queryClient = useQueryClient();
   const router = useRouter();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: ContentService.generateContent,
     onSuccess: (response) => {
       const { data } = handleResponse(response);
-      toast.success("Content generated successfully!");
+      toast.success(t("dashboard.common.toast.contentGeneratedSuccess"));
       // Invalidate the list query to refetch content
       queryClient.invalidateQueries({ queryKey: aiContentKeys.lists() });
       // Navigate to the content detail page
@@ -34,7 +36,7 @@ export function useGenerateAIContent() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to generate content");
+      toast.error(message || t("dashboard.common.toast.contentGenerateError"));
     },
   });
 }
@@ -84,12 +86,12 @@ export function useAIContents(params = {}, options = {}) {
  */
 export function useDeleteAIContent() {
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: ContentService.deleteContent,
     onSuccess: (response, contentId) => {
-      const { message } = handleResponse(response);
-      toast.success(message || "Content deleted successfully");
+      toast.success(t("dashboard.common.toast.contentDeletedSuccess"));
       // Remove the specific content from cache
       queryClient.removeQueries({ queryKey: aiContentKeys.detail(contentId) });
       // Invalidate the list to refetch
@@ -97,7 +99,7 @@ export function useDeleteAIContent() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to delete content");
+      toast.error(message || t("dashboard.common.toast.contentDeleteError"));
     },
   });
 }

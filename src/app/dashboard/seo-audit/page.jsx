@@ -5,6 +5,7 @@ import DashboardLayout from "@/components/layout/DashboardLayout";
 import { HiPlus, HiDocumentReport } from "react-icons/hi";
 import SEOAuditListHeader from "@/components/seo-audit/list/SEOAuditListHeader";
 import SEOAuditTable from "@/components/seo-audit/list/SEOAuditTable";
+import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
 import { useTranslation } from "@/i18n/context";
 import { useSEOAudits, useDeleteSEOAudit } from "@/hooks/seoAuditHooks";
 import { handleError } from "@/utils/handleError";
@@ -13,14 +14,33 @@ export default function SEOAuditListPage() {
   const router = useRouter();
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [auditToDelete, setAuditToDelete] = useState(null);
 
   const { data, isLoading, isError, error } = useSEOAudits({ page: 1, limit: 50 });
-  const { mutate: deleteAudit } = useDeleteSEOAudit();
+  const { mutate: deleteAudit, isPending: isDeleting } = useDeleteSEOAudit();
 
   const handleDelete = (auditId, e) => {
     e.stopPropagation();
-    if (confirm("Are you sure you want to delete this audit?")) {
-      deleteAudit(auditId);
+    setAuditToDelete(auditId);
+    setDeleteModalOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
+    if (auditToDelete) {
+      deleteAudit(auditToDelete, {
+        onSuccess: () => {
+          setDeleteModalOpen(false);
+          setAuditToDelete(null);
+        },
+      });
+    }
+  };
+
+  const handleCloseModal = () => {
+    if (!isDeleting) {
+      setDeleteModalOpen(false);
+      setAuditToDelete(null);
     }
   };
 
@@ -58,6 +78,8 @@ export default function SEOAuditListPage() {
       audit.keyword?.toLowerCase().includes(query)
     );
   });
+
+  const auditToDeleteData = audits.find((a) => a._id === auditToDelete);
 
   return (
     <DashboardLayout>
@@ -102,6 +124,16 @@ export default function SEOAuditListPage() {
               </>
             )}
           </div>
+
+      {/* Delete Confirmation Modal */}
+      <DeleteConfirmationModal
+        isOpen={deleteModalOpen}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmDelete}
+        itemName={auditToDeleteData ? `${auditToDeleteData.url || auditToDeleteData.keyword || "Audit"}` : null}
+        isDeleting={isDeleting}
+        type="audit"
+      />
     </DashboardLayout>
   );
 }

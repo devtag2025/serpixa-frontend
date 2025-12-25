@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import ContentHeader from "@/components/ai-content/view/ContentHeader";
@@ -10,6 +11,7 @@ import ParagraphsSection from "@/components/ai-content/view/ParagraphsSection";
 import ContentPreview from "@/components/ai-content/view/ContentPreview";
 import FAQSection from "@/components/ai-content/view/FAQSection";
 import CTASection from "@/components/ai-content/view/CTASection";
+import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
 import { handleError } from "@/utils/handleError";
 import { useTranslation } from "@/i18n/context";
 import { toast } from "react-hot-toast";
@@ -19,6 +21,7 @@ export default function AIContentViewPage() {
   const { id } = useParams();
   const router = useRouter();
   const { t } = useTranslation();
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
   // Fetch content by ID
   const { data: content, isLoading, error } = useAIContent(id);
@@ -60,13 +63,34 @@ export default function AIContentViewPage() {
     router.push("/dashboard/ai-content/new");
   };
 
+  const handleCopyAllHTML = async () => {
+    if (!content || !content.htmlContent) return;
+
+    try {
+      await navigator.clipboard.writeText(content.htmlContent);
+      toast.success(t("dashboard.aiContent.view.copied"));
+    } catch (err) {
+      console.error("Failed to copy HTML:", err);
+      toast.error("Failed to copy HTML");
+    }
+  };
+
   const handleDelete = () => {
-    if (window.confirm("Are you sure you want to delete this content?")) {
-      deleteContent(id, {
-        onSuccess: () => {
-          router.push("/dashboard/ai-content");
-        },
-      });
+    setDeleteModalOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
+    deleteContent(id, {
+      onSuccess: () => {
+        setDeleteModalOpen(false);
+        router.push("/dashboard/ai-content");
+      },
+    });
+  };
+
+  const handleCloseModal = () => {
+    if (!isDeleting) {
+      setDeleteModalOpen(false);
     }
   };
 
@@ -123,6 +147,7 @@ export default function AIContentViewPage() {
           onRegenerate={handleRegenerate}
           onExportHTML={handleExportHTML}
           onExportPDF={() => toast.info("PDF export coming soon!")}
+          onCopyAllHTML={handleCopyAllHTML}
           onDelete={handleDelete}
           isExporting={false}
           isDeleting={isDeleting}
@@ -177,6 +202,16 @@ export default function AIContentViewPage() {
             </div>
           </div>
         </div>
+
+      {/* Delete Confirmation Modal */}
+      <DeleteConfirmationModal
+        isOpen={deleteModalOpen}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmDelete}
+        itemName={content ? `${content.keyword || "Content"}` : null}
+        isDeleting={isDeleting}
+        type="content"
+      />
     </DashboardLayout>
   );
 }

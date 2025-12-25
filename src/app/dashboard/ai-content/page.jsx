@@ -5,6 +5,7 @@ import DashboardLayout from "@/components/layout/DashboardLayout";
 import { handleError } from "@/utils/handleError";
 import ContentListHeader from "@/components/ai-content/list/ContentListHeader";
 import ContentTable from "@/components/ai-content/list/ContentTable";
+import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
 import { useTranslation } from "@/i18n/context";
 import { useAIContents, useDeleteAIContent } from "@/hooks/aiContentHooks";
 
@@ -12,6 +13,8 @@ export default function AIContentListPage() {
   const router = useRouter();
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [contentToDelete, setContentToDelete] = useState(null);
 
   const params = { page: 1, limit: 50 };
   if (searchQuery.trim()) {
@@ -19,12 +22,29 @@ export default function AIContentListPage() {
   }
 
   const { data, isLoading, isError, error } = useAIContents(params);
-  const { mutate: deleteContent } = useDeleteAIContent();
+  const { mutate: deleteContent, isPending: isDeleting } = useDeleteAIContent();
 
   const handleDelete = (contentId, e) => {
     e.stopPropagation();
-    if (window.confirm("Are you sure you want to delete this content?")) {
-      deleteContent(contentId);
+    setContentToDelete(contentId);
+    setDeleteModalOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
+    if (contentToDelete) {
+      deleteContent(contentToDelete, {
+        onSuccess: () => {
+          setDeleteModalOpen(false);
+          setContentToDelete(null);
+        },
+      });
+    }
+  };
+
+  const handleCloseModal = () => {
+    if (!isDeleting) {
+      setDeleteModalOpen(false);
+      setContentToDelete(null);
     }
   };
 
@@ -55,6 +75,7 @@ export default function AIContentListPage() {
 
   const contents = data?.contents || [];
   const isEmpty = contents.length === 0 && !searchQuery;
+  const contentToDeleteData = contents.find((c) => c._id === contentToDelete);
 
   return (
     <DashboardLayout>
@@ -62,7 +83,7 @@ export default function AIContentListPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Search Bar */}
-            {!isEmpty && (
+            {/* {!isEmpty && (
               <div className="mb-6">
                 <div className="relative">
                   <input
@@ -89,7 +110,7 @@ export default function AIContentListPage() {
                   </div>
                 </div>
               </div>
-            )}
+            )} */}
 
             {/* Empty State */}
             {isEmpty ? (
@@ -111,6 +132,16 @@ export default function AIContentListPage() {
               <ContentTable contents={contents} onDelete={handleDelete} />
             )}
           </div>
+
+      {/* Delete Confirmation Modal */}
+      <DeleteConfirmationModal
+        isOpen={deleteModalOpen}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmDelete}
+        itemName={contentToDeleteData ? `${contentToDeleteData.keyword || "Content"}` : null}
+        isDeleting={isDeleting}
+        type="content"
+      />
     </DashboardLayout>
   );
 }

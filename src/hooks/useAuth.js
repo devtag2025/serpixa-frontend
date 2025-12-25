@@ -4,7 +4,7 @@ import { AuthService } from "@/services/authService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
 import { toast } from "react-hot-toast";
-import { useI18n } from "@/i18n/context";
+import { useI18n, useTranslation } from "@/i18n/context";
 
 // Query keys
 export const authKeys = {
@@ -44,19 +44,19 @@ export function useRegister() {
   const queryClient = useQueryClient();
   const router = useRouter();
   const { locale } = useI18n();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: (data) => AuthService.register({ ...data, locale }),
     onSuccess: (response) => {
-      const { message } = handleResponse(response);
-      toast.success(message || "Account created successfully!");
+      toast.success(t("dashboard.common.toast.accountCreatedSuccess"));
       // Invalidate auth query to refetch after registration
       queryClient.invalidateQueries({ queryKey: authKeys.all });
       router.push("/login");
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Signup failed.");
+      toast.error(message || t("dashboard.common.toast.signupError"));
       console.error("Signup failed:", message);
     },
   });
@@ -65,18 +65,19 @@ export function useRegister() {
 export function useLogin() {
   const queryClient = useQueryClient();
   const router = useRouter();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: AuthService.login,
     onSuccess: (response) => {
-      const { message, data } = handleResponse(response);
+      const { data } = handleResponse(response);
       
       // Store accessToken in localStorage if provided (for API interceptor)
       if (data?.accessToken && typeof window !== "undefined") {
         localStorage.setItem("token", data.accessToken);
       }
       
-      toast.success(message || "Login successful!");
+      toast.success(t("dashboard.common.toast.loginSuccess"));
       // Invalidate and refetch auth query to get user profile
       queryClient.invalidateQueries({ queryKey: authKeys.all });
       // Redirect to dashboard
@@ -84,7 +85,7 @@ export function useLogin() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Login failed.");
+      toast.error(message || t("dashboard.common.toast.loginError"));
       console.error("Login failed:", message);
     },
   });
@@ -93,6 +94,7 @@ export function useLogin() {
 export function useLogout() {
   const queryClient = useQueryClient();
   const router = useRouter();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: AuthService.logout,
@@ -103,12 +105,12 @@ export function useLogout() {
       }
       // Clear all auth-related queries
       queryClient.removeQueries({ queryKey: authKeys.all });
-      toast.success("Logged out successfully");
+      toast.success(t("dashboard.common.toast.logoutSuccess"));
       router.push("/login");
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Logout failed.");
+      toast.error(message || t("dashboard.common.toast.logoutError"));
       // Even if logout fails on server, clear local state
       if (typeof window !== "undefined") {
         localStorage.removeItem("token");
@@ -121,16 +123,16 @@ export function useLogout() {
 
 export function useForgotPassword() {
   const { locale } = useI18n();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: (data) => AuthService.forgotPassword({ ...data, locale }),
     onSuccess: (response) => {
-      const { message } = handleResponse(response);
-      toast.success(message || "Password reset email sent!");
+      toast.success(t("dashboard.common.toast.passwordResetEmailSent"));
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to send reset email.");
+      toast.error(message || t("dashboard.common.toast.passwordResetEmailError"));
       console.error("Forgot password failed:", message);
     },
   });
@@ -139,17 +141,17 @@ export function useForgotPassword() {
 export function useResetPassword() {
   const router = useRouter();
   const { locale } = useI18n();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: (data) => AuthService.resetPassword({ ...data, locale }),
     onSuccess: (response) => {
-      const { message } = handleResponse(response);
-      toast.success(message || "Password reset successful!");
+      toast.success(t("dashboard.common.toast.passwordResetSuccess"));
       router.push("/login");
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Password reset failed.");
+      toast.error(message || t("dashboard.common.toast.passwordResetError"));
       console.error("Reset password failed:", message);
     },
   });
@@ -158,12 +160,12 @@ export function useResetPassword() {
 export function useVerifyEmail() {
   const router = useRouter();
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: AuthService.verifyEmail,
     onSuccess: (response) => {
-      const { message } = handleResponse(response);
-      toast.success(message || "Email verified successfully!");
+      toast.success(t("dashboard.common.toast.emailVerifiedSuccess"));
       // Invalidate auth query to refetch user profile
       queryClient.invalidateQueries({ queryKey: authKeys.all });
       // Redirect to login after a short delay
@@ -173,7 +175,7 @@ export function useVerifyEmail() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Email verification failed.");
+      toast.error(message || t("dashboard.common.toast.emailVerificationError"));
       console.error("Verify email failed:", message);
     },
   });
@@ -181,16 +183,16 @@ export function useVerifyEmail() {
 
 export function useResendVerification() {
   const { locale } = useI18n();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: (data) => AuthService.resendVerification({ ...data, locale }),
     onSuccess: (response) => {
-      const { message } = handleResponse(response);
-      toast.success(message || "Verification email sent!");
+      toast.success(t("dashboard.common.toast.verificationEmailSent"));
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to send verification email.");
+      toast.error(message || t("dashboard.common.toast.verificationEmailError"));
       console.error("Resend verification failed:", message);
     },
   });

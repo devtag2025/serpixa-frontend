@@ -6,7 +6,7 @@ export default function GeoAuditHeader({ audit, onDownloadPDF, isDownloadingPDF 
   const { t } = useTranslation();
   
   return (
-    <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
+    <div className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
           <div className="flex-1 min-w-0">

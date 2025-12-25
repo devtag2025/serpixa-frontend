@@ -32,44 +32,12 @@ export default function RecommendationsTable({ recommendations }) {
       return true;
     });
 
-    // Sort
+    // Sort by priority only
     const priorityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
-    const impactOrder = { high: 0, medium: 1, low: 2 };
-    const effortOrder = { easy: 0, moderate: 1, difficult: 2 };
 
     filtered.sort((a, b) => {
-      let aVal, bVal;
-      
-      switch (sortBy) {
-        case "priority":
-          aVal = priorityOrder[a.priority] ?? 4;
-          bVal = priorityOrder[b.priority] ?? 4;
-          break;
-        case "category":
-          aVal = (a.category || "").toLowerCase();
-          bVal = (b.category || "").toLowerCase();
-          break;
-        case "impact":
-          aVal = impactOrder[a.impact] ?? 3;
-          bVal = impactOrder[b.impact] ?? 3;
-          break;
-        case "effort":
-          aVal = effortOrder[a.effort] ?? 3;
-          bVal = effortOrder[b.effort] ?? 3;
-          break;
-        case "issue":
-          aVal = (a.issue || "").toLowerCase();
-          bVal = (b.issue || "").toLowerCase();
-          break;
-        default:
-          return 0;
-      }
-
-      if (typeof aVal === "string") {
-        return sortOrder === "asc" 
-          ? aVal.localeCompare(bVal)
-          : bVal.localeCompare(aVal);
-      }
+      const aVal = priorityOrder[a.priority] ?? 4;
+      const bVal = priorityOrder[b.priority] ?? 4;
       return sortOrder === "asc" ? aVal - bVal : bVal - aVal;
     });
 
@@ -83,11 +51,12 @@ export default function RecommendationsTable({ recommendations }) {
     effortFilter !== "all",
   ].filter(Boolean).length;
 
-  const handleSort = (field) => {
-    if (sortBy === field) {
+  const handleSort = () => {
+    // Only allow sorting by priority
+    if (sortBy === "priority") {
       setSortOrder(sortOrder === "asc" ? "desc" : "asc");
     } else {
-      setSortBy(field);
+      setSortBy("priority");
       setSortOrder("asc");
     }
   };
@@ -109,19 +78,19 @@ export default function RecommendationsTable({ recommendations }) {
     return labels[category] || category;
   };
 
-  const SortableHeader = ({ field, label }) => (
+  const SortableHeader = ({ label }) => (
     <th
       className="px-6 py-3 text-left cursor-pointer hover:bg-gray-100 transition-colors group"
-      onClick={() => handleSort(field)}
+      onClick={handleSort}
     >
       <div className="flex items-center gap-2">
         <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{label}</span>
-        {sortBy === field && (
+        {sortBy === "priority" && (
           <span className="text-gray-400 text-xs">
             {sortOrder === "asc" ? "↑" : "↓"}
           </span>
         )}
-        {sortBy !== field && (
+        {sortBy !== "priority" && (
           <span className="text-gray-300 text-xs opacity-0 group-hover:opacity-100">↕</span>
         )}
       </div>
@@ -140,7 +109,7 @@ export default function RecommendationsTable({ recommendations }) {
                 {filteredAndSorted.length} {t("dashboard.seoAudit.view.of")} {recommendations.length} {t("dashboard.gbpAudit.view.recommendationsFound")}
               </p>
             </div>
-            <button
+            {/* <button
               onClick={() => setShowFilters(!showFilters)}
               className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
             >
@@ -151,7 +120,7 @@ export default function RecommendationsTable({ recommendations }) {
                   {activeFiltersCount}
                 </span>
               )}
-            </button>
+            </button> */}
           </div>
         </div>
 
@@ -251,16 +220,32 @@ export default function RecommendationsTable({ recommendations }) {
           <table className="w-full">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
-                <SortableHeader field="priority" label={t("dashboard.gbpAudit.view.priority")} />
-                <SortableHeader field="category" label={t("dashboard.seoAudit.view.category")} />
-                <SortableHeader field="issue" label={t("dashboard.seoAudit.view.issue")} />
+                <SortableHeader label={t("dashboard.gbpAudit.view.priority")} />
+                <th className="px-6 py-3 text-left">
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                    {t("dashboard.seoAudit.view.category")}
+                  </span>
+                </th>
+                <th className="px-6 py-3 text-left">
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                    {t("dashboard.seoAudit.view.issue")}
+                  </span>
+                </th>
                 <th className="px-6 py-3 text-left">
                   <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
                     {t("dashboard.gbpAudit.view.action")}
                   </span>
                 </th>
-                <SortableHeader field="impact" label={t("dashboard.seoAudit.view.impact")} />
-                <SortableHeader field="effort" label={t("dashboard.seoAudit.view.effort")} />
+                <th className="px-6 py-3 text-left">
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                    {t("dashboard.seoAudit.view.impact")}
+                  </span>
+                </th>
+                <th className="px-6 py-3 text-left">
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                    {t("dashboard.seoAudit.view.effort")}
+                  </span>
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">

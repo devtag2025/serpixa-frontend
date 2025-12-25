@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useTranslation } from "@/i18n/context";
-import { HiChevronDown, HiChevronUp } from "react-icons/hi";
+import { HiChevronDown } from "react-icons/hi";
 
 export default function FAQ() {
   const { t } = useTranslation();
@@ -69,24 +69,26 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 rounded-xl transition-colors"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 rounded-xl transition-colors duration-200"
                 >
                   <span className="text-lg font-semibold text-gray-900 pr-8">
                     {t(faq.question)}
                   </span>
-                  {isOpen ? (
-                    <HiChevronUp className="w-6 h-6 text-gray-500 flex-shrink-0" />
-                  ) : (
-                    <HiChevronDown className="w-6 h-6 text-gray-500 flex-shrink-0" />
-                  )}
+                  <div className={`flex-shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
+                    <HiChevronDown className="w-6 h-6 text-gray-500" />
+                  </div>
                 </button>
-                {isOpen && (
-                  <div className="px-6 pb-5">
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="px-6 pb-5 pt-0">
                     <p className="text-gray-600 leading-relaxed">
                       {t(faq.answer)}
                     </p>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

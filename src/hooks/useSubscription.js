@@ -4,6 +4,7 @@ import { SubscriptionService } from "@/services/subscriptionService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
 import { toast } from "react-hot-toast";
+import { useTranslation } from "@/i18n/context";
 
 // Query keys
 export const subscriptionKeys = {
@@ -78,6 +79,7 @@ export function useCredits() {
  */
 export function useCreateCheckout() {
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: SubscriptionService.createCheckout,
@@ -87,12 +89,12 @@ export function useCreateCheckout() {
       if (data.checkout_url) {
         window.location.href = data.checkout_url;
       } else {
-        toast.error("Failed to get checkout URL");
+        toast.error(t("dashboard.common.toast.checkoutUrlError"));
       }
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to create checkout session");
+      toast.error(message || t("dashboard.common.toast.checkoutSessionError"));
       console.error("Checkout failed:", message);
     },
   });
@@ -102,6 +104,8 @@ export function useCreateCheckout() {
  * Create billing portal session mutation
  */
 export function useCreatePortalSession() {
+  const { t } = useTranslation();
+
   return useMutation({
     mutationFn: SubscriptionService.createPortalSession,
     onSuccess: (response) => {
@@ -110,12 +114,12 @@ export function useCreatePortalSession() {
       if (data.portal_url) {
         window.location.href = data.portal_url;
       } else {
-        toast.error("Failed to get portal URL");
+        toast.error(t("dashboard.common.toast.portalUrlError"));
       }
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to create portal session");
+      toast.error(message || t("dashboard.common.toast.portalSessionError"));
       console.error("Portal session failed:", message);
     },
   });

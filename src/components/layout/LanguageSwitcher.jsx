@@ -1,6 +1,6 @@
 "use client";
 import { useI18n } from "@/i18n/context";
-import { localeNames } from "@/i18n/config";
+import { headerLocaleNames, localeNames } from "@/i18n/config";
 import { useState, useRef, useEffect } from "react";
 
 export default function LanguageSwitcher() {
@@ -46,7 +46,7 @@ export default function LanguageSwitcher() {
             d="M3 5h12M9 3v2m1.196 2.196a3 3 0 001.5 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span className="hidden sm:inline">{localeNames[locale] || locale.toUpperCase()}</span>
+        <span className="hidden sm:inline">{headerLocaleNames[locale] || localeNames[locale] || locale.toUpperCase()}</span>
         <svg
           className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
           fill="none"
@@ -65,7 +65,7 @@ export default function LanguageSwitcher() {
       {isOpen && (
         <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg border border-gray-200 z-50">
           <div className="py-1">
-            {Object.entries(localeNames).map(([code, name]) => (
+            {Object.entries(headerLocaleNames).map(([code, name]) => (
               <button
                 key={code}
                 onClick={() => handleLocaleChange(code)}

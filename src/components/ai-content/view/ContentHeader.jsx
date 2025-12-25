@@ -1,13 +1,13 @@
 "use client";
-import { HiRefresh, HiDownload } from "react-icons/hi";
+import { HiRefresh, HiDownload, HiClipboard } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
 import { useRouter } from "next/navigation";
 
-export default function ContentHeader({ content, onRegenerate, onExportHTML, onExportPDF, onDelete, isExporting, isDeleting }) {
+export default function ContentHeader({ content, onRegenerate, onExportHTML, onExportPDF, onCopyAllHTML, onDelete, isExporting, isDeleting }) {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
+    <div className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-4">
           <div className="flex-1 min-w-0">
@@ -24,6 +24,15 @@ export default function ContentHeader({ content, onRegenerate, onExportHTML, onE
             </div>
           </div>
           <div className="flex h-full items-center gap-2 sm:gap-3 flex-shrink-0">
+            {onCopyAllHTML && (
+              <button
+                onClick={onCopyAllHTML}
+                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 text-primary bg-white border border-primary rounded-lg hover:bg-primary/5 transition-colors font-medium text-xs sm:text-sm whitespace-nowrap"
+              >
+                <HiClipboard className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>{t("dashboard.aiContent.view.copyAllHtml")}</span>
+              </button>
+            )}
             {onDelete && (
               <button
                 onClick={onDelete}

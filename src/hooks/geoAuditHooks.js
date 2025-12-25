@@ -4,6 +4,7 @@ import { GeoAuditService } from "@/services/geoAuditService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
 import { toast } from "react-hot-toast";
+import { useTranslation } from "@/i18n/context";
 
 // Query keys for Geo audits
 export const geoAuditKeys = {
@@ -22,12 +23,13 @@ export const geoAuditKeys = {
 export function useRunGeoAudit() {
   const queryClient = useQueryClient();
   const router = useRouter();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: GeoAuditService.runAudit,
     onSuccess: (response) => {
       const { data } = handleResponse(response);
-      toast.success("Geo audit completed successfully!");
+      toast.success(t("dashboard.common.toast.geoAuditCompletedSuccess"));
       // Invalidate the list query to refetch audits
       queryClient.invalidateQueries({ queryKey: geoAuditKeys.lists() });
       // Navigate to the audit detail page
@@ -35,7 +37,7 @@ export function useRunGeoAudit() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to run Geo audit");
+      toast.error(message || t("dashboard.common.toast.geoAuditRunError"));
     },
   });
 }
@@ -105,12 +107,12 @@ export function useGeoAudits(params = {}, options = {}) {
  */
 export function useDeleteGeoAudit() {
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: GeoAuditService.deleteAudit,
     onSuccess: (response, auditId) => {
-      const { message } = handleResponse(response);
-      toast.success(message || "Audit deleted successfully");
+      toast.success(t("dashboard.common.toast.geoAuditDeleteSuccess"));
       // Remove the specific audit from cache
       queryClient.removeQueries({ queryKey: geoAuditKeys.detail(auditId) });
       // Invalidate the list to refetch
@@ -118,7 +120,7 @@ export function useDeleteGeoAudit() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to delete audit");
+      toast.error(message || t("dashboard.common.toast.geoAuditDeleteError"));
     },
   });
 }
@@ -128,6 +130,8 @@ export function useDeleteGeoAudit() {
  * @returns {Object} Mutation object with mutate, isPending, etc.
  */
 export function useDownloadGeoAuditPDF() {
+  const { t } = useTranslation();
+
   return useMutation({
     mutationFn: GeoAuditService.downloadPDF,
     onSuccess: (blob, auditId) => {
@@ -140,11 +144,11 @@ export function useDownloadGeoAuditPDF() {
       link.click();
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
-      toast.success("PDF downloaded successfully");
+      toast.success(t("dashboard.common.toast.pdfDownloadedSuccess"));
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to download PDF");
+      toast.error(message || t("dashboard.common.toast.pdfDownloadError"));
     },
   });
 }

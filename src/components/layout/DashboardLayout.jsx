@@ -43,7 +43,7 @@ export default function DashboardLayout({ children }) {
         <div className="flex-1 flex flex-col lg:ml-0">
           <DashboardTopBar onMenuClick={toggleMobileSidebar} />
           {/* Content area */}
-          <main className="flex-1 overflow-y-auto">
+          <main className="flex-1 overflow-y-auto bg-gray-50">
             {children}
           </main>
         </div>

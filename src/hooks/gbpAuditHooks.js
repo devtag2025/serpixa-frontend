@@ -4,6 +4,7 @@ import { GBPAuditService } from "@/services/gbpAuditService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
 import { toast } from "react-hot-toast";
+import { useTranslation } from "@/i18n/context";
 
 // Query keys for GBP audits
 export const gbpAuditKeys = {
@@ -22,12 +23,13 @@ export const gbpAuditKeys = {
 export function useRunGBPAudit() {
   const queryClient = useQueryClient();
   const router = useRouter();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: GBPAuditService.runAudit,
     onSuccess: (response) => {
       const { data } = handleResponse(response);
-      toast.success("GBP audit completed successfully!");
+      toast.success(t("dashboard.common.toast.gbpAuditCompletedSuccess"));
       // Invalidate the list query to refetch audits
       queryClient.invalidateQueries({ queryKey: gbpAuditKeys.lists() });
       // Navigate to the audit detail page
@@ -35,7 +37,7 @@ export function useRunGBPAudit() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to run GBP audit");
+      toast.error(message || t("dashboard.common.toast.gbpAuditRunError"));
     },
   });
 }
@@ -105,12 +107,12 @@ export function useGBPAudits(params = {}, options = {}) {
  */
 export function useDeleteGBPAudit() {
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: GBPAuditService.deleteAudit,
     onSuccess: (response, auditId) => {
-      const { message } = handleResponse(response);
-      toast.success(message || "Audit deleted successfully");
+      toast.success(t("dashboard.common.toast.gbpAuditDeleteSuccess"));
       // Remove the specific audit from cache
       queryClient.removeQueries({ queryKey: gbpAuditKeys.detail(auditId) });
       // Invalidate the list to refetch
@@ -118,7 +120,7 @@ export function useDeleteGBPAudit() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to delete audit");
+      toast.error(message || t("dashboard.common.toast.gbpAuditDeleteError"));
     },
   });
 }
@@ -128,6 +130,8 @@ export function useDeleteGBPAudit() {
  * @returns {Object} Mutation object with mutate, isPending, etc.
  */
 export function useDownloadGBPAuditPDF() {
+  const { t } = useTranslation();
+
   return useMutation({
     mutationFn: (auditId, view = false) => GBPAuditService.downloadPDF(auditId, view),
     onSuccess: (blob, auditId) => {
@@ -140,11 +144,11 @@ export function useDownloadGBPAuditPDF() {
       link.click();
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
-      toast.success("PDF downloaded successfully");
+      toast.success(t("dashboard.common.toast.pdfDownloadedSuccess"));
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to download PDF");
+      toast.error(message || t("dashboard.common.toast.pdfDownloadError"));
     },
   });
 }

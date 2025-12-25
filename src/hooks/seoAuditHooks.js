@@ -4,6 +4,7 @@ import { SEOAuditService } from "@/services/seoAuditService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
 import { toast } from "react-hot-toast";
+import { useTranslation } from "@/i18n/context";
 
 // Query keys for SEO audits
 export const seoAuditKeys = {
@@ -22,12 +23,13 @@ export const seoAuditKeys = {
 export function useRunSEOAudit() {
   const queryClient = useQueryClient();
   const router = useRouter();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: SEOAuditService.runAudit,
     onSuccess: (response) => {
       const { data } = handleResponse(response);
-      toast.success("SEO audit completed successfully!");
+      toast.success(t("dashboard.common.toast.seoAuditCompletedSuccess"));
       // Invalidate the list query to refetch audits
       queryClient.invalidateQueries({ queryKey: seoAuditKeys.lists() });
       // Navigate to the audit detail page
@@ -35,7 +37,7 @@ export function useRunSEOAudit() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to run SEO audit");
+      toast.error(message || t("dashboard.common.toast.seoAuditRunError"));
     },
   });
 }
@@ -105,12 +107,12 @@ export function useSEOAudits(params = {}, options = {}) {
  */
 export function useDeleteSEOAudit() {
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
 
   return useMutation({
     mutationFn: SEOAuditService.deleteAudit,
     onSuccess: (response, auditId) => {
-      const { message } = handleResponse(response);
-      toast.success(message || "Audit deleted successfully");
+      toast.success(t("dashboard.common.toast.seoAuditDeleteSuccess"));
       // Remove the specific audit from cache
       queryClient.removeQueries({ queryKey: seoAuditKeys.detail(auditId) });
       // Invalidate the list to refetch
@@ -118,7 +120,7 @@ export function useDeleteSEOAudit() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to delete audit");
+      toast.error(message || t("dashboard.common.toast.seoAuditDeleteError"));
     },
   });
 }
@@ -128,6 +130,8 @@ export function useDeleteSEOAudit() {
  * @returns {Object} Mutation object with mutate, isPending, etc.
  */
 export function useDownloadSEOAuditPDF() {
+  const { t } = useTranslation();
+
   return useMutation({
     mutationFn: SEOAuditService.downloadPDF,
     onSuccess: (blob, auditId) => {
@@ -140,11 +144,11 @@ export function useDownloadSEOAuditPDF() {
       link.click();
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
-      toast.success("PDF downloaded successfully");
+      toast.success(t("dashboard.common.toast.pdfDownloadedSuccess"));
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || "Failed to download PDF");
+      toast.error(message || t("dashboard.common.toast.pdfDownloadError"));
     },
   });
 }
