@@ -1,0 +1,1130 @@
+{
+  "landing": {
+    "hero": {
+      "title": "All the tools you need to perfect your SEO and AI visibility",
+      "subtitle": "Own traditional and AI search with a powerful platform, trusted data, and exceptional UX",
+      "startTrial": "Start free trial",
+      "seeTour": "See product tour",
+      "noCreditCard": "No credit card required",
+      "trustedBy": "Trusted by",
+      "professionals": "SEO professionals since 2013",
+      "aiPowered": "AI Powered",
+      "contentGeneration": "Content Generation",
+      "quickStart": "Quick Start",
+      "quickStartDescription": "Run your first audit in minutes"
+    },
+    "features": {
+      "badge": "Features",
+      "title": "Precise. Credible. AI-Ready.",
+      "subtitle": "It's all about our unique data.",
+      "countryDatabases": {
+        "value": "188",
+        "description": "COUNTRY DATABASES"
+      },
+      "keywordDatabase": {
+        "value": "5.4B",
+        "description": "KEYWORD DATABASE"
+      },
+      "domainProfiles": {
+        "value": "2.2B",
+        "description": "DOMAIN PROFILES"
+      },
+      "accurateRankings": {
+        "value": "100%",
+        "description": "ACCURATE KEYWORD RANKINGS"
+      },
+      "aiAlgorithms": {
+        "value": "AI",
+        "description": "POWERED ALGORITHMS"
+      },
+      "trustedBadge": "Trusted Platform",
+      "trustedTitle": "Trusted by large teams running SEO at scale",
+      "trustedSubtitle": "Join thousands of SEO professionals who rely on our powerful platform for accurate data and insights",
+      "startTrial": "Start free trial"
+    },
+    "pricing": {
+      "title": "Fair and flexible pricing that scales with you",
+      "subtitle": "Choose a plan that grows with your goals. Packed with more than you'd expect.",
+      "loadingPlans": "Loading plans...",
+      "from": "From",
+      "perMonth": "per month",
+      "perYear": "per year",
+      "oneTime": "one-time",
+      "startTrial": "Start free trial",
+      "processing": "Processing...",
+      "purchase": "Purchase",
+      "agenciesChoice": "Agencies' Choice",
+      "needMore": "Need more? Upgrade with add-ons!",
+      "enhancePlan": "Enhance your plan with powerful add-ons",
+      "seoAudits": "SEO Audits",
+      "geoAudits": "GEO Audits",
+      "gbpAudits": "GBP Audits",
+      "aiGenerations": "AI Generations",
+      "searchesPerMonth": "Searches per month",
+      "apiCallsPerMonth": "API Calls per month",
+      "signInRequired": "Please sign up or log in to continue",
+      "badge": "Pricing",
+      "exclVat": "HTVA"
+    },
+    "plans": {
+      "starterPlan": {
+        "name": "Starter Plan",
+        "description": "Perfect for getting started with SEO audits"
+      },
+      "premiumPlan": {
+        "name": "Premium Plan",
+        "description": "Advanced features with more audits and AI generations"
+      },
+      "extra10SeoAudits": {
+        "name": "Extra 10 SEO Audits",
+        "description": "One-time purchase of 10 additional SEO audits"
+      },
+      "extra10GeoAudits": {
+        "name": "Extra 10 GEO Audits",
+        "description": "One-time purchase of 10 additional GEO audits"
+      },
+      "extra5GbpAudits": {
+        "name": "Extra 5 GBP Audits",
+        "description": "One-time purchase of 5 additional GBP audits"
+      },
+      "extra50AiGenerations": {
+        "name": "Extra 50 AI Generations",
+        "description": "One-time purchase of 50 additional AI generations"
+      }
+    },
+    "testimonials": {
+      "badge": "Testimonials",
+      "title": "Trusted by thousands of SEO professionals",
+      "subtitle": "See what our customers have to say about their experience",
+      "testimonial1": "Serpixa has completely transformed our SEO workflow. The AI-powered content generation saves us hours every week, and the audit reports are incredibly detailed.",
+      "testimonial2": "The best SEO platform we've used. The combination of traditional SEO tools with AI capabilities gives us a competitive edge that's unmatched.",
+      "testimonial3": "As a content strategist, the AI content generation feature is a game-changer. It helps us create high-quality, SEO-optimized content at scale.",
+      "testimonial4": "The pricing is fair, the features are powerful, and the support is excellent. Highly recommend for any business serious about SEO.",
+      "trustText": "Join thousands of satisfied customers"
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about Serpixa",
+      "question1": "What is included in the free trial?",
+      "answer1": "Our free trial includes access to all core features with limited usage. You can run SEO audits, generate AI content, and explore all our tools without a credit card.",
+      "question2": "How accurate are the SEO audit results?",
+      "answer2": "Our SEO audits use industry-leading algorithms and real-time data to provide 100% accurate keyword rankings and comprehensive on-page analysis. We continuously update our database with the latest search engine data.",
+      "question3": "Can I cancel my subscription anytime?",
+      "answer3": "Yes, you can cancel your subscription at any time. There are no long-term contracts, and you'll continue to have access until the end of your billing period.",
+      "question4": "What makes your AI content generation different?",
+      "answer4": "Our AI content is specifically trained for SEO optimization. It generates content with proper keyword density, meta tags, FAQ sections, and CTAs - all optimized for search engines while maintaining high quality.",
+      "question5": "Do you offer support for enterprise customers?",
+      "answer5": "Yes, we offer dedicated support, custom integrations, and tailored solutions for enterprise customers. Contact our sales team to discuss your specific needs.",
+      "question6": "How do I get started?",
+      "answer6": "Simply sign up for a free trial, choose a plan that fits your needs, and start running your first audit or generating content. Our intuitive interface makes it easy to get started in minutes."
+    },
+    "cta": {
+      "title": "Ready to transform your SEO strategy?",
+      "subtitle": "Join thousands of professionals who trust Serpixa for their SEO and AI content needs",
+      "benefit1": "No credit card required",
+      "benefit2": "Cancel anytime",
+      "benefit3": "24/7 customer support",
+      "benefit4": "14-day money-back guarantee",
+      "startTrial": "Start free trial",
+      "viewPricing": "View pricing",
+      "trustText": "Trusted by 10,000+ businesses worldwide"
+    },
+    "footer": {
+      "description": "All the tools you need to perfect your SEO and AI visibility. Own traditional and AI search with a powerful platform.",
+      "quickLinks": "Quick Links",
+      "home": "Home",
+      "features": "Features",
+      "pricing": "Pricing",
+      "signUp": "Sign Up",
+      "products": "Products",
+      "seoAudit": "SEO Audit",
+      "gbpAudit": "GBP Audit",
+      "geoAudit": "GEO Audit",
+      "aiContent": "AI Content",
+      "copyright": "© 2024 Serpixa. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "whySerpixa": {
+      "hero": {
+        "title": "Why Serpixa?",
+        "subtitle": "Everything you need to master SEO—automated audits, AI-powered insights, and professional reports, all in one platform",
+        "startTrial": "Start Free Trial"
+      },
+      "problemSolution": {
+        "title": "The Problem We Solve",
+        "problems": {
+          "title": "Manual SEO Work is Time-Consuming",
+          "item1": "Hours spent on manual SEO audits and analysis",
+          "item2": "Difficulty tracking local search visibility",
+          "item3": "Inconsistent reporting formats across tools",
+          "item4": "Lack of actionable recommendations"
+        },
+        "solution": {
+          "title": "Serpixa Automates Everything",
+          "description": "Serpixa streamlines your entire SEO workflow. Run comprehensive audits in minutes, get AI-powered content suggestions, and generate professional reports that impress clients—all from one intuitive platform."
+        }
+      },
+      "benefits": {
+        "badge": "Benefits",
+        "title": "Why Choose Serpixa?",
+        "subtitle": "Everything you need to succeed with SEO, all in one place",
+        "timeSaving": {
+          "title": "Save Hours of Work",
+          "description": "Run complete SEO, GEO, and GBP audits in minutes instead of hours. Automate repetitive tasks and focus on what matters—growing your business."
+        },
+        "allInOne": {
+          "title": "All-in-One Platform",
+          "description": "SEO audits, local visibility analysis, Google Business Profile optimization, and AI content generation—everything you need in one powerful platform."
+        },
+        "professionalReports": {
+          "title": "Professional Reports",
+          "description": "Generate client-ready PDF reports with your branding. Impress clients with detailed insights, visual charts, and actionable recommendations."
+        },
+        "actionableInsights": {
+          "title": "Actionable Insights",
+          "description": "Get clear, specific recommendations—not just data. Know exactly what to fix and how to improve your search rankings."
+        },
+        "easyToUse": {
+          "title": "Easy to Use",
+          "description": "No technical expertise required. Our intuitive interface makes it easy to get started in minutes, even if you're new to SEO."
+        },
+        "trusted": {
+          "title": "Trusted & Reliable",
+          "description": "Built on industry-leading data sources with 100% accurate rankings. Trusted by SEO professionals and agencies worldwide."
+        }
+      },
+      "whatYouGet": {
+        "title": "What You Get",
+        "subtitle": "Comprehensive SEO tools designed for modern businesses",
+        "seoAudit": {
+          "title": "SEO Audit",
+          "description": "Complete website analysis with on-page SEO insights, competitor rankings, keyword optimization, and technical SEO checks. Get a comprehensive SEO score and detailed recommendations."
+        },
+        "geoAudit": {
+          "title": "GEO Audit",
+          "description": "Analyze local search visibility with competitor analysis, citation recommendations, and NAP consistency checks. Understand your local market position and improve your visibility."
+        },
+        "gbpAudit": {
+          "title": "GBP Audit",
+          "description": "Optimize your Google Business Profile with completeness scoring, optimization checklists, and actionable recommendations. Ensure your profile stands out in local searches."
+        },
+        "aiContent": {
+          "title": "AI Content Generation",
+          "description": "Generate SEO-optimized content including meta tags, headings, FAQ sections, and CTAs. Powered by advanced AI to create high-quality, search-engine-friendly content."
+        }
+      },
+      "results": {
+        "title": "Real Results",
+        "subtitle": "What you can achieve with Serpixa",
+        "improveRankings": "Improve search rankings",
+        "increaseVisibility": "Increase local visibility",
+        "saveTime": "Save hours of manual work",
+        "impressClients": "Impress clients with professional reports",
+        "dataDriven": "Make data-driven decisions"
+      },
+      "perfectFor": {
+        "title": "Perfect For",
+        "subtitle": "Built for everyone who cares about SEO",
+        "agencies": {
+          "title": "SEO Agencies",
+          "description": "Manage multiple clients efficiently with automated audits and professional reports. Scale your agency without scaling your workload."
+        },
+        "businesses": {
+          "title": "Small Businesses",
+          "description": "DIY SEO without the expertise. Get professional-grade insights and recommendations to improve your online presence."
+        },
+        "marketingTeams": {
+          "title": "Marketing Teams",
+          "description": "Make data-driven decisions with comprehensive SEO insights. Track performance, analyze competitors, and optimize your strategy."
+        },
+        "freelancers": {
+          "title": "Freelancers",
+          "description": "Deliver professional reports that impress clients. Stand out with detailed audits and actionable recommendations."
+        }
+      },
+      "whyChoose": {
+        "title": "Why Trust Serpixa?",
+        "subtitle": "Built for professionals who demand accuracy and reliability",
+        "trusted": "Trusted by SEO professionals since 2013",
+        "accurate": "100% accurate keyword rankings and data",
+        "bilingual": "Full bilingual support (FR & NL)",
+        "gdpr": "GDPR compliant and secure",
+        "updates": "Regular updates with latest SEO trends",
+        "support": "Dedicated customer support"
+      },
+      "cta": {
+        "title": "Ready to Transform Your SEO Workflow?",
+        "subtitle": "Join thousands of professionals who trust Serpixa for their SEO and AI content needs",
+        "startTrial": "Start Free Trial",
+        "viewPricing": "View Pricing",
+        "trustText": "No credit card required • Cancel anytime"
+      }
+    },
+    "featuresPage": {
+      "hero": {
+        "badge": "Features",
+        "title": "Powerful Features for SEO Success",
+        "subtitle": "Everything you need to analyze, optimize, and grow your online presence",
+        "startTrial": "Start Free Trial"
+      },
+      "mainFeatures": {
+        "title": "Core Features",
+        "subtitle": "Comprehensive tools designed to help you master SEO"
+      },
+      "seoAudit": {
+        "title": "SEO Audit",
+        "description": "Complete website analysis with comprehensive SEO insights. Analyze your on-page SEO, track keyword rankings, and get actionable recommendations to improve your search visibility.",
+        "feature1": "On-page SEO analysis (title tags, meta descriptions, headings)",
+        "feature2": "Keyword optimization and density analysis",
+        "feature3": "Technical SEO checks and recommendations",
+        "feature4": "Competitor analysis and ranking insights"
+      },
+      "geoAudit": {
+        "title": "GEO Audit",
+        "description": "Analyze your local search visibility and understand your position in the local market. Get insights on competitors, citations, and NAP consistency.",
+        "feature1": "Local visibility score and rankings",
+        "feature2": "Nearby competitor analysis with ratings and reviews",
+        "feature3": "Citation and NAP consistency checks",
+        "feature4": "Actionable recommendations for local SEO improvement"
+      },
+      "gbpAudit": {
+        "title": "GBP Audit",
+        "description": "Optimize your Google Business Profile with comprehensive completeness scoring and optimization checklists. Ensure your profile stands out in local searches.",
+        "feature1": "Business information completeness scoring",
+        "feature2": "Category optimization and additional categories",
+        "feature3": "Photos, ratings, reviews, and business attributes analysis",
+        "feature4": "Optimization score with actionable recommendations"
+      },
+      "aiContent": {
+        "title": "AI Content Generation",
+        "description": "Generate SEO-optimized content powered by advanced AI. Create high-quality content including meta tags, headings, FAQ sections, and CTAs optimized for search engines.",
+        "feature1": "SEO-optimized meta titles and descriptions",
+        "feature2": "Complete HTML content with proper heading structure",
+        "feature3": "FAQ sections and compelling CTAs",
+        "feature4": "Keyword density analysis and optimization"
+      },
+      "languageSupport": {
+        "title": "Bilingual Support",
+        "subtitle": "Full support for French and Dutch languages across the platform",
+        "supportedLanguages": {
+          "title": "Supported Languages"
+        },
+        "benefits": {
+          "title": "Benefits"
+        },
+        "feature1": "Complete UI translation in French and Dutch",
+        "feature2": "Localized email notifications and reports",
+        "feature3": "Regional language support (Belgian French & Dutch)",
+        "feature4": "Easy language switching with persistent preferences"
+      },
+      "additionalFeatures": {
+        "title": "Additional Features",
+        "subtitle": "More tools to help you succeed",
+        "professionalReports": {
+          "title": "Professional Reports",
+          "description": "Generate client-ready PDF reports with your branding. Impress clients with detailed insights and visual charts."
+        },
+        "dataVisualization": {
+          "title": "Data Visualization",
+          "description": "Visual charts and graphs to help you understand your SEO performance at a glance."
+        },
+        "fastResults": {
+          "title": "Fast Results",
+          "description": "Get comprehensive audit results in minutes, not hours. Save time and focus on what matters."
+        },
+        "secure": {
+          "title": "Secure & Reliable",
+          "description": "GDPR compliant with secure data handling. Your data is safe and protected."
+        },
+        "actionableInsights": {
+          "title": "Actionable Insights",
+          "description": "Get clear, specific recommendations—not just data. Know exactly what to fix and how."
+        },
+        "easyToUse": {
+          "title": "Easy to Use",
+          "description": "Intuitive interface that makes it easy to get started, even if you're new to SEO."
+        }
+      },
+      "cta": {
+        "title": "Ready to Get Started?",
+        "subtitle": "Start using Serpixa today and transform your SEO strategy",
+        "startTrial": "Start Free Trial",
+        "viewPricing": "View Pricing"
+      }
+    },
+    "aboutUs": {
+      "hero": {
+        "badge": "About Us",
+        "title": "Empowering Businesses with SEO Excellence",
+        "subtitle": "We're on a mission to make SEO accessible, powerful, and results-driven for businesses of all sizes"
+      },
+      "ourStory": {
+        "title": "Our Story",
+        "paragraph1": "Serpixa was born from a simple observation: SEO tools were either too complex for small businesses or too expensive for growing companies. We saw a gap in the market for a platform that combines powerful analytics with ease of use.",
+        "paragraph2": "Founded in 2013, we've been helping SEO professionals and businesses worldwide improve their search visibility. Our platform leverages cutting-edge technology and industry-leading data sources to deliver accurate, actionable insights.",
+        "paragraph3": "Today, Serpixa serves thousands of customers across the globe, from solo entrepreneurs to large agencies, all united by one goal: achieving better search rankings and growing their online presence.",
+        "mission": {
+          "title": "Our Mission",
+          "description": "To democratize SEO by making professional-grade tools accessible to everyone, regardless of their technical expertise or budget."
+        }
+      },
+      "stats": {
+        "title": "By The Numbers",
+        "subtitle": "Our impact in numbers",
+        "customers": {
+          "value": "10,000+",
+          "label": "Happy Customers"
+        },
+        "audits": {
+          "value": "1M+",
+          "label": "Audits Completed"
+        },
+        "countries": {
+          "value": "50+",
+          "label": "Countries Served"
+        },
+        "satisfaction": {
+          "value": "98%",
+          "label": "Customer Satisfaction"
+        }
+      },
+      "values": {
+        "title": "Our Values",
+        "subtitle": "The principles that guide everything we do",
+        "innovation": {
+          "title": "Innovation",
+          "description": "We continuously push the boundaries of what's possible in SEO, integrating the latest AI technology and data sources to stay ahead of the curve."
+        },
+        "trust": {
+          "title": "Trust & Reliability",
+          "description": "We're committed to providing 100% accurate data and reliable insights. Your success is built on our foundation of trust and transparency."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "description": "We strive for excellence in every feature, every report, and every interaction. Good enough isn't good enough—we aim for exceptional."
+        },
+        "customerFirst": {
+          "title": "Customer First",
+          "description": "Your success is our success. We listen to our customers, adapt to their needs, and build features that truly make a difference."
+        }
+      },
+      "whyWeDo": {
+        "title": "Why We Do What We Do",
+        "subtitle": "Understanding the problem we're solving",
+        "problem": {
+          "title": "The Challenge",
+          "item1": "SEO tools are often too complex and intimidating",
+          "item2": "Small businesses struggle with expensive enterprise solutions",
+          "item3": "Manual SEO work is time-consuming and error-prone"
+        },
+        "solution": {
+          "title": "Our Solution",
+          "item1": "Intuitive platform that anyone can use, regardless of technical skill",
+          "item2": "Affordable pricing that scales with your business",
+          "item3": "Automated workflows that save hours of manual work"
+        }
+      },
+      "cta": {
+        "title": "Join Us on This Journey",
+        "subtitle": "Be part of a community that's transforming how businesses approach SEO",
+        "startTrial": "Start Free Trial",
+        "exploreFeatures": "Explore Features"
+      }
+    }
+  },
+  "dashboard": {
+    "page": {
+      "welcomeBack": "Welcome back",
+      "subscription": "Subscription",
+      "noSubscription": "No Subscription",
+      "yourCredits": "Your Credits",
+      "quickActions": "Quick Actions",
+      "recentAudits": "Recent Audits",
+      "noRecentAudits": "No recent audits",
+      "viewAll": "View all",
+      "getStarted": "Get started",
+      "overview": "Overview",
+      "totalAudits": "Total Audits",
+      "successRate": "Success Rate",
+      "remaining": "Remaining",
+      "used": "Used",
+      "available": "Available",
+      "newSeoAudit": "New SEO Audit",
+      "newSeoAuditDesc": "Analyze website SEO performance",
+      "newGeoAudit": "New GEO Audit",
+      "newGeoAuditDesc": "Check local search visibility",
+      "newGbpAudit": "New GBP Audit",
+      "newGbpAuditDesc": "Audit Google Business Profile",
+      "aiContent": "AI Content",
+      "aiContentDesc": "Generate optimized content"
+    },
+    "extras": {
+      "title": "Extras & Add-ons",
+      "subtitle": "Manage your addon credits and purchase additional extras",
+      "myExtras": "My Extras",
+      "totalCredits": "total credits",
+      "noExtras": "No extras purchased yet",
+      "noExtrasTitle": "No Extras Yet",
+      "noExtrasDescription": "You haven't purchased any addons yet. Browse available extras below to enhance your plan.",
+      "browseExtras": "Browse Extras",
+      "purchaseHistory": "Purchase History",
+      "credits": "credits",
+      "remaining": "remaining",
+      "noCredits": "No credits available",
+      "buyMore": "Buy More Extras",
+      "buyMoreDescription": "Enhance your plan with additional credits for SEO, GEO, GBP audits, and AI content generation.",
+      "noAddonsAvailable": "No addons available at the moment",
+      "historyNote": "Purchase history is displayed for reference. Actual purchase records may vary."
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "seoAudits": "SEO Audits",
+      "geoAudits": "GEO Audits",
+      "gbpAudits": "GBP Audits",
+      "aiContent": "AI Content",
+      "reports": "Reports",
+      "profile": "Profile",
+      "settings": "Settings",
+      "billing": "Billing",
+      "credits": "Credits",
+      "newAudit": "New Audit",
+      "history": "History",
+      "generator": "Generator",
+      "plan": "Plan",
+      "payment": "Payment",
+      "addOns": "Add-ons",
+      "extras": "Extras"
+    },
+    "support": {
+      "title": "Support",
+      "subtitle": "Get help from our support team",
+      "subject": "Subject",
+      "subjectPlaceholder": "Brief description of your issue",
+      "subjectRequired": "Subject is required",
+      "subjectMinLength": "Subject must be at least 3 characters",
+      "subjectMaxLength": "Subject must be less than 200 characters",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "message": "Message",
+      "messagePlaceholder": "Describe your issue or question in detail...",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters",
+      "messageMaxLength": "Message must be less than 2000 characters",
+      "send": "Send Message"
+    },
+    "profile": {
+      "page": {
+        "title": "Profile",
+        "subtitle": "Manage your account information and preferences",
+        "personalInfo": "Personal Information",
+        "name": "Name",
+        "email": "Email",
+        "emailStatus": "Email Status",
+        "verified": "Verified",
+        "notVerified": "Not Verified",
+        "subscription": "Subscription",
+        "plan": "Current Plan",
+        "renewsOn": "Renews On",
+        "credits": "Credits",
+        "noCredits": "No credits available",
+        "accountInfo": "Account Information",
+        "memberSince": "Member Since",
+        "userType": "User Type"
+      }
+    },
+    "common": {
+      "newAudit": "New Audit",
+      "reRunAudit": "Re-run Audit",
+      "exportPdf": "Export PDF",
+      "generating": "Generating...",
+      "delete": "Delete",
+      "view": "View",
+      "edit": "Edit",
+      "save": "Save",
+      "cancel": "Cancel",
+      "close": "Close",
+      "search": "Search",
+      "filter": "Filter",
+      "export": "Export",
+      "actions": "Actions",
+      "date": "Date",
+      "status": "Status",
+      "score": "Score",
+      "url": "URL",
+      "keyword": "Keyword",
+      "issues": "Issues",
+      "noResults": "No results found",
+      "copy": "Copy",
+      "copied": "Copied",
+      "copyUrl": "Copy URL",
+      "copyTitle": "Copy title",
+      "copyDescription": "Copy description",
+      "optional": "Optional",
+      "required": "Required",
+      "submit": "Submit",
+      "back": "Back",
+      "loading": "Loading...",
+      "errorLoading": "Error loading data. Please try again.",
+      "delete": "Delete",
+      "deleting": "Deleting...",
+      "deleteAuditTitle": "Delete Audit",
+      "deleteAuditMessage": "Are you sure you want to delete this audit? This action cannot be undone.",
+      "deleteContentTitle": "Delete Content",
+      "deleteContentMessage": "Are you sure you want to delete this content? This action cannot be undone.",
+      "deleteWarning": "This action cannot be undone. All data associated with this item will be permanently deleted.",
+      "pagination": {
+        "showing": "Showing {start} to {end} of {total} results",
+        "noResults": "No results",
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page {page}"
+      },
+      "toast": {
+        "contentGeneratedSuccess": "Content generated successfully!",
+        "contentDeletedSuccess": "Content deleted successfully",
+        "contentDeleteError": "Failed to delete content",
+        "contentGenerateError": "Failed to generate content",
+        "seoAuditCompletedSuccess": "SEO audit completed successfully!",
+        "seoAuditDeleteSuccess": "Audit deleted successfully",
+        "seoAuditDeleteError": "Failed to delete audit",
+        "seoAuditRunError": "Failed to run SEO audit",
+        "geoAuditCompletedSuccess": "Geo audit completed successfully!",
+        "geoAuditDeleteSuccess": "Audit deleted successfully",
+        "geoAuditDeleteError": "Failed to delete audit",
+        "geoAuditRunError": "Failed to run Geo audit",
+        "gbpAuditCompletedSuccess": "GBP audit completed successfully!",
+        "gbpAuditDeleteSuccess": "Audit deleted successfully",
+        "gbpAuditDeleteError": "Failed to delete audit",
+        "gbpAuditRunError": "Failed to run GBP audit",
+        "pdfDownloadedSuccess": "PDF downloaded successfully",
+        "pdfDownloadError": "Failed to download PDF",
+        "accountCreatedSuccess": "Account created successfully!",
+        "signupError": "Signup failed.",
+        "loginSuccess": "Login successful!",
+        "loginError": "Login failed.",
+        "logoutSuccess": "Logged out successfully",
+        "logoutError": "Logout failed.",
+        "passwordResetEmailSent": "Password reset email sent!",
+        "passwordResetEmailError": "Failed to send reset email.",
+        "passwordResetSuccess": "Password reset successful!",
+        "passwordResetError": "Password reset failed.",
+        "emailVerifiedSuccess": "Email verified successfully!",
+        "emailVerificationError": "Email verification failed.",
+        "verificationEmailSent": "Verification email sent!",
+        "verificationEmailError": "Failed to send verification email.",
+        "checkoutUrlError": "Failed to get checkout URL",
+        "checkoutSessionError": "Failed to create checkout session",
+        "portalUrlError": "Failed to get portal URL",
+        "portalSessionError": "Failed to create portal session"
+      },
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "seoAudit": {
+      "new": {
+        "title": "New SEO Audit",
+        "subtitle": "Analyze your website's SEO performance and get actionable insights",
+        "whatWillBeAnalyzed": "What will be analyzed?",
+        "onPageElements": "On-page SEO elements (title, meta, headings)",
+        "keywordOptimization": "Keyword optimization and density",
+        "technicalSeo": "Technical SEO checks",
+        "competitorAnalysis": "Competitor analysis and rankings"
+      },
+      "form": {
+        "websiteUrl": "Website URL",
+        "websiteUrlPlaceholder": "https://example.com",
+        "websiteUrlHelp": "Enter the full URL of the page you want to audit",
+        "targetKeyword": "Target Keyword",
+        "targetKeywordPlaceholder": "e.g., best seo tools",
+        "targetKeywordHelp": "The primary keyword you want to optimize for",
+        "locale": "Locale",
+        "localeHelp": "Select the locale for the audit",
+        "runAudit": "Run SEO Audit",
+        "runningAudit": "Running Audit..."
+      },
+      "list": {
+        "title": "SEO Audits",
+        "subtitle": "View and manage your SEO audit history",
+        "searchPlaceholder": "Search by URL or keyword...",
+        "noAudits": "No audits yet",
+        "noAuditsDescription": "Get started by creating your first SEO audit",
+        "createNewAudit": "Create New Audit",
+        "totalAudits": "Total Audits",
+        "avgScore": "Avg Score",
+        "totalIssues": "Total Issues",
+        "completed": "Completed"
+      },
+      "view": {
+        "title": "SEO Audit Results",
+        "onPageAnalysis": "On-Page Analysis",
+        "serpInfo": "SERP Information",
+        "auditInfo": "Audit Information",
+        "recommendations": "Recommendations",
+        "competitorAnalysis": "Competitor Analysis",
+        "titleTag": "Title Tag",
+        "metaDescription": "Meta Description",
+        "h1Tag": "H1 Tag",
+        "images": "Images",
+        "links": "Links",
+        "canonicalTag": "Canonical Tag",
+        "notFound": "Not found",
+        "length": "Length",
+        "characters": "characters",
+        "count": "Count",
+        "total": "Total",
+        "internal": "Internal",
+        "external": "External",
+        "broken": "Broken",
+        "withoutAlt": "Without alt",
+        "severity": "Severity",
+        "issue": "Issue",
+        "description": "Description",
+        "pagesAffected": "Pages Affected",
+        "fix": "Fix",
+        "learnMore": "Learn More",
+        "position": "Position",
+        "domain": "Domain",
+        "breadcrumb": "Breadcrumb",
+        "location": "Location",
+        "language": "Language",
+        "device": "Device",
+        "totalResults": "Total Results",
+        "targetKeyword": "Target Keyword",
+        "copyUrl": "Copy URL",
+        "copyKeyword": "Copy Keyword",
+        "issuesFound": "issues found",
+        "action": "Action",
+        "topCompetitors": "Top",
+        "competitors": "competitors",
+        "rank": "Rank",
+        "noTitle": "No title",
+        "seoScore": "SEO Score",
+        "totalIssues": "Total Issues",
+        "totalLinks": "Total Links",
+        "competitorsLabel": "Competitors",
+        "viewAudit": "View Audit",
+        "deleteAudit": "Delete Audit",
+        "priority": "Priority",
+        "category": "Category",
+        "impact": "Impact",
+        "effort": "Effort",
+        "filters": "Filters",
+        "clearFilters": "Clear Filters",
+        "all": "All",
+        "critical": "Critical",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low",
+        "easy": "Easy",
+        "moderate": "Moderate",
+        "difficult": "Difficult",
+        "of": "of",
+        "noRecommendationsMatch": "No recommendations match the selected filters",
+        "categoryMeta": "Meta Tags",
+        "categoryContent": "Content",
+        "categoryTechnical": "Technical",
+        "categoryKeyword": "Keyword",
+        "categoryCompetitor": "Competitor",
+        "categorySuccess": "Success",
+        "pdfDownloaded": "PDF downloaded successfully!",
+        "failedToDownloadPdf": "Failed to download PDF",
+        "copiedToClipboard": "{label} copied to clipboard!",
+        "failedToCopy": "Failed to copy to clipboard",
+        "loadingAuditResults": "Loading audit results...",
+        "failedToLoadAudit": "Failed to Load Audit",
+        "errorLoadingAudit": "An error occurred while loading the audit",
+        "backToAudits": "Back to Audits",
+        "auditFailed": "Audit Failed"
+      }
+    },
+    "geoAudit": {
+      "new": {
+        "title": "New GEO Audit",
+        "subtitle": "Analyze local search visibility and competitor landscape",
+        "whatWillBeAnalyzed": "What will be analyzed?",
+        "localVisibility": "Local visibility score and rankings",
+        "nearbyCompetitors": "Nearby competitors with ratings and reviews",
+        "citationAnalysis": "Citation and NAP consistency analysis",
+        "recommendations": "Actionable recommendations for improvement"
+      },
+      "form": {
+        "keyword": "Keyword",
+        "keywordPlaceholder": "e.g., restaurants",
+        "keywordHelp": "The search term you want to analyze",
+        "city": "City",
+        "cityPlaceholder": "e.g., Brussels",
+        "cityHelp": "City name (preferred for better results)",
+        "country": "Country",
+        "countryPlaceholder": "e.g., Belgium",
+        "countryHelp": "Country name",
+        "businessName": "Business Name",
+        "businessNamePlaceholder": "e.g., My Restaurant",
+        "businessNameHelp": "Optional: Your business name for better targeting",
+        "googleDomain": "Google Domain",
+        "googleDomainHelp": "Select the Google domain for your target market",
+        "googleDomainPlaceholder": "Select Google Domain",
+        "cityHelpDetailed": "The city where you want to analyze local search results (e.g., \"New York\", \"Brussels\", \"Paris\")",
+        "countryHelpDetailed": "The country for local search analysis (used if city is not provided, e.g., \"United States\", \"Belgium\")",
+        "businessNameHelpDetailed": "Leave blank to see all competitors. If provided, we'll find your business in the results.",
+        "keywordHelpDetailed": "The search term you want to analyze for local results",
+        "showAdvanced": "Show Advanced Options",
+        "hideAdvanced": "Hide Advanced Options",
+        "language": "Language",
+        "locale": "Locale",
+        "localeHelp": "Select the locale for the audit",
+        "device": "Device",
+        "runAudit": "Run GEO Audit",
+        "runningAudit": "Running Audit..."
+      },
+      "view": {
+        "title": "GEO Audit Results",
+        "localVisibilityScore": "Local Visibility Score",
+        "totalCompetitors": "Total Competitors",
+        "totalRecommendations": "Total Recommendations",
+        "citationScore": "Citation Score",
+        "auditInfo": "Audit Information",
+        "citationAnalysis": "Citation Analysis",
+        "napConsistency": "NAP Consistency",
+        "businessInformation": "Business Information",
+        "recommendations": "Recommendations",
+        "nearbyCompetitors": "Nearby Competitors",
+        "businessName": "Business Name",
+        "location": "Location",
+        "keyword": "Keyword",
+        "date": "Date",
+        "status": "Status",
+        "name": "Name",
+        "rating": "Rating",
+        "reviews": "Reviews",
+        "distance": "Distance",
+        "address": "Address",
+        "phone": "Phone",
+        "website": "Website",
+        "visibilityScore": "Visibility Score",
+        "competitors": "Competitors",
+        "napIssues": "NAP Issues",
+        "copyKeyword": "Copy keyword",
+        "nameConsistency": "Name Consistency",
+        "addressConsistency": "Address Consistency",
+        "phoneConsistency": "Phone Consistency",
+        "issues": "Issues",
+        "noNapData": "No NAP data available",
+        "missingCitations": "Missing Citations",
+        "inconsistentData": "Inconsistent Data",
+        "noCitationIssues": "No citation issues found",
+        "noCitationData": "No citation data available",
+        "ratingAndReviews": "Rating & Reviews",
+        "category": "Category",
+        "copyPhone": "Copy phone",
+        "visit": "Visit",
+        "business": "Business",
+        "avgVisibility": "Avg Visibility",
+        "viewAudit": "View Audit",
+        "deleteAudit": "Delete Audit"
+      },
+      "list": {
+        "title": "GEO Audits",
+        "subtitle": "View and manage your GEO audit history",
+        "searchPlaceholder": "Search by business name...",
+        "noAudits": "No audits yet",
+        "noAuditsDescription": "Get started by creating your first GEO audit",
+        "createNewAudit": "Create New Audit",
+        "totalAudits": "Total Audits",
+        "avgVisibility": "Avg Visibility",
+        "totalCompetitors": "Total Competitors",
+        "completed": "Completed"
+      }
+    },
+    "gbpAudit": {
+      "new": {
+        "title": "New GBP Audit",
+        "subtitle": "Analyze your Google Business Profile optimization and completeness",
+        "whatWillBeAnalyzed": "What will be analyzed?",
+        "businessInfo": "Business information completeness (name, address, phone, website)",
+        "categoryOptimization": "Category optimization and additional categories",
+        "businessDescription": "Business description and hours",
+        "photosRatings": "Photos, ratings, reviews, and business attributes",
+        "optimizationScore": "Optimization score and actionable recommendations"
+      },
+      "form": {
+        "businessName": "Business Name",
+        "businessNamePlaceholder": "e.g., My Restaurant",
+        "businessNameHelp": "Optional if GBP Link provided",
+        "businessNameHelpDetailed": "The name of your business as it appears on Google Business Profile",
+        "gbpLink": "GBP Link",
+        "gbpLinkPlaceholder": "https://www.google.com/maps/place/...",
+        "gbpLinkHelp": "Direct link to your Google Business Profile (optional, but helps find your business faster)",
+        "gbpLinkOptional": "Optional if Business Name provided",
+        "location": "Location",
+        "locationPlaceholder": "e.g., United States, New York",
+        "locationHelp": "Location for business search (defaults to \"United States\")",
+        "languageCode": "Language Code",
+        "languageCodeHelp": "Language code for the business information",
+        "locale": "Locale",
+        "localeHelp": "Select the locale for the audit",
+        "showAdvanced": "Show Advanced Options",
+        "hideAdvanced": "Hide Advanced Options",
+        "runAudit": "Run GBP Audit",
+        "runningAudit": "Running Audit...",
+        "businessNameOrGbpRequired": "Business name or GBP link is required",
+        "validUrlRequired": "Please enter a valid URL"
+      },
+      "list": {
+        "title": "GBP Audits",
+        "subtitle": "View and manage your GBP audit history",
+        "searchPlaceholder": "Search by business name...",
+        "noAudits": "No audits yet",
+        "noAuditsDescription": "Get started by creating your first GBP audit",
+        "createNewAudit": "Create New Audit",
+        "totalAudits": "Total Audits",
+        "avgScore": "Avg Score",
+        "totalRecommendations": "Total Recommendations",
+        "completed": "Completed"
+      },
+      "view": {
+        "title": "GBP Audit Results",
+        "optimizationScore": "Optimization Score",
+        "completedItems": "Completed Items",
+        "totalItems": "Total Items",
+        "totalRecommendations": "Total Recommendations",
+        "businessInfo": "Business Information",
+        "checklist": "Optimization Checklist",
+        "auditInfo": "Audit Information",
+        "recommendations": "Recommendations",
+        "recommendationsFound": "recommendations found",
+        "priority": "Priority",
+        "action": "Action",
+        "categoryProfile": "Profile",
+        "categoryContent": "Content",
+        "categoryReviews": "Reviews",
+        "categorySuccess": "Success",
+        "businessName": "Business Name",
+        "gbpLink": "GBP Link",
+        "date": "Date",
+        "status": "Status",
+        "category": "Category",
+        "address": "Address",
+        "phone": "Phone",
+        "website": "Website",
+        "hours": "Hours",
+        "description": "Description",
+        "completed": "Completed",
+        "pending": "Pending",
+        "priority": "Priority",
+        "action": "Action",
+        "googleRating": "Google Rating",
+        "name": "Name",
+        "primaryCategory": "Primary Category",
+        "additionalCategories": "Additional Categories",
+        "ratingAndReviews": "Rating & Reviews",
+        "businessHours": "Business Hours",
+        "set": "Set",
+        "placeId": "Place ID",
+        "copyGbpLink": "Copy GBP link",
+        "copyPlaceId": "Copy Place ID",
+        "recommendationsFound": "recommendations found",
+        "complete": "Complete",
+        "missing": "Missing",
+        "viewAudit": "View Audit",
+        "deleteAudit": "Delete Audit"
+      }
+    },
+    "aiContent": {
+      "new": {
+        "title": "AI Content Generator",
+        "subtitle": "Generate SEO-optimized content using AI",
+        "whatWillBeAnalyzed": "What will be generated?",
+        "metaTitle": "Optimized meta title (max 60 characters)",
+        "metaDescription": "Persuasive meta description (max 155 characters)",
+        "htmlContent": "Complete HTML content (1500+ words)",
+        "faq": "FAQ section (5-7 questions)",
+        "cta": "Compelling call-to-action",
+        "seoOptimized": "SEO-optimized with keyword density analysis"
+      },
+      "form": {
+        "keyword": "Keyword",
+        "keywordPlaceholder": "e.g., best seo tools",
+        "keywordHelp": "Enter the primary keyword for content generation",
+        "locale": "Locale",
+        "localeHelp": "Select the locale for content generation",
+        "generateContent": "Generate Content",
+        "generating": "Generating..."
+      },
+      "progress": {
+        "generating": "Generating Content",
+        "keyword": "Keyword",
+        "processing": "Processing...",
+        "pleaseWait": "Please wait while we generate your SEO-optimized content",
+        "analyzingKeyword": "Analyzing keyword...",
+        "generatingSeoContent": "Generating SEO content...",
+        "optimizingMetaTags": "Optimizing meta tags...",
+        "structuringContent": "Structuring content...",
+        "finalizing": "Finalizing..."
+      },
+      "view": {
+        "title": "Generated Content",
+        "metaTitle": "Meta Title",
+        "metaDescription": "Meta Description",
+        "htmlContent": "Content",
+        "faq": "FAQ",
+        "cta": "Call to Action",
+        "seoScore": "SEO Score",
+        "keywordDensity": "Keyword Density",
+        "wordCount": "Word Count",
+        "copy": "Copy",
+        "copied": "Copied",
+        "copyMetaTitle": "Copy meta title",
+        "copyMetaDescription": "Copy meta description",
+        "copyContent": "Copy content",
+        "regenerate": "Regenerate",
+        "exportHtml": "Export HTML",
+        "exportPdf": "Export PDF",
+        "copyAllHtml": "Copy All HTML",
+        "generatedAt": "Generated at",
+        "keyword": "Keyword",
+        "locale": "Locale",
+        "headings": "Headings",
+        "h1Tags": "H1 Tags",
+        "h2Tags": "H2 Tags",
+        "h3Tags": "H3 Tags",
+        "h4Tags": "H4 Tags",
+        "h5Tags": "H5 Tags",
+        "h6Tags": "H6 Tags",
+        "lists": "Lists",
+        "found": "found",
+        "noHeadings": "No headings found in the content",
+        "noH1Tags": "No H1 tags found in the content",
+        "noLists": "No lists found in the content",
+        "h1Content": "H1 Content",
+        "h2Content": "H2 Content",
+        "h3Content": "H3 Content",
+        "h4Content": "H4 Content",
+        "h5Content": "H5 Content",
+        "h6Content": "H6 Content",
+        "type": "Type",
+        "items": "Items",
+        "listContent": "List Content",
+        "moreItems": "more items",
+        "paragraphs": "Paragraphs",
+        "paragraphContent": "Content",
+        "characters": "Characters",
+        "words": "Words",
+        "readMore": "Read more",
+        "readLess": "Read less",
+        "showMore": "Show",
+        "showLess": "Show less",
+        "noParagraphs": "No paragraphs found",
+        "seoDisclaimer": "Page optimized according to SEO best practices for this keyword. We do not promise a \"guaranteed ranking,\" base optimized to adapt for your business."
+      },
+      "list": {
+        "subtitle": "View and manage your AI-generated content",
+        "searchPlaceholder": "Search by keyword...",
+        "noContent": "No content yet",
+        "noContentDescription": "Get started by generating your first AI content",
+        "createNewAudit": "Create New Content"
+      }
+    }
+  },
+  "login": {
+    "greeting": "Nice to see you again",
+    "title": "WELCOME BACK",
+    "description": "All the tools you need to perfect your SEO and AI visibility. Own traditional and AI search with a powerful platform, trusted data, and exceptional UX.",
+    "trustedBy": "Trusted by SEO professionals since 2013",
+    "formTitle": "Login Account",
+    "formSubtitle": "Enter your credentials to access your account and start optimizing your SEO strategy.",
+    "emailLabel": "Email ID",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "passwordRequired": "Password is required",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "rememberMe": "Keep me signed in",
+    "forgotPassword": "Forgot Password?",
+    "loginButton": "Login",
+    "loggingIn": "Logging in...",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up"
+  },
+  "signup": {
+    "greeting": "Start your journey today",
+    "title": "CREATE ACCOUNT",
+    "description": "Join thousands of SEO professionals who trust Serpixa for their SEO and AI content needs. Get started with a free trial and unlock powerful tools to perfect your SEO strategy.",
+    "noCreditCard": "No credit card required • 14-day free trial",
+    "formTitle": "Create Account",
+    "formSubtitle": "Sign up to get started with Serpixa and transform your SEO strategy today.",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "nameRequired": "Name is required",
+    "emailLabel": "Email ID",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Create a password",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 8 characters",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "confirmPasswordRequired": "Please confirm your password",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "signUpButton": "Sign Up",
+    "creatingAccount": "Creating account...",
+    "alreadyHaveAccount": "Already have an account?",
+    "logIn": "Log in"
+  },
+  "forgotPassword": {
+    "greeting": "Need to reset your password?",
+    "title": "FORGOT PASSWORD",
+    "description": "Don't worry! Enter your email address and we'll send you a link to reset your password. You'll be back to optimizing your SEO in no time.",
+    "secureProcess": "Secure password reset process",
+    "formTitle": "Reset Password",
+    "formSubtitle": "Enter the email address associated with your account, and we'll send you a link to reset your password.",
+    "emailLabel": "Email ID",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "sendResetLink": "Send Reset Link",
+    "sendingResetLink": "Sending reset link...",
+    "returnToSignIn": "← Return to sign in",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up"
+  },
+  "resetPassword": {
+    "title": "Set new password",
+    "subtitle": "Enter your new password below and confirm it to reset your account.",
+    "newPasswordLabel": "New Password",
+    "newPasswordPlaceholder": "Enter new password",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "At least 6 characters",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm password",
+    "confirmPasswordRequired": "Please confirm your password",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "resetButton": "Reset Password",
+    "resetting": "Resetting...",
+    "returnToSignIn": "Return to sign in",
+    "invalidToken": "Invalid or missing reset token",
+    "loading": "Loading..."
+  },
+  "navbar": {
+    "whySerpixa": "Why Serpixa",
+    "aboutUs": "About Us",
+    "features": "Features",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "signOut": "Sign out",
+    "signIn": "Sign in",
+    "signUp": "Sign Up",
+    "startFreeTrial": "Start free trial"
+  }
+}
+

@@ -1,0 +1,1123 @@
+{
+  "landing": {
+    "hero": {
+      "title": "Alle tools die u nodig heeft om uw SEO- en AI-zichtbaarheid te perfectioneren",
+      "subtitle": "Beheer traditioneel en AI-zoeken met een krachtig platform, betrouwbare data en uitzonderlijke UX",
+      "startTrial": "Start gratis proefperiode",
+      "seeTour": "Bekijk producttour",
+      "noCreditCard": "Geen creditcard vereist",
+      "trustedBy": "Vertrouwd door",
+      "professionals": "SEO-professionals sinds 2013",
+      "aiPowered": "AI Aangedreven",
+      "contentGeneration": "Content Generatie",
+      "quickStart": "Snelle Start",
+      "quickStartDescription": "Voer uw eerste audit uit in minuten"
+    },
+    "features": {
+      "badge": "Functies",
+      "title": "Precies. Geloofwaardig. AI-klaar.",
+      "subtitle": "Het gaat allemaal om onze unieke data.",
+      "countryDatabases": {
+        "value": "188",
+        "description": "LANDENDATABANKEN"
+      },
+      "keywordDatabase": {
+        "value": "5.4B",
+        "description": "ZOEKWOORDENDATABANK"
+      },
+      "domainProfiles": {
+        "value": "2.2B",
+        "description": "DOMEINPROFIELEN"
+      },
+      "accurateRankings": {
+        "value": "100%",
+        "description": "ACCURATE ZOEKWOORDENRANKINGEN"
+      },
+      "aiAlgorithms": {
+        "value": "AI",
+        "description": "AANGEDREVEN ALGORITMEN"
+      },
+      "trustedBadge": "Vertrouwd platform",
+      "trustedTitle": "Vertrouwd door grote teams die SEO op schaal uitvoeren",
+      "trustedSubtitle": "Sluit je aan bij duizenden SEO-professionals die vertrouwen op ons krachtige platform voor nauwkeurige gegevens en inzichten",
+      "startTrial": "Start gratis proefperiode"
+    },
+    "pricing": {
+      "title": "Eerlijke en flexibele prijzen die met u meegroeien",
+      "subtitle": "Kies een plan dat groeit met uw doelen. Vol met meer dan u zou verwachten.",
+      "loadingPlans": "Plannen laden...",
+      "from": "Vanaf",
+      "perMonth": "per maand",
+      "perYear": "per jaar",
+      "oneTime": "eenmalig",
+      "startTrial": "Start gratis proefperiode",
+      "processing": "Verwerken...",
+      "purchase": "Kopen",
+      "agenciesChoice": "Keuze van agentschappen",
+      "needMore": "Meer nodig? Upgrade met add-ons!",
+      "enhancePlan": "Verbeter uw plan met krachtige add-ons",
+      "seoAudits": "SEO-audits",
+      "geoAudits": "GEO-audits",
+      "gbpAudits": "GBP-audits",
+      "aiGenerations": "AI-generaties",
+      "searchesPerMonth": "Zoekopdrachten per maand",
+      "apiCallsPerMonth": "API-aanroepen per maand",
+      "signInRequired": "Meld u aan of log in om door te gaan",
+      "badge": "Prijzen",
+      "exclVat": "HTVA"
+    },
+    "plans": {
+      "starterPlan": {
+        "name": "Starter Plan",
+        "description": "Perfect om te beginnen met SEO-audits"
+      },
+      "premiumPlan": {
+        "name": "Premium Plan",
+        "description": "Geavanceerde functies met meer audits en AI-generaties"
+      },
+      "extra10SeoAudits": {
+        "name": "Extra 10 SEO-audits",
+        "description": "Eenmalige aankoop van 10 extra SEO-audits"
+      },
+      "extra10GeoAudits": {
+        "name": "Extra 10 GEO-audits",
+        "description": "Eenmalige aankoop van 10 extra GEO-audits"
+      },
+      "extra5GbpAudits": {
+        "name": "Extra 5 GBP-audits",
+        "description": "Eenmalige aankoop van 5 extra GBP-audits"
+      },
+      "extra50AiGenerations": {
+        "name": "Extra 50 AI-generaties",
+        "description": "Eenmalige aankoop van 50 extra AI-generaties"
+      }
+    },
+    "testimonials": {
+      "badge": "Getuigenissen",
+      "title": "Vertrouwd door duizenden SEO-professionals",
+      "subtitle": "Zie wat onze klanten zeggen over hun ervaring",
+      "testimonial1": "Serpixa heeft onze SEO-workflow volledig getransformeerd. De AI-aangedreven contentgeneratie bespaart ons wekelijks uren, en de auditrapporten zijn ongelooflijk gedetailleerd.",
+      "testimonial2": "Het beste SEO-platform dat we hebben gebruikt. De combinatie van traditionele SEO-tools met AI-mogelijkheden geeft ons een concurrentievoordeel dat ongeëvenaard is.",
+      "testimonial3": "Als contentstrateeg is de AI-contentgeneratiefunctie een game-changer. Het helpt ons om hoogwaardige, SEO-geoptimaliseerde content op schaal te creëren.",
+      "testimonial4": "De prijzen zijn eerlijk, de functies zijn krachtig en de ondersteuning is uitstekend. Ik raad het ten zeerste aan voor elk bedrijf dat serieus is over SEO.",
+      "trustText": "Sluit u aan bij duizenden tevreden klanten"
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Veelgestelde vragen",
+      "subtitle": "Alles wat u moet weten over Serpixa",
+      "question1": "Wat zit er in de gratis proefperiode?",
+      "answer1": "Onze gratis proefperiode omvat toegang tot alle kernfuncties met beperkt gebruik. U kunt SEO-audits uitvoeren, AI-content genereren en al onze tools verkennen zonder creditcard.",
+      "question2": "Hoe nauwkeurig zijn de SEO-auditresultaten?",
+      "answer2": "Onze SEO-audits gebruiken toonaangevende algoritmen en real-time data om 100% nauwkeurige zoekwoordrankings en uitgebreide on-page analyse te bieden. We werken continu onze database bij met de nieuwste zoekmachinegegevens.",
+      "question3": "Kan ik mijn abonnement op elk moment opzeggen?",
+      "answer3": "Ja, u kunt uw abonnement op elk moment opzeggen. Er zijn geen langetermijncontracten en u blijft toegang hebben tot het einde van uw factureringsperiode.",
+      "question4": "Wat maakt uw AI-contentgeneratie anders?",
+      "answer4": "Onze AI-content is specifiek getraind voor SEO-optimalisatie. Het genereert content met de juiste zoekwoorddichtheid, meta-tags, FAQ-secties en CTA's - allemaal geoptimaliseerd voor zoekmachines terwijl hoge kwaliteit behouden blijft.",
+      "question5": "Biedt u ondersteuning voor zakelijke klanten?",
+      "answer5": "Ja, we bieden toegewijde ondersteuning, aangepaste integraties en op maat gemaakte oplossingen voor zakelijke klanten. Neem contact op met ons verkoopteam om uw specifieke behoeften te bespreken.",
+      "question6": "Hoe begin ik?",
+      "answer6": "Meld u gewoon aan voor een gratis proefperiode, kies een plan dat bij uw behoeften past en begin met het uitvoeren van uw eerste audit of het genereren van content. Onze intuïtieve interface maakt het gemakkelijk om binnen enkele minuten te beginnen."
+    },
+    "cta": {
+      "title": "Klaar om uw SEO-strategie te transformeren?",
+      "subtitle": "Sluit u aan bij duizenden professionals die Serpixa vertrouwen voor hun SEO- en AI-contentbehoeften",
+      "benefit1": "Geen creditcard vereist",
+      "benefit2": "Op elk moment opzeggen",
+      "benefit3": "24/7 klantenondersteuning",
+      "benefit4": "14-dagen geld-terug-garantie",
+      "startTrial": "Start gratis proefperiode",
+      "viewPricing": "Bekijk prijzen",
+      "trustText": "Vertrouwd door meer dan 10.000 bedrijven wereldwijd"
+    },
+    "footer": {
+      "description": "Alle tools die u nodig heeft om uw SEO en AI-zichtbaarheid te perfectioneren. Beheer traditioneel en AI-zoeken met een krachtig platform.",
+      "quickLinks": "Snelle links",
+      "home": "Home",
+      "features": "Functies",
+      "pricing": "Prijzen",
+      "signUp": "Aanmelden",
+      "products": "Producten",
+      "seoAudit": "SEO Audit",
+      "gbpAudit": "GBP Audit",
+      "geoAudit": "GEO Audit",
+      "aiContent": "AI Content",
+      "copyright": "© 2024 Serpixa. Alle rechten voorbehouden.",
+      "privacy": "Privacybeleid",
+      "terms": "Servicevoorwaarden"
+    },
+    "whySerpixa": {
+      "hero": {
+        "title": "Waarom Serpixa?",
+        "subtitle": "Alles wat u nodig heeft om SEO onder de knie te krijgen—geautomatiseerde audits, AI-aangedreven inzichten en professionele rapporten, alles op één platform",
+        "startTrial": "Start gratis proefperiode"
+      },
+      "problemSolution": {
+        "title": "Het probleem dat we oplossen",
+        "problems": {
+          "title": "Handmatig SEO-werk kost veel tijd",
+          "item1": "Uren besteed aan handmatige SEO-audits en analyses",
+          "item2": "Moeilijkheid bij het volgen van lokale zoekzichtbaarheid",
+          "item3": "Inconsistente rapportageformaten tussen tools",
+          "item4": "Gebrek aan actiegerichte aanbevelingen"
+        },
+        "solution": {
+          "title": "Serpixa automatiseert alles",
+          "description": "Serpixa stroomlijnt uw hele SEO-workflow. Voer uitgebreide audits uit in minuten, krijg AI-aangedreven content suggesties en genereer professionele rapporten die klanten imponeren—alles vanuit één intuïtief platform."
+        }
+      },
+      "benefits": {
+        "badge": "Voordelen",
+        "title": "Waarom Serpixa kiezen?",
+        "subtitle": "Alles wat u nodig heeft om te slagen met SEO, alles op één plek",
+        "timeSaving": {
+          "title": "Bespaar uren werk",
+          "description": "Voer complete SEO-, GEO- en GBP-audits uit in minuten in plaats van uren. Automatiseer repetitieve taken en focus op wat belangrijk is—uw bedrijf laten groeien."
+        },
+        "allInOne": {
+          "title": "Alles-in-één platform",
+          "description": "SEO-audits, lokale zichtbaarheidsanalyse, Google Business Profile optimalisatie en AI-content generatie—alles wat u nodig heeft op één krachtig platform."
+        },
+        "professionalReports": {
+          "title": "Professionele rapporten",
+          "description": "Genereer klantklare PDF-rapporten met uw branding. Imponeer klanten met gedetailleerde inzichten, visuele grafieken en actiegerichte aanbevelingen."
+        },
+        "actionableInsights": {
+          "title": "Actiegerichte inzichten",
+          "description": "Krijg duidelijke, specifieke aanbevelingen—niet alleen data. Weet precies wat u moet repareren en hoe u uw zoekrankings kunt verbeteren."
+        },
+        "easyToUse": {
+          "title": "Gebruiksvriendelijk",
+          "description": "Geen technische expertise vereist. Onze intuïtieve interface maakt het gemakkelijk om binnen minuten te beginnen, zelfs als u nieuw bent in SEO."
+        },
+        "trusted": {
+          "title": "Betrouwbaar en vertrouwd",
+          "description": "Gebouwd op toonaangevende databronnen met 100% nauwkeurige rankings. Vertrouwd door SEO-professionals en agentschappen wereldwijd."
+        }
+      },
+      "whatYouGet": {
+        "title": "Wat u krijgt",
+        "subtitle": "Uitgebreide SEO-tools ontworpen voor moderne bedrijven",
+        "seoAudit": {
+          "title": "SEO Audit",
+          "description": "Volledige website-analyse met on-page SEO-inzichten, concurrent rankings, zoekwoordoptimalisatie en technische SEO-controles. Krijg een uitgebreide SEO-score en gedetailleerde aanbevelingen."
+        },
+        "geoAudit": {
+          "title": "GEO Audit",
+          "description": "Analyseer lokale zoekzichtbaarheid met concurrentenanalyse, citatie-aanbevelingen en NAP-consistentiecontroles. Begrijp uw lokale marktpositie en verbeter uw zichtbaarheid."
+        },
+        "gbpAudit": {
+          "title": "GBP Audit",
+          "description": "Optimaliseer uw Google Business Profile met volledigheidsscores, optimalisatiecontrolelijsten en actiegerichte aanbevelingen. Zorg ervoor dat uw profiel opvalt in lokale zoekopdrachten."
+        },
+        "aiContent": {
+          "title": "AI Content Generatie",
+          "description": "Genereer SEO-geoptimaliseerde content inclusief meta-tags, koppen, FAQ-secties en CTA's. Aangedreven door geavanceerde AI om hoogwaardige, zoekmachinevriendelijke content te creëren."
+        }
+      },
+      "results": {
+        "title": "Echte resultaten",
+        "subtitle": "Wat u kunt bereiken met Serpixa",
+        "improveRankings": "Verbeter zoekrankings",
+        "increaseVisibility": "Verhoog lokale zichtbaarheid",
+        "saveTime": "Bespaar uren handmatig werk",
+        "impressClients": "Imponeer klanten met professionele rapporten",
+        "dataDriven": "Neem datagestuurde beslissingen"
+      },
+      "perfectFor": {
+        "title": "Perfect voor",
+        "subtitle": "Gebouwd voor iedereen die om SEO geeft",
+        "agencies": {
+          "title": "SEO Agentschappen",
+          "description": "Beheer meerdere klanten efficiënt met geautomatiseerde audits en professionele rapporten. Schaal uw agentschap zonder uw workload te verhogen."
+        },
+        "businesses": {
+          "title": "Kleine bedrijven",
+          "description": "DIY SEO zonder de expertise. Krijg professionele inzichten en aanbevelingen om uw online aanwezigheid te verbeteren."
+        },
+        "marketingTeams": {
+          "title": "Marketingteams",
+          "description": "Neem datagestuurde beslissingen met uitgebreide SEO-inzichten. Volg prestaties, analyseer concurrenten en optimaliseer uw strategie."
+        },
+        "freelancers": {
+          "title": "Freelancers",
+          "description": "Lever professionele rapporten die klanten imponeren. Val op met gedetailleerde audits en actiegerichte aanbevelingen."
+        }
+      },
+      "whyChoose": {
+        "title": "Waarom Serpixa vertrouwen?",
+        "subtitle": "Gebouwd voor professionals die nauwkeurigheid en betrouwbaarheid eisen",
+        "trusted": "Vertrouwd door SEO-professionals sinds 2013",
+        "accurate": "100% nauwkeurige zoekwoordrankings en data",
+        "bilingual": "Volledige tweetalige ondersteuning (FR & NL)",
+        "gdpr": "AVG-conform en veilig",
+        "updates": "Regelmatige updates met de nieuwste SEO-trends",
+        "support": "Toegewijd klantenservice"
+      },
+      "cta": {
+        "title": "Klaar om uw SEO-workflow te transformeren?",
+        "subtitle": "Sluit u aan bij duizenden professionals die Serpixa vertrouwen voor hun SEO- en AI-content behoeften",
+        "startTrial": "Start gratis proefperiode",
+        "viewPricing": "Bekijk prijzen",
+        "trustText": "Geen creditcard vereist • Annuleer op elk moment"
+      }
+    },
+    "featuresPage": {
+      "hero": {
+        "badge": "Functies",
+        "title": "Krachtige functies voor SEO-succes",
+        "subtitle": "Alles wat u nodig heeft om uw online aanwezigheid te analyseren, optimaliseren en te laten groeien",
+        "startTrial": "Start gratis proefperiode"
+      },
+      "mainFeatures": {
+        "title": "Kernfuncties",
+        "subtitle": "Uitgebreide tools ontworpen om u te helpen SEO onder de knie te krijgen"
+      },
+      "seoAudit": {
+        "title": "SEO Audit",
+        "description": "Volledige website-analyse met uitgebreide SEO-inzichten. Analyseer uw on-page SEO, volg zoekwoordrankings en krijg actiegerichte aanbevelingen om uw zoekzichtbaarheid te verbeteren.",
+        "feature1": "On-page SEO-analyse (titel tags, meta beschrijvingen, koppen)",
+        "feature2": "Zoekwoordoptimalisatie en dichtheidsanalyse",
+        "feature3": "Technische SEO-controles en aanbevelingen",
+        "feature4": "Concurrentenanalyse en ranking-inzichten"
+      },
+      "geoAudit": {
+        "title": "GEO Audit",
+        "description": "Analyseer uw lokale zoekzichtbaarheid en begrijp uw positie op de lokale markt. Krijg inzichten over concurrenten, citaties en NAP-consistentie.",
+        "feature1": "Lokale zichtbaarheidsscore en rankings",
+        "feature2": "Analyse van nabijgelegen concurrenten met beoordelingen en recensies",
+        "feature3": "Citatie- en NAP-consistentiecontroles",
+        "feature4": "Actiegerichte aanbevelingen voor lokale SEO-verbetering"
+      },
+      "gbpAudit": {
+        "title": "GBP Audit",
+        "description": "Optimaliseer uw Google Business Profile met uitgebreide volledigheidsscores en optimalisatiecontrolelijsten. Zorg ervoor dat uw profiel opvalt in lokale zoekopdrachten.",
+        "feature1": "Volledigheidsscore bedrijfsinformatie",
+        "feature2": "Categorie-optimalisatie en aanvullende categorieën",
+        "feature3": "Analyse van foto's, beoordelingen, recensies en bedrijfsattributen",
+        "feature4": "Optimalisatiescore met actiegerichte aanbevelingen"
+      },
+      "aiContent": {
+        "title": "AI Content Generatie",
+        "description": "Genereer SEO-geoptimaliseerde content aangedreven door geavanceerde AI. Maak hoogwaardige content inclusief meta-tags, koppen, FAQ-secties en CTA's geoptimaliseerd voor zoekmachines.",
+        "feature1": "SEO-geoptimaliseerde meta-titels en beschrijvingen",
+        "feature2": "Volledige HTML-content met juiste kopstructuur",
+        "feature3": "FAQ-secties en overtuigende CTA's",
+        "feature4": "Zoekwoorddichtheidsanalyse en optimalisatie"
+      },
+      "languageSupport": {
+        "title": "Tweetalige ondersteuning",
+        "subtitle": "Volledige ondersteuning voor Franse en Nederlandse talen op het hele platform",
+        "supportedLanguages": {
+          "title": "Ondersteunde talen"
+        },
+        "benefits": {
+          "title": "Voordelen"
+        },
+        "feature1": "Volledige UI-vertaling in Frans en Nederlands",
+        "feature2": "Gelokaliseerde e-mailnotificaties en rapporten",
+        "feature3": "Regionale taalondersteuning (Belgisch Frans & Nederlands)",
+        "feature4": "Eenvoudige taalwisseling met persistente voorkeuren"
+      },
+      "additionalFeatures": {
+        "title": "Aanvullende functies",
+        "subtitle": "Meer tools om u te helpen slagen",
+        "professionalReports": {
+          "title": "Professionele rapporten",
+          "description": "Genereer klantklare PDF-rapporten met uw branding. Imponeer klanten met gedetailleerde inzichten en visuele grafieken."
+        },
+        "dataVisualization": {
+          "title": "Gegevensvisualisatie",
+          "description": "Visuele grafieken en diagrammen om u te helpen uw SEO-prestaties in één oogopslag te begrijpen."
+        },
+        "fastResults": {
+          "title": "Snelle resultaten",
+          "description": "Krijg uitgebreide auditresultaten in minuten, niet in uren. Bespaar tijd en focus op wat belangrijk is."
+        },
+        "secure": {
+          "title": "Veilig en betrouwbaar",
+          "description": "AVG-conform met veilige gegevensverwerking. Uw gegevens zijn veilig en beschermd."
+        },
+        "actionableInsights": {
+          "title": "Actiegerichte inzichten",
+          "description": "Krijg duidelijke, specifieke aanbevelingen—niet alleen data. Weet precies wat u moet repareren en hoe."
+        },
+        "easyToUse": {
+          "title": "Gebruiksvriendelijk",
+          "description": "Intuïtieve interface die het gemakkelijk maakt om te beginnen, zelfs als u nieuw bent in SEO."
+        }
+      },
+      "cta": {
+        "title": "Klaar om te beginnen?",
+        "subtitle": "Begin vandaag met Serpixa en transformeer uw SEO-strategie",
+        "startTrial": "Start gratis proefperiode",
+        "viewPricing": "Bekijk prijzen"
+      }
+    },
+    "aboutUs": {
+      "hero": {
+        "badge": "Over ons",
+        "title": "Bedrijven empoweren met SEO-excellentie",
+        "subtitle": "Onze missie is om SEO toegankelijk, krachtig en resultaatgericht te maken voor bedrijven van alle groottes"
+      },
+      "ourStory": {
+        "title": "Ons verhaal",
+        "paragraph1": "Serpixa is ontstaan uit een eenvoudige observatie: SEO-tools waren ofwel te complex voor kleine bedrijven of te duur voor groeiende bedrijven. We zagen een gat in de markt voor een platform dat krachtige analyses combineert met gebruiksgemak.",
+        "paragraph2": "Opgericht in 2013, helpen we SEO-professionals en bedrijven wereldwijd hun zoekzichtbaarheid te verbeteren. Ons platform maakt gebruik van geavanceerde technologie en toonaangevende databronnen om nauwkeurige, actiegerichte inzichten te leveren.",
+        "paragraph3": "Vandaag de dag bedient Serpixa duizenden klanten over de hele wereld, van solo-ondernemers tot grote agentschappen, allemaal verenigd door één doel: betere zoekrankings bereiken en hun online aanwezigheid laten groeien.",
+        "mission": {
+          "title": "Onze missie",
+          "description": "SEO democratiseren door professionele tools toegankelijk te maken voor iedereen, ongeacht hun technische expertise of budget."
+        }
+      },
+      "stats": {
+        "title": "In cijfers",
+        "subtitle": "Onze impact in cijfers",
+        "customers": {
+          "value": "10.000+",
+          "label": "Tevreden klanten"
+        },
+        "audits": {
+          "value": "1M+",
+          "label": "Voltooide audits"
+        },
+        "countries": {
+          "value": "50+",
+          "label": "Bediende landen"
+        },
+        "satisfaction": {
+          "value": "98%",
+          "label": "Klanttevredenheid"
+        }
+      },
+      "values": {
+        "title": "Onze waarden",
+        "subtitle": "De principes die alles wat we doen begeleiden",
+        "innovation": {
+          "title": "Innovatie",
+          "description": "We verleggen continu de grenzen van wat mogelijk is in SEO, integreren de nieuwste AI-technologie en databronnen om voorop te blijven lopen."
+        },
+        "trust": {
+          "title": "Vertrouwen en betrouwbaarheid",
+          "description": "We zijn toegewijd aan het leveren van 100% nauwkeurige data en betrouwbare inzichten. Uw succes is gebouwd op onze fundering van vertrouwen en transparantie."
+        },
+        "excellence": {
+          "title": "Excellentie",
+          "description": "We streven naar excellentie in elke functie, elk rapport en elke interactie. Goed genoeg is niet goed genoeg—we streven naar uitzonderlijk."
+        },
+        "customerFirst": {
+          "title": "Klant eerst",
+          "description": "Uw succes is ons succes. We luisteren naar onze klanten, passen ons aan hun behoeften aan en bouwen functies die echt het verschil maken."
+        }
+      },
+      "whyWeDo": {
+        "title": "Waarom we doen wat we doen",
+        "subtitle": "Het probleem begrijpen dat we oplossen",
+        "problem": {
+          "title": "De uitdaging",
+          "item1": "SEO-tools zijn vaak te complex en intimiderend",
+          "item2": "Kleine bedrijven worstelen met dure enterprise-oplossingen",
+          "item3": "Handmatig SEO-werk kost veel tijd en is foutgevoelig"
+        },
+        "solution": {
+          "title": "Onze oplossing",
+          "item1": "Intuïtief platform dat iedereen kan gebruiken, ongeacht technische vaardigheid",
+          "item2": "Betaalbare prijzen die meegroeien met uw bedrijf",
+          "item3": "Geautomatiseerde workflows die uren handmatig werk besparen"
+        }
+      },
+      "cta": {
+        "title": "Sluit u aan bij deze reis",
+        "subtitle": "Maak deel uit van een gemeenschap die transformeert hoe bedrijven SEO benaderen",
+        "startTrial": "Start gratis proefperiode",
+        "exploreFeatures": "Functies verkennen"
+      }
+    }
+  },
+  "dashboard": {
+    "page": {
+      "welcomeBack": "Welkom terug",
+      "subscription": "Abonnement",
+      "noSubscription": "Geen abonnement",
+      "yourCredits": "Uw credits",
+      "quickActions": "Snelle acties",
+      "recentAudits": "Recente audits",
+      "noRecentAudits": "Geen recente audits",
+      "viewAll": "Alles bekijken",
+      "getStarted": "Aan de slag",
+      "overview": "Overzicht",
+      "totalAudits": "Totaal aantal audits",
+      "successRate": "Succespercentage",
+      "remaining": "Resterend",
+      "used": "Gebruikt",
+      "available": "Beschikbaar",
+      "newSeoAudit": "Nieuwe SEO-audit",
+      "newSeoAuditDesc": "Analyseer website SEO-prestaties",
+      "newGeoAudit": "Nieuwe GEO-audit",
+      "newGeoAuditDesc": "Controleer lokale zoekzichtbaarheid",
+      "newGbpAudit": "Nieuwe GBP-audit",
+      "newGbpAuditDesc": "Audit Google Business-profiel",
+      "aiContent": "AI-inhoud",
+      "aiContentDesc": "Genereer geoptimaliseerde inhoud"
+    },
+    "extras": {
+      "title": "Extras en add-ons",
+      "subtitle": "Beheer uw add-on credits en koop extra extras",
+      "myExtras": "Mijn Extras",
+      "totalCredits": "totaal credits",
+      "noExtras": "Nog geen extras gekocht",
+      "noExtrasTitle": "Nog geen extras",
+      "noExtrasDescription": "U heeft nog geen add-ons gekocht. Blader door beschikbare extras hieronder om uw plan te verbeteren.",
+      "browseExtras": "Blader door extras",
+      "purchaseHistory": "Aankoopgeschiedenis",
+      "credits": "credits",
+      "remaining": "resterend",
+      "noCredits": "Geen credits beschikbaar",
+      "buyMore": "Meer extras kopen",
+      "buyMoreDescription": "Verbeter uw plan met extra credits voor SEO, GEO, GBP audits en AI-contentgeneratie.",
+      "noAddonsAvailable": "Er zijn momenteel geen add-ons beschikbaar",
+      "historyNote": "Aankoopgeschiedenis wordt weergegeven als referentie. Werkelijke aankoopgegevens kunnen variëren."
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "seoAudits": "SEO-audits",
+      "geoAudits": "GEO-audits",
+      "gbpAudits": "GBP-audits",
+      "aiContent": "AI-inhoud",
+      "reports": "Rapporten",
+      "profile": "Profiel",
+      "settings": "Instellingen",
+      "billing": "Facturering",
+      "credits": "Credits",
+      "newAudit": "Nieuwe audit",
+      "history": "Geschiedenis",
+      "generator": "Generator",
+      "plan": "Plan",
+      "payment": "Betaling",
+      "addOns": "Add-ons",
+      "extras": "Extras"
+    },
+    "support": {
+      "title": "Ondersteuning",
+      "subtitle": "Krijg hulp van ons ondersteuningsteam",
+      "subject": "Onderwerp",
+      "subjectPlaceholder": "Korte beschrijving van uw probleem",
+      "subjectRequired": "Onderwerp is verplicht",
+      "subjectMinLength": "Onderwerp moet minimaal 3 tekens bevatten",
+      "subjectMaxLength": "Onderwerp moet minder dan 200 tekens bevatten",
+      "email": "E-mail",
+      "emailPlaceholder": "uw.email@voorbeeld.com",
+      "emailRequired": "E-mail is verplicht",
+      "emailInvalid": "Voer een geldig e-mailadres in",
+      "message": "Bericht",
+      "messagePlaceholder": "Beschrijf uw probleem of vraag in detail...",
+      "messageRequired": "Bericht is verplicht",
+      "messageMinLength": "Bericht moet minimaal 10 tekens bevatten",
+      "messageMaxLength": "Bericht moet minder dan 2000 tekens bevatten",
+      "send": "Bericht verzenden"
+    },
+    "profile": {
+      "page": {
+        "title": "Profiel",
+        "subtitle": "Beheer uw accountgegevens en voorkeuren",
+        "personalInfo": "Persoonlijke informatie",
+        "name": "Naam",
+        "email": "E-mail",
+        "emailStatus": "E-mailstatus",
+        "verified": "Geverifieerd",
+        "notVerified": "Niet geverifieerd",
+        "subscription": "Abonnement",
+        "plan": "Huidig plan",
+        "renewsOn": "Verlengt op",
+        "credits": "Credits",
+        "noCredits": "Geen credits beschikbaar",
+        "accountInfo": "Accountinformatie",
+        "memberSince": "Lid sinds",
+        "userType": "Gebruikerstype"
+      }
+    },
+    "common": {
+      "newAudit": "Nieuwe audit",
+      "reRunAudit": "Audit opnieuw uitvoeren",
+      "exportPdf": "PDF exporteren",
+      "generating": "Genereren...",
+      "delete": "Verwijderen",
+      "view": "Bekijken",
+      "edit": "Bewerken",
+      "save": "Opslaan",
+      "cancel": "Annuleren",
+      "close": "Sluiten",
+      "search": "Zoeken",
+      "filter": "Filteren",
+      "export": "Exporteren",
+      "actions": "Acties",
+      "date": "Datum",
+      "status": "Status",
+      "score": "Score",
+      "url": "URL",
+      "keyword": "Zoekwoord",
+      "issues": "Problemen",
+      "noResults": "Geen resultaten gevonden",
+      "copy": "Kopiëren",
+      "copied": "Gekopieerd",
+      "copyUrl": "URL kopiëren",
+      "copyTitle": "Titel kopiëren",
+      "copyDescription": "Beschrijving kopiëren",
+      "optional": "Optioneel",
+      "required": "Vereist",
+      "submit": "Verzenden",
+      "back": "Terug",
+      "loading": "Laden...",
+      "errorLoading": "Fout bij het laden van gegevens. Probeer het opnieuw.",
+      "delete": "Verwijderen",
+      "deleting": "Verwijderen...",
+      "deleteAuditTitle": "Audit verwijderen",
+      "deleteAuditMessage": "Weet u zeker dat u deze audit wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+      "deleteContentTitle": "Inhoud verwijderen",
+      "deleteContentMessage": "Weet u zeker dat u deze inhoud wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+      "deleteWarning": "Deze actie kan niet ongedaan worden gemaakt. Alle gegevens die aan dit item zijn gekoppeld, worden permanent verwijderd.",
+      "pagination": {
+        "showing": "Toont {start} tot {end} van {total} resultaten",
+        "noResults": "Geen resultaten",
+        "previous": "Vorige",
+        "next": "Volgende",
+        "page": "Pagina {page}"
+      },
+      "toast": {
+        "contentGeneratedSuccess": "Inhoud succesvol gegenereerd!",
+        "contentDeletedSuccess": "Inhoud succesvol verwijderd",
+        "contentDeleteError": "Verwijderen van inhoud mislukt",
+        "contentGenerateError": "Genereren van inhoud mislukt",
+        "seoAuditCompletedSuccess": "SEO-audit succesvol voltooid!",
+        "seoAuditDeleteSuccess": "Audit succesvol verwijderd",
+        "seoAuditDeleteError": "Verwijderen van audit mislukt",
+        "seoAuditRunError": "Uitvoeren van SEO-audit mislukt",
+        "geoAuditCompletedSuccess": "Geo-audit succesvol voltooid!",
+        "geoAuditDeleteSuccess": "Audit succesvol verwijderd",
+        "geoAuditDeleteError": "Verwijderen van audit mislukt",
+        "geoAuditRunError": "Uitvoeren van Geo-audit mislukt",
+        "gbpAuditCompletedSuccess": "GBP-audit succesvol voltooid!",
+        "gbpAuditDeleteSuccess": "Audit succesvol verwijderd",
+        "gbpAuditDeleteError": "Verwijderen van audit mislukt",
+        "gbpAuditRunError": "Uitvoeren van GBP-audit mislukt",
+        "pdfDownloadedSuccess": "PDF succesvol gedownload",
+        "pdfDownloadError": "Downloaden van PDF mislukt",
+        "accountCreatedSuccess": "Account succesvol aangemaakt!",
+        "signupError": "Registratie mislukt.",
+        "loginSuccess": "Succesvol ingelogd!",
+        "loginError": "Inloggen mislukt.",
+        "logoutSuccess": "Succesvol uitgelogd",
+        "logoutError": "Uitloggen mislukt.",
+        "passwordResetEmailSent": "Wachtwoordreset-e-mail verzonden!",
+        "passwordResetEmailError": "Verzenden van reset-e-mail mislukt.",
+        "passwordResetSuccess": "Wachtwoordreset succesvol!",
+        "passwordResetError": "Wachtwoordreset mislukt.",
+        "emailVerifiedSuccess": "E-mail succesvol geverifieerd!",
+        "emailVerificationError": "E-mailverificatie mislukt.",
+        "verificationEmailSent": "Verificatie-e-mail verzonden!",
+        "verificationEmailError": "Verzenden van verificatie-e-mail mislukt.",
+        "checkoutUrlError": "Ophalen van checkout-URL mislukt",
+        "checkoutSessionError": "Aanmaken van checkout-sessie mislukt",
+        "portalUrlError": "Ophalen van portal-URL mislukt",
+        "portalSessionError": "Aanmaken van portal-sessie mislukt"
+      },
+      "next": "Volgende",
+      "previous": "Vorige"
+    },
+    "seoAudit": {
+      "new": {
+        "title": "Nieuwe SEO-audit",
+        "subtitle": "Analyseer de SEO-prestaties van uw website en krijg actiegerichte inzichten",
+        "whatWillBeAnalyzed": "Wat wordt er geanalyseerd?",
+        "onPageElements": "On-page SEO-elementen (titel, meta, koppen)",
+        "keywordOptimization": "Zoekwoordoptimalisatie en -dichtheid",
+        "technicalSeo": "Technische SEO-controles",
+        "competitorAnalysis": "Concurrentieanalyse en rankings"
+      },
+      "form": {
+        "websiteUrl": "Website-URL",
+        "websiteUrlPlaceholder": "https://voorbeeld.com",
+        "websiteUrlHelp": "Voer de volledige URL in van de pagina die u wilt auditen",
+        "targetKeyword": "Doelzoekwoord",
+        "targetKeywordPlaceholder": "bijv. beste seo-tools",
+        "targetKeywordHelp": "Het primaire zoekwoord waarvoor u wilt optimaliseren",
+        "locale": "Locale",
+        "localeHelp": "Selecteer de locale voor de audit",
+        "runAudit": "SEO-audit uitvoeren",
+        "runningAudit": "Audit wordt uitgevoerd..."
+      },
+      "list": {
+        "title": "SEO-audits",
+        "subtitle": "Bekijk en beheer uw SEO-auditgeschiedenis",
+        "searchPlaceholder": "Zoeken op URL of zoekwoord...",
+        "noAudits": "Nog geen audits",
+        "noAuditsDescription": "Begin met het maken van uw eerste SEO-audit",
+        "createNewAudit": "Nieuwe audit maken",
+        "totalAudits": "Totaal aantal audits",
+        "avgScore": "Gemiddelde score",
+        "totalIssues": "Totaal aantal problemen",
+        "completed": "Voltooid"
+      },
+      "view": {
+        "title": "SEO-auditresultaten",
+        "onPageAnalysis": "On-page analyse",
+        "serpInfo": "SERP-informatie",
+        "auditInfo": "Auditinformatie",
+        "recommendations": "Aanbevelingen",
+        "competitorAnalysis": "Concurrentieanalyse",
+        "titleTag": "Titeltag",
+        "metaDescription": "Meta-beschrijving",
+        "h1Tag": "H1-tag",
+        "images": "Afbeeldingen",
+        "links": "Links",
+        "canonicalTag": "Canonical tag",
+        "notFound": "Niet gevonden",
+        "length": "Lengte",
+        "characters": "tekens",
+        "count": "Aantal",
+        "total": "Totaal",
+        "internal": "Intern",
+        "external": "Extern",
+        "broken": "Kapot",
+        "withoutAlt": "Zonder alt",
+        "severity": "Ernst",
+        "issue": "Probleem",
+        "description": "Beschrijving",
+        "pagesAffected": "Getroffen pagina's",
+        "fix": "Oplossen",
+        "learnMore": "Meer informatie",
+        "position": "Positie",
+        "domain": "Domein",
+        "breadcrumb": "Broodkruimel",
+        "location": "Locatie",
+        "language": "Taal",
+        "device": "Apparaat",
+        "totalResults": "Totaal aantal resultaten",
+        "targetKeyword": "Doelzoekwoord",
+        "copyUrl": "URL kopiëren",
+        "copyKeyword": "Zoekwoord kopiëren",
+        "issuesFound": "problemen gevonden",
+        "action": "Actie",
+        "topCompetitors": "Top",
+        "competitors": "concurrenten",
+        "rank": "Rang",
+        "noTitle": "Geen titel",
+        "seoScore": "SEO-score",
+        "totalIssues": "Totaal aantal problemen",
+        "totalLinks": "Totaal aantal links",
+        "competitorsLabel": "Concurrenten",
+        "viewAudit": "Audit bekijken",
+        "deleteAudit": "Audit verwijderen",
+        "priority": "Prioriteit",
+        "category": "Categorie",
+        "impact": "Impact",
+        "effort": "Inspanning",
+        "filters": "Filters",
+        "clearFilters": "Filters wissen",
+        "all": "Alle",
+        "critical": "Kritiek",
+        "high": "Hoog",
+        "medium": "Gemiddeld",
+        "low": "Laag",
+        "easy": "Makkelijk",
+        "moderate": "Matig",
+        "difficult": "Moeilijk",
+        "of": "van",
+        "noRecommendationsMatch": "Geen aanbevelingen komen overeen met de geselecteerde filters",
+        "categoryMeta": "Meta-tags",
+        "categoryContent": "Inhoud",
+        "categoryTechnical": "Technisch",
+        "categoryKeyword": "Zoekwoord",
+        "categoryCompetitor": "Concurrent",
+        "categorySuccess": "Succes",
+        "pdfDownloaded": "PDF succesvol gedownload!",
+        "failedToDownloadPdf": "PDF downloaden mislukt",
+        "copiedToClipboard": "{label} gekopieerd naar klembord!",
+        "failedToCopy": "Kopiëren naar klembord mislukt",
+        "loadingAuditResults": "Auditresultaten laden...",
+        "failedToLoadAudit": "Audit laden mislukt",
+        "errorLoadingAudit": "Er is een fout opgetreden bij het laden van de audit",
+        "backToAudits": "Terug naar audits",
+        "auditFailed": "Audit mislukt"
+      }
+    },
+    "geoAudit": {
+      "new": {
+        "title": "Nieuwe GEO-audit",
+        "subtitle": "Analyseer lokale zoekzichtbaarheid en concurrentielandschap",
+        "whatWillBeAnalyzed": "Wat wordt er geanalyseerd?",
+        "localVisibility": "Lokale zichtbaarheidsscore en rankings",
+        "nearbyCompetitors": "Nabijgelegen concurrenten met beoordelingen en reviews",
+        "citationAnalysis": "Citatie- en NAP-consistentieanalyse",
+        "recommendations": "Actiegerichte aanbevelingen voor verbetering"
+      },
+      "form": {
+        "keyword": "Zoekwoord",
+        "keywordPlaceholder": "bijv. restaurants",
+        "keywordHelp": "De zoekterm die u wilt analyseren",
+        "city": "Stad",
+        "cityPlaceholder": "bijv. Brussel",
+        "cityHelp": "Stadsnaam (voorkeur voor betere resultaten)",
+        "country": "Land",
+        "countryPlaceholder": "bijv. België",
+        "countryHelp": "Landnaam",
+        "businessName": "Bedrijfsnaam",
+        "businessNamePlaceholder": "bijv. Mijn Restaurant",
+        "businessNameHelp": "Optioneel: Uw bedrijfsnaam voor beter gericht",
+        "googleDomain": "Google-domein",
+        "googleDomainHelp": "Selecteer het Google-domein voor uw doelmarkt",
+        "googleDomainPlaceholder": "Google-domein selecteren",
+        "cityHelpDetailed": "De stad waar u lokale zoekresultaten wilt analyseren (bijv. \"New York\", \"Brussel\", \"Parijs\")",
+        "countryHelpDetailed": "Het land voor lokale zoekanalyse (gebruikt als stad niet is opgegeven, bijv. \"Verenigde Staten\", \"België\")",
+        "businessNameHelpDetailed": "Laat leeg om alle concurrenten te zien. Indien opgegeven, vinden we uw bedrijf in de resultaten.",
+        "keywordHelpDetailed": "De zoekterm die u wilt analyseren voor lokale resultaten",
+        "showAdvanced": "Geavanceerde opties weergeven",
+        "hideAdvanced": "Geavanceerde opties verbergen",
+        "language": "Taal",
+        "locale": "Locale",
+        "localeHelp": "Selecteer de locale voor de audit",
+        "device": "Apparaat",
+        "runAudit": "GEO-audit uitvoeren",
+        "runningAudit": "Audit wordt uitgevoerd..."
+      },
+      "view": {
+        "title": "GEO-auditresultaten",
+        "localVisibilityScore": "Lokale zichtbaarheidsscore",
+        "totalCompetitors": "Totaal aantal concurrenten",
+        "totalRecommendations": "Totaal aantal aanbevelingen",
+        "citationScore": "Citatiescore",
+        "auditInfo": "Auditinformatie",
+        "citationAnalysis": "Citatieanalyse",
+        "napConsistency": "NAP-consistentie",
+        "businessInformation": "Bedrijfsinformatie",
+        "recommendations": "Aanbevelingen",
+        "nearbyCompetitors": "Nabijgelegen concurrenten",
+        "businessName": "Bedrijfsnaam",
+        "location": "Locatie",
+        "keyword": "Zoekwoord",
+        "date": "Datum",
+        "status": "Status",
+        "name": "Naam",
+        "rating": "Beoordeling",
+        "reviews": "Reviews",
+        "distance": "Afstand",
+        "address": "Adres",
+        "phone": "Telefoon",
+        "website": "Website",
+        "visibilityScore": "Zichtbaarheidsscore",
+        "competitors": "Concurrenten",
+        "napIssues": "NAP-problemen",
+        "copyKeyword": "Zoekwoord kopiëren",
+        "nameConsistency": "Naamconsistentie",
+        "addressConsistency": "Adresconsistentie",
+        "phoneConsistency": "Telefoonconsistentie",
+        "issues": "Problemen",
+        "noNapData": "Geen NAP-gegevens beschikbaar",
+        "missingCitations": "Ontbrekende citaties",
+        "inconsistentData": "Inconsistente gegevens",
+        "noCitationIssues": "Geen citatieproblemen gevonden",
+        "noCitationData": "Geen citatiegegevens beschikbaar",
+        "ratingAndReviews": "Beoordeling en reviews",
+        "category": "Categorie",
+        "copyPhone": "Telefoon kopiëren",
+        "visit": "Bezoeken",
+        "business": "Bedrijf",
+        "avgVisibility": "Gemiddelde zichtbaarheid",
+        "viewAudit": "Audit bekijken",
+        "deleteAudit": "Audit verwijderen"
+      },
+      "list": {
+        "title": "GEO-audits",
+        "subtitle": "Bekijk en beheer uw GEO-auditgeschiedenis",
+        "searchPlaceholder": "Zoeken op bedrijfsnaam...",
+        "noAudits": "Nog geen audits",
+        "noAuditsDescription": "Begin met het maken van uw eerste GEO-audit",
+        "createNewAudit": "Nieuwe audit maken",
+        "totalAudits": "Totaal aantal audits",
+        "avgVisibility": "Gemiddelde zichtbaarheid",
+        "totalCompetitors": "Totaal aantal concurrenten",
+        "completed": "Voltooid"
+      }
+    },
+    "gbpAudit": {
+      "new": {
+        "title": "Nieuwe GBP-audit",
+        "subtitle": "Analyseer uw Google Business-profieloptimalisatie en -volledigheid",
+        "whatWillBeAnalyzed": "Wat wordt er geanalyseerd?",
+        "businessInfo": "Volledigheid bedrijfsinformatie (naam, adres, telefoon, website)",
+        "categoryOptimization": "Categorieoptimalisatie en aanvullende categorieën",
+        "businessDescription": "Bedrijfsbeschrijving en openingstijden",
+        "photosRatings": "Foto's, beoordelingen, reviews en bedrijfsattributen",
+        "optimizationScore": "Optimalisatiescore en actiegerichte aanbevelingen"
+      },
+      "form": {
+        "businessName": "Bedrijfsnaam",
+        "businessNamePlaceholder": "bijv. Mijn Restaurant",
+        "businessNameHelp": "Optioneel als GBP-link is opgegeven",
+        "businessNameHelpDetailed": "De naam van uw bedrijf zoals deze verschijnt op Google Business-profiel",
+        "gbpLink": "GBP-link",
+        "gbpLinkPlaceholder": "https://www.google.com/maps/place/...",
+        "gbpLinkHelp": "Directe link naar uw Google Business-profiel (optioneel, maar helpt uw bedrijf sneller te vinden)",
+        "gbpLinkOptional": "Optioneel als bedrijfsnaam is opgegeven",
+        "location": "Locatie",
+        "locationPlaceholder": "bijv. Verenigde Staten, New York",
+        "locationHelp": "Locatie voor bedrijfszoekopdracht (standaard \"Verenigde Staten\")",
+        "languageCode": "Taalcode",
+        "languageCodeHelp": "Taalcode voor de bedrijfsinformatie",
+        "locale": "Locale",
+        "localeHelp": "Selecteer de locale voor de audit",
+        "showAdvanced": "Geavanceerde opties weergeven",
+        "hideAdvanced": "Geavanceerde opties verbergen",
+        "runAudit": "GBP-audit uitvoeren",
+        "runningAudit": "Audit wordt uitgevoerd...",
+        "businessNameOrGbpRequired": "Bedrijfsnaam of GBP-link is vereist",
+        "validUrlRequired": "Voer een geldige URL in"
+      },
+      "list": {
+        "title": "GBP-audits",
+        "subtitle": "Bekijk en beheer uw GBP-auditgeschiedenis",
+        "searchPlaceholder": "Zoeken op bedrijfsnaam...",
+        "noAudits": "Nog geen audits",
+        "noAuditsDescription": "Begin met het maken van uw eerste GBP-audit",
+        "createNewAudit": "Nieuwe audit maken",
+        "totalAudits": "Totaal aantal audits",
+        "avgScore": "Gemiddelde score",
+        "totalRecommendations": "Totaal aantal aanbevelingen",
+        "completed": "Voltooid"
+      },
+      "view": {
+        "title": "GBP-auditresultaten",
+        "optimizationScore": "Optimalisatiescore",
+        "completedItems": "Voltooide items",
+        "totalItems": "Totaal aantal items",
+        "totalRecommendations": "Totaal aantal aanbevelingen",
+        "businessInfo": "Bedrijfsinformatie",
+        "checklist": "Optimalisatiecontrolelijst",
+        "auditInfo": "Auditinformatie",
+        "recommendations": "Aanbevelingen",
+        "businessName": "Bedrijfsnaam",
+        "gbpLink": "GBP-link",
+        "date": "Datum",
+        "status": "Status",
+        "category": "Categorie",
+        "address": "Adres",
+        "phone": "Telefoon",
+        "website": "Website",
+        "hours": "Uren",
+        "description": "Beschrijving",
+        "completed": "Voltooid",
+        "pending": "In afwachting",
+        "priority": "Prioriteit",
+        "action": "Actie",
+        "googleRating": "Google-beoordeling",
+        "name": "Naam",
+        "primaryCategory": "Primaire categorie",
+        "additionalCategories": "Aanvullende categorieën",
+        "ratingAndReviews": "Beoordeling en reviews",
+        "businessHours": "Openingstijden",
+        "set": "Ingesteld",
+        "placeId": "Plaats-ID",
+        "copyGbpLink": "GBP-link kopiëren",
+        "copyPlaceId": "Plaats-ID kopiëren",
+        "recommendationsFound": "aanbevelingen gevonden",
+        "complete": "Voltooid",
+        "missing": "Ontbrekend",
+        "viewAudit": "Audit bekijken",
+        "deleteAudit": "Audit verwijderen"
+      }
+    },
+    "aiContent": {
+      "new": {
+        "title": "AI-inhoudgenerator",
+        "subtitle": "Genereer SEO-geoptimaliseerde inhoud met AI",
+        "whatWillBeAnalyzed": "Wat wordt er gegenereerd?",
+        "metaTitle": "Geoptimaliseerde meta-titel (max 60 tekens)",
+        "metaDescription": "Overtuigende meta-beschrijving (max 155 tekens)",
+        "htmlContent": "Volledige HTML-inhoud (1500+ woorden)",
+        "faq": "FAQ-sectie (5-7 vragen)",
+        "cta": "Overtuigende call-to-action",
+        "seoOptimized": "SEO-geoptimaliseerd met zoekwoorddichtheidsanalyse"
+      },
+      "form": {
+        "keyword": "Zoekwoord",
+        "keywordPlaceholder": "bijv. beste seo-tools",
+        "keywordHelp": "Voer het primaire zoekwoord in voor inhoudsgeneratie",
+        "locale": "Locale",
+        "localeHelp": "Selecteer de locale voor inhoudsgeneratie",
+        "generateContent": "Inhoud genereren",
+        "generating": "Genereren..."
+      },
+      "progress": {
+        "generating": "Inhoud genereren",
+        "keyword": "Zoekwoord",
+        "processing": "Verwerken...",
+        "pleaseWait": "Even geduld terwijl we uw SEO-geoptimaliseerde inhoud genereren",
+        "analyzingKeyword": "Zoekwoord analyseren...",
+        "generatingSeoContent": "SEO-inhoud genereren...",
+        "optimizingMetaTags": "Meta-tags optimaliseren...",
+        "structuringContent": "Inhoud structureren...",
+        "finalizing": "Afronden..."
+      },
+      "view": {
+        "title": "Gegenereerde inhoud",
+        "metaTitle": "Meta-titel",
+        "metaDescription": "Meta-beschrijving",
+        "htmlContent": "Inhoud",
+        "faq": "FAQ",
+        "cta": "Call-to-action",
+        "seoScore": "SEO-score",
+        "keywordDensity": "Zoekwoorddichtheid",
+        "wordCount": "Aantal woorden",
+        "copy": "Kopiëren",
+        "copied": "Gekopieerd",
+        "copyMetaTitle": "Meta-titel kopiëren",
+        "copyMetaDescription": "Meta-beschrijving kopiëren",
+        "copyContent": "Inhoud kopiëren",
+        "regenerate": "Opnieuw genereren",
+        "exportHtml": "HTML exporteren",
+        "exportPdf": "PDF exporteren",
+        "copyAllHtml": "Alle HTML kopiëren",
+        "generatedAt": "Gegenereerd op",
+        "keyword": "Zoekwoord",
+        "locale": "Locale",
+        "headings": "Koppen",
+        "h1Tags": "H1-tags",
+        "h2Tags": "H2-tags",
+        "h3Tags": "H3-tags",
+        "h4Tags": "H4-tags",
+        "h5Tags": "H5-tags",
+        "h6Tags": "H6-tags",
+        "lists": "Lijsten",
+        "found": "gevonden",
+        "noHeadings": "Geen koppen gevonden in de inhoud",
+        "noH1Tags": "Geen H1-tags gevonden in de inhoud",
+        "noLists": "Geen lijsten gevonden in de inhoud",
+        "h1Content": "H1-inhoud",
+        "h2Content": "H2-inhoud",
+        "h3Content": "H3-inhoud",
+        "h4Content": "H4-inhoud",
+        "h5Content": "H5-inhoud",
+        "h6Content": "H6-inhoud",
+        "type": "Type",
+        "items": "Items",
+        "listContent": "Lijstinhoud",
+        "moreItems": "meer items",
+        "paragraphs": "Paragrafen",
+        "paragraphContent": "Inhoud",
+        "characters": "Tekens",
+        "words": "Woorden",
+        "readMore": "Lees meer",
+        "readLess": "Lees minder",
+        "showMore": "Toon",
+        "showLess": "Toon minder",
+        "noParagraphs": "Geen paragrafen gevonden",
+        "seoDisclaimer": "Pagina geoptimaliseerd volgens SEO-best practices voor dit zoekwoord. We beloven geen ‘gegarandeerde ranking’; basis is geoptimaliseerd om zich aan te passen aan uw bedrijf."
+      },
+      "list": {
+        "subtitle": "Bekijk en beheer uw AI-gegenereerde inhoud",
+        "searchPlaceholder": "Zoeken op zoekwoord...",
+        "noContent": "Nog geen inhoud",
+        "noContentDescription": "Begin met het genereren van uw eerste AI-inhoud",
+        "createNewAudit": "Nieuwe inhoud maken"
+      }
+    }
+  },
+  "login": {
+    "greeting": "Leuk je weer te zien",
+    "title": "WELKOM TERUG",
+    "description": "Alle tools die u nodig heeft om uw SEO- en AI-zichtbaarheid te perfectioneren. Beheer traditioneel en AI-zoeken met een krachtig platform, betrouwbare data en uitzonderlijke UX.",
+    "trustedBy": "Vertrouwd door SEO-professionals sinds 2013",
+    "formTitle": "Inloggen",
+    "formSubtitle": "Voer uw inloggegevens in om toegang te krijgen tot uw account en uw SEO-strategie te optimaliseren.",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "Voer uw e-mailadres in",
+    "emailRequired": "E-mailadres is verplicht",
+    "emailInvalid": "Ongeldig e-mailformaat",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "Voer uw wachtwoord in",
+    "passwordRequired": "Wachtwoord is verplicht",
+    "showPassword": "Wachtwoord tonen",
+    "hidePassword": "Wachtwoord verbergen",
+    "rememberMe": "Ingelogd blijven",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "loginButton": "Inloggen",
+    "loggingIn": "Inloggen...",
+    "noAccount": "Heeft u nog geen account?",
+    "signUp": "Aanmelden"
+  },
+  "signup": {
+    "greeting": "Begin vandaag uw reis",
+    "title": "ACCOUNT AANMAKEN",
+    "description": "Sluit u aan bij duizenden SEO-professionals die vertrouwen op Serpixa voor hun SEO- en AI-contentbehoeften. Begin met een gratis proefperiode en ontgrendel krachtige tools om uw SEO-strategie te perfectioneren.",
+    "noCreditCard": "Geen creditcard vereist • 14 dagen gratis proefperiode",
+    "formTitle": "Account aanmaken",
+    "formSubtitle": "Meld u aan om te beginnen met Serpixa en transformeer uw SEO-strategie vandaag nog.",
+    "nameLabel": "Volledige naam",
+    "namePlaceholder": "Voer uw volledige naam in",
+    "nameRequired": "Naam is verplicht",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "Voer uw e-mailadres in",
+    "emailRequired": "E-mailadres is verplicht",
+    "emailInvalid": "Ongeldig e-mailformaat",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "Maak een wachtwoord",
+    "passwordRequired": "Wachtwoord is verplicht",
+    "passwordMinLength": "Wachtwoord moet minimaal 8 tekens bevatten",
+    "confirmPasswordLabel": "Bevestig wachtwoord",
+    "confirmPasswordPlaceholder": "Bevestig uw wachtwoord",
+    "confirmPasswordRequired": "Bevestig uw wachtwoord",
+    "passwordsDoNotMatch": "Wachtwoorden komen niet overeen",
+    "showPassword": "Wachtwoord tonen",
+    "hidePassword": "Wachtwoord verbergen",
+    "signUpButton": "Aanmelden",
+    "creatingAccount": "Account aanmaken...",
+    "alreadyHaveAccount": "Heeft u al een account?",
+    "logIn": "Inloggen"
+  },
+  "forgotPassword": {
+    "greeting": "Wachtwoord opnieuw instellen?",
+    "title": "WACHTWOORD VERGETEN",
+    "description": "Geen zorgen! Voer uw e-mailadres in en we sturen u een link om uw wachtwoord opnieuw in te stellen. U bent zo weer bezig met het optimaliseren van uw SEO.",
+    "secureProcess": "Veilig wachtwoordherstelproces",
+    "formTitle": "Wachtwoord opnieuw instellen",
+    "formSubtitle": "Voer het e-mailadres in dat aan uw account is gekoppeld, en we sturen u een link om uw wachtwoord opnieuw in te stellen.",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "Voer uw e-mail in",
+    "emailRequired": "E-mail is verplicht",
+    "emailInvalid": "Ongeldig e-mailformaat",
+    "sendResetLink": "Herstel link verzenden",
+    "sendingResetLink": "Herstel link verzenden...",
+    "returnToSignIn": "← Terug naar inloggen",
+    "noAccount": "Heeft u geen account?",
+    "signUp": "Aanmelden"
+  },
+  "resetPassword": {
+    "title": "Nieuw wachtwoord instellen",
+    "subtitle": "Voer hieronder uw nieuwe wachtwoord in en bevestig het om uw account opnieuw in te stellen.",
+    "newPasswordLabel": "Nieuw wachtwoord",
+    "newPasswordPlaceholder": "Voer nieuw wachtwoord in",
+    "passwordRequired": "Wachtwoord is verplicht",
+    "passwordMinLength": "Minimaal 6 tekens",
+    "confirmPasswordLabel": "Bevestig wachtwoord",
+    "confirmPasswordPlaceholder": "Bevestig wachtwoord",
+    "confirmPasswordRequired": "Bevestig uw wachtwoord",
+    "passwordsDoNotMatch": "Wachtwoorden komen niet overeen",
+    "resetButton": "Wachtwoord opnieuw instellen",
+    "resetting": "Opnieuw instellen...",
+    "returnToSignIn": "Terug naar inloggen",
+    "invalidToken": "Ongeldige of ontbrekende hersteltoken",
+    "loading": "Laden..."
+  },
+  "navbar": {
+    "whySerpixa": "Waarom Serpixa",
+    "aboutUs": "Over ons",
+    "features": "Functies",
+    "dashboard": "Dashboard",
+    "profile": "Profiel",
+    "signOut": "Uitloggen",
+    "signIn": "Inloggen",
+    "signUp": "Aanmelden",
+    "startFreeTrial": "Start gratis proefperiode"
+  }
+}
+
