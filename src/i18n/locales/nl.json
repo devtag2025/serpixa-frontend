@@ -576,6 +576,13 @@
       "deleteContentTitle": "Inhoud verwijderen",
       "deleteContentMessage": "Weet u zeker dat u deze inhoud wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
       "deleteWarning": "Deze actie kan niet ongedaan worden gemaakt. Alle gegevens die aan dit item zijn gekoppeld, worden permanent verwijderd.",
+      "pagination": {
+        "showing": "Toont {start} tot {end} van {total} resultaten",
+        "noResults": "Geen resultaten",
+        "previous": "Vorige",
+        "next": "Volgende",
+        "page": "Pagina {page}"
+      },
       "toast": {
         "contentGeneratedSuccess": "Inhoud succesvol gegenereerd!",
         "contentDeletedSuccess": "Inhoud succesvol verwijderd",

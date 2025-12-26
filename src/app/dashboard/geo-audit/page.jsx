@@ -7,6 +7,7 @@ import { HiPlus, HiLocationMarker } from "react-icons/hi";
 import GeoAuditListHeader from "@/components/geo-audit/list/GeoAuditListHeader";
 import GeoAuditTable from "@/components/geo-audit/list/GeoAuditTable";
 import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
+import Pagination from "@/components/common/Pagination";
 import { useTranslation } from "@/i18n/context";
 import { useGeoAudits, useDeleteGeoAudit } from "@/hooks/geoAuditHooks";
 
@@ -14,10 +15,12 @@ export default function GeoAuditListPage() {
   const router = useRouter();
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [auditToDelete, setAuditToDelete] = useState(null);
 
-  const { data, isLoading, isError, error } = useGeoAudits({ page: 1, limit: 50 });
+  const limit = 10;
+  const { data, isLoading, isFetching, isError, error } = useGeoAudits({ page: currentPage, limit });
   const { mutate: deleteAudit, isPending: isDeleting } = useDeleteGeoAudit();
 
   const handleDelete = (auditId, e) => {
@@ -44,7 +47,8 @@ export default function GeoAuditListPage() {
     }
   };
 
-  if (isLoading) {
+  // Only show full page loader on initial load when there's no data
+  if (isLoading && !data) {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
@@ -70,17 +74,21 @@ export default function GeoAuditListPage() {
   }
 
   const audits = data?.audits || [];
-  const filteredAudits = audits.filter((audit) => {
-    if (!searchQuery) return true;
-    const query = searchQuery.toLowerCase();
-    return (
-      audit.businessName?.toLowerCase().includes(query) ||
-      audit.keyword?.toLowerCase().includes(query) ||
-      audit.location?.toLowerCase().includes(query)
-    );
-  });
-
+  const pagination = data?.pagination || {};
+  const isEmpty = audits.length === 0 && currentPage === 1;
   const auditToDeleteData = audits.find((a) => a._id === auditToDelete);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    // Scroll to top when page changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Reset to page 1 when search query changes
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1);
+  };
 
   return (
     <DashboardLayout>
@@ -88,7 +96,7 @@ export default function GeoAuditListPage() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 py-8">
-            {audits.length === 0 ? (
+            {isEmpty ? (
               <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-12 text-center">
                 <HiLocationMarker className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{t("dashboard.geoAudit.list.noAudits")}</h3>
@@ -110,7 +118,7 @@ export default function GeoAuditListPage() {
                       type="text"
                       placeholder={t("dashboard.geoAudit.list.searchPlaceholder")}
                       value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onChange={handleSearchChange}
                       className="w-full px-4 py-2.5 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
                     />
                     <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
@@ -121,7 +129,17 @@ export default function GeoAuditListPage() {
                   </div>
                 </div> */}
 
-                <GeoAuditTable audits={filteredAudits} onDelete={handleDelete} />
+                <GeoAuditTable audits={audits} onDelete={handleDelete} />
+                {pagination.pages > 1 && (
+                  <Pagination
+                    currentPage={pagination.page || currentPage}
+                    totalPages={pagination.pages || 1}
+                    total={pagination.total || 0}
+                    limit={limit}
+                    onPageChange={handlePageChange}
+                    isLoading={isFetching}
+                  />
+                )}
               </>
             )}
           </div>

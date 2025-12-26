@@ -576,6 +576,13 @@
       "deleteContentTitle": "Delete Content",
       "deleteContentMessage": "Are you sure you want to delete this content? This action cannot be undone.",
       "deleteWarning": "This action cannot be undone. All data associated with this item will be permanently deleted.",
+      "pagination": {
+        "showing": "Showing {start} to {end} of {total} results",
+        "noResults": "No results",
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page {page}"
+      },
       "toast": {
         "contentGeneratedSuccess": "Content generated successfully!",
         "contentDeletedSuccess": "Content deleted successfully",

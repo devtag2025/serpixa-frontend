@@ -76,6 +76,7 @@ export function useAIContents(params = {}, options = {}) {
       return data;
     },
     staleTime: 2 * 60 * 1000, // Consider data fresh for 2 minutes
+    keepPreviousData: true, // Keep previous data visible while fetching new page
     ...options,
   });
 }

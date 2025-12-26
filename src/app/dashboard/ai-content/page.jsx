@@ -6,6 +6,7 @@ import { handleError } from "@/utils/handleError";
 import ContentListHeader from "@/components/ai-content/list/ContentListHeader";
 import ContentTable from "@/components/ai-content/list/ContentTable";
 import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
+import Pagination from "@/components/common/Pagination";
 import { useTranslation } from "@/i18n/context";
 import { useAIContents, useDeleteAIContent } from "@/hooks/aiContentHooks";
 
@@ -13,15 +14,17 @@ export default function AIContentListPage() {
   const router = useRouter();
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [contentToDelete, setContentToDelete] = useState(null);
 
-  const params = { page: 1, limit: 50 };
+  const limit = 10;
+  const params = { page: currentPage, limit };
   if (searchQuery.trim()) {
     params.keyword = searchQuery.trim();
   }
 
-  const { data, isLoading, isError, error } = useAIContents(params);
+  const { data, isLoading, isFetching, isError, error } = useAIContents(params);
   const { mutate: deleteContent, isPending: isDeleting } = useDeleteAIContent();
 
   const handleDelete = (contentId, e) => {
@@ -48,7 +51,8 @@ export default function AIContentListPage() {
     }
   };
 
-  if (isLoading) {
+  // Only show full page loader on initial load when there's no data
+  if (isLoading && !data) {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
@@ -74,8 +78,21 @@ export default function AIContentListPage() {
   }
 
   const contents = data?.contents || [];
-  const isEmpty = contents.length === 0 && !searchQuery;
+  const pagination = data?.pagination || {};
+  const isEmpty = contents.length === 0 && !searchQuery && currentPage === 1;
   const contentToDeleteData = contents.find((c) => c._id === contentToDelete);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    // Scroll to top when page changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Reset to page 1 when search query changes
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1);
+  };
 
   return (
     <DashboardLayout>
@@ -90,7 +107,7 @@ export default function AIContentListPage() {
                     type="text"
                     placeholder={t("dashboard.aiContent.list.searchPlaceholder")}
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={handleSearchChange}
                     className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 placeholder-gray-400"
                   />
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -129,7 +146,19 @@ export default function AIContentListPage() {
                 </button>
               </div>
             ) : (
-              <ContentTable contents={contents} onDelete={handleDelete} />
+              <>
+                <ContentTable contents={contents} onDelete={handleDelete} />
+                {pagination.pages > 1 && (
+                  <Pagination
+                    currentPage={pagination.page || currentPage}
+                    totalPages={pagination.pages || 1}
+                    total={pagination.total || 0}
+                    limit={limit}
+                    onPageChange={handlePageChange}
+                    isLoading={isFetching}
+                  />
+                )}
+              </>
             )}
           </div>
 
