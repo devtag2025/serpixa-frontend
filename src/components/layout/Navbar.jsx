@@ -313,7 +313,7 @@ export default function Navbar() {
                       className="block px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary/90 text-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      {t("navbar.startFreeTrial")}
+                      {t("navbar.signUp")}
                     </Link>
                   </>
                 )}

@@ -3,9 +3,8 @@
     "hero": {
       "title": "Alle tools die u nodig heeft om uw SEO- en AI-zichtbaarheid te perfectioneren",
       "subtitle": "Beheer traditioneel en AI-zoeken met een krachtig platform, betrouwbare data en uitzonderlijke UX",
-      "startTrial": "Start gratis proefperiode",
-      "seeTour": "Bekijk producttour",
-      "noCreditCard": "Geen creditcard vereist",
+      "startTrial": "Aan de slag",
+      "seeFeatures": "Bekijk functies",
       "trustedBy": "Vertrouwd door",
       "professionals": "SEO-professionals sinds 2013",
       "aiPowered": "AI Aangedreven",
@@ -40,7 +39,7 @@
       "trustedBadge": "Vertrouwd platform",
       "trustedTitle": "Vertrouwd door grote teams die SEO op schaal uitvoeren",
       "trustedSubtitle": "Sluit je aan bij duizenden SEO-professionals die vertrouwen op ons krachtige platform voor nauwkeurige gegevens en inzichten",
-      "startTrial": "Start gratis proefperiode"
+      "startTrial": "Aan de slag"
     },
     "pricing": {
       "title": "Eerlijke en flexibele prijzen die met u meegroeien",
@@ -50,7 +49,7 @@
       "perMonth": "per maand",
       "perYear": "per jaar",
       "oneTime": "eenmalig",
-      "startTrial": "Start gratis proefperiode",
+      "startTrial": "Kies een plan",
       "processing": "Verwerken...",
       "purchase": "Kopen",
       "agenciesChoice": "Keuze van agentschappen",
@@ -64,7 +63,7 @@
       "apiCallsPerMonth": "API-aanroepen per maand",
       "signInRequired": "Meld u aan of log in om door te gaan",
       "badge": "Prijzen",
-      "exclVat": "HTVA"
+      "exclVat": "Excl. BTW"
     },
     "plans": {
       "starterPlan": {
@@ -106,8 +105,8 @@
       "badge": "FAQ",
       "title": "Veelgestelde vragen",
       "subtitle": "Alles wat u moet weten over Serpixa",
-      "question1": "Wat zit er in de gratis proefperiode?",
-      "answer1": "Onze gratis proefperiode omvat toegang tot alle kernfuncties met beperkt gebruik. U kunt SEO-audits uitvoeren, AI-content genereren en al onze tools verkennen zonder creditcard.",
+      "question1": "Welke plannen biedt u aan?",
+      "answer1": "We bieden twee hoofdplannen aan: Starter Pack en Premium Pack. Het Starter Pack is perfect om te beginnen met SEO-audits, terwijl het Premium Pack geavanceerde functies bevat met meer audits en AI-generaties. Beide plannen omvatten toegang tot alle kernfuncties.",
       "question2": "Hoe nauwkeurig zijn de SEO-auditresultaten?",
       "answer2": "Onze SEO-audits gebruiken toonaangevende algoritmen en real-time data om 100% nauwkeurige zoekwoordrankings en uitgebreide on-page analyse te bieden. We werken continu onze database bij met de nieuwste zoekmachinegegevens.",
       "question3": "Kan ik mijn abonnement op elk moment opzeggen?",
@@ -117,7 +116,7 @@
       "question5": "Biedt u ondersteuning voor zakelijke klanten?",
       "answer5": "Ja, we bieden toegewijde ondersteuning, aangepaste integraties en op maat gemaakte oplossingen voor zakelijke klanten. Neem contact op met ons verkoopteam om uw specifieke behoeften te bespreken.",
       "question6": "Hoe begin ik?",
-      "answer6": "Meld u gewoon aan voor een gratis proefperiode, kies een plan dat bij uw behoeften past en begin met het uitvoeren van uw eerste audit of het genereren van content. Onze intuïtieve interface maakt het gemakkelijk om binnen enkele minuten te beginnen."
+      "answer6": "Maak gewoon een account aan, kies tussen Starter Pack of Premium Pack op basis van uw behoeften, en begin met het uitvoeren van uw eerste audit of het genereren van content. Onze intuïtieve interface maakt het gemakkelijk om binnen enkele minuten te beginnen."
     },
     "cta": {
       "title": "Klaar om uw SEO-strategie te transformeren?",
@@ -126,7 +125,7 @@
       "benefit2": "Op elk moment opzeggen",
       "benefit3": "24/7 klantenondersteuning",
       "benefit4": "14-dagen geld-terug-garantie",
-      "startTrial": "Start gratis proefperiode",
+      "startTrial": "Aan de slag",
       "viewPricing": "Bekijk prijzen",
       "trustText": "Vertrouwd door meer dan 10.000 bedrijven wereldwijd"
     },
@@ -134,9 +133,9 @@
       "description": "Alle tools die u nodig heeft om uw SEO en AI-zichtbaarheid te perfectioneren. Beheer traditioneel en AI-zoeken met een krachtig platform.",
       "quickLinks": "Snelle links",
       "home": "Home",
+      "whySerpixa": "Waarom Serpixa",
+      "aboutUs": "Over ons",
       "features": "Functies",
-      "pricing": "Prijzen",
-      "signUp": "Aanmelden",
       "products": "Producten",
       "seoAudit": "SEO Audit",
       "gbpAudit": "GBP Audit",
@@ -150,7 +149,7 @@
       "hero": {
         "title": "Waarom Serpixa?",
         "subtitle": "Alles wat u nodig heeft om SEO onder de knie te krijgen—geautomatiseerde audits, AI-aangedreven inzichten en professionele rapporten, alles op één platform",
-        "startTrial": "Start gratis proefperiode"
+        "startTrial": "Aan de slag"
       },
       "problemSolution": {
         "title": "Het probleem dat we oplossen",
@@ -257,7 +256,7 @@
       "cta": {
         "title": "Klaar om uw SEO-workflow te transformeren?",
         "subtitle": "Sluit u aan bij duizenden professionals die Serpixa vertrouwen voor hun SEO- en AI-content behoeften",
-        "startTrial": "Start gratis proefperiode",
+        "startTrial": "Aan de slag",
         "viewPricing": "Bekijk prijzen",
         "trustText": "Geen creditcard vereist • Annuleer op elk moment"
       }
@@ -267,7 +266,7 @@
         "badge": "Functies",
         "title": "Krachtige functies voor SEO-succes",
         "subtitle": "Alles wat u nodig heeft om uw online aanwezigheid te analyseren, optimaliseren en te laten groeien",
-        "startTrial": "Start gratis proefperiode"
+        "startTrial": "Aan de slag"
       },
       "mainFeatures": {
         "title": "Kernfuncties",
@@ -350,7 +349,7 @@
       "cta": {
         "title": "Klaar om te beginnen?",
         "subtitle": "Begin vandaag met Serpixa en transformeer uw SEO-strategie",
-        "startTrial": "Start gratis proefperiode",
+        "startTrial": "Aan de slag",
         "viewPricing": "Bekijk prijzen"
       }
     },
@@ -429,7 +428,7 @@
       "cta": {
         "title": "Sluit u aan bij deze reis",
         "subtitle": "Maak deel uit van een gemeenschap die transformeert hoe bedrijven SEO benaderen",
-        "startTrial": "Start gratis proefperiode",
+        "startTrial": "Aan de slag",
         "exploreFeatures": "Functies verkennen"
       }
     }
@@ -1048,8 +1047,8 @@
   "signup": {
     "greeting": "Begin vandaag uw reis",
     "title": "ACCOUNT AANMAKEN",
-    "description": "Sluit u aan bij duizenden SEO-professionals die vertrouwen op Serpixa voor hun SEO- en AI-contentbehoeften. Begin met een gratis proefperiode en ontgrendel krachtige tools om uw SEO-strategie te perfectioneren.",
-    "noCreditCard": "Geen creditcard vereist • 14 dagen gratis proefperiode",
+    "description": "Sluit u aan bij duizenden SEO-professionals die vertrouwen op Serpixa voor hun SEO- en AI-contentbehoeften. Maak uw account aan en kies tussen Starter Pack of Premium Pack om krachtige tools voor uw SEO-strategie te ontgrendelen.",
+    "noCreditCard": "Geen creditcard vereist",
     "formTitle": "Account aanmaken",
     "formSubtitle": "Meld u aan om te beginnen met Serpixa en transformeer uw SEO-strategie vandaag nog.",
     "nameLabel": "Volledige naam",
@@ -1117,7 +1116,7 @@
     "signOut": "Uitloggen",
     "signIn": "Inloggen",
     "signUp": "Aanmelden",
-    "startFreeTrial": "Start gratis proefperiode"
+    "startFreeTrial": "Aan de slag"
   }
 }
 
