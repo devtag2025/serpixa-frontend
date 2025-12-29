@@ -30,7 +30,7 @@ export default function SignupPage() {
 
   return (
     <PublicRoute>
-      <main className="h-[calc(100vh-4rem)] flex">
+      <main className="min-h-[calc(100vh-4rem)] flex pb-8 sm:pb-12">
         {/* Left Panel - Branding Section */}
         <div className="hidden lg:flex lg:w-[45%] relative overflow-hidden bg-gradient-to-br from-[hsl(217,90%,55%)] via-[hsl(217,100%,60%)] to-[hsl(220,95%,50%)]">
           {/* Background Pattern - Grid */}
@@ -106,7 +106,7 @@ export default function SignupPage() {
         </div>
 
         {/* Right Panel - Signup Form */}
-        <div className="flex-1 flex items-center justify-center bg-white px-4 sm:px-6 lg:px-12">
+        <div className="flex-1 flex items-center justify-center bg-white px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
           <div className="w-full max-w-md">
             {/* Mobile Logo - Only visible on small screens */}
             <div className="lg:hidden flex items-center justify-center mb-8">

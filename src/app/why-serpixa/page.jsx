@@ -420,9 +420,9 @@ export default function WhySerpixaPage() {
               {t("landing.whySerpixa.cta.viewPricing")}
             </Link>
           </div>
-          <p className="mt-8 text-gray-500 text-sm">
+          {/* <p className="mt-8 text-gray-500 text-sm">
             {t("landing.whySerpixa.cta.trustText")}
-          </p>
+          </p> */}
         </div>
       </section>
     </div>

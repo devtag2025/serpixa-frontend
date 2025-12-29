@@ -110,17 +110,12 @@ export default function Hero() {
             {t("landing.hero.startTrial")}
           </Link>
           <Link
-            href="#tour"
+            href="/features"
             className="w-full sm:w-auto px-8 py-3 bg-white text-gray-700 border border-gray-300 rounded-md font-medium hover:bg-gray-50 transition-all duration-300 hover:scale-105 text-sm md:text-base"
           >
-            {t("landing.hero.seeTour")}
+            {t("landing.hero.seeFeatures")}
           </Link>
         </div>
-
-        {/* Small Text */}
-        <p className="text-xs text-gray-500 mb-16">
-          {t("landing.hero.noCreditCard")}
-        </p>
 
         {/* Trust Section */}
         <div className="flex flex-col items-center gap-6">
@@ -132,7 +127,7 @@ export default function Hero() {
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-white"></div>
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 border-2 border-white"></div>
             </div>
-            <p className="text-gray-800 text-sm md:text-base font-medium drop-shadow-sm">
+            <p className="text-gray-800 text-sm md:text-base font-medium drop-shadow-sm py-8">
               {t("landing.hero.trustedBy")} <span className="font-semibold">1.5M+</span> {t("landing.hero.professionals")}
             </p>
           </div>

@@ -55,18 +55,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#features" className="text-white/80 hover:text-white text-sm transition-colors">
+                <Link href="/why-serpixa" className="text-white/80 hover:text-white text-sm transition-colors">
+                  {t("landing.footer.whySerpixa")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/about-us" className="text-white/80 hover:text-white text-sm transition-colors">
+                  {t("landing.footer.aboutUs")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/features" className="text-white/80 hover:text-white text-sm transition-colors">
                   {t("landing.footer.features")}
-                </Link>
-              </li>
-              <li>
-                <Link href="#pricing" className="text-white/80 hover:text-white text-sm transition-colors">
-                  {t("landing.footer.pricing")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/signup" className="text-white/80 hover:text-white text-sm transition-colors">
-                  {t("landing.footer.signUp")}
                 </Link>
               </li>
             </ul>
@@ -104,18 +104,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/20">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-white/70 text-xs text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+            <p className="text-white/70 text-xs text-center">
               {t("landing.footer.copyright")}
             </p>
-            <div className="flex items-center gap-6">
-              <Link href="#" className="text-white/70 hover:text-white text-xs transition-colors">
-                {t("landing.footer.privacy")}
-              </Link>
-              <Link href="#" className="text-white/70 hover:text-white text-xs transition-colors">
-                {t("landing.footer.terms")}
-              </Link>
-            </div>
           </div>
         </div>
       </div>

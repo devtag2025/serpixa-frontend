@@ -3,9 +3,8 @@
     "hero": {
       "title": "Tous les outils dont vous avez besoin pour perfectionner votre visibilité SEO et IA",
       "subtitle": "Maîtrisez la recherche traditionnelle et l'IA avec une plateforme puissante, des données fiables et une UX exceptionnelle",
-      "startTrial": "Commencer l'essai gratuit",
-      "seeTour": "Voir la visite du produit",
-      "noCreditCard": "Aucune carte de crédit requise",
+      "startTrial": "Commencer",
+      "seeFeatures": "Voir les fonctionnalités",
       "trustedBy": "Approuvé par",
       "professionals": "professionnels du SEO depuis 2013",
       "aiPowered": "Alimenté par l'IA",
@@ -40,7 +39,7 @@
       "trustedBadge": "Plateforme de confiance",
       "trustedTitle": "Approuvé par les grandes équipes qui gèrent le SEO à grande échelle",
       "trustedSubtitle": "Rejoignez des milliers de professionnels SEO qui font confiance à notre plateforme puissante pour des données et des insights précis",
-      "startTrial": "Commencer l'essai gratuit"
+      "startTrial": "Commencer"
     },
     "pricing": {
       "title": "Tarification équitable et flexible qui évolue avec vous",
@@ -50,7 +49,7 @@
       "perMonth": "par mois",
       "perYear": "par an",
       "oneTime": "unique",
-      "startTrial": "Commencer l'essai gratuit",
+      "startTrial": "Choisir un plan",
       "processing": "Traitement en cours...",
       "purchase": "Acheter",
       "agenciesChoice": "Choix des agences",
@@ -64,7 +63,7 @@
       "apiCallsPerMonth": "Appels API par mois",
       "signInRequired": "Veuillez vous inscrire ou vous connecter pour continuer",
       "badge": "Tarification",
-      "exclVat": "HTVA"
+      "exclVat": "Hors TVA"
     },
     "plans": {
       "starterPlan": {
@@ -106,8 +105,8 @@
       "badge": "FAQ",
       "title": "Questions fréquemment posées",
       "subtitle": "Tout ce que vous devez savoir sur Serpixa",
-      "question1": "Qu'est-ce qui est inclus dans l'essai gratuit ?",
-      "answer1": "Notre essai gratuit comprend l'accès à toutes les fonctionnalités principales avec une utilisation limitée. Vous pouvez exécuter des audits SEO, générer du contenu IA et explorer tous nos outils sans carte de crédit.",
+      "question1": "Quels plans proposez-vous ?",
+      "answer1": "Nous proposons deux plans principaux : Starter Pack et Premium Pack. Le Starter Pack est parfait pour commencer avec les audits SEO, tandis que le Premium Pack comprend des fonctionnalités avancées avec plus d'audits et de générations IA. Les deux plans incluent l'accès à toutes les fonctionnalités principales.",
       "question2": "Quelle est la précision des résultats d'audit SEO ?",
       "answer2": "Nos audits SEO utilisent des algorithmes de pointe et des données en temps réel pour fournir des classements de mots-clés 100% précis et une analyse complète sur la page. Nous mettons continuellement à jour notre base de données avec les dernières données des moteurs de recherche.",
       "question3": "Puis-je annuler mon abonnement à tout moment ?",
@@ -117,7 +116,7 @@
       "question5": "Offrez-vous un support pour les clients entreprise ?",
       "answer5": "Oui, nous offrons un support dédié, des intégrations personnalisées et des solutions sur mesure pour les clients entreprise. Contactez notre équipe commerciale pour discuter de vos besoins spécifiques.",
       "question6": "Comment commencer ?",
-      "answer6": "Inscrivez-vous simplement pour un essai gratuit, choisissez un plan qui correspond à vos besoins et commencez à exécuter votre premier audit ou à générer du contenu. Notre interface intuitive facilite le démarrage en quelques minutes."
+      "answer6": "Créez simplement un compte, choisissez entre Starter Pack ou Premium Pack selon vos besoins, et commencez à exécuter votre premier audit ou à générer du contenu. Notre interface intuitive facilite le démarrage en quelques minutes."
     },
     "cta": {
       "title": "Prêt à transformer votre stratégie SEO ?",
@@ -126,17 +125,17 @@
       "benefit2": "Annulez à tout moment",
       "benefit3": "Support client 24/7",
       "benefit4": "Garantie de remboursement de 14 jours",
-      "startTrial": "Commencer l'essai gratuit",
-      "viewPricing": "Voir les prix",
+      "startTrial": "Commencer",
+      "viewPricing": "Voir les tarifs",
       "trustText": "Approuvé par plus de 10 000 entreprises dans le monde"
     },
     "footer": {
       "description": "Tous les outils dont vous avez besoin pour perfectionner votre référencement SEO et votre visibilité IA. Maîtrisez la recherche traditionnelle et IA avec une plateforme puissante.",
       "quickLinks": "Liens rapides",
       "home": "Accueil",
+      "whySerpixa": "Pourquoi Serpixa",
+      "aboutUs": "À propos de nous",
       "features": "Fonctionnalités",
-      "pricing": "Tarifs",
-      "signUp": "S'inscrire",
       "products": "Produits",
       "seoAudit": "Audit SEO",
       "gbpAudit": "Audit GBP",
@@ -150,7 +149,7 @@
       "hero": {
         "title": "Pourquoi Serpixa ?",
         "subtitle": "Tout ce dont vous avez besoin pour maîtriser le SEO—audits automatisés, insights alimentés par l'IA et rapports professionnels, le tout sur une seule plateforme",
-        "startTrial": "Commencer l'essai gratuit"
+        "startTrial": "Commencer"
       },
       "problemSolution": {
         "title": "Le problème que nous résolvons",
@@ -257,7 +256,7 @@
       "cta": {
         "title": "Prêt à transformer votre flux de travail SEO ?",
         "subtitle": "Rejoignez des milliers de professionnels qui font confiance à Serpixa pour leurs besoins SEO et de contenu IA",
-        "startTrial": "Commencer l'essai gratuit",
+        "startTrial": "Commencer",
         "viewPricing": "Voir les prix",
         "trustText": "Aucune carte de crédit requise • Annulez à tout moment"
       }
@@ -267,7 +266,7 @@
         "badge": "Fonctionnalités",
         "title": "Fonctionnalités puissantes pour le succès SEO",
         "subtitle": "Tout ce dont vous avez besoin pour analyser, optimiser et développer votre présence en ligne",
-        "startTrial": "Commencer l'essai gratuit"
+        "startTrial": "Commencer"
       },
       "mainFeatures": {
         "title": "Fonctionnalités principales",
@@ -350,7 +349,7 @@
       "cta": {
         "title": "Prêt à commencer ?",
         "subtitle": "Commencez à utiliser Serpixa dès aujourd'hui et transformez votre stratégie SEO",
-        "startTrial": "Commencer l'essai gratuit",
+        "startTrial": "Commencer",
         "viewPricing": "Voir les prix"
       }
     },
@@ -429,7 +428,7 @@
       "cta": {
         "title": "Rejoignez-nous dans cette aventure",
         "subtitle": "Faites partie d'une communauté qui transforme la façon dont les entreprises abordent le SEO",
-        "startTrial": "Commencer l'essai gratuit",
+        "startTrial": "Commencer",
         "exploreFeatures": "Explorer les fonctionnalités"
       }
     }
@@ -1028,8 +1027,8 @@
   "signup": {
     "greeting": "Commencez votre parcours aujourd'hui",
     "title": "CRÉER UN COMPTE",
-    "description": "Rejoignez des milliers de professionnels SEO qui font confiance à Serpixa pour leurs besoins en SEO et contenu IA. Commencez avec un essai gratuit et débloquez des outils puissants pour perfectionner votre stratégie SEO.",
-    "noCreditCard": "Aucune carte de crédit requise • Essai gratuit de 14 jours",
+    "description": "Rejoignez des milliers de professionnels SEO qui font confiance à Serpixa pour leurs besoins en SEO et contenu IA. Créez votre compte et choisissez entre Starter Pack ou Premium Pack pour débloquer des outils puissants pour votre stratégie SEO.",
+    "noCreditCard": "Aucune carte de crédit requise",
     "formTitle": "Créer un compte",
     "formSubtitle": "Inscrivez-vous pour commencer avec Serpixa et transformer votre stratégie SEO dès aujourd'hui.",
     "nameLabel": "Nom complet",
@@ -1097,7 +1096,7 @@
     "signOut": "Se déconnecter",
     "signIn": "Se connecter",
     "signUp": "S'inscrire",
-    "startFreeTrial": "Commencer l'essai gratuit"
+    "startFreeTrial": "Commencer"
   }
 }
 

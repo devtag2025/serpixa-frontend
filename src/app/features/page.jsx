@@ -108,8 +108,8 @@ export default function FeaturesPage() {
         />
 
         <div className="relative z-10 w-full max-w-6xl mx-auto text-center">
-          <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6">
-            <span className="text-white font-semibold text-sm uppercase tracking-wide">
+          <div className="inline-block px-4 py-2 bg-gray-900/10 backdrop-blur-sm rounded-full mb-6 border border-gray-300/30">
+            <span className="text-gray-900 font-semibold text-sm uppercase tracking-wide">
               {t("landing.featuresPage.hero.badge")}
             </span>
           </div>

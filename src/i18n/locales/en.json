@@ -3,9 +3,8 @@
     "hero": {
       "title": "All the tools you need to perfect your SEO and AI visibility",
       "subtitle": "Own traditional and AI search with a powerful platform, trusted data, and exceptional UX",
-      "startTrial": "Start free trial",
-      "seeTour": "See product tour",
-      "noCreditCard": "No credit card required",
+      "startTrial": "Get Started",
+      "seeFeatures": "See features",
       "trustedBy": "Trusted by",
       "professionals": "SEO professionals since 2013",
       "aiPowered": "AI Powered",
@@ -40,7 +39,7 @@
       "trustedBadge": "Trusted Platform",
       "trustedTitle": "Trusted by large teams running SEO at scale",
       "trustedSubtitle": "Join thousands of SEO professionals who rely on our powerful platform for accurate data and insights",
-      "startTrial": "Start free trial"
+      "startTrial": "Get Started"
     },
     "pricing": {
       "title": "Fair and flexible pricing that scales with you",
@@ -50,7 +49,7 @@
       "perMonth": "per month",
       "perYear": "per year",
       "oneTime": "one-time",
-      "startTrial": "Start free trial",
+      "startTrial": "Choose Plan",
       "processing": "Processing...",
       "purchase": "Purchase",
       "agenciesChoice": "Agencies' Choice",
@@ -64,7 +63,7 @@
       "apiCallsPerMonth": "API Calls per month",
       "signInRequired": "Please sign up or log in to continue",
       "badge": "Pricing",
-      "exclVat": "HTVA"
+      "exclVat": "Excl. VAT"
     },
     "plans": {
       "starterPlan": {
@@ -106,8 +105,8 @@
       "badge": "FAQ",
       "title": "Frequently Asked Questions",
       "subtitle": "Everything you need to know about Serpixa",
-      "question1": "What is included in the free trial?",
-      "answer1": "Our free trial includes access to all core features with limited usage. You can run SEO audits, generate AI content, and explore all our tools without a credit card.",
+      "question1": "What plans do you offer?",
+      "answer1": "We offer two main plans: Starter Pack and Premium Pack. The Starter Pack is perfect for getting started with SEO audits, while the Premium Pack includes advanced features with more audits and AI generations. Both plans include access to all core features.",
       "question2": "How accurate are the SEO audit results?",
       "answer2": "Our SEO audits use industry-leading algorithms and real-time data to provide 100% accurate keyword rankings and comprehensive on-page analysis. We continuously update our database with the latest search engine data.",
       "question3": "Can I cancel my subscription anytime?",
@@ -117,7 +116,7 @@
       "question5": "Do you offer support for enterprise customers?",
       "answer5": "Yes, we offer dedicated support, custom integrations, and tailored solutions for enterprise customers. Contact our sales team to discuss your specific needs.",
       "question6": "How do I get started?",
-      "answer6": "Simply sign up for a free trial, choose a plan that fits your needs, and start running your first audit or generating content. Our intuitive interface makes it easy to get started in minutes."
+      "answer6": "Simply create an account, choose between Starter Pack or Premium Pack based on your needs, and start running your first audit or generating content. Our intuitive interface makes it easy to get started in minutes."
     },
     "cta": {
       "title": "Ready to transform your SEO strategy?",
@@ -126,17 +125,17 @@
       "benefit2": "Cancel anytime",
       "benefit3": "24/7 customer support",
       "benefit4": "14-day money-back guarantee",
-      "startTrial": "Start free trial",
-      "viewPricing": "View pricing",
+      "startTrial": "Get Started",
+      "viewPricing": "View Pricing",
       "trustText": "Trusted by 10,000+ businesses worldwide"
     },
     "footer": {
       "description": "All the tools you need to perfect your SEO and AI visibility. Own traditional and AI search with a powerful platform.",
       "quickLinks": "Quick Links",
       "home": "Home",
+      "whySerpixa": "Why Serpixa",
+      "aboutUs": "About Us",
       "features": "Features",
-      "pricing": "Pricing",
-      "signUp": "Sign Up",
       "products": "Products",
       "seoAudit": "SEO Audit",
       "gbpAudit": "GBP Audit",
@@ -150,7 +149,7 @@
       "hero": {
         "title": "Why Serpixa?",
         "subtitle": "Everything you need to master SEO—automated audits, AI-powered insights, and professional reports, all in one platform",
-        "startTrial": "Start Free Trial"
+        "startTrial": "Get Started"
       },
       "problemSolution": {
         "title": "The Problem We Solve",
@@ -257,7 +256,7 @@
       "cta": {
         "title": "Ready to Transform Your SEO Workflow?",
         "subtitle": "Join thousands of professionals who trust Serpixa for their SEO and AI content needs",
-        "startTrial": "Start Free Trial",
+        "startTrial": "Get Started",
         "viewPricing": "View Pricing",
         "trustText": "No credit card required • Cancel anytime"
       }
@@ -267,7 +266,7 @@
         "badge": "Features",
         "title": "Powerful Features for SEO Success",
         "subtitle": "Everything you need to analyze, optimize, and grow your online presence",
-        "startTrial": "Start Free Trial"
+        "startTrial": "Get Started"
       },
       "mainFeatures": {
         "title": "Core Features",
@@ -350,7 +349,7 @@
       "cta": {
         "title": "Ready to Get Started?",
         "subtitle": "Start using Serpixa today and transform your SEO strategy",
-        "startTrial": "Start Free Trial",
+        "startTrial": "Get Started",
         "viewPricing": "View Pricing"
       }
     },
@@ -429,7 +428,7 @@
       "cta": {
         "title": "Join Us on This Journey",
         "subtitle": "Be part of a community that's transforming how businesses approach SEO",
-        "startTrial": "Start Free Trial",
+        "startTrial": "Get Started",
         "exploreFeatures": "Explore Features"
       }
     }
@@ -1055,8 +1054,8 @@
   "signup": {
     "greeting": "Start your journey today",
     "title": "CREATE ACCOUNT",
-    "description": "Join thousands of SEO professionals who trust Serpixa for their SEO and AI content needs. Get started with a free trial and unlock powerful tools to perfect your SEO strategy.",
-    "noCreditCard": "No credit card required • 14-day free trial",
+    "description": "Join thousands of SEO professionals who trust Serpixa for their SEO and AI content needs. Create your account and choose between Starter Pack or Premium Pack to unlock powerful tools for your SEO strategy.",
+    "noCreditCard": "No credit card required",
     "formTitle": "Create Account",
     "formSubtitle": "Sign up to get started with Serpixa and transform your SEO strategy today.",
     "nameLabel": "Full Name",
@@ -1124,7 +1123,7 @@
     "signOut": "Sign out",
     "signIn": "Sign in",
     "signUp": "Sign Up",
-    "startFreeTrial": "Start free trial"
+    "startFreeTrial": "Get Started"
   }
 }
 
