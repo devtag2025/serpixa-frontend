@@ -1098,8 +1098,11 @@
     "signUp": "Sign up"
   },
   "resetPassword": {
+    "greeting": "Welcome back",
     "title": "Set new password",
+    "description": "Enter your new password below and confirm it to reset your account. Choose a strong password to keep your account secure.",
     "subtitle": "Enter your new password below and confirm it to reset your account.",
+    "secureProcess": "Secure password reset",
     "newPasswordLabel": "New Password",
     "newPasswordPlaceholder": "Enter new password",
     "passwordRequired": "Password is required",
@@ -1112,7 +1115,9 @@
     "resetting": "Resetting...",
     "returnToSignIn": "Return to sign in",
     "invalidToken": "Invalid or missing reset token",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
   },
   "navbar": {
     "whySerpixa": "Why Serpixa",

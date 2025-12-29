@@ -15,9 +15,12 @@ export default function LanguageSwitcher() {
       }
     }
 
+    // Support both mouse and touch events for mobile
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
     };
   }, []);
 
@@ -30,11 +33,11 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+        className="flex items-center gap-1.5 md:gap-2 px-2 md:px-3 py-1.5 md:py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
         aria-label="Change language"
       >
         <svg
-          className="w-5 h-5"
+          className="w-4 h-4 md:w-5 md:h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -48,7 +51,7 @@ export default function LanguageSwitcher() {
         </svg>
         <span className="hidden sm:inline">{headerLocaleNames[locale] || localeNames[locale] || locale.toUpperCase()}</span>
         <svg
-          className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`w-3 h-3 md:w-4 md:h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -63,16 +66,16 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg border border-gray-200 z-50">
+        <div className="absolute right-0 md:right-0 md:left-auto left-0 mt-2 w-22 md:w-40 bg-white rounded-md shadow-lg border border-gray-200 z-[10000]">
           <div className="py-1">
             {Object.entries(headerLocaleNames).map(([code, name]) => (
               <button
                 key={code}
                 onClick={() => handleLocaleChange(code)}
-                className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                className={`w-full text-left px-2.5 md:px-4 py-1.5 md:py-2 text-xs md:text-sm transition-colors touch-manipulation ${
                   locale === code
                     ? "bg-primary text-white"
-                    : "text-gray-700 hover:bg-gray-100"
+                    : "text-gray-700 hover:bg-gray-100 active:bg-gray-100"
                 }`}
               >
                 {name}

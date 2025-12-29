@@ -117,13 +117,13 @@ export default function ForgotPasswordPage() {
                     />
                   </svg>
                 </div>
-                <span className="text-xl font-semibold text-gray-900">Serpixa</span>
+                <span className="text-xl font-semibold text-gray-900 ">Serpixa</span>
               </Link>
             </div>
 
             {/* Form Header */}
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">{t("forgotPassword.formTitle")}</h2>
+              <h2 className="text-3xl font-bold text-gray-900  mb-2">{t("forgotPassword.formTitle")}</h2>
               <p className="text-gray-600 text-sm">
                 {t("forgotPassword.formSubtitle")}
               </p>
