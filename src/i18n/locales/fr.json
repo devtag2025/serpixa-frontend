@@ -1091,8 +1091,11 @@
     "signUp": "S'inscrire"
   },
   "resetPassword": {
+    "greeting": "Bon retour",
     "title": "Définir un nouveau mot de passe",
+    "description": "Entrez votre nouveau mot de passe ci-dessous et confirmez-le pour réinitialiser votre compte. Choisissez un mot de passe fort pour garder votre compte sécurisé.",
     "subtitle": "Entrez votre nouveau mot de passe ci-dessous et confirmez-le pour réinitialiser votre compte.",
+    "secureProcess": "Réinitialisation sécurisée du mot de passe",
     "newPasswordLabel": "Nouveau mot de passe",
     "newPasswordPlaceholder": "Entrez le nouveau mot de passe",
     "passwordRequired": "Le mot de passe est requis",
@@ -1105,7 +1108,9 @@
     "resetting": "Réinitialisation...",
     "returnToSignIn": "Retour à la connexion",
     "invalidToken": "Jeton de réinitialisation invalide ou manquant",
-    "loading": "Chargement..."
+    "loading": "Chargement...",
+    "showPassword": "Afficher le mot de passe",
+    "hidePassword": "Masquer le mot de passe"
   },
   "navbar": {
     "whySerpixa": "Pourquoi Serpixa",

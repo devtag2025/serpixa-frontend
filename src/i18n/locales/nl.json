@@ -1091,8 +1091,11 @@
     "signUp": "Aanmelden"
   },
   "resetPassword": {
+    "greeting": "Welkom terug",
     "title": "Nieuw wachtwoord instellen",
+    "description": "Voer hieronder uw nieuwe wachtwoord in en bevestig het om uw account opnieuw in te stellen. Kies een sterk wachtwoord om uw account veilig te houden.",
     "subtitle": "Voer hieronder uw nieuwe wachtwoord in en bevestig het om uw account opnieuw in te stellen.",
+    "secureProcess": "Veilig wachtwoordherstel",
     "newPasswordLabel": "Nieuw wachtwoord",
     "newPasswordPlaceholder": "Voer nieuw wachtwoord in",
     "passwordRequired": "Wachtwoord is verplicht",
@@ -1105,7 +1108,9 @@
     "resetting": "Opnieuw instellen...",
     "returnToSignIn": "Terug naar inloggen",
     "invalidToken": "Ongeldige of ontbrekende hersteltoken",
-    "loading": "Laden..."
+    "loading": "Laden...",
+    "showPassword": "Wachtwoord tonen",
+    "hidePassword": "Wachtwoord verbergen"
   },
   "navbar": {
     "whySerpixa": "Waarom Serpixa",

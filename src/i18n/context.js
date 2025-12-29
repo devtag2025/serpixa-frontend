@@ -6,8 +6,6 @@ const translationLoaders = {
   en: () => import("./locales/en.json"),
   fr: () => import("./locales/fr.json"),
   nl: () => import("./locales/nl.json"),
-  'nl-be': () => import("./locales/nl-be.json"),
-  'be-fr': () => import("./locales/be-fr.json"),
 };
 
 // Cache for loaded translations
