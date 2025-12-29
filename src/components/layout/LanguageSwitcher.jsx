@@ -64,7 +64,7 @@ export default function LanguageSwitcher() {
           />
         </svg>
       </button>
-// menu dropdown
+ {/* menu dropdown */}
       {isOpen && (
         <div className="absolute right-0 md:right-0 md:left-auto left-0 mt-2 w-22 md:w-40 bg-white rounded-md shadow-lg border border-gray-200 z-[10000]">
           <div className="py-1">
