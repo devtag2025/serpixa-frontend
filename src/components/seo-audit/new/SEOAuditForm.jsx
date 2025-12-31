@@ -5,6 +5,7 @@ import { HiSearch, HiGlobe } from "react-icons/hi";
 // import { HiDeviceMobile } from "react-icons/hi"; // Used in commented advanced options
 import { useTranslation } from "@/i18n/context";
 import LocaleSelect from "@/components/common/LocaleSelect";
+import { isValidUrlFormat } from "@/utils/urlNormalizer";
 
 export default function SEOAuditForm({ onSubmit, isPending }) {
   const { t } = useTranslation();
@@ -27,15 +28,16 @@ export default function SEOAuditForm({ onSubmit, isPending }) {
             <HiGlobe className="h-5 w-5 text-gray-400" />
           </div>
           <input
-            type="url"
+            type="text"
             placeholder={t("dashboard.seoAudit.form.websiteUrlPlaceholder")}
             {...register("url", {
               required: "Website URL is required",
-              pattern: {
-                value:
-                  /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
-                message: "Please enter a valid URL",
-              },
+              validate: {
+                validUrl: (value) => {
+                  if (!value) return true; // required handles empty
+                  return isValidUrlFormat(value) || "Please enter a valid URL (e.g., example.com, www.example.com, or https://example.com)";
+                }
+              }
             })}
             className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
           />

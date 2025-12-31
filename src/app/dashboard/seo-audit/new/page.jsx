@@ -4,6 +4,7 @@ import SEOAuditForm from "@/components/seo-audit/new/SEOAuditForm";
 import { useTranslation, useI18n } from "@/i18n/context";
 import { mapI18nLocaleToAuditLocale } from "@/utils/localeMapper";
 import { useRunSEOAudit } from "@/hooks/seoAuditHooks";
+import { normalizeUrl } from "@/utils/urlNormalizer";
 
 export default function NewSEOAuditPage() {
   const { t } = useTranslation();
@@ -15,8 +16,11 @@ export default function NewSEOAuditPage() {
     const formLocale = data.locale || i18nLocale;
     const backendLocale = mapI18nLocaleToAuditLocale(formLocale);
     
+    // Normalize URL before sending to backend
+    const normalizedUrl = normalizeUrl(data.url);
+    
     const payload = {
-      url: data.url.trim(),
+      url: normalizedUrl,
       keyword: data.keyword?.trim() || "",
       locale: backendLocale,
       ...(data.device && { device: data.device }),

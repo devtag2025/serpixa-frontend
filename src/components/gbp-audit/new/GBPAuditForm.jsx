@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { HiOfficeBuilding, HiLink, HiGlobe } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
 import LocaleSelect from "@/components/common/LocaleSelect";
+import { isValidUrlFormat } from "@/utils/urlNormalizer";
 
 export default function GBPAuditForm({ onSubmit, isPending }) {
   const { t } = useTranslation();
@@ -77,18 +78,17 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
             <HiLink className="h-5 w-5 text-gray-400" />
           </div>
           <input
-            type="url"
+            type="text"
             placeholder={t("dashboard.gbpAudit.form.gbpLinkPlaceholder")}
             {...register("gbpLink", {
               validate: (value) => {
                 if (!value && !businessName) {
                   return t("dashboard.gbpAudit.form.businessNameOrGbpRequired");
                 }
+                if (value && !isValidUrlFormat(value)) {
+                  return t("dashboard.gbpAudit.form.validUrlRequired") + " (e.g., example.com, www.example.com, or https://example.com)";
+                }
                 return true;
-              },
-              pattern: {
-                value: /^https?:\/\/.+/,
-                message: t("dashboard.gbpAudit.form.validUrlRequired"),
               },
             })}
             className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
