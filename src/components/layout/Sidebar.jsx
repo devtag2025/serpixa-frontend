@@ -253,7 +253,7 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
             className="relative w-full shadow-md flex items-center justify-start px-4 space-x-3 py-3 text-sm font-medium rounded-lg transition-all duration-300 text-white bg-gradient-to-r from-primary via-blue-500 to-primary hover:shadow-lg hover:brightness-110"
           >
             <HiChatAlt className="w-5 h-5 flex-shrink-0" />
-            <span className="whitespace-nowrap font-bold">{t("dashboard.support.title")}</span>
+            <span className="whitespace-nowrap font-bold">Support</span>
           </button>
         </div>
       </aside>
@@ -330,11 +330,11 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
               hover:shadow-lg hover:brightness-110
             `}
             
-            title={!isExpanded ? t("dashboard.support.title") : ""}
+            title={!isExpanded ? "Support" : ""}
           >
             <HiChatAlt className="w-5 h-5 flex-shrink-0" />
             {isExpanded && (
-              <span className="whitespace-nowrap font-bold">{t("dashboard.support.title")}</span>
+              <span className="whitespace-nowrap font-bold">Support</span>
             )}
           </button>
         </div>

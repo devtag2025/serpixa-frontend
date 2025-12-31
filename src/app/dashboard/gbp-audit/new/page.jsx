@@ -4,6 +4,7 @@ import GBPAuditForm from "@/components/gbp-audit/new/GBPAuditForm";
 import { useTranslation, useI18n } from "@/i18n/context";
 import { mapI18nLocaleToAuditLocale } from "@/utils/localeMapper";
 import { useRunGBPAudit } from "@/hooks/gbpAuditHooks";
+import { normalizeUrl } from "@/utils/urlNormalizer";
 
 export default function NewGBPAuditPage() {
   const { t } = useTranslation();
@@ -15,8 +16,12 @@ export default function NewGBPAuditPage() {
     const formLocale = payload.locale || i18nLocale;
     const backendLocale = mapI18nLocaleToAuditLocale(formLocale);
     
+    // Normalize URL if provided
+    const normalizedGbpLink = payload.gbpLink ? normalizeUrl(payload.gbpLink) : null;
+    
     const finalPayload = {
       ...payload,
+      gbpLink: normalizedGbpLink,
       locale: backendLocale,
     };
     

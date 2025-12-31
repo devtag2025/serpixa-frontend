@@ -513,7 +513,8 @@
       "messageRequired": "Message is required",
       "messageMinLength": "Message must be at least 10 characters",
       "messageMaxLength": "Message must be less than 2000 characters",
-      "send": "Send Message"
+      "send": "Send Message",
+      "messageSentSuccess": "Your message has been sent! An agent will reply within 24 hours."
     },
     "profile": {
       "page": {

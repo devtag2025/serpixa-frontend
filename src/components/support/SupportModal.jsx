@@ -2,6 +2,7 @@
 import { useForm } from "react-hook-form";
 import { HiX, HiMail, HiChatAlt } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
+import { toast } from "react-hot-toast";
 
 export default function SupportModal({ isOpen, onClose }) {
   const { t } = useTranslation();
@@ -15,10 +16,17 @@ export default function SupportModal({ isOpen, onClose }) {
   const onSubmit = (data) => {
     // TODO: Implement support email submission
     console.log("Support form data:", data);
+    
+    // Show success toast message
+    toast.success(t("dashboard.support.messageSentSuccess"));
+    
     // Reset form after submission
     reset();
-    // Close modal (will be handled by backend integration later)
-    // onClose();
+    
+    // Close modal after a short delay to allow user to see the toast
+    setTimeout(() => {
+      onClose();
+    }, 500);
   };
 
   return (

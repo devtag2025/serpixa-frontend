@@ -108,8 +108,8 @@ export default function FeaturesPage() {
         />
 
         <div className="relative z-10 w-full max-w-6xl mx-auto text-center">
-          <div className="inline-block px-4 py-2 bg-gray-900/10 backdrop-blur-sm rounded-full mb-6 border border-gray-300/30">
-            <span className="text-gray-900 font-semibold text-sm uppercase tracking-wide">
+          <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6">
+            <span className="text-white font-semibold text-sm uppercase tracking-wide">
               {t("landing.featuresPage.hero.badge")}
             </span>
           </div>
@@ -215,12 +215,6 @@ export default function FeaturesPage() {
                   </span>
                   <span className="px-4 py-2 bg-green-100 text-green-700 rounded-lg font-medium">
                     Nederlands
-                  </span>
-                  <span className="px-4 py-2 bg-orange-100 text-orange-700 rounded-lg font-medium">
-                    Français (BE)
-                  </span>
-                  <span className="px-4 py-2 bg-pink-100 text-pink-700 rounded-lg font-medium">
-                    Nederlands (BE)
                   </span>
                 </div>
               </div>
