@@ -94,10 +94,10 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
       ],
     },
     {
-      key: "extras",
-      icon: HiGift,
-      label: t("dashboard.sidebar.extras"),
-      href: "/dashboard/extras",
+      key: "subscription",
+      icon: HiCreditCard,
+      label: t("dashboard.sidebar.subscription"),
+      href: "/dashboard/subscription",
     },
     // {
     //   key: "reports",

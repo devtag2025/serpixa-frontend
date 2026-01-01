@@ -477,6 +477,36 @@
       "noAddonsAvailable": "Er zijn momenteel geen add-ons beschikbaar",
       "historyNote": "Aankoopgeschiedenis wordt weergegeven als referentie. Werkelijke aankoopgegevens kunnen variëren."
     },
+    "subscription": {
+      "title": "Abonnement en add-ons",
+      "subtitle": "Beheer uw abonnementsplan en add-on credits",
+      "tabs": {
+        "planManagement": "Planbeheer",
+        "addonManagement": "Add-on beheer"
+      },
+      "currentPlan": "Huidig plan",
+      "noSubscription": "Geen actief abonnement",
+      "noSubscriptionDescription": "U heeft geen actief abonnement. Blader door beschikbare plannen hieronder om te beginnen.",
+      "price": "Prijs",
+      "renewsOn": "Verlengt op",
+      "endsOn": "Eindigt op",
+      "cancelingNotice": "Uw abonnement eindigt op de verlengingsdatum. U kunt het op elk moment daarvoor opnieuw activeren.",
+      "manageSubscription": "Abonnement beheren",
+      "upgradePlan": "Plan upgraden",
+      "subscribe": "Abonneren",
+      "current": "Huidig",
+      "availablePlans": "Beschikbare plannen",
+      "availablePlansDescription": "Kies een abonnementsplan dat bij uw behoeften past",
+      "noPlansAvailable": "Er zijn momenteel geen abonnementsplannen beschikbaar",
+      "monthly": "Maandelijks",
+      "yearly": "Jaarlijks",
+      "status": {
+        "active": "Actief",
+        "trial": "Proefperiode",
+        "canceled": "Geannuleerd",
+        "pastDue": "Achterstallig"
+      }
+    },
     "sidebar": {
       "dashboard": "Dashboard",
       "seoAudits": "SEO-audits",
@@ -494,6 +524,7 @@
       "plan": "Plan",
       "payment": "Betaling",
       "addOns": "Add-ons",
+      "subscription": "Abonnement",
       "extras": "Extras"
     },
     "support": {
@@ -1043,7 +1074,11 @@
     "loginButton": "Inloggen",
     "loggingIn": "Inloggen...",
     "noAccount": "Heeft u nog geen account?",
-    "signUp": "Aanmelden"
+    "signUp": "Aanmelden",
+    "emailNotVerified": "E-mail niet geverifieerd",
+    "verificationRequired": "Verifieer uw e-mailadres om door te gaan.",
+    "resendVerification": "Verificatie-e-mail opnieuw verzenden",
+    "sending": "Verzenden..."
   },
   "signup": {
     "greeting": "Begin vandaag uw reis",

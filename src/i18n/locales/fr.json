@@ -477,6 +477,36 @@
       "noAddonsAvailable": "Aucun module complémentaire disponible pour le moment",
       "historyNote": "L'historique des achats est affiché à titre de référence. Les enregistrements d'achat réels peuvent varier."
     },
+    "subscription": {
+      "title": "Abonnement et modules complémentaires",
+      "subtitle": "Gérez votre plan d'abonnement et vos crédits de modules complémentaires",
+      "tabs": {
+        "planManagement": "Gestion du plan",
+        "addonManagement": "Gestion des modules complémentaires"
+      },
+      "currentPlan": "Plan actuel",
+      "noSubscription": "Aucun abonnement actif",
+      "noSubscriptionDescription": "Vous n'avez pas d'abonnement actif. Parcourez les plans disponibles ci-dessous pour commencer.",
+      "price": "Prix",
+      "renewsOn": "Renouvellement le",
+      "endsOn": "Se termine le",
+      "cancelingNotice": "Votre abonnement se terminera à la date de renouvellement. Vous pouvez le réactiver à tout moment avant cette date.",
+      "manageSubscription": "Gérer l'abonnement",
+      "upgradePlan": "Mettre à niveau le plan",
+      "subscribe": "S'abonner",
+      "current": "Actuel",
+      "availablePlans": "Plans disponibles",
+      "availablePlansDescription": "Choisissez un plan d'abonnement qui correspond à vos besoins",
+      "noPlansAvailable": "Aucun plan d'abonnement disponible pour le moment",
+      "monthly": "Mensuel",
+      "yearly": "Annuel",
+      "status": {
+        "active": "Actif",
+        "trial": "Essai",
+        "canceled": "Annulé",
+        "pastDue": "En retard"
+      }
+    },
     "sidebar": {
       "dashboard": "Tableau de bord",
       "seoAudits": "Audits SEO",
@@ -494,6 +524,7 @@
       "plan": "Plan",
       "payment": "Paiement",
       "addOns": "Modules complémentaires",
+      "subscription": "Abonnement",
       "extras": "Extras"
     },
     "support": {
@@ -1043,7 +1074,11 @@
     "loginButton": "Se connecter",
     "loggingIn": "Connexion en cours...",
     "noAccount": "Vous n'avez pas de compte ?",
-    "signUp": "S'inscrire"
+    "signUp": "S'inscrire",
+    "emailNotVerified": "E-mail non vérifié",
+    "verificationRequired": "Veuillez vérifier votre adresse e-mail pour continuer.",
+    "resendVerification": "Renvoyer l'e-mail de vérification",
+    "sending": "Envoi en cours..."
   },
   "signup": {
     "greeting": "Commencez votre parcours aujourd'hui",
