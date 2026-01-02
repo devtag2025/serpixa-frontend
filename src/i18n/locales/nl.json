@@ -564,7 +564,10 @@
         "noCredits": "Geen credits beschikbaar",
         "accountInfo": "Accountinformatie",
         "memberSince": "Lid sinds",
-        "userType": "Gebruikerstype"
+        "userType": "Gebruikerstype",
+        "preferences": "Voorkeuren",
+        "preferredLanguage": "Voorkeurstaal",
+        "preferredLanguageHelp": "Dit wordt gebruikt voor e-mails en meldingen"
       }
     },
     "common": {
@@ -576,6 +579,7 @@
       "view": "Bekijken",
       "edit": "Bewerken",
       "save": "Opslaan",
+      "saving": "Opslaan...",
       "cancel": "Annuleren",
       "close": "Sluiten",
       "search": "Zoeken",
@@ -645,6 +649,8 @@
         "passwordResetError": "Wachtwoordreset mislukt.",
         "emailVerifiedSuccess": "E-mail succesvol geverifieerd!",
         "emailVerificationError": "E-mailverificatie mislukt.",
+        "profileUpdatedSuccess": "Profiel succesvol bijgewerkt!",
+        "profileUpdateError": "Bijwerken van profiel mislukt.",
         "verificationEmailSent": "Verificatie-e-mail verzonden!",
         "verificationEmailError": "Verzenden van verificatie-e-mail mislukt.",
         "checkoutUrlError": "Ophalen van checkout-URL mislukt",
@@ -1104,6 +1110,8 @@
     "passwordsDoNotMatch": "Wachtwoorden komen niet overeen",
     "showPassword": "Wachtwoord tonen",
     "hidePassword": "Wachtwoord verbergen",
+    "preferredLanguageLabel": "Voorkeurstaal",
+    "preferredLanguageHelp": "Selecteer uw voorkeurstaal voor e-mails en meldingen",
     "signUpButton": "Aanmelden",
     "creatingAccount": "Account aanmaken...",
     "alreadyHaveAccount": "Heeft u al een account?",

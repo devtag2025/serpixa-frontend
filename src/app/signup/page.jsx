@@ -6,6 +6,7 @@ import PublicRoute from "@/components/auth/PublicRoute";
 import Link from "next/link";
 import { HiUser, HiLockClosed, HiEye, HiEyeOff, HiMail } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
+import PreferredLanguageSelect from "@/components/common/PreferredLanguageSelect";
 
 export default function SignupPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -271,6 +272,17 @@ export default function SignupPage() {
                     {errors.confirmPassword.message}
                   </p>
                 )}
+              </div>
+
+              {/* Preferred Language Field */}
+              <div>
+                <label htmlFor="locale" className="block text-sm font-medium text-gray-700 mb-2">
+                  {t("signup.preferredLanguageLabel") || "Preferred Language"}
+                </label>
+                <PreferredLanguageSelect register={register} />
+                <p className="text-gray-500 text-xs mt-1.5">
+                  {t("signup.preferredLanguageHelp") || "Select your preferred language for emails and notifications"}
+                </p>
               </div>
 
               {/* Submit Button */}

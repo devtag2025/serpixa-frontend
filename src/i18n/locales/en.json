@@ -564,7 +564,10 @@
         "noCredits": "No credits available",
         "accountInfo": "Account Information",
         "memberSince": "Member Since",
-        "userType": "User Type"
+        "userType": "User Type",
+        "preferences": "Preferences",
+        "preferredLanguage": "Preferred Language",
+        "preferredLanguageHelp": "This will be used for emails and notifications"
       }
     },
     "common": {
@@ -576,6 +579,7 @@
       "view": "View",
       "edit": "Edit",
       "save": "Save",
+      "saving": "Saving...",
       "cancel": "Cancel",
       "close": "Close",
       "search": "Search",
@@ -647,6 +651,8 @@
         "emailVerificationError": "Email verification failed.",
         "verificationEmailSent": "Verification email sent!",
         "verificationEmailError": "Failed to send verification email.",
+        "profileUpdatedSuccess": "Profile updated successfully!",
+        "profileUpdateError": "Failed to update profile.",
         "checkoutUrlError": "Failed to get checkout URL",
         "checkoutSessionError": "Failed to create checkout session",
         "portalUrlError": "Failed to get portal URL",
@@ -1111,6 +1117,8 @@
     "passwordsDoNotMatch": "Passwords do not match",
     "showPassword": "Show password",
     "hidePassword": "Hide password",
+    "preferredLanguageLabel": "Preferred Language",
+    "preferredLanguageHelp": "Select your preferred language for emails and notifications",
     "signUpButton": "Sign Up",
     "creatingAccount": "Creating account...",
     "alreadyHaveAccount": "Already have an account?",

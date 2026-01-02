@@ -564,7 +564,10 @@
         "noCredits": "Aucun crédit disponible",
         "accountInfo": "Informations du compte",
         "memberSince": "Membre depuis",
-        "userType": "Type d'utilisateur"
+        "userType": "Type d'utilisateur",
+        "preferences": "Préférences",
+        "preferredLanguage": "Langue préférée",
+        "preferredLanguageHelp": "Ceci sera utilisé pour les e-mails et les notifications"
       }
     },
     "common": {
@@ -576,6 +579,7 @@
       "view": "Voir",
       "edit": "Modifier",
       "save": "Enregistrer",
+      "saving": "Enregistrement...",
       "cancel": "Annuler",
       "close": "Fermer",
       "search": "Rechercher",
@@ -645,6 +649,8 @@
         "passwordResetError": "Échec de la réinitialisation du mot de passe.",
         "emailVerifiedSuccess": "E-mail vérifié avec succès !",
         "emailVerificationError": "Échec de la vérification de l'e-mail.",
+        "profileUpdatedSuccess": "Profil mis à jour avec succès !",
+        "profileUpdateError": "Échec de la mise à jour du profil.",
         "verificationEmailSent": "E-mail de vérification envoyé !",
         "verificationEmailError": "Échec de l'envoi de l'e-mail de vérification.",
         "checkoutUrlError": "Échec de la récupération de l'URL de paiement",
@@ -1104,6 +1110,8 @@
     "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
     "showPassword": "Afficher le mot de passe",
     "hidePassword": "Masquer le mot de passe",
+    "preferredLanguageLabel": "Langue préférée",
+    "preferredLanguageHelp": "Sélectionnez votre langue préférée pour les e-mails et les notifications",
     "signUpButton": "S'inscrire",
     "creatingAccount": "Création du compte...",
     "alreadyHaveAccount": "Vous avez déjà un compte ?",

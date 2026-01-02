@@ -1,9 +1,12 @@
 "use client";
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
 import DashboardLayout from "@/components/layout/DashboardLayout";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth, useUpdateProfile } from "@/hooks/useAuth";
 import { useDashboard } from "@/hooks/useDashboardStats";
 import { useTranslation } from "@/i18n/context";
-import { HiUser, HiMail, HiShieldCheck, HiXCircle, HiCreditCard, HiCalendar } from "react-icons/hi";
+import { HiUser, HiMail, HiShieldCheck, HiXCircle, HiCreditCard, HiCalendar, HiCog } from "react-icons/hi";
+import PreferredLanguageSelect from "@/components/common/PreferredLanguageSelect";
 
 export default function ProfilePage() {
   const { data: user, isLoading: isAuthLoading } = useAuth();
@@ -13,8 +16,33 @@ export default function ProfilePage() {
     subscriptionInfo,
     isLoading: isDashboardLoading,
   } = useDashboard(t);
+  const { mutate: updateProfile, isPending: isUpdating } = useUpdateProfile();
+  
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      locale: 'en',
+    },
+  });
+
+  // Reset form when user data is loaded
+  useEffect(() => {
+    if (user?.preferred_locale) {
+      reset({
+        locale: user.preferred_locale,
+      });
+    }
+  }, [user, reset]);
 
   const isLoading = isAuthLoading || isDashboardLoading;
+
+  const onUpdatePreferences = (data) => {
+    updateProfile({ locale: data.locale });
+  };
 
   if (isLoading) {
     return (
@@ -144,6 +172,47 @@ export default function ProfilePage() {
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Preferences Card */}
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                  <HiCog className="w-5 h-5 text-primary" />
+                  {t("dashboard.profile.page.preferences") || "Preferences"}
+                </h2>
+
+                <form onSubmit={handleSubmit(onUpdatePreferences)} className="space-y-4">
+                  <div>
+                    <label htmlFor="locale" className="block text-sm font-medium text-gray-700 mb-2">
+                      {t("dashboard.profile.page.preferredLanguage") || "Preferred Language"}
+                    </label>
+                    <PreferredLanguageSelect 
+                      register={register} 
+                      defaultValue={user?.preferred_locale || 'en'}
+                    />
+                    <p className="text-gray-500 text-xs mt-1.5">
+                      {t("dashboard.profile.page.preferredLanguageHelp") || "This will be used for emails and notifications"}
+                    </p>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isUpdating}
+                    className="w-full sm:w-auto px-6 py-2.5 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isUpdating ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        {t("dashboard.common.saving") || "Saving..."}
+                      </span>
+                    ) : (
+                      t("dashboard.common.save") || "Save Preferences"
+                    )}
+                  </button>
+                </form>
               </div>
 
               <div className="flex w-full gap-4">
