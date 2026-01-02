@@ -495,6 +495,7 @@
       "upgradePlan": "Plan upgraden",
       "subscribe": "Abonneren",
       "current": "Huidig",
+      "downgradeNotAllowed": "Downgrade niet toegestaan",
       "availablePlans": "Beschikbare plannen",
       "availablePlansDescription": "Kies een abonnementsplan dat bij uw behoeften past",
       "noPlansAvailable": "Er zijn momenteel geen abonnementsplannen beschikbaar",

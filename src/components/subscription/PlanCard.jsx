@@ -12,6 +12,7 @@ export default function PlanCard({
   onSubscribe,
   isSubscribing,
   isCurrentPlan = false,
+  isDisabled = false,
 }) {
   const { t } = useTranslation();
 
@@ -57,6 +58,8 @@ export default function PlanCard({
         ${
           isCurrentPlan
             ? "border-primary shadow-lg"
+            : isDisabled
+            ? "border-gray-200 shadow-md opacity-60"
             : "border-gray-200 shadow-md hover:shadow-xl hover:scale-[1.02] hover:border-primary/30"
         }
         ${plan.is_popular ? "ring-2 ring-primary/20" : ""}
@@ -130,11 +133,11 @@ export default function PlanCard({
       {/* Subscribe Button */}
       <button
         onClick={() => onSubscribe(plan.stripe_price_id, plan.name)}
-        disabled={isSubscribing || isCurrentPlan}
+        disabled={isSubscribing || isCurrentPlan || isDisabled}
         className={`
           w-full py-3 px-6 rounded-lg font-semibold text-sm transition-all duration-300
           ${
-            isCurrentPlan
+            isCurrentPlan || isDisabled
               ? "bg-gray-100 text-gray-500 cursor-not-allowed"
               : "bg-gradient-to-r from-primary to-primary/90 text-white shadow-md hover:shadow-lg hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
           }
@@ -144,6 +147,8 @@ export default function PlanCard({
           ? t("landing.pricing.processing")
           : isCurrentPlan
           ? t("dashboard.subscription.currentPlan")
+          : isDisabled
+          ? t("dashboard.subscription.downgradeNotAllowed") || "Downgrade not allowed"
           : t("dashboard.subscription.subscribe")}
       </button>
     </div>

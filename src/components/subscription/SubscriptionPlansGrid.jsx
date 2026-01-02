@@ -61,6 +61,8 @@ export default function SubscriptionPlansGrid() {
 
   // Get current plan ID if exists
   const currentPlanId = currentSubscription?.plan?.id;
+  // Get current plan name to check if user has Premium Plan
+  const currentPlanName = currentSubscription?.plan?.name;
 
   if (isLoading) {
     return (
@@ -134,6 +136,8 @@ export default function SubscriptionPlansGrid() {
             const isSubscribing =
               subscribingPriceId === plan.stripe_price_id && createCheckout.isPending;
             const isCurrentPlan = currentPlanId === plan.id;
+            // Disable Starter Plan if user has Premium Plan
+            const isDowngradeDisabled = currentPlanName === "Premium Plan" && plan.name === "Starter Plan";
 
             return (
               <PlanCard
@@ -144,6 +148,7 @@ export default function SubscriptionPlansGrid() {
                 onSubscribe={handleSubscribe}
                 isSubscribing={isSubscribing}
                 isCurrentPlan={isCurrentPlan}
+                isDisabled={isDowngradeDisabled}
               />
             );
           })}
