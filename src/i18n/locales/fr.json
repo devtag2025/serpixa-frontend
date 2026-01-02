@@ -477,6 +477,37 @@
       "noAddonsAvailable": "Aucun module complémentaire disponible pour le moment",
       "historyNote": "L'historique des achats est affiché à titre de référence. Les enregistrements d'achat réels peuvent varier."
     },
+    "subscription": {
+      "title": "Abonnement et modules complémentaires",
+      "subtitle": "Gérez votre plan d'abonnement et vos crédits de modules complémentaires",
+      "tabs": {
+        "planManagement": "Gestion du plan",
+        "addonManagement": "Gestion des modules complémentaires"
+      },
+      "currentPlan": "Plan actuel",
+      "noSubscription": "Aucun abonnement actif",
+      "noSubscriptionDescription": "Vous n'avez pas d'abonnement actif. Parcourez les plans disponibles ci-dessous pour commencer.",
+      "price": "Prix",
+      "renewsOn": "Renouvellement le",
+      "endsOn": "Se termine le",
+      "cancelingNotice": "Votre abonnement se terminera à la date de renouvellement. Vous pouvez le réactiver à tout moment avant cette date.",
+      "manageSubscription": "Gérer l'abonnement",
+      "upgradePlan": "Mettre à niveau le plan",
+      "subscribe": "S'abonner",
+      "current": "Actuel",
+      "downgradeNotAllowed": "Rétrogradation non autorisée",
+      "availablePlans": "Plans disponibles",
+      "availablePlansDescription": "Choisissez un plan d'abonnement qui correspond à vos besoins",
+      "noPlansAvailable": "Aucun plan d'abonnement disponible pour le moment",
+      "monthly": "Mensuel",
+      "yearly": "Annuel",
+      "status": {
+        "active": "Actif",
+        "trial": "Essai",
+        "canceled": "Annulé",
+        "pastDue": "En retard"
+      }
+    },
     "sidebar": {
       "dashboard": "Tableau de bord",
       "seoAudits": "Audits SEO",
@@ -494,6 +525,7 @@
       "plan": "Plan",
       "payment": "Paiement",
       "addOns": "Modules complémentaires",
+      "subscription": "Abonnement",
       "extras": "Extras"
     },
     "support": {
@@ -533,7 +565,10 @@
         "noCredits": "Aucun crédit disponible",
         "accountInfo": "Informations du compte",
         "memberSince": "Membre depuis",
-        "userType": "Type d'utilisateur"
+        "userType": "Type d'utilisateur",
+        "preferences": "Préférences",
+        "preferredLanguage": "Langue préférée",
+        "preferredLanguageHelp": "Ceci sera utilisé pour les e-mails et les notifications"
       }
     },
     "common": {
@@ -545,6 +580,7 @@
       "view": "Voir",
       "edit": "Modifier",
       "save": "Enregistrer",
+      "saving": "Enregistrement...",
       "cancel": "Annuler",
       "close": "Fermer",
       "search": "Rechercher",
@@ -614,6 +650,8 @@
         "passwordResetError": "Échec de la réinitialisation du mot de passe.",
         "emailVerifiedSuccess": "E-mail vérifié avec succès !",
         "emailVerificationError": "Échec de la vérification de l'e-mail.",
+        "profileUpdatedSuccess": "Profil mis à jour avec succès !",
+        "profileUpdateError": "Échec de la mise à jour du profil.",
         "verificationEmailSent": "E-mail de vérification envoyé !",
         "verificationEmailError": "Échec de l'envoi de l'e-mail de vérification.",
         "checkoutUrlError": "Échec de la récupération de l'URL de paiement",
@@ -1043,7 +1081,11 @@
     "loginButton": "Se connecter",
     "loggingIn": "Connexion en cours...",
     "noAccount": "Vous n'avez pas de compte ?",
-    "signUp": "S'inscrire"
+    "signUp": "S'inscrire",
+    "emailNotVerified": "E-mail non vérifié",
+    "verificationRequired": "Veuillez vérifier votre adresse e-mail pour continuer.",
+    "resendVerification": "Renvoyer l'e-mail de vérification",
+    "sending": "Envoi en cours..."
   },
   "signup": {
     "greeting": "Commencez votre parcours aujourd'hui",
@@ -1069,6 +1111,8 @@
     "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
     "showPassword": "Afficher le mot de passe",
     "hidePassword": "Masquer le mot de passe",
+    "preferredLanguageLabel": "Langue préférée",
+    "preferredLanguageHelp": "Sélectionnez votre langue préférée pour les e-mails et les notifications",
     "signUpButton": "S'inscrire",
     "creatingAccount": "Création du compte...",
     "alreadyHaveAccount": "Vous avez déjà un compte ?",

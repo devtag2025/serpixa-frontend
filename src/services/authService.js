@@ -8,5 +8,6 @@ export const AuthService = {
   verifyEmail: (token) => api.get(`/auth/verify-email/${token}`),
   resendVerification: (data) => api.post("/auth/resend-verification", data),
   getProfile: () => api.get("/auth/profile"),
+  updateProfile: (data) => api.put("/auth/profile", data),
   logout: () => api.post("/auth/logout"),
 };

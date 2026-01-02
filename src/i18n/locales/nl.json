@@ -477,6 +477,37 @@
       "noAddonsAvailable": "Er zijn momenteel geen add-ons beschikbaar",
       "historyNote": "Aankoopgeschiedenis wordt weergegeven als referentie. Werkelijke aankoopgegevens kunnen variëren."
     },
+    "subscription": {
+      "title": "Abonnement en add-ons",
+      "subtitle": "Beheer uw abonnementsplan en add-on credits",
+      "tabs": {
+        "planManagement": "Planbeheer",
+        "addonManagement": "Add-on beheer"
+      },
+      "currentPlan": "Huidig plan",
+      "noSubscription": "Geen actief abonnement",
+      "noSubscriptionDescription": "U heeft geen actief abonnement. Blader door beschikbare plannen hieronder om te beginnen.",
+      "price": "Prijs",
+      "renewsOn": "Verlengt op",
+      "endsOn": "Eindigt op",
+      "cancelingNotice": "Uw abonnement eindigt op de verlengingsdatum. U kunt het op elk moment daarvoor opnieuw activeren.",
+      "manageSubscription": "Abonnement beheren",
+      "upgradePlan": "Plan upgraden",
+      "subscribe": "Abonneren",
+      "current": "Huidig",
+      "downgradeNotAllowed": "Downgrade niet toegestaan",
+      "availablePlans": "Beschikbare plannen",
+      "availablePlansDescription": "Kies een abonnementsplan dat bij uw behoeften past",
+      "noPlansAvailable": "Er zijn momenteel geen abonnementsplannen beschikbaar",
+      "monthly": "Maandelijks",
+      "yearly": "Jaarlijks",
+      "status": {
+        "active": "Actief",
+        "trial": "Proefperiode",
+        "canceled": "Geannuleerd",
+        "pastDue": "Achterstallig"
+      }
+    },
     "sidebar": {
       "dashboard": "Dashboard",
       "seoAudits": "SEO-audits",
@@ -494,6 +525,7 @@
       "plan": "Plan",
       "payment": "Betaling",
       "addOns": "Add-ons",
+      "subscription": "Abonnement",
       "extras": "Extras"
     },
     "support": {
@@ -533,7 +565,10 @@
         "noCredits": "Geen credits beschikbaar",
         "accountInfo": "Accountinformatie",
         "memberSince": "Lid sinds",
-        "userType": "Gebruikerstype"
+        "userType": "Gebruikerstype",
+        "preferences": "Voorkeuren",
+        "preferredLanguage": "Voorkeurstaal",
+        "preferredLanguageHelp": "Dit wordt gebruikt voor e-mails en meldingen"
       }
     },
     "common": {
@@ -545,6 +580,7 @@
       "view": "Bekijken",
       "edit": "Bewerken",
       "save": "Opslaan",
+      "saving": "Opslaan...",
       "cancel": "Annuleren",
       "close": "Sluiten",
       "search": "Zoeken",
@@ -614,6 +650,8 @@
         "passwordResetError": "Wachtwoordreset mislukt.",
         "emailVerifiedSuccess": "E-mail succesvol geverifieerd!",
         "emailVerificationError": "E-mailverificatie mislukt.",
+        "profileUpdatedSuccess": "Profiel succesvol bijgewerkt!",
+        "profileUpdateError": "Bijwerken van profiel mislukt.",
         "verificationEmailSent": "Verificatie-e-mail verzonden!",
         "verificationEmailError": "Verzenden van verificatie-e-mail mislukt.",
         "checkoutUrlError": "Ophalen van checkout-URL mislukt",
@@ -1043,7 +1081,11 @@
     "loginButton": "Inloggen",
     "loggingIn": "Inloggen...",
     "noAccount": "Heeft u nog geen account?",
-    "signUp": "Aanmelden"
+    "signUp": "Aanmelden",
+    "emailNotVerified": "E-mail niet geverifieerd",
+    "verificationRequired": "Verifieer uw e-mailadres om door te gaan.",
+    "resendVerification": "Verificatie-e-mail opnieuw verzenden",
+    "sending": "Verzenden..."
   },
   "signup": {
     "greeting": "Begin vandaag uw reis",
@@ -1069,6 +1111,8 @@
     "passwordsDoNotMatch": "Wachtwoorden komen niet overeen",
     "showPassword": "Wachtwoord tonen",
     "hidePassword": "Wachtwoord verbergen",
+    "preferredLanguageLabel": "Voorkeurstaal",
+    "preferredLanguageHelp": "Selecteer uw voorkeurstaal voor e-mails en meldingen",
     "signUpButton": "Aanmelden",
     "creatingAccount": "Account aanmaken...",
     "alreadyHaveAccount": "Heeft u al een account?",

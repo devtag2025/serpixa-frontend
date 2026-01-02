@@ -43,11 +43,22 @@ export function useAuth() {
 export function useRegister() {
   const queryClient = useQueryClient();
   const router = useRouter();
-  const { locale } = useI18n();
+  const { locale: currentLocale } = useI18n();
   const { t } = useTranslation();
 
   return useMutation({
-    mutationFn: (data) => AuthService.register({ ...data, locale }),
+    mutationFn: (data) => {
+      // Use locale from form data if provided, otherwise use current i18n locale
+      // Map to preferred locale (en, fr, nl) if needed
+      const mapToPreferredLocale = (locale) => {
+        if (!locale) return currentLocale;
+        if (locale === 'fr' || locale === 'be-fr') return 'fr';
+        if (locale === 'nl' || locale === 'nl-be') return 'nl';
+        return locale === 'en' ? 'en' : currentLocale;
+      };
+      const preferredLocale = mapToPreferredLocale(data.locale || currentLocale);
+      return AuthService.register({ ...data, locale: preferredLocale });
+    },
     onSuccess: (response) => {
       toast.success(t("dashboard.common.toast.accountCreatedSuccess"));
       // Invalidate auth query to refetch after registration
@@ -194,6 +205,28 @@ export function useResendVerification() {
       const message = handleError(error);
       toast.error(message || t("dashboard.common.toast.verificationEmailError"));
       console.error("Resend verification failed:", message);
+    },
+  });
+}
+
+export function useUpdateProfile() {
+  const queryClient = useQueryClient();
+  const { t } = useTranslation();
+
+  return useMutation({
+    mutationFn: AuthService.updateProfile,
+    onSuccess: (response) => {
+      const { data } = handleResponse(response);
+      // Update auth query cache with new user data
+      queryClient.setQueryData(authKeys.profile(), data);
+      // Note: preferred_locale is only used for emails/notifications, not for dashboard UI language
+      // The dashboard UI language should be controlled separately by the user via the language switcher
+      toast.success(t("dashboard.common.toast.profileUpdatedSuccess") || "Profile updated successfully");
+    },
+    onError: (error) => {
+      const message = handleError(error);
+      toast.error(message || t("dashboard.common.toast.profileUpdateError") || "Failed to update profile");
+      console.error("Update profile failed:", message);
     },
   });
 }

@@ -477,6 +477,37 @@
       "noAddonsAvailable": "No addons available at the moment",
       "historyNote": "Purchase history is displayed for reference. Actual purchase records may vary."
     },
+    "subscription": {
+      "title": "Subscription & Add-ons",
+      "subtitle": "Manage your subscription plan and addon credits",
+      "tabs": {
+        "planManagement": "Plan Management",
+        "addonManagement": "Addon Management"
+      },
+      "currentPlan": "Current Plan",
+      "noSubscription": "No Active Subscription",
+      "noSubscriptionDescription": "You don't have an active subscription. Browse available plans below to get started.",
+      "price": "Price",
+      "renewsOn": "Renews On",
+      "endsOn": "Ends On",
+      "cancelingNotice": "Your subscription will end on the renewal date. You can reactivate it anytime before then.",
+      "manageSubscription": "Manage Subscription",
+      "upgradePlan": "Upgrade Plan",
+      "subscribe": "Subscribe",
+      "current": "Current",
+      "downgradeNotAllowed": "Downgrade not allowed",
+      "availablePlans": "Available Plans",
+      "availablePlansDescription": "Choose a subscription plan that fits your needs",
+      "noPlansAvailable": "No subscription plans available at the moment",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "status": {
+        "active": "Active",
+        "trial": "Trial",
+        "canceled": "Canceled",
+        "pastDue": "Past Due"
+      }
+    },
     "sidebar": {
       "dashboard": "Dashboard",
       "seoAudits": "SEO Audits",
@@ -494,6 +525,7 @@
       "plan": "Plan",
       "payment": "Payment",
       "addOns": "Add-ons",
+      "subscription": "Subscription",
       "extras": "Extras"
     },
     "support": {
@@ -533,7 +565,10 @@
         "noCredits": "No credits available",
         "accountInfo": "Account Information",
         "memberSince": "Member Since",
-        "userType": "User Type"
+        "userType": "User Type",
+        "preferences": "Preferences",
+        "preferredLanguage": "Preferred Language",
+        "preferredLanguageHelp": "This will be used for emails and notifications"
       }
     },
     "common": {
@@ -545,6 +580,7 @@
       "view": "View",
       "edit": "Edit",
       "save": "Save",
+      "saving": "Saving...",
       "cancel": "Cancel",
       "close": "Close",
       "search": "Search",
@@ -616,6 +652,8 @@
         "emailVerificationError": "Email verification failed.",
         "verificationEmailSent": "Verification email sent!",
         "verificationEmailError": "Failed to send verification email.",
+        "profileUpdatedSuccess": "Profile updated successfully!",
+        "profileUpdateError": "Failed to update profile.",
         "checkoutUrlError": "Failed to get checkout URL",
         "checkoutSessionError": "Failed to create checkout session",
         "portalUrlError": "Failed to get portal URL",
@@ -1050,7 +1088,11 @@
     "loginButton": "Login",
     "loggingIn": "Logging in...",
     "noAccount": "Don't have an account?",
-    "signUp": "Sign up"
+    "signUp": "Sign up",
+    "emailNotVerified": "Email not verified",
+    "verificationRequired": "Please verify your email address to continue.",
+    "resendVerification": "Resend Verification Email",
+    "sending": "Sending..."
   },
   "signup": {
     "greeting": "Start your journey today",
@@ -1076,6 +1118,8 @@
     "passwordsDoNotMatch": "Passwords do not match",
     "showPassword": "Show password",
     "hidePassword": "Hide password",
+    "preferredLanguageLabel": "Preferred Language",
+    "preferredLanguageHelp": "Select your preferred language for emails and notifications",
     "signUpButton": "Sign Up",
     "creatingAccount": "Creating account...",
     "alreadyHaveAccount": "Already have an account?",
