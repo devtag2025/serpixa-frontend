@@ -2,11 +2,11 @@
   "landing": {
     "hero": {
       "title": "All the tools you need to perfect your SEO and AI visibility",
-      "subtitle": "Own traditional and AI search with a powerful platform, trusted data, and exceptional UX",
+      "subtitle": "Own traditional and AI search with a powerful platform, reliable data, and an intuitive UX",
       "startTrial": "Get Started",
       "seeFeatures": "See features",
-      "trustedBy": "Trusted by",
-      "professionals": "SEO professionals since 2013",
+      "trustedBy": "Built for",
+      "professionals": "SEO teams and marketers",
       "aiPowered": "AI Powered",
       "contentGeneration": "Content Generation",
       "quickStart": "Quick Start",
@@ -36,9 +36,9 @@
         "value": "AI",
         "description": "POWERED ALGORITHMS"
       },
-      "trustedBadge": "Trusted Platform",
-      "trustedTitle": "Trusted by large teams running SEO at scale",
-      "trustedSubtitle": "Join thousands of SEO professionals who rely on our powerful platform for accurate data and insights",
+      "trustedBadge": "Platform benefits",
+      "trustedTitle": "Built to support teams running SEO at scale",
+      "trustedSubtitle": "Designed to provide clear data and insights for collaborative teams",
       "startTrial": "Get Started"
     },
     "pricing": {
@@ -93,13 +93,13 @@
     },
     "testimonials": {
       "badge": "Testimonials",
-      "title": "Trusted by thousands of SEO professionals",
-      "subtitle": "See what our customers have to say about their experience",
-      "testimonial1": "Serpixa has completely transformed our SEO workflow. The AI-powered content generation saves us hours every week, and the audit reports are incredibly detailed.",
-      "testimonial2": "The best SEO platform we've used. The combination of traditional SEO tools with AI capabilities gives us a competitive edge that's unmatched.",
-      "testimonial3": "As a content strategist, the AI content generation feature is a game-changer. It helps us create high-quality, SEO-optimized content at scale.",
-      "testimonial4": "The pricing is fair, the features are powerful, and the support is excellent. Highly recommend for any business serious about SEO.",
-      "trustText": "Join thousands of satisfied customers"
+      "title": "Feedback from SEO practitioners",
+      "subtitle": "Highlights from teams who tried Serpixa",
+      "testimonial1": "Serpixa helps streamline our SEO workflow. The AI content tools save time while keeping audit outputs actionable.",
+      "testimonial2": "The mix of SEO tools and AI suggestions keeps our team aligned without bouncing between platforms.",
+      "testimonial3": "AI content generation speeds up our drafts and keeps an SEO-friendly structure we can review before publishing.",
+      "testimonial4": "Pricing feels reasonable for the feature set, and the support team responds quickly when we have questions.",
+      "trustText": "Feedback gathered from product evaluations"
     },
     "faq": {
       "badge": "FAQ",
@@ -108,7 +108,7 @@
       "question1": "What plans do you offer?",
       "answer1": "We offer two main plans: Starter Pack and Premium Pack. The Starter Pack is perfect for getting started with SEO audits, while the Premium Pack includes advanced features with more audits and AI generations. Both plans include access to all core features.",
       "question2": "How accurate are the SEO audit results?",
-      "answer2": "Our SEO audits use industry-leading algorithms and real-time data to provide 100% accurate keyword rankings and comprehensive on-page analysis. We continuously update our database with the latest search engine data.",
+      "answer2": "Our SEO audits use industry-standard algorithms and regularly updated data sources to provide reliable keyword tracking and thorough on-page analysis.",
       "question3": "Can I cancel my subscription anytime?",
       "answer3": "Yes, you can cancel your subscription at any time. There are no long-term contracts, and you'll continue to have access until the end of your billing period.",
       "question4": "What makes your AI content generation different?",
@@ -120,14 +120,14 @@
     },
     "cta": {
       "title": "Ready to transform your SEO strategy?",
-      "subtitle": "Join thousands of professionals who trust Serpixa for their SEO and AI content needs",
+      "subtitle": "See how Serpixa can fit into your workflow",
       "benefit1": "No credit card required",
       "benefit2": "Cancel anytime",
-      "benefit3": "24/7 customer support",
-      "benefit4": "14-day money-back guarantee",
+      "benefit3": "Helpful support when you need it",
+      "benefit4": "Transparent, flexible pricing",
       "startTrial": "Get Started",
       "viewPricing": "View Pricing",
-      "trustText": "Trusted by 10,000+ businesses worldwide"
+      "trustText": "Built for teams of all sizes"
     },
     "footer": {
       "description": "All the tools you need to perfect your SEO and AI visibility. Own traditional and AI search with a powerful platform.",
@@ -190,8 +190,8 @@
           "description": "No technical expertise required. Our intuitive interface makes it easy to get started in minutes, even if you're new to SEO."
         },
         "trusted": {
-          "title": "Trusted & Reliable",
-          "description": "Built on industry-leading data sources with 100% accurate rankings. Trusted by SEO professionals and agencies worldwide."
+          "title": "Reliable & Secure",
+          "description": "Built on quality data sources with a focus on accuracy. Designed for SEO professionals and agencies who value reliable insights."
         }
       },
       "whatYouGet": {
@@ -244,10 +244,10 @@
         }
       },
       "whyChoose": {
-        "title": "Why Trust Serpixa?",
+        "title": "Why Choose Serpixa?",
         "subtitle": "Built for professionals who demand accuracy and reliability",
-        "trusted": "Trusted by SEO professionals since 2013",
-        "accurate": "100% accurate keyword rankings and data",
+        "trusted": "Designed for SEO professionals",
+        "accurate": "Focus on accurate keyword rankings and data",
         "bilingual": "Full bilingual support (FR & NL)",
         "gdpr": "GDPR compliant and secure",
         "updates": "Regular updates with latest SEO trends",
@@ -255,7 +255,7 @@
       },
       "cta": {
         "title": "Ready to Transform Your SEO Workflow?",
-        "subtitle": "Join thousands of professionals who trust Serpixa for their SEO and AI content needs",
+        "subtitle": "Try Serpixa for your SEO and AI content needs",
         "startTrial": "Get Started",
         "viewPricing": "View Pricing",
         "trustText": "No credit card required • Cancel anytime"
@@ -348,7 +348,7 @@
       },
       "cta": {
         "title": "Ready to Get Started?",
-        "subtitle": "Start using Serpixa today and transform your SEO strategy",
+        "subtitle": "Try Serpixa today and see how it can help your SEO workflow",
         "startTrial": "Get Started",
         "viewPricing": "View Pricing"
       }
@@ -362,22 +362,22 @@
       "ourStory": {
         "title": "Our Story",
         "paragraph1": "Serpixa was born from a simple observation: SEO tools were either too complex for small businesses or too expensive for growing companies. We saw a gap in the market for a platform that combines powerful analytics with ease of use.",
-        "paragraph2": "Founded in 2013, we've been helping SEO professionals and businesses worldwide improve their search visibility. Our platform leverages cutting-edge technology and industry-leading data sources to deliver accurate, actionable insights.",
-        "paragraph3": "Today, Serpixa serves thousands of customers across the globe, from solo entrepreneurs to large agencies, all united by one goal: achieving better search rankings and growing their online presence.",
+        "paragraph2": "We aim to help SEO professionals and businesses improve their search visibility. Our platform uses modern technology and quality data sources to deliver actionable insights.",
+        "paragraph3": "Serpixa is designed for users of all sizes, from solo entrepreneurs to agencies, all united by one goal: achieving better search rankings and growing their online presence.",
         "mission": {
           "title": "Our Mission",
-          "description": "To democratize SEO by making professional-grade tools accessible to everyone, regardless of their technical expertise or budget."
+          "description": "To make professional-grade SEO tools accessible to everyone, regardless of their technical expertise or budget."
         }
       },
       "stats": {
         "title": "By The Numbers",
         "subtitle": "Our impact in numbers",
         "customers": {
-          "value": "10,000+",
+          "value": "Growing",
           "label": "Happy Customers"
         },
         "audits": {
-          "value": "1M+",
+          "value": "Many",
           "label": "Audits Completed"
         },
         "countries": {
@@ -385,7 +385,7 @@
           "label": "Countries Served"
         },
         "satisfaction": {
-          "value": "98%",
+          "value": "High",
           "label": "Customer Satisfaction"
         }
       },
@@ -398,7 +398,7 @@
         },
         "trust": {
           "title": "Trust & Reliability",
-          "description": "We're committed to providing 100% accurate data and reliable insights. Your success is built on our foundation of trust and transparency."
+          "description": "We're committed to providing accurate data and reliable insights. Your success is built on our foundation of trust and transparency."
         },
         "excellence": {
           "title": "Excellence",
@@ -427,7 +427,7 @@
       },
       "cta": {
         "title": "Join Us on This Journey",
-        "subtitle": "Be part of a community that's transforming how businesses approach SEO",
+        "subtitle": "Try our tools and see how they can help your SEO workflow",
         "startTrial": "Get Started",
         "exploreFeatures": "Explore Features"
       }
@@ -1071,7 +1071,7 @@
     "greeting": "Nice to see you again",
     "title": "WELCOME BACK",
     "description": "All the tools you need to perfect your SEO and AI visibility. Own traditional and AI search with a powerful platform, trusted data, and exceptional UX.",
-    "trustedBy": "Trusted by SEO professionals since 2013",
+    "trustedBy": "Trusted by SEO professionals worldwide",
     "formTitle": "Login Account",
     "formSubtitle": "Enter your credentials to access your account and start optimizing your SEO strategy.",
     "emailLabel": "Email ID",

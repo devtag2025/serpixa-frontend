@@ -7,10 +7,7 @@ import {
   HiShieldCheck,
   HiChartBar,
   HiHeart,
-  HiCheckCircle,
-  HiGlobeAlt,
-  HiUsers,
-  HiTrendingUp
+  HiCheckCircle
 } from "react-icons/hi";
 
 export default function AboutUsPage() {
@@ -40,33 +37,6 @@ export default function AboutUsPage() {
       titleKey: "landing.aboutUs.values.customerFirst.title",
       descriptionKey: "landing.aboutUs.values.customerFirst.description",
       color: "pink"
-    }
-  ];
-
-  const stats = [
-    {
-      icon: HiUsers,
-      valueKey: "landing.aboutUs.stats.customers.value",
-      labelKey: "landing.aboutUs.stats.customers.label",
-      color: "blue"
-    },
-    {
-      icon: HiTrendingUp,
-      valueKey: "landing.aboutUs.stats.audits.value",
-      labelKey: "landing.aboutUs.stats.audits.label",
-      color: "green"
-    },
-    {
-      icon: HiGlobeAlt,
-      valueKey: "landing.aboutUs.stats.countries.value",
-      labelKey: "landing.aboutUs.stats.countries.label",
-      color: "purple"
-    },
-    {
-      icon: HiSparkles,
-      valueKey: "landing.aboutUs.stats.satisfaction.value",
-      labelKey: "landing.aboutUs.stats.satisfaction.label",
-      color: "orange"
     }
   ];
 
@@ -148,42 +118,6 @@ export default function AboutUsPage() {
                 {t("landing.aboutUs.ourStory.mission.description")}
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
-        <div className="w-full max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              {t("landing.aboutUs.stats.title")}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t("landing.aboutUs.stats.subtitle")}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 text-center"
-                >
-                  <div className={`w-16 h-16 rounded-lg ${getColorClasses(stat.color)} flex items-center justify-center mb-4 mx-auto`}>
-                    <Icon className="w-8 h-8" />
-                  </div>
-                  <div className="text-4xl font-bold text-gray-900 mb-2">
-                    {t(stat.valueKey)}
-                  </div>
-                  <p className="text-gray-600 text-lg">
-                    {t(stat.labelKey)}
-                  </p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

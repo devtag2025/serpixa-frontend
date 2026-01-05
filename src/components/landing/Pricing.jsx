@@ -160,17 +160,17 @@ export default function Pricing() {
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 max-w-5xl mx-auto">
               {subscriptionPlans.map((plan) => {
                 const highlighted = isPopular(plan);
                 return (
                   <div
                     key={plan.id}
-                    className={`group relative bg-white rounded-3xl p-8 md:p-10 ${
+                    className={`group relative bg-white rounded-3xl p-6 md:p-7 ${
                       highlighted
-                        ? "border-2 border-primary shadow-2xl shadow-primary/20 scale-105 md:scale-110"
+                        ? "border-2 border-primary shadow-lg shadow-primary/15 scale-[1.01] md:scale-[1.03]"
                         : "border border-gray-200 shadow-lg"
-                    } transition-all duration-300 hover:shadow-2xl hover:scale-105`}
+                    } transition-all duration-300 hover:shadow-xl hover:scale-[1.015]`}
                   >
                     {/* Gradient overlay for popular plan */}
                     {highlighted && (
@@ -190,24 +190,24 @@ export default function Pricing() {
                     )}
 
                     {/* Plan Name */}
-                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{getPlanTranslation(plan.name, 'name')}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{getPlanTranslation(plan.name, 'name')}</h3>
 
                     {/* Price */}
                     <div className="mb-6">
                       <div className="flex items-baseline gap-2">
-                        <span className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                        <span className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                         €{formatPrice(plan.price, plan.currency)}
                         </span>
                       </div>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-gray-500 text-lg">/{getBillingPeriod(plan.billing_period)}</span>
+                        <span className="text-gray-500 text-sm md:text-base">/{getBillingPeriod(plan.billing_period)}</span>
                         <span className="text-gray-500 text-xs">{t("landing.pricing.exclVat")}</span>
                       </div>
                     </div>
 
                     {/* Description */}
                     {plan.description && (
-                      <p className="text-gray-600 mb-8 text-base leading-relaxed">{getPlanTranslation(plan.name, 'description')}</p>
+                      <p className="text-gray-600 mb-7 text-sm md:text-base leading-relaxed">{getPlanTranslation(plan.name, 'description')}</p>
                     )}
 
                     {/* Limits/Features */}
@@ -240,7 +240,7 @@ export default function Pricing() {
                                     </svg>
                                   </div>
                                 </div>
-                                <span className="text-gray-700 text-base font-medium leading-relaxed">{limit}</span>
+                                <span className="text-gray-700 text-sm md:text-base font-medium leading-relaxed">{limit}</span>
                               </li>
                             ))
                           ) : (
@@ -263,7 +263,7 @@ export default function Pricing() {
                                     </svg>
                                   </div>
                                 </div>
-                                <span className="text-gray-700 text-base leading-relaxed">{feature}</span>
+                                <span className="text-gray-700 text-sm md:text-base leading-relaxed">{feature}</span>
                               </li>
                             ))
                           )}
@@ -276,10 +276,10 @@ export default function Pricing() {
                       <button
                         onClick={() => handleCheckout(plan.stripe_price_id, plan.name)}
                         disabled={purchasingPriceId === plan.stripe_price_id && createCheckout.isPending}
-                        className={`group/btn relative w-full text-center py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 ${
+                        className={`group/btn relative w-full text-center py-3 px-4.5 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 ${
                           highlighted
-                            ? "bg-gradient-to-r from-primary to-purple-600 text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-105"
-                            : "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:scale-105"
+                            ? "bg-gradient-to-r from-primary to-purple-600 text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.015]"
+                            : "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/25 hover:scale-[1.015]"
                         } disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100`}
                       >
                         <span className="relative z-10">
@@ -292,10 +292,10 @@ export default function Pricing() {
                     ) : (
                       <Link
                         href="/signup"
-                        className={`group/btn relative block w-full text-center py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 ${
+                        className={`group/btn relative block w-full text-center py-3 px-4.5 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 ${
                           highlighted
-                            ? "bg-gradient-to-r from-primary to-purple-600 text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-105"
-                            : "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:scale-105"
+                            ? "bg-gradient-to-r from-primary to-purple-600 text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.015]"
+                            : "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/25 hover:scale-[1.015]"
                         }`}
                       >
                         <span className="relative z-10">{t("landing.pricing.startTrial")}</span>

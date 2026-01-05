@@ -128,7 +128,7 @@ export default function Hero() {
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 border-2 border-white"></div>
             </div>
             <p className="text-gray-800 text-sm md:text-base font-medium drop-shadow-sm py-8">
-              {t("landing.hero.trustedBy")} <span className="font-semibold">1.5M+</span> {t("landing.hero.professionals")}
+              {t("landing.hero.trustedBy")} {t("landing.hero.professionals")}
             </p>
           </div>
 

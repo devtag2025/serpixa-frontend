@@ -2,11 +2,11 @@
   "landing": {
     "hero": {
       "title": "Alle tools die u nodig heeft om uw SEO- en AI-zichtbaarheid te perfectioneren",
-      "subtitle": "Beheer traditioneel en AI-zoeken met een krachtig platform, betrouwbare data en uitzonderlijke UX",
+      "subtitle": "Beheer traditioneel en AI-zoeken met een krachtig platform, betrouwbare data en een intuïtieve UX",
       "startTrial": "Aan de slag",
       "seeFeatures": "Bekijk functies",
-      "trustedBy": "Vertrouwd door",
-      "professionals": "SEO-professionals sinds 2013",
+      "trustedBy": "Ontworpen voor",
+      "professionals": "SEO-teams en marketeers",
       "aiPowered": "AI Aangedreven",
       "contentGeneration": "Content Generatie",
       "quickStart": "Snelle Start",
@@ -36,9 +36,9 @@
         "value": "AI",
         "description": "AANGEDREVEN ALGORITMEN"
       },
-      "trustedBadge": "Vertrouwd platform",
-      "trustedTitle": "Vertrouwd door grote teams die SEO op schaal uitvoeren",
-      "trustedSubtitle": "Sluit je aan bij duizenden SEO-professionals die vertrouwen op ons krachtige platform voor nauwkeurige gegevens en inzichten",
+      "trustedBadge": "Platformvoordelen",
+      "trustedTitle": "Ontworpen om teams te ondersteunen die SEO op schaal doen",
+      "trustedSubtitle": "Bedoeld om duidelijke data en inzichten te bieden aan samenwerkende teams",
       "startTrial": "Aan de slag"
     },
     "pricing": {
@@ -93,13 +93,13 @@
     },
     "testimonials": {
       "badge": "Getuigenissen",
-      "title": "Vertrouwd door duizenden SEO-professionals",
-      "subtitle": "Zie wat onze klanten zeggen over hun ervaring",
-      "testimonial1": "Serpixa heeft onze SEO-workflow volledig getransformeerd. De AI-aangedreven contentgeneratie bespaart ons wekelijks uren, en de auditrapporten zijn ongelooflijk gedetailleerd.",
-      "testimonial2": "Het beste SEO-platform dat we hebben gebruikt. De combinatie van traditionele SEO-tools met AI-mogelijkheden geeft ons een concurrentievoordeel dat ongeëvenaard is.",
-      "testimonial3": "Als contentstrateeg is de AI-contentgeneratiefunctie een game-changer. Het helpt ons om hoogwaardige, SEO-geoptimaliseerde content op schaal te creëren.",
-      "testimonial4": "De prijzen zijn eerlijk, de functies zijn krachtig en de ondersteuning is uitstekend. Ik raad het ten zeerste aan voor elk bedrijf dat serieus is over SEO.",
-      "trustText": "Sluit u aan bij duizenden tevreden klanten"
+      "title": "Feedback van SEO-praktijkexperts",
+      "subtitle": "Hoogtepunten van teams die Serpixa hebben geprobeerd",
+      "testimonial1": "Serpixa helpt onze SEO-workflow te stroomlijnen. De AI-contenttools besparen tijd en houden audits uitvoerbaar.",
+      "testimonial2": "De mix van SEO-tools en AI-suggesties houdt ons team op één lijn zonder steeds van platform te wisselen.",
+      "testimonial3": "AI-contentgeneratie versnelt onze eerste versies en bewaart een SEO-structuur die we kunnen beoordelen voor publicatie.",
+      "testimonial4": "De prijs voelt passend bij de functies en het supportteam reageert snel wanneer we vragen hebben.",
+      "trustText": "Feedback verzameld uit productevaluaties"
     },
     "faq": {
       "badge": "FAQ",
@@ -108,7 +108,7 @@
       "question1": "Welke plannen biedt u aan?",
       "answer1": "We bieden twee hoofdplannen aan: Starter Pack en Premium Pack. Het Starter Pack is perfect om te beginnen met SEO-audits, terwijl het Premium Pack geavanceerde functies bevat met meer audits en AI-generaties. Beide plannen omvatten toegang tot alle kernfuncties.",
       "question2": "Hoe nauwkeurig zijn de SEO-auditresultaten?",
-      "answer2": "Onze SEO-audits gebruiken toonaangevende algoritmen en real-time data om 100% nauwkeurige zoekwoordrankings en uitgebreide on-page analyse te bieden. We werken continu onze database bij met de nieuwste zoekmachinegegevens.",
+      "answer2": "Onze SEO-audits gebruiken gangbare algoritmen en regelmatig bijgewerkte databronnen om betrouwbaar zoekwoordonderzoek en grondige on-page analyse te bieden.",
       "question3": "Kan ik mijn abonnement op elk moment opzeggen?",
       "answer3": "Ja, u kunt uw abonnement op elk moment opzeggen. Er zijn geen langetermijncontracten en u blijft toegang hebben tot het einde van uw factureringsperiode.",
       "question4": "Wat maakt uw AI-contentgeneratie anders?",
@@ -120,14 +120,14 @@
     },
     "cta": {
       "title": "Klaar om uw SEO-strategie te transformeren?",
-      "subtitle": "Sluit u aan bij duizenden professionals die Serpixa vertrouwen voor hun SEO- en AI-contentbehoeften",
+      "subtitle": "Bekijk hoe Serpixa in uw workflow past",
       "benefit1": "Geen creditcard vereist",
       "benefit2": "Op elk moment opzeggen",
-      "benefit3": "24/7 klantenondersteuning",
-      "benefit4": "14-dagen geld-terug-garantie",
+      "benefit3": "Behulpzame support wanneer u het nodig heeft",
+      "benefit4": "Transparante, flexibele prijzen",
       "startTrial": "Aan de slag",
       "viewPricing": "Bekijk prijzen",
-      "trustText": "Vertrouwd door meer dan 10.000 bedrijven wereldwijd"
+      "trustText": "Ontworpen voor teams van elke omvang"
     },
     "footer": {
       "description": "Alle tools die u nodig heeft om uw SEO en AI-zichtbaarheid te perfectioneren. Beheer traditioneel en AI-zoeken met een krachtig platform.",
@@ -190,8 +190,8 @@
           "description": "Geen technische expertise vereist. Onze intuïtieve interface maakt het gemakkelijk om binnen minuten te beginnen, zelfs als u nieuw bent in SEO."
         },
         "trusted": {
-          "title": "Betrouwbaar en vertrouwd",
-          "description": "Gebouwd op toonaangevende databronnen met 100% nauwkeurige rankings. Vertrouwd door SEO-professionals en agentschappen wereldwijd."
+          "title": "Betrouwbaar en veilig",
+          "description": "Gebouwd op kwalitatieve databronnen met focus op nauwkeurigheid. Ontworpen voor SEO-professionals en agentschappen die betrouwbare inzichten waarderen."
         }
       },
       "whatYouGet": {
@@ -244,18 +244,18 @@
         }
       },
       "whyChoose": {
-        "title": "Waarom Serpixa vertrouwen?",
+        "title": "Waarom Serpixa kiezen?",
         "subtitle": "Gebouwd voor professionals die nauwkeurigheid en betrouwbaarheid eisen",
-        "trusted": "Vertrouwd door SEO-professionals sinds 2013",
-        "accurate": "100% nauwkeurige zoekwoordrankings en data",
+        "trusted": "Ontworpen voor SEO-professionals",
+        "accurate": "Focus op nauwkeurige zoekwoordrankings en data",
         "bilingual": "Volledige tweetalige ondersteuning (FR & NL)",
         "gdpr": "AVG-conform en veilig",
         "updates": "Regelmatige updates met de nieuwste SEO-trends",
-        "support": "Toegewijd klantenservice"
+        "support": "Toegewijde klantenservice"
       },
       "cta": {
         "title": "Klaar om uw SEO-workflow te transformeren?",
-        "subtitle": "Sluit u aan bij duizenden professionals die Serpixa vertrouwen voor hun SEO- en AI-content behoeften",
+        "subtitle": "Probeer Serpixa voor uw SEO- en AI-content behoeften",
         "startTrial": "Aan de slag",
         "viewPricing": "Bekijk prijzen",
         "trustText": "Geen creditcard vereist • Annuleer op elk moment"
@@ -348,7 +348,7 @@
       },
       "cta": {
         "title": "Klaar om te beginnen?",
-        "subtitle": "Begin vandaag met Serpixa en transformeer uw SEO-strategie",
+        "subtitle": "Probeer Serpixa vandaag en ontdek hoe het uw SEO-workflow kan verbeteren",
         "startTrial": "Aan de slag",
         "viewPricing": "Bekijk prijzen"
       }
@@ -362,22 +362,22 @@
       "ourStory": {
         "title": "Ons verhaal",
         "paragraph1": "Serpixa is ontstaan uit een eenvoudige observatie: SEO-tools waren ofwel te complex voor kleine bedrijven of te duur voor groeiende bedrijven. We zagen een gat in de markt voor een platform dat krachtige analyses combineert met gebruiksgemak.",
-        "paragraph2": "Opgericht in 2013, helpen we SEO-professionals en bedrijven wereldwijd hun zoekzichtbaarheid te verbeteren. Ons platform maakt gebruik van geavanceerde technologie en toonaangevende databronnen om nauwkeurige, actiegerichte inzichten te leveren.",
-        "paragraph3": "Vandaag de dag bedient Serpixa duizenden klanten over de hele wereld, van solo-ondernemers tot grote agentschappen, allemaal verenigd door één doel: betere zoekrankings bereiken en hun online aanwezigheid laten groeien.",
+        "paragraph2": "We streven ernaar SEO-professionals en bedrijven te helpen hun zoekzichtbaarheid te verbeteren. Ons platform maakt gebruik van moderne technologie en kwalitatieve databronnen om actiegerichte inzichten te leveren.",
+        "paragraph3": "Serpixa is ontworpen voor gebruikers van alle groottes, van solo-ondernemers tot agentschappen, allemaal verenigd door één doel: betere zoekrankings bereiken en hun online aanwezigheid laten groeien.",
         "mission": {
           "title": "Onze missie",
-          "description": "SEO democratiseren door professionele tools toegankelijk te maken voor iedereen, ongeacht hun technische expertise of budget."
+          "description": "Professionele SEO-tools toegankelijk maken voor iedereen, ongeacht hun technische expertise of budget."
         }
       },
       "stats": {
         "title": "In cijfers",
         "subtitle": "Onze impact in cijfers",
         "customers": {
-          "value": "10.000+",
+          "value": "Groeiend",
           "label": "Tevreden klanten"
         },
         "audits": {
-          "value": "1M+",
+          "value": "Veel",
           "label": "Voltooide audits"
         },
         "countries": {
@@ -385,7 +385,7 @@
           "label": "Bediende landen"
         },
         "satisfaction": {
-          "value": "98%",
+          "value": "Hoog",
           "label": "Klanttevredenheid"
         }
       },
@@ -398,7 +398,7 @@
         },
         "trust": {
           "title": "Vertrouwen en betrouwbaarheid",
-          "description": "We zijn toegewijd aan het leveren van 100% nauwkeurige data en betrouwbare inzichten. Uw succes is gebouwd op onze fundering van vertrouwen en transparantie."
+          "description": "We zijn toegewijd aan het leveren van nauwkeurige data en betrouwbare inzichten. Uw succes is gebouwd op onze fundering van vertrouwen en transparantie."
         },
         "excellence": {
           "title": "Excellentie",
@@ -427,7 +427,7 @@
       },
       "cta": {
         "title": "Sluit u aan bij deze reis",
-        "subtitle": "Maak deel uit van een gemeenschap die transformeert hoe bedrijven SEO benaderen",
+        "subtitle": "Probeer onze tools en ontdek hoe ze uw SEO-workflow kunnen verbeteren",
         "startTrial": "Aan de slag",
         "exploreFeatures": "Functies verkennen"
       }
@@ -1064,7 +1064,7 @@
     "greeting": "Leuk je weer te zien",
     "title": "WELKOM TERUG",
     "description": "Alle tools die u nodig heeft om uw SEO- en AI-zichtbaarheid te perfectioneren. Beheer traditioneel en AI-zoeken met een krachtig platform, betrouwbare data en uitzonderlijke UX.",
-    "trustedBy": "Vertrouwd door SEO-professionals sinds 2013",
+    "trustedBy": "Vertrouwd door SEO-professionals wereldwijd",
     "formTitle": "Inloggen",
     "formSubtitle": "Voer uw inloggegevens in om toegang te krijgen tot uw account en uw SEO-strategie te optimaliseren.",
     "emailLabel": "E-mailadres",
