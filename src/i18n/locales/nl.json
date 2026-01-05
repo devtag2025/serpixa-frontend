@@ -129,6 +129,21 @@
       "viewPricing": "Bekijk prijzen",
       "trustText": "Ontworpen voor teams van elke omvang"
     },
+    "contact": {
+      "title": "Contacteer ons",
+      "subtitle": "We zijn er om te helpen. Stuur ons een bericht en we nemen zo snel mogelijk contact met u op.",
+      "email": "E-mail",
+      "address": "Adres",
+      "phone": "Telefoon",
+      "form": {
+        "name": "Naam",
+        "email": "E-mail",
+        "website": "Website (optioneel)",
+        "message": "Bericht",
+        "submit": "Bericht versturen",
+        "successMessage": "Bericht verzonden! We nemen snel contact met u op."
+      }
+    },
     "footer": {
       "description": "Alle tools die u nodig heeft om uw SEO en AI-zichtbaarheid te perfectioneren. Beheer traditioneel en AI-zoeken met een krachtig platform.",
       "quickLinks": "Snelle links",

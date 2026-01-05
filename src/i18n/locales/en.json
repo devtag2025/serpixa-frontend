@@ -129,6 +129,21 @@
       "viewPricing": "View Pricing",
       "trustText": "Built for teams of all sizes"
     },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "We're here to help. Send us a message and we'll get back to you as soon as possible.",
+      "email": "Email",
+      "address": "Address",
+      "phone": "Phone",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "website": "Website (optional)",
+        "message": "Message",
+        "submit": "Send Message",
+        "successMessage": "Message sent! We'll get back to you soon."
+      }
+    },
     "footer": {
       "description": "All the tools you need to perfect your SEO and AI visibility. Own traditional and AI search with a powerful platform.",
       "quickLinks": "Quick Links",
