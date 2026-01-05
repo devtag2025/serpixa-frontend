@@ -129,6 +129,21 @@
       "viewPricing": "Voir les tarifs",
       "trustText": "Conçu pour des équipes de toutes tailles"
     },
+    "contact": {
+      "title": "Contactez-nous",
+      "subtitle": "Nous sommes là pour vous aider. Envoyez-nous un message et nous vous répondrons dès que possible.",
+      "email": "Email",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "form": {
+        "name": "Nom",
+        "email": "Email",
+        "website": "Site web (optionnel)",
+        "message": "Message",
+        "submit": "Envoyer le message",
+        "successMessage": "Message envoyé ! Nous vous répondrons bientôt."
+      }
+    },
     "footer": {
       "description": "Tous les outils dont vous avez besoin pour perfectionner votre référencement SEO et votre visibilité IA. Maîtrisez la recherche traditionnelle et IA avec une plateforme puissante.",
       "quickLinks": "Liens rapides",

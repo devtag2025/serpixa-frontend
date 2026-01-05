@@ -9,6 +9,7 @@ import {
   HiHeart,
   HiCheckCircle
 } from "react-icons/hi";
+import Contact from "@/components/landing/Contact";
 
 export default function AboutUsPage() {
   const { t } = useTranslation();
@@ -212,6 +213,9 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <Contact />
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white">
