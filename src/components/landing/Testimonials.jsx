@@ -99,10 +99,6 @@ export default function Testimonials() {
         {/* Trust Indicators */}
         <div className="text-center">
           <p className="text-gray-600 mb-4">{t("landing.testimonials.trustText")}</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-70">
-            <div className="text-gray-700 font-semibold">4.8/5 Rating</div>
-            <div className="text-gray-700 font-semibold">10,000+ Reviews</div>
-          </div>
         </div>
       </div>
     </section>
