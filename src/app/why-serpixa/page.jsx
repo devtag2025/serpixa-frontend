@@ -378,7 +378,6 @@ export default function WhySerpixaPage() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
-              "landing.whySerpixa.whyChoose.trusted",
               "landing.whySerpixa.whyChoose.accurate",
               "landing.whySerpixa.whyChoose.bilingual",
               "landing.whySerpixa.whyChoose.gdpr",

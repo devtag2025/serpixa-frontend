@@ -1,12 +1,11 @@
 {
   "landing": {
     "hero": {
-      "title": "Alle tools die u nodig heeft om uw SEO- en AI-zichtbaarheid te perfectioneren",
-      "subtitle": "Beheer traditioneel en AI-zoeken met een krachtig platform, betrouwbare data en een intuïtieve UX",
+      "title": "Analyseer uw pagina. Begrijp deze. Optimaliseer wat echt belangrijk is.",
+      "subtitle": "Serpixa laat zien waarom een pagina niet goed presteert op Google en wat u kunt verbeteren om betere resultaten te behalen.",
       "startTrial": "Aan de slag",
       "seeFeatures": "Bekijk functies",
-      "trustedBy": "Ontworpen voor",
-      "professionals": "SEO-teams en marketeers",
+      "tagline": "Analyseer. Begrijp. Handel.",
       "aiPowered": "AI Aangedreven",
       "contentGeneration": "Content Generatie",
       "quickStart": "Snelle Start",
@@ -36,9 +35,15 @@
         "value": "AI",
         "description": "AANGEDREVEN ALGORITMEN"
       },
-      "trustedBadge": "Platformvoordelen",
-      "trustedTitle": "Ontworpen om teams te ondersteunen die SEO op schaal doen",
-      "trustedSubtitle": "Bedoeld om duidelijke data en inzichten te bieden aan samenwerkende teams",
+      "trustedBadge": "VOOR WIE?",
+      "trustedTitle": "Serpixa is ontworpen voor:",
+      "trustedSubtitle": "Bedoeld voor teams en bedrijven die afhankelijk zijn van hun online zichtbaarheid.",
+      "trustedAudience": {
+        "1": "KMO’s",
+        "2": "Zelfstandigen",
+        "3": "Marketingbureaus",
+        "4": "Elk bedrijf dat afhankelijk is van zijn online zichtbaarheid"
+      },
       "startTrial": "Aan de slag"
     },
     "pricing": {
@@ -101,27 +106,28 @@
       "testimonial4": "De prijs voelt passend bij de functies en het supportteam reageert snel wanneer we vragen hebben.",
       "trustText": "Feedback verzameld uit productevaluaties"
     },
-    "faq": {
-      "badge": "FAQ",
-      "title": "Veelgestelde vragen",
-      "subtitle": "Alles wat u moet weten over Serpixa",
-      "question1": "Welke plannen biedt u aan?",
-      "answer1": "We bieden twee hoofdplannen aan: Starter Pack en Premium Pack. Het Starter Pack is perfect om te beginnen met SEO-audits, terwijl het Premium Pack geavanceerde functies bevat met meer audits en AI-generaties. Beide plannen omvatten toegang tot alle kernfuncties.",
-      "question2": "Hoe nauwkeurig zijn de SEO-auditresultaten?",
-      "answer2": "Onze SEO-audits gebruiken gangbare algoritmen en regelmatig bijgewerkte databronnen om betrouwbaar zoekwoordonderzoek en grondige on-page analyse te bieden.",
-      "question3": "Kan ik mijn abonnement op elk moment opzeggen?",
-      "answer3": "Ja, u kunt uw abonnement op elk moment opzeggen. Er zijn geen langetermijncontracten en u blijft toegang hebben tot het einde van uw factureringsperiode.",
-      "question4": "Wat maakt uw AI-contentgeneratie anders?",
-      "answer4": "Onze AI-content is specifiek getraind voor SEO-optimalisatie. Het genereert content met de juiste zoekwoorddichtheid, meta-tags, FAQ-secties en CTA's - allemaal geoptimaliseerd voor zoekmachines terwijl hoge kwaliteit behouden blijft.",
-      "question5": "Biedt u ondersteuning voor zakelijke klanten?",
-      "answer5": "Ja, we bieden toegewijde ondersteuning, aangepaste integraties en op maat gemaakte oplossingen voor zakelijke klanten. Neem contact op met ons verkoopteam om uw specifieke behoeften te bespreken.",
-      "question6": "Hoe begin ik?",
-      "answer6": "Maak gewoon een account aan, kies tussen Starter Pack of Premium Pack op basis van uw behoeften, en begin met het uitvoeren van uw eerste audit of het genereren van content. Onze intuïtieve interface maakt het gemakkelijk om binnen enkele minuten te beginnen."
-    },
+   "faq": {
+  "badge": "FAQ",
+  "title": "Veelgestelde vragen",
+  "subtitle": "Alles wat u moet weten over Serpixa",
+  "question1": "Waarom verschijnt mijn website niet op Google?",
+  "answer1": "Omdat Google uw pagina vergelijkt met die van uw concurrenten. Serpixa laat precies zien waar het verschil zit en wat verbeterd moet worden.",
+  "question2": "Vervangt Serpixa een SEO-expert?",
+  "answer2": "Nee. Serpixa helpt u sneller betere beslissingen te nemen. Het vereenvoudigt analyses en helpt bij het prioriteren van acties.",
+  "question3": "Wat is het verschil tussen Semrush en Serpixa?",
+  "answer3": "Semrush levert veel data. Serpixa geeft een duidelijke beslissing voor één specifieke pagina, met concrete en uitvoerbare acties.",
+  "question4": "Is SEO nog steeds nuttig met AI?",
+  "answer4": "Ja. AI-systemen vertrouwen op duidelijke, gestructureerde en betrouwbare content. Serpixa helpt bij het maken van pagina’s die begrijpelijk zijn voor Google en AI-assistenten.",
+  "question5": "Welke plannen biedt u aan?",
+  "answer5": "We bieden twee hoofdplannen aan: Starter Pack en Premium Pack. Het Starter Pack is ideaal om te starten met SEO-audits, terwijl het Premium Pack geavanceerde functies, meer audits en AI-generaties bevat. Beide plannen geven toegang tot alle kernfuncties.",
+  "question6": "Hoe begin ik?",
+  "answer6": "Maak een account aan, kies tussen het Starter Pack of Premium Pack en start direct met uw eerste audit. Het platform is ontworpen om eenvoudig en intuïtief te gebruiken."
+},
+
     "cta": {
       "title": "Klaar om uw SEO-strategie te transformeren?",
       "subtitle": "Bekijk hoe Serpixa in uw workflow past",
-      "benefit1": "Geen creditcard vereist",
+      "benefit1": "Begin binnen enkele minuten",
       "benefit2": "Op elk moment opzeggen",
       "benefit3": "Behulpzame support wanneer u het nodig heeft",
       "benefit4": "Transparante, flexibele prijzen",
@@ -135,6 +141,7 @@
       "email": "E-mail",
       "address": "Adres",
       "phone": "Telefoon",
+      "whatsappNumber": "Whatsapp",
       "form": {
         "name": "Naam",
         "email": "E-mail",
@@ -145,7 +152,7 @@
       }
     },
     "footer": {
-      "description": "Alle tools die u nodig heeft om uw SEO en AI-zichtbaarheid te perfectioneren. Beheer traditioneel en AI-zoeken met een krachtig platform.",
+      "description": "Analyseer uw pagina. Begrijp deze. Optimaliseer wat echt belangrijk is. Serpixa laat zien waarom een pagina niet presteert op Google — en wat u kunt verbeteren.",
       "quickLinks": "Snelle links",
       "home": "Home",
       "whySerpixa": "Waarom Serpixa",
@@ -273,7 +280,7 @@
         "subtitle": "Probeer Serpixa voor uw SEO- en AI-content behoeften",
         "startTrial": "Aan de slag",
         "viewPricing": "Bekijk prijzen",
-        "trustText": "Geen creditcard vereist • Annuleer op elk moment"
+        "trustText": "Eenvoudige setup • Annuleer op elk moment"
       }
     },
     "featuresPage": {
@@ -1078,8 +1085,8 @@
   "login": {
     "greeting": "Leuk je weer te zien",
     "title": "WELKOM TERUG",
-    "description": "Alle tools die u nodig heeft om uw SEO- en AI-zichtbaarheid te perfectioneren. Beheer traditioneel en AI-zoeken met een krachtig platform, betrouwbare data en uitzonderlijke UX.",
-    "trustedBy": "Vertrouwd door SEO-professionals wereldwijd",
+    "description": "Analyseer uw pagina. Begrijp deze. Optimaliseer wat echt belangrijk is. Serpixa laat zien waarom een pagina niet presteert op Google — en wat u kunt verbeteren om betere resultaten te behalen.",
+    "trustedBy": "Ontworpen voor SEO-professionals",
     "formTitle": "Inloggen",
     "formSubtitle": "Voer uw inloggegevens in om toegang te krijgen tot uw account en uw SEO-strategie te optimaliseren.",
     "emailLabel": "E-mailadres",
@@ -1106,7 +1113,7 @@
     "greeting": "Begin vandaag uw reis",
     "title": "ACCOUNT AANMAKEN",
     "description": "Sluit u aan bij duizenden SEO-professionals die vertrouwen op Serpixa voor hun SEO- en AI-contentbehoeften. Maak uw account aan en kies tussen Starter Pack of Premium Pack om krachtige tools voor uw SEO-strategie te ontgrendelen.",
-    "noCreditCard": "Geen creditcard vereist",
+    "noCreditCard": "Begin binnen enkele minuten",
     "formTitle": "Account aanmaken",
     "formSubtitle": "Meld u aan om te beginnen met Serpixa en transformeer uw SEO-strategie vandaag nog.",
     "nameLabel": "Volledige naam",
