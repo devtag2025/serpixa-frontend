@@ -1,6 +1,6 @@
 "use client";
 import { useTranslation } from "@/i18n/context";
-import { useCurrentSubscription } from "@/hooks/useSubscription";
+import { useCurrentSubscription, useCreatePortalSession } from "@/hooks/useSubscription";
 import {
   HiCreditCard,
   HiCalendar,
@@ -15,6 +15,7 @@ import {
 export default function CurrentSubscriptionCard() {
   const { t } = useTranslation();
   const { data: subscription, isLoading, isError } = useCurrentSubscription();
+  const portalMutation = useCreatePortalSession();
 
   if (isLoading) {
     return (
@@ -166,28 +167,17 @@ export default function CurrentSubscriptionCard() {
         )}
 
         {/* Action Buttons */}
-        {/* <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-100">
+        <div className="flex pt-4 border-t border-gray-100">
           <button
-            className="flex-1 px-4 py-2.5 bg-primary text-white rounded-lg font-semibold text-sm hover:bg-primary/90 transition-colors"
-            onClick={() => {
-              // TODO: Implement manage subscription (Stripe Portal)
-              console.log("Manage subscription clicked");
-            }}
+            className="px-6 py-2.5 bg-primary text-white rounded-lg font-semibold text-sm hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => portalMutation.mutate()}
+            disabled={portalMutation.isPending}
           >
-            {t("dashboard.subscription.manageSubscription")}
+            {portalMutation.isPending 
+              ? t("dashboard.common.loading") 
+              : t("dashboard.subscription.manageSubscription")}
           </button>
-          {!cancel_at_period_end && (
-            <button
-              className="flex-1 px-4 py-2.5 bg-white border border-gray-300 text-gray-700 rounded-lg font-semibold text-sm hover:bg-gray-50 transition-colors"
-              onClick={() => {
-                // TODO: Implement upgrade plan
-                console.log("Upgrade plan clicked");
-              }}
-            >
-              {t("dashboard.subscription.upgradePlan")}
-            </button>
-          )}
-        </div> */}
+        </div>
       </div>
     </div>
   );
