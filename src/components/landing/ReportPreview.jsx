@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "@/i18n/context";
 
 const SLIDES = [
-  { src: "/report-pt1.png", altKey: "landing.reportPreview.alt1" },
-  { src: "/report-pt2-v2.png", altKey: "landing.reportPreview.alt2" },
-  { src: "/report-pt3.png", altKey: "landing.reportPreview.alt3" },
+  { src: "/report-pt-1.jpg", altKey: "landing.reportPreview.alt1" },
+  { src: "/report-pt-2.jpg", altKey: "landing.reportPreview.alt2" },
+  { src: "/report-pt-3.jpg", altKey: "landing.reportPreview.alt3" },
 ];
 
 const DISPLAY_DURATION_MS = 7000;
