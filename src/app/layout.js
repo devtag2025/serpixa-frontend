@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import ReactQueryProvider from "@/lib/react-query-provider";
 import ToastProvider from "@/lib/toastProvider";
@@ -28,6 +29,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* CookieYes banner script */}
+        <Script
+          id="cookieyes"
+          type="text/javascript"
+          src="https://cdn-cookieyes.com/client_data/c4df661fbfc120ea66662be08560fa45/script.js"
+          strategy="afterInteractive"
+        />
+        
         <I18nProvider locale={defaultLocale}>
           <ReactQueryProvider>
             <ToastProvider />
