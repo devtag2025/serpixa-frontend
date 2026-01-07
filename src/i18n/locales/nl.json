@@ -106,6 +106,24 @@
       "testimonial4": "De prijs voelt passend bij de functies en het supportteam reageert snel wanneer we vragen hebben.",
       "trustText": "Feedback verzameld uit productevaluaties"
     },
+    "reportPreview": {
+      "badge": "Rapporten",
+      "title": "Heldere, leesbare rapporten die uw klanten echt begrijpen",
+      "subtitle": "Zodra uw audit is voltooid, genereert Serpixa een duidelijk en gemakkelijk te lezen rapport dat u direct met uw klant kunt delen.",
+      "valueProposition": "Dit is een van de belangrijkste sterke punten van Serpixa. Het zet complexe SEO-gegevens om in eenvoudige, actiegerichte inzichten zodat iedereen snel kan zien wat er mis is, waarom het belangrijk is en wat de volgende stap is.",
+      "benefits": {
+        "1": "Helder overzicht met een zichtbare score en kleurgecodeerde secties",
+        "2": "Duidelijke uitleg in begrijpelijke taal in plaats van technisch SEO-jargon",
+        "3": "Geprioriteerde actiepunten gegroepeerd op impact en urgentie",
+        "4": "PDF-rapporten die met één klik kunnen worden geëxporteerd en gedeeld",
+        "5": "Rapporten beschikbaar in het Engels, Frans en Nederlands"
+      },
+      "alt1": "Serpixa SEO-auditrapport met score en belangrijkste problemen",
+      "alt2": "Serpixa-rapportsectie met gedetailleerde checks en statussen",
+      "alt3": "Serpixa-aanbevelingslijst met prioriteiten en acties",
+      "urlHint": "app.serpixa.com/audit-rapport",
+      "indicatorLabel": "Toon rapportslide {{index}}"
+    },
    "faq": {
   "badge": "FAQ",
   "title": "Veelgestelde vragen",
@@ -152,7 +170,7 @@
       }
     },
     "footer": {
-      "description": "Analyseer uw pagina. Begrijp deze. Optimaliseer wat echt belangrijk is. Serpixa laat zien waarom een pagina niet presteert op Google — en wat u kunt verbeteren.",
+      "description": "Analyseer uw pagina. Begrijp deze. Optimaliseer wat echt belangrijk is. Serpixa laat zien waarom een pagina niet presteert op Google en wat u kunt verbeteren.",
       "quickLinks": "Snelle links",
       "home": "Home",
       "whySerpixa": "Waarom Serpixa",
@@ -170,7 +188,7 @@
     "whySerpixa": {
       "hero": {
         "title": "Waarom Serpixa?",
-        "subtitle": "Alles wat u nodig heeft om SEO onder de knie te krijgen—geautomatiseerde audits, AI-aangedreven inzichten en professionele rapporten, alles op één platform",
+        "subtitle": "Alles wat u nodig heeft om SEO onder de knie te krijgen geautomatiseerde audits, AI-aangedreven inzichten en professionele rapporten, alles op één platform",
         "startTrial": "Aan de slag"
       },
       "problemSolution": {
@@ -184,7 +202,7 @@
         },
         "solution": {
           "title": "Serpixa automatiseert alles",
-          "description": "Serpixa stroomlijnt uw hele SEO-workflow. Voer uitgebreide audits uit in minuten, krijg AI-aangedreven content suggesties en genereer professionele rapporten die klanten imponeren—alles vanuit één intuïtief platform."
+          "description": "Serpixa stroomlijnt uw hele SEO-workflow. Voer uitgebreide audits uit in minuten, krijg AI-aangedreven content suggesties en genereer professionele rapporten die klanten imponeren alles vanuit één intuïtief platform."
         }
       },
       "benefits": {
@@ -193,11 +211,11 @@
         "subtitle": "Alles wat u nodig heeft om te slagen met SEO, alles op één plek",
         "timeSaving": {
           "title": "Bespaar uren werk",
-          "description": "Voer complete SEO-, GEO- en GBP-audits uit in minuten in plaats van uren. Automatiseer repetitieve taken en focus op wat belangrijk is—uw bedrijf laten groeien."
+          "description": "Voer complete SEO-, GEO- en GBP-audits uit in minuten in plaats van uren. Automatiseer repetitieve taken en focus op wat belangrijk is uw bedrijf laten groeien."
         },
         "allInOne": {
           "title": "Alles-in-één platform",
-          "description": "SEO-audits, lokale zichtbaarheidsanalyse, Google Business Profile optimalisatie en AI-content generatie—alles wat u nodig heeft op één krachtig platform."
+          "description": "SEO-audits, lokale zichtbaarheidsanalyse, Google Business Profile optimalisatie en AI-content generatie alles wat u nodig heeft op één krachtig platform."
         },
         "professionalReports": {
           "title": "Professionele rapporten",
@@ -205,7 +223,7 @@
         },
         "actionableInsights": {
           "title": "Actiegerichte inzichten",
-          "description": "Krijg duidelijke, specifieke aanbevelingen—niet alleen data. Weet precies wat u moet repareren en hoe u uw zoekrankings kunt verbeteren."
+          "description": "Krijg duidelijke, specifieke aanbevelingen pas seulement data. Weet precies wat u moet repareren en hoe u uw zoekrankings kunt verbeteren."
         },
         "easyToUse": {
           "title": "Gebruiksvriendelijk",
@@ -344,12 +362,14 @@
         "title": "Aanvullende functies",
         "subtitle": "Meer tools om u te helpen slagen",
         "professionalReports": {
-          "title": "Professionele rapporten",
-          "description": "Genereer klantklare PDF-rapporten met uw branding. Imponeer klanten met gedetailleerde inzichten en visuele grafieken."
+       "title": "Professionele rapporten",
+"description": "Genereer PDF-rapporten die klaar zijn om met klanten te delen, met alle essentiële inzichten. Bied uw klanten duidelijke en gedetailleerde informatie."
+
         },
-        "dataVisualization": {
-          "title": "Gegevensvisualisatie",
-          "description": "Visuele grafieken en diagrammen om u te helpen uw SEO-prestaties in één oogopslag te begrijpen."
+        "seoAnalysis": {
+        "title": "SEO analyse",
+"description": "Uitgebreide SEO-audits die precies laten zien waar uw pagina's verbeterd kunnen worden."
+
         },
         "fastResults": {
           "title": "Snelle resultaten",
@@ -361,7 +381,7 @@
         },
         "actionableInsights": {
           "title": "Actiegerichte inzichten",
-          "description": "Krijg duidelijke, specifieke aanbevelingen—niet alleen data. Weet precies wat u moet repareren en hoe."
+          "description": "Krijg duidelijke, specifieke aanbevelingen pas seulement data. Weet precies wat u moet repareren en hoe."
         },
         "easyToUse": {
           "title": "Gebruiksvriendelijk",
@@ -424,7 +444,7 @@
         },
         "excellence": {
           "title": "Excellentie",
-          "description": "We streven naar excellentie in elke functie, elk rapport en elke interactie. Goed genoeg is niet goed genoeg—we streven naar uitzonderlijk."
+          "description": "We streven naar excellentie in elke functie, elk rapport en elke interactie. Goed genoeg is niet goed genoeg we streven naar uitzonderlijk."
         },
         "customerFirst": {
           "title": "Klant eerst",
@@ -1085,7 +1105,7 @@
   "login": {
     "greeting": "Leuk je weer te zien",
     "title": "WELKOM TERUG",
-    "description": "Analyseer uw pagina. Begrijp deze. Optimaliseer wat echt belangrijk is. Serpixa laat zien waarom een pagina niet presteert op Google — en wat u kunt verbeteren om betere resultaten te behalen.",
+    "description": "Analyseer uw pagina. Begrijp deze. Optimaliseer wat echt belangrijk is. Serpixa laat zien waarom een pagina niet presteert op Google en wat u kunt verbeteren om betere resultaten te behalen.",
     "trustedBy": "Ontworpen voor SEO-professionals",
     "formTitle": "Inloggen",
     "formSubtitle": "Voer uw inloggegevens in om toegang te krijgen tot uw account en uw SEO-strategie te optimaliseren.",

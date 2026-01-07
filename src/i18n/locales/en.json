@@ -2,7 +2,7 @@
   "landing": {
     "hero": {
       "title": "Analyze your page. Understand it. Optimize what truly matters.",
-      "subtitle": "Serpixa shows you why a page isn't performing on Google — and what to fix to achieve better results.",
+      "subtitle": "Serpixa shows you why a page isn't performing on Google and what to fix to achieve better results.",
       "startTrial": "Get Started",
       "seeFeatures": "See features",
       "tagline": "Analyze. Understand. Act.",
@@ -106,6 +106,24 @@
       "testimonial4": "Pricing feels reasonable for the feature set, and the support team responds quickly when we have questions.",
       "trustText": "Feedback gathered from product evaluations"
     },
+    "reportPreview": {
+      "badge": "Reports",
+      "title": "Clear, readable reports your clients will actually understand",
+      "subtitle": "Once your audit is complete, Serpixa generates a clear, easy-to-read report that you can share directly with your client.",
+      "valueProposition": "This is one of Serpixa’s key strengths. It turns complex SEO data into simple, action-oriented insights so anyone can quickly see what is wrong, why it matters, and what to do next.",
+      "benefits": {
+        "1": "Crystal-clear overview with a visible score and color-coded sections",
+        "2": "Plain-language explanations instead of technical SEO jargon",
+        "3": "Prioritized action items grouped by impact and urgency",
+        "4": "PDF reports that can be exported and shared in one click",
+        "5": "Reports available in English, French, and Dutch"
+      },
+      "alt1": "Serpixa SEO audit report showing score and key issues",
+      "alt2": "Serpixa report section with detailed checks and status labels",
+      "alt3": "Serpixa recommendations list with priorities and actions",
+      "urlHint": "app.serpixa.com/audit-report",
+      "indicatorLabel": "Show report slide {{index}}"
+    },
    "faq": {
   "badge": "FAQ",
   "title": "Frequently Asked Questions",
@@ -152,7 +170,7 @@
       }
     },
     "footer": {
-      "description": "Analyze your page. Understand it. Optimize what truly matters. Serpixa shows you why a page isn't performing on Google — and what to fix.",
+      "description": "Analyze your page. Understand it. Optimize what truly matters. Serpixa shows you why a page isn't performing on Google and what to fix.",
       "quickLinks": "Quick Links",
       "home": "Home",
       "whySerpixa": "Why Serpixa",
@@ -170,7 +188,7 @@
     "whySerpixa": {
       "hero": {
         "title": "Why Serpixa?",
-        "subtitle": "Everything you need to master SEO—automated audits, AI-powered insights, and professional reports, all in one platform",
+        "subtitle": "Everything you need to master SEO automated audits, AI-powered insights, and professional reports, all in one platform",
         "startTrial": "Get Started"
       },
       "problemSolution": {
@@ -184,7 +202,7 @@
         },
         "solution": {
           "title": "Serpixa Automates Everything",
-          "description": "Serpixa streamlines your entire SEO workflow. Run comprehensive audits in minutes, get AI-powered content suggestions, and generate professional reports that impress clients—all from one intuitive platform."
+          "description": "Serpixa streamlines your entire SEO workflow. Run comprehensive audits in minutes, get AI-powered content suggestions, and generate professional reports that impress clients all from one intuitive platform."
         }
       },
       "benefits": {
@@ -193,19 +211,19 @@
         "subtitle": "Everything you need to succeed with SEO, all in one place",
         "timeSaving": {
           "title": "Save Hours of Work",
-          "description": "Run complete SEO, GEO, and GBP audits in minutes instead of hours. Automate repetitive tasks and focus on what matters—growing your business."
+          "description": "Run complete SEO, GEO, and GBP audits in minutes instead of hours. Automate repetitive tasks and focus on what matters growing your business."
         },
         "allInOne": {
           "title": "All-in-One Platform",
-          "description": "SEO audits, local visibility analysis, Google Business Profile optimization, and AI content generation—everything you need in one powerful platform."
+          "description": "SEO audits, local visibility analysis, Google Business Profile optimization, and AI content generation everything you need in one powerful platform."
         },
         "professionalReports": {
           "title": "Professional Reports",
-          "description": "Generate client-ready PDF reports with your branding. Impress clients with detailed insights, visual charts, and actionable recommendations."
+          "description": "Generate client-ready PDF reports with all the essential insights. Share clear, detailed information with your clients."
         },
         "actionableInsights": {
           "title": "Actionable Insights",
-          "description": "Get clear, specific recommendations—not just data. Know exactly what to fix and how to improve your search rankings."
+          "description": "Get clear, specific recommendations not just data. Know exactly what to fix and how to improve your search rankings."
         },
         "easyToUse": {
           "title": "Easy to Use",
@@ -344,12 +362,12 @@
         "title": "Additional Features",
         "subtitle": "More tools to help you succeed",
         "professionalReports": {
-          "title": "Professional Reports",
-          "description": "Generate client-ready PDF reports with your branding. Impress clients with detailed insights and visual charts."
+         "title": "Professional Reports",
+"description": "Generate client-ready PDF reports with all the essential insights. Share clear, detailed information with your clients."
+
         },
-        "dataVisualization": {
-          "title": "Data Visualization",
-          "description": "Visual charts and graphs to help you understand your SEO performance at a glance."
+        "seoAnalysis": {
+          "title": "SEO Analysis", "description": "Comprehensive SEO audits that highlight exactly where your pages can improve."
         },
         "fastResults": {
           "title": "Fast Results",
@@ -361,7 +379,7 @@
         },
         "actionableInsights": {
           "title": "Actionable Insights",
-          "description": "Get clear, specific recommendations—not just data. Know exactly what to fix and how."
+          "description": "Get clear, specific recommendations not just data. Know exactly what to fix and how."
         },
         "easyToUse": {
           "title": "Easy to Use",
@@ -424,7 +442,7 @@
         },
         "excellence": {
           "title": "Excellence",
-          "description": "We strive for excellence in every feature, every report, and every interaction. Good enough isn't good enough—we aim for exceptional."
+          "description": "We strive for excellence in every feature, every report, and every interaction. Good enough isn't good enough we aim for exceptional."
         },
         "customerFirst": {
           "title": "Customer First",
@@ -1092,7 +1110,7 @@
   "login": {
     "greeting": "Nice to see you again",
     "title": "WELCOME BACK",
-    "description": "Analyze your page. Understand it. Optimize what truly matters. Serpixa shows you why a page isn't performing on Google — and what to fix to achieve better results.",
+    "description": "Analyze your page. Understand it. Optimize what truly matters. Serpixa shows you why a page isn't performing on Google and what to fix to achieve better results.",
     "trustedBy": "Designed for SEO professionals",
     "formTitle": "Login Account",
     "formSubtitle": "Enter your credentials to access your account and start optimizing your SEO strategy.",

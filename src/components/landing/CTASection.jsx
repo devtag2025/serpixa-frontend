@@ -68,11 +68,6 @@ export default function CTASection() {
             {t("landing.cta.viewPricing")}
           </Link>
         </div>
-
-        {/* Trust Text */}
-        <p className="mt-8 text-gray-500 text-sm">
-          {t("landing.cta.trustText")}
-        </p>
       </div>
     </section>
   );
