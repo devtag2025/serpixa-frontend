@@ -43,13 +43,13 @@ export default function Contact() {
       icon: HiPhone,
       label: t("landing.contact.phone"),
       value: "+32 3 434 36 35",
-      color: "bg-green-100 text-green-600",
+      color: "bg-yellow-100 text-yellow-600",
     },
     {
       label: t("landing.contact.whatsappNumber"),
       icon: FaWhatsapp ,
       value: "+32 491 55 67 29",
-      color: "bg-yellow-100 text-yellow-600",
+      color: "bg-green-100 text-green-600",
     },
   ];
 
