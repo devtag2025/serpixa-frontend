@@ -21,6 +21,8 @@ export default function Navbar() {
   const { data: user, isLoading } = useAuth();
   const { mutate: logout } = useLogout();
 
+  const isActiveLink = (href) => pathname === href;
+
   const navLinks = [
     {
       label: t("navbar.whySerpixa"),
@@ -136,7 +138,11 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={link.href}
-                    className="flex items-center text-gray-700 hover:text-gray-900 font-medium text-sm transition-colors"
+                    className={`flex items-center font-medium text-sm transition-colors ${
+                      isActiveLink(link.href)
+                        ? "text-primary"
+                        : "text-gray-700 hover:text-gray-900"
+                    }`}
                   >
                     {link.label}
                   </Link>
@@ -345,7 +351,11 @@ export default function Navbar() {
                     <div key={link.label}>
                       <Link
                         href={link.href}
-                        className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 font-medium text-base rounded-lg transition-colors"
+                        className={`block px-4 py-3 font-medium text-base rounded-lg transition-colors ${
+                          isActiveLink(link.href)
+                            ? "text-primary bg-gray-50"
+                            : "text-gray-700 hover:text-primary hover:bg-gray-50"
+                        }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.label}

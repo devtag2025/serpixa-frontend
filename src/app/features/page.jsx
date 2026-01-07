@@ -262,8 +262,8 @@ export default function FeaturesPage() {
               },
               {
                 icon: HiChartBar,
-                titleKey: "landing.featuresPage.additionalFeatures.dataVisualization.title",
-                descriptionKey: "landing.featuresPage.additionalFeatures.dataVisualization.description",
+                titleKey: "landing.featuresPage.additionalFeatures.seoAnalysis.title",
+                descriptionKey: "landing.featuresPage.additionalFeatures.seoAnalysis.description",
                 color: "purple"
               },
               {

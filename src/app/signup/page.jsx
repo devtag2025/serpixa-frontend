@@ -31,7 +31,7 @@ export default function SignupPage() {
 
   return (
     <PublicRoute>
-      <main className="min-h-[calc(100vh-4rem)] flex pb-8 sm:pb-12">
+      <main className="min-h-[calc(100vh-4rem)] flex">
         {/* Left Panel - Branding Section */}
         <div className="hidden lg:flex lg:w-[45%] relative overflow-hidden bg-gradient-to-br from-[hsl(217,90%,55%)] via-[hsl(217,100%,60%)] to-[hsl(220,95%,50%)]">
           {/* Background Pattern - Grid */}
@@ -107,33 +107,13 @@ export default function SignupPage() {
         </div>
 
         {/* Right Panel - Signup Form */}
-        <div className="flex-1 flex items-center justify-center bg-white px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
+        <div className="flex-1 flex items-center justify-center bg-white px-4 sm:px-6 lg:px-12 ">
           <div className="w-full max-w-md">
-            {/* Mobile Logo - Only visible on small screens */}
-            <div className="lg:hidden flex items-center justify-center mb-8">
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                </div>
-                <span className="text-xl font-semibold text-gray-900">Serpixa</span>
-              </Link>
-            </div>
+                    
 
             {/* Form Header */}
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">{t("signup.formTitle")}</h2>
+            <div className="mb-2">
+              <h2 className="text-2xl font-bold text-gray-900 mb-1">{t("signup.formTitle")}</h2>
               <p className="text-gray-600 text-sm">
                 {t("signup.formSubtitle")}
               </p>
@@ -155,7 +135,7 @@ export default function SignupPage() {
                     type="text"
                     placeholder={t("signup.namePlaceholder")}
                     {...register("name", { required: t("signup.nameRequired") })}
-                    className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full pl-12 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   />
                 </div>
                 {errors.name && (
@@ -185,7 +165,7 @@ export default function SignupPage() {
                         message: t("signup.emailInvalid"),
                       },
                     })}
-                    className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full pl-12 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   />
                 </div>
                 {errors.email && (
@@ -212,7 +192,7 @@ export default function SignupPage() {
                       required: t("signup.passwordRequired"),
                       minLength: { value: 8, message: t("signup.passwordMinLength") },
                     })}
-                    className="w-full pl-12 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full pl-12 pr-12 py-2 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   />
                   <button
                     type="button"
@@ -252,7 +232,7 @@ export default function SignupPage() {
                       validate: (value) =>
                         value === password || t("signup.passwordsDoNotMatch"),
                     })}
-                    className="w-full pl-12 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full pl-12 pr-12 py-2 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   />
                   <button
                     type="button"
@@ -289,7 +269,7 @@ export default function SignupPage() {
               <button
                 type="submit"
                 disabled={isPending}
-                className="w-full bg-primary text-white py-3 rounded-lg text-sm font-semibold hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all disabled:opacity-70 disabled:cursor-not-allowed shadow-sm hover:shadow-md"
+                className="w-full bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all disabled:opacity-70 disabled:cursor-not-allowed shadow-sm hover:shadow-md"
               >
                 {isPending ? (
                   <span className="flex items-center justify-center">
@@ -306,7 +286,7 @@ export default function SignupPage() {
             </form>
 
             {/* Login Link */}
-            <p className="text-center text-gray-600 text-sm mt-6">
+            <p className="text-center text-gray-600 text-sm mt-2">
               {t("signup.alreadyHaveAccount")}{" "}
               <Link href="/login" className="text-primary hover:underline font-medium">
                 {t("signup.logIn")}

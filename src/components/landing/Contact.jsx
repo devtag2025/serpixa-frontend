@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useTranslation } from "@/i18n/context";
 import { HiMail, HiLocationMarker, HiPhone } from "react-icons/hi";
+import { FaWhatsapp  } from "react-icons/fa";
 import { toast } from "react-hot-toast";
 
 export default function Contact() {
@@ -29,19 +30,25 @@ export default function Contact() {
     {
       icon: HiMail,
       label: t("landing.contact.email"),
-      value: "contact@serpixa.com",
+      value: "contact@serpixa.eu",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: HiLocationMarker,
       label: t("landing.contact.address"),
-      value: "Brussels, Belgium",
+      value: "Anvers, Belgique",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: HiPhone,
       label: t("landing.contact.phone"),
-      value: "+32 XXX XXX XXX",
+      value: "+32 3 434 36 35",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      label: t("landing.contact.whatsappNumber"),
+      icon: FaWhatsapp ,
+      value: "+32 491 55 67 29",
       color: "bg-green-100 text-green-600",
     },
   ];

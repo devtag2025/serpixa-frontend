@@ -1,12 +1,11 @@
 {
   "landing": {
     "hero": {
-      "title": "All the tools you need to perfect your SEO and AI visibility",
-      "subtitle": "Own traditional and AI search with a powerful platform, reliable data, and an intuitive UX",
+      "title": "Analyze your page. Understand it. Optimize what truly matters.",
+      "subtitle": "Serpixa shows you why a page isn't performing on Google and what to fix to achieve better results.",
       "startTrial": "Get Started",
       "seeFeatures": "See features",
-      "trustedBy": "Built for",
-      "professionals": "SEO teams and marketers",
+      "tagline": "Analyze. Understand. Act.",
       "aiPowered": "AI Powered",
       "contentGeneration": "Content Generation",
       "quickStart": "Quick Start",
@@ -36,9 +35,15 @@
         "value": "AI",
         "description": "POWERED ALGORITHMS"
       },
-      "trustedBadge": "Platform benefits",
-      "trustedTitle": "Built to support teams running SEO at scale",
-      "trustedSubtitle": "Designed to provide clear data and insights for collaborative teams",
+      "trustedBadge": "WHO IS IT FOR?",
+      "trustedTitle": "Serpixa is designed for:",
+      "trustedSubtitle": "Built for teams and businesses that rely on search visibility.",
+      "trustedAudience": {
+        "1": "SMEs",
+        "2": "Freelancers",
+        "3": "Marketing agencies",
+        "4": "Any business that depends on its online visibility"
+      },
       "startTrial": "Get Started"
     },
     "pricing": {
@@ -101,27 +106,46 @@
       "testimonial4": "Pricing feels reasonable for the feature set, and the support team responds quickly when we have questions.",
       "trustText": "Feedback gathered from product evaluations"
     },
-    "faq": {
-      "badge": "FAQ",
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know about Serpixa",
-      "question1": "What plans do you offer?",
-      "answer1": "We offer two main plans: Starter Pack and Premium Pack. The Starter Pack is perfect for getting started with SEO audits, while the Premium Pack includes advanced features with more audits and AI generations. Both plans include access to all core features.",
-      "question2": "How accurate are the SEO audit results?",
-      "answer2": "Our SEO audits use industry-standard algorithms and regularly updated data sources to provide reliable keyword tracking and thorough on-page analysis.",
-      "question3": "Can I cancel my subscription anytime?",
-      "answer3": "Yes, you can cancel your subscription at any time. There are no long-term contracts, and you'll continue to have access until the end of your billing period.",
-      "question4": "What makes your AI content generation different?",
-      "answer4": "Our AI content is specifically trained for SEO optimization. It generates content with proper keyword density, meta tags, FAQ sections, and CTAs - all optimized for search engines while maintaining high quality.",
-      "question5": "Do you offer support for enterprise customers?",
-      "answer5": "Yes, we offer dedicated support, custom integrations, and tailored solutions for enterprise customers. Contact our sales team to discuss your specific needs.",
-      "question6": "How do I get started?",
-      "answer6": "Simply create an account, choose between Starter Pack or Premium Pack based on your needs, and start running your first audit or generating content. Our intuitive interface makes it easy to get started in minutes."
+    "reportPreview": {
+      "badge": "Reports",
+      "title": "Clear, readable reports your clients will actually understand",
+      "subtitle": "Once your audit is complete, Serpixa generates a clear, easy-to-read report that you can share directly with your client.",
+      "valueProposition": "This is one of Serpixa’s key strengths. It turns complex SEO data into simple, action-oriented insights so anyone can quickly see what is wrong, why it matters, and what to do next.",
+      "benefits": {
+        "1": "Crystal-clear overview with a visible score and color-coded sections",
+        "2": "Plain-language explanations instead of technical SEO jargon",
+        "3": "Prioritized action items grouped by impact and urgency",
+        "4": "PDF reports that can be exported and shared in one click",
+        "5": "Reports available in English, French, and Dutch"
+      },
+      "alt1": "Serpixa SEO audit report showing score and key issues",
+      "alt2": "Serpixa report section with detailed checks and status labels",
+      "alt3": "Serpixa recommendations list with priorities and actions",
+      "urlHint": "app.serpixa.com/audit-report",
+      "indicatorLabel": "Show report slide {{index}}"
     },
+   "faq": {
+  "badge": "FAQ",
+  "title": "Frequently Asked Questions",
+  "subtitle": "Everything you need to know about Serpixa",
+  "question1": "Why doesn’t my website appear on Google?",
+  "answer1": "Because Google compares your page to those of your competitors. Serpixa shows exactly where the gap is and what needs to be improved.",
+  "question2": "Does Serpixa replace an SEO expert?",
+  "answer2": "No. Serpixa helps you make better decisions faster. It simplifies analysis and prioritizes actions.",
+  "question3": "What’s the difference between Semrush and Serpixa?",
+  "answer3": "Semrush provides a large amount of data. Serpixa delivers a clear decision for a specific page, with concrete and actionable steps.",
+  "question4": "Is SEO still useful with AI?",
+  "answer4": "Yes. AI systems rely on content that is clear, structured, and credible. Serpixa helps create pages that are understandable by Google and AI assistants.",
+  "question5": "What plans do you offer?",
+  "answer5": "We offer two main plans: Starter Pack and Premium Pack. The Starter Pack is ideal for getting started with SEO audits, while the Premium Pack includes advanced features, more audits, and AI generations. Both plans include access to all core features.",
+  "question6": "How do I get started?",
+  "answer6": "Simply create an account, choose between the Starter Pack or Premium Pack, and start running your first audit. The platform is designed to be intuitive and easy to use from day one."
+},
+
     "cta": {
       "title": "Ready to transform your SEO strategy?",
       "subtitle": "See how Serpixa can fit into your workflow",
-      "benefit1": "No credit card required",
+      "benefit1": "Get started in minutes",
       "benefit2": "Cancel anytime",
       "benefit3": "Helpful support when you need it",
       "benefit4": "Transparent, flexible pricing",
@@ -135,6 +159,7 @@
       "email": "Email",
       "address": "Address",
       "phone": "Phone",
+      "whatsappNumber": "Whatsapp",
       "form": {
         "name": "Name",
         "email": "Email",
@@ -145,7 +170,7 @@
       }
     },
     "footer": {
-      "description": "All the tools you need to perfect your SEO and AI visibility. Own traditional and AI search with a powerful platform.",
+      "description": "Analyze your page. Understand it. Optimize what truly matters. Serpixa shows you why a page isn't performing on Google and what to fix.",
       "quickLinks": "Quick Links",
       "home": "Home",
       "whySerpixa": "Why Serpixa",
@@ -163,7 +188,7 @@
     "whySerpixa": {
       "hero": {
         "title": "Why Serpixa?",
-        "subtitle": "Everything you need to master SEO—automated audits, AI-powered insights, and professional reports, all in one platform",
+        "subtitle": "Everything you need to master SEO automated audits, AI-powered insights, and professional reports, all in one platform",
         "startTrial": "Get Started"
       },
       "problemSolution": {
@@ -177,7 +202,7 @@
         },
         "solution": {
           "title": "Serpixa Automates Everything",
-          "description": "Serpixa streamlines your entire SEO workflow. Run comprehensive audits in minutes, get AI-powered content suggestions, and generate professional reports that impress clients—all from one intuitive platform."
+          "description": "Serpixa streamlines your entire SEO workflow. Run comprehensive audits in minutes, get AI-powered content suggestions, and generate professional reports that impress clients all from one intuitive platform."
         }
       },
       "benefits": {
@@ -186,19 +211,19 @@
         "subtitle": "Everything you need to succeed with SEO, all in one place",
         "timeSaving": {
           "title": "Save Hours of Work",
-          "description": "Run complete SEO, GEO, and GBP audits in minutes instead of hours. Automate repetitive tasks and focus on what matters—growing your business."
+          "description": "Run complete SEO, GEO, and GBP audits in minutes instead of hours. Automate repetitive tasks and focus on what matters growing your business."
         },
         "allInOne": {
           "title": "All-in-One Platform",
-          "description": "SEO audits, local visibility analysis, Google Business Profile optimization, and AI content generation—everything you need in one powerful platform."
+          "description": "SEO audits, local visibility analysis, Google Business Profile optimization, and AI content generation everything you need in one powerful platform."
         },
         "professionalReports": {
           "title": "Professional Reports",
-          "description": "Generate client-ready PDF reports with your branding. Impress clients with detailed insights, visual charts, and actionable recommendations."
+          "description": "Generate client-ready PDF reports with all the essential insights. Share clear, detailed information with your clients."
         },
         "actionableInsights": {
           "title": "Actionable Insights",
-          "description": "Get clear, specific recommendations—not just data. Know exactly what to fix and how to improve your search rankings."
+          "description": "Get clear, specific recommendations not just data. Know exactly what to fix and how to improve your search rankings."
         },
         "easyToUse": {
           "title": "Easy to Use",
@@ -273,7 +298,7 @@
         "subtitle": "Try Serpixa for your SEO and AI content needs",
         "startTrial": "Get Started",
         "viewPricing": "View Pricing",
-        "trustText": "No credit card required • Cancel anytime"
+        "trustText": "Easy setup • Cancel anytime"
       }
     },
     "featuresPage": {
@@ -337,12 +362,12 @@
         "title": "Additional Features",
         "subtitle": "More tools to help you succeed",
         "professionalReports": {
-          "title": "Professional Reports",
-          "description": "Generate client-ready PDF reports with your branding. Impress clients with detailed insights and visual charts."
+         "title": "Professional Reports",
+"description": "Generate client-ready PDF reports with all the essential insights. Share clear, detailed information with your clients."
+
         },
-        "dataVisualization": {
-          "title": "Data Visualization",
-          "description": "Visual charts and graphs to help you understand your SEO performance at a glance."
+        "seoAnalysis": {
+          "title": "SEO Analysis", "description": "Comprehensive SEO audits that highlight exactly where your pages can improve."
         },
         "fastResults": {
           "title": "Fast Results",
@@ -354,7 +379,7 @@
         },
         "actionableInsights": {
           "title": "Actionable Insights",
-          "description": "Get clear, specific recommendations—not just data. Know exactly what to fix and how."
+          "description": "Get clear, specific recommendations not just data. Know exactly what to fix and how."
         },
         "easyToUse": {
           "title": "Easy to Use",
@@ -417,7 +442,7 @@
         },
         "excellence": {
           "title": "Excellence",
-          "description": "We strive for excellence in every feature, every report, and every interaction. Good enough isn't good enough—we aim for exceptional."
+          "description": "We strive for excellence in every feature, every report, and every interaction. Good enough isn't good enough we aim for exceptional."
         },
         "customerFirst": {
           "title": "Customer First",
@@ -1085,8 +1110,8 @@
   "login": {
     "greeting": "Nice to see you again",
     "title": "WELCOME BACK",
-    "description": "All the tools you need to perfect your SEO and AI visibility. Own traditional and AI search with a powerful platform, trusted data, and exceptional UX.",
-    "trustedBy": "Trusted by SEO professionals worldwide",
+    "description": "Analyze your page. Understand it. Optimize what truly matters. Serpixa shows you why a page isn't performing on Google and what to fix to achieve better results.",
+    "trustedBy": "Designed for SEO professionals",
     "formTitle": "Login Account",
     "formSubtitle": "Enter your credentials to access your account and start optimizing your SEO strategy.",
     "emailLabel": "Email ID",
@@ -1113,7 +1138,7 @@
     "greeting": "Start your journey today",
     "title": "CREATE ACCOUNT",
     "description": "Join thousands of SEO professionals who trust Serpixa for their SEO and AI content needs. Create your account and choose between Starter Pack or Premium Pack to unlock powerful tools for your SEO strategy.",
-    "noCreditCard": "No credit card required",
+    "noCreditCard": "Get started in minutes",
     "formTitle": "Create Account",
     "formSubtitle": "Sign up to get started with Serpixa and transform your SEO strategy today.",
     "nameLabel": "Full Name",

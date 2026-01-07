@@ -77,7 +77,7 @@ export default function Features() {
           })}
         </div>
 
-        {/* G2 Awards Section */}
+        {/* Audience Section */}
         <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 md:p-16 text-center text-white overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
@@ -86,28 +86,36 @@ export default function Features() {
             }}></div>
           </div>
           
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 mb-6">
+          <div className="relative z-10 max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 mb-4">
               <svg className="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span className="text-yellow-400 font-semibold text-sm uppercase tracking-wide">{t("landing.features.trustedBadge")}</span>
+              <span className="text-yellow-400 font-semibold text-sm uppercase tracking-wide">
+                {t("landing.features.trustedBadge")}
+              </span>
             </div>
-            
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">
               {t("landing.features.trustedTitle")}
             </h3>
-            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            {/* <p className="text-lg md:text-xl text-gray-300 mb-8">
               {t("landing.features.trustedSubtitle")}
-            </p>
+            </p> */}
 
-            {/* CTA Button */}
-            <Link
-              href="/signup"
-              className="inline-block px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gray-100"
-            >
-              {t("landing.features.startTrial")}
-            </Link>
+            {/* Audience list */}
+            <div className="flex flex-col py-4 md:flex-row md:justify-center md:gap-8 text-left md:text-center space-y-4 md:space-y-0">
+              {[1, 2, 3, 4].map((index) => (
+                <div key={index} className="flex items-center  md:items-center gap-3">
+                 <div className=" pt-2">
+                 <div className="w-3 h-3 rounded-full bg-yellow-400 flex-shrink-0 md:mb-2" />
+                 </div>
+                  <span className="text-base md:text-lg text-gray-100">
+                    {t(`landing.features.trustedAudience.${index}`)}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
