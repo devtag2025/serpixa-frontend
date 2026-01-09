@@ -62,7 +62,7 @@
       "needMore": "Meer nodig? Upgrade met add-ons!",
       "enhancePlan": "Verbeter uw plan met krachtige add-ons",
       "seoAudits": "SEO-audits",
-      "geoAudits": "GEO-audits",
+      "localSeoAudits": "Lokale SEO-audits",
       "gbpAudits": "GBP-audits",
       "aiGenerations": "AI-generaties",
       "searchesPerMonth": "Zoekopdrachten per maand",
@@ -84,9 +84,9 @@
         "name": "Extra 10 SEO-audits",
         "description": "Eenmalige aankoop van 10 extra SEO-audits"
       },
-      "extra10GeoAudits": {
-        "name": "Extra 10 GEO-audits",
-        "description": "Eenmalige aankoop van 10 extra GEO-audits"
+      "extra10LocalSeoAudits": {
+        "name": "Extra 10 lokale SEO-audits",
+        "description": "Eenmalige aankoop van 10 extra lokale SEO-audits"
       },
       "extra5GbpAudits": {
         "name": "Extra 5 GBP-audits",
@@ -188,7 +188,7 @@
       "products": "Producten",
       "seoAudit": "SEO Audit",
       "gbpAudit": "GBP Audit",
-      "geoAudit": "GEO Audit",
+      "localSeoAudit": "Lokale SEO Audit",
       "aiContent": "AI Content",
       "copyright": "© 2024 Serpixa. Alle rechten voorbehouden.",
       "privacy": "Privacybeleid",
@@ -220,7 +220,7 @@
         "subtitle": "Alles wat u nodig heeft om te slagen met SEO, alles op één plek",
         "timeSaving": {
           "title": "Bespaar uren werk",
-          "description": "Voer complete SEO-, GEO- en GBP-audits uit in minuten in plaats van uren. Automatiseer repetitieve taken en focus op wat belangrijk is uw bedrijf laten groeien."
+          "description": "Voer complete SEO-, lokale SEO- en GBP-audits uit in minuten in plaats van uren. Automatiseer repetitieve taken en focus op wat belangrijk is uw bedrijf laten groeien."
         },
         "allInOne": {
           "title": "Alles-in-één platform",
@@ -250,8 +250,8 @@
           "title": "SEO Audit",
           "description": "Volledige website-analyse met on-page SEO-inzichten, concurrent rankings, zoekwoordoptimalisatie en technische SEO-controles. Krijg een uitgebreide SEO-score en gedetailleerde aanbevelingen."
         },
-        "geoAudit": {
-          "title": "GEO Audit",
+        "localSeoAudit": {
+          "title": "Lokale SEO Audit",
           "description": "Analyseer lokale zoekzichtbaarheid met concurrentenanalyse, citatie-aanbevelingen en NAP-consistentiecontroles. Begrijp uw lokale marktpositie en verbeter uw zichtbaarheid."
         },
         "gbpAudit": {
@@ -329,8 +329,8 @@
         "feature3": "Technische SEO-controles en aanbevelingen",
         "feature4": "Concurrentenanalyse en ranking-inzichten"
       },
-      "geoAudit": {
-        "title": "GEO Audit",
+      "localSeoAudit": {
+        "title": "Lokale SEO Audit",
         "description": "Analyseer uw lokale zoekzichtbaarheid en begrijp uw positie op de lokale markt. Krijg inzichten over concurrenten, citaties en NAP-consistentie.",
         "feature1": "Lokale zichtbaarheidsscore en rankings",
         "feature2": "Analyse van nabijgelegen concurrenten met beoordelingen en recensies",
@@ -503,8 +503,8 @@
       "available": "Beschikbaar",
       "newSeoAudit": "Nieuwe SEO-audit",
       "newSeoAuditDesc": "Analyseer website SEO-prestaties",
-      "newGeoAudit": "Nieuwe GEO-audit",
-      "newGeoAuditDesc": "Controleer lokale zoekzichtbaarheid",
+      "newLocalSeoAudit": "Nieuwe lokale SEO-audit",
+      "newLocalSeoAuditDesc": "Controleer lokale zoekzichtbaarheid",
       "newGbpAudit": "Nieuwe GBP-audit",
       "newGbpAuditDesc": "Audit Google Business-profiel",
       "aiContent": "AI-inhoud",

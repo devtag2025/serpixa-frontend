@@ -62,7 +62,7 @@
       "needMore": "Besoin de plus ? Améliorez avec des modules complémentaires !",
       "enhancePlan": "Améliorez votre plan avec des modules complémentaires puissants",
       "seoAudits": "Audits SEO",
-      "geoAudits": "Audits GEO",
+      "localSeoAudits": "Audits SEO locaux",
       "gbpAudits": "Audits GBP",
       "aiGenerations": "Générations IA",
       "searchesPerMonth": "Recherches par mois",
@@ -84,9 +84,9 @@
         "name": "10 audits SEO supplémentaires",
         "description": "Achat unique de 10 audits SEO supplémentaires"
       },
-      "extra10GeoAudits": {
-        "name": "10 audits GEO supplémentaires",
-        "description": "Achat unique de 10 audits GEO supplémentaires"
+      "extra10LocalSeoAudits": {
+        "name": "10 audits SEO locaux supplémentaires",
+        "description": "Achat unique de 10 audits SEO locaux supplémentaires"
       },
       "extra5GbpAudits": {
         "name": "5 audits GBP supplémentaires",
@@ -189,7 +189,7 @@
       "products": "Produits",
       "seoAudit": "Audit SEO",
       "gbpAudit": "Audit GBP",
-      "geoAudit": "Audit GEO",
+      "localSeoAudit": "Audit SEO local",
       "aiContent": "Contenu IA",
       "copyright": "© 2024 Serpixa. Tous droits réservés.",
       "privacy": "Politique de confidentialité",
@@ -221,7 +221,7 @@
         "subtitle": "Tout ce dont vous avez besoin pour réussir avec le SEO, tout au même endroit",
         "timeSaving": {
           "title": "Économisez des heures de travail",
-          "description": "Exécutez des audits SEO, GEO et GBP complets en quelques minutes au lieu d'heures. Automatisez les tâches répétitives et concentrez-vous sur ce qui compte faire croître votre entreprise."
+          "description": "Exécutez des audits SEO, SEO local et GBP complets en quelques minutes au lieu d'heures. Automatisez les tâches répétitives et concentrez-vous sur ce qui compte faire croître votre entreprise."
         },
         "allInOne": {
           "title": "Plateforme tout-en-un",
@@ -251,8 +251,8 @@
           "title": "Audit SEO",
           "description": "Analyse complète du site web avec insights SEO on-page, classements des concurrents, optimisation des mots-clés et vérifications SEO techniques. Obtenez un score SEO complet et des recommandations détaillées."
         },
-        "geoAudit": {
-          "title": "Audit GEO",
+        "localSeoAudit": {
+          "title": "Audit SEO local",
           "description": "Analysez la visibilité de recherche locale avec analyse des concurrents, recommandations de citations et vérifications de cohérence NAP. Comprenez votre position sur le marché local et améliorez votre visibilité."
         },
         "gbpAudit": {
@@ -330,8 +330,8 @@
         "feature3": "Vérifications SEO techniques et recommandations",
         "feature4": "Analyse des concurrents et insights de classement"
       },
-      "geoAudit": {
-        "title": "Audit GEO",
+      "localSeoAudit": {
+        "title": "Audit SEO local",
         "description": "Analysez votre visibilité de recherche locale et comprenez votre position sur le marché local. Obtenez des insights sur les concurrents, les citations et la cohérence NAP.",
         "feature1": "Score de visibilité locale et classements",
         "feature2": "Analyse des concurrents à proximité avec notes et avis",
@@ -504,8 +504,8 @@
       "available": "Disponible",
       "newSeoAudit": "Nouvel audit SEO",
       "newSeoAuditDesc": "Analyser les performances SEO du site web",
-      "newGeoAudit": "Nouvel audit GEO",
-      "newGeoAuditDesc": "Vérifier la visibilité de recherche locale",
+      "newLocalSeoAudit": "Nouvel audit SEO local",
+      "newLocalSeoAuditDesc": "Vérifier la visibilité de recherche locale",
       "newGbpAudit": "Nouvel audit GBP",
       "newGbpAuditDesc": "Auditer le profil Google Business",
       "aiContent": "Contenu IA",
