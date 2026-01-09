@@ -1,51 +1,33 @@
 "use client";
-import { useI18n } from "@/i18n/context";
 import { useState, useEffect, useRef } from "react";
 import ReactCountryFlag from "react-country-flag";
 import CustomDropdown from "@/components/common/CustomDropdown";
+import { useTranslation } from "@/i18n/context";
+import { useI18n } from "@/i18n/context";
 
-// Locale configuration for SEO Audit
-const seoAuditLocales = [
-  { 
-    value: 'be-fr', 
-    label: 'Français - BE', 
-    countryCode: 'BE',
-    language: 'French',
-    country: 'BE'
-  },
-  { 
-    value: 'nl-be', 
-    label: 'Nederlands - BE', 
-    countryCode: 'BE',
-    language: 'Dutch',
-    country: 'BE'
-  },
+// Locale configuration for GBP Audit - Only 3 languages
+const gbpAuditLocales = [
   { 
     value: 'fr', 
-    label: 'Français - FR', 
+    label: 'Français', 
     countryCode: 'FR',
-    language: 'French',
-    country: 'FR'
   },
   { 
     value: 'nl', 
-    label: 'Nederlands - NL', 
+    label: 'Nederlands', 
     countryCode: 'NL',
-    language: 'Dutch',
-    country: 'NL'
   },
   { 
     value: 'en', 
     label: 'English', 
-    countryCode: 'GB', // British flag for English
-    language: 'English',
-    country: 'GB'
+    countryCode: 'GB',
   },
 ];
 
-export default function SEOAuditLocaleSelect({ register, defaultValue, className = "" }) {
+export default function GBPAuditLocaleSelect({ register, defaultValue, className = "" }) {
+  const { t } = useTranslation();
   const { locale: currentLocale } = useI18n();
-  const defaultLocale = defaultValue || currentLocale;
+  const defaultLocale = defaultValue || currentLocale || 'en';
   const [selectedLocale, setSelectedLocale] = useState(defaultLocale);
   const hiddenInputRef = useRef(null);
 
@@ -79,7 +61,7 @@ export default function SEOAuditLocaleSelect({ register, defaultValue, className
   }, [selectedLocale, onChange]);
 
   // Prepare options for CustomDropdown
-  const options = seoAuditLocales.map((locale) => ({
+  const options = gbpAuditLocales.map((locale) => ({
     value: locale.value,
     label: locale.label,
     countryCode: locale.countryCode,
@@ -101,13 +83,13 @@ export default function SEOAuditLocaleSelect({ register, defaultValue, className
 
   // Custom trigger with flag icon on the left
   const customTrigger = (isOpen) => {
-    const selectedLocaleOption = seoAuditLocales.find(locale => locale.value === selectedLocale);
+    const selectedLocaleOption = gbpAuditLocales.find(locale => locale.value === selectedLocale);
     return (
       <div className="relative w-full">
         <button
           type="button"
-          className={`w-full flex items-center justify-between px-4 py-3 border border-blue-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-left hover:border-blue-600 transition-colors ${
-            selectedOption ? 'bg-primary/10' : 'bg-white'
+          className={`w-full flex items-center justify-between px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary text-left hover:border-primary transition-colors ${
+            selectedOption ? 'bg-white' : 'bg-white'
           }`}
         >
           <div className="flex items-center gap-3">
@@ -130,7 +112,7 @@ export default function SEOAuditLocaleSelect({ register, defaultValue, className
                 </span>
               </>
             ) : (
-              <span className="text-gray-500">Select locale</span>
+              <span className="text-gray-500">{t("dashboard.gbpAudit.form.localePlaceholder") || "Select language"}</span>
             )}
           </div>
           <svg
@@ -155,7 +137,7 @@ export default function SEOAuditLocaleSelect({ register, defaultValue, className
 
   // Custom render function for dropdown options with flags
   const renderOption = (option, isSelected) => {
-    const localeData = seoAuditLocales.find(loc => loc.value === option.value);
+    const localeData = gbpAuditLocales.find(locale => locale.value === option.value);
     return (
       <div className={`flex items-center justify-between w-full px-4 py-2 transition-colors ${
         isSelected ? 'bg-primary text-white' : 'text-gray-700 group-hover:bg-primary group-hover:text-white'
@@ -212,7 +194,7 @@ export default function SEOAuditLocaleSelect({ register, defaultValue, className
         options={options}
         value={selectedLocale}
         onChange={(value) => setSelectedLocale(value)}
-        placeholder="Select locale"
+        placeholder={t("dashboard.gbpAudit.form.localePlaceholder") || "Select language"}
         className="w-full"
         trigger={customTrigger}
         menuClassName="w-full"

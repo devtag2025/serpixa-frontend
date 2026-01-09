@@ -955,6 +955,7 @@
         "languageCode": "Taalcode",
         "languageCodeHelp": "Taalcode voor de bedrijfsinformatie",
         "locale": "Locale",
+        "localePlaceholder": "Selecteer taal",
         "localeHelp": "Selecteer de locale voor de audit",
         "showAdvanced": "Geavanceerde opties weergeven",
         "hideAdvanced": "Geavanceerde opties verbergen",

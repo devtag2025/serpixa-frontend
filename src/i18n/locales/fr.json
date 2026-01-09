@@ -956,6 +956,7 @@
         "languageCode": "Code de langue",
         "languageCodeHelp": "Code de langue pour les informations de l'entreprise",
         "locale": "Paramètres régionaux",
+        "localePlaceholder": "Sélectionner la langue",
         "localeHelp": "Sélectionnez les paramètres régionaux pour l'audit",
         "showAdvanced": "Afficher les options avancées",
         "hideAdvanced": "Masquer les options avancées",

@@ -953,6 +953,7 @@
         "languageCode": "Language Code",
         "languageCodeHelp": "Language code for the business information",
         "locale": "Locale",
+        "localePlaceholder": "Select language",
         "localeHelp": "Select the locale for the audit",
         "showAdvanced": "Show Advanced Options",
         "hideAdvanced": "Hide Advanced Options",

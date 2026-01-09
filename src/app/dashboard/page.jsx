@@ -38,7 +38,7 @@ export default function Dashboard() {
       textColor: "#3b82f6", // Blue
     },
     {
-      href: "/dashboard/geo-audit/new",
+      href: "/dashboard/local-seo/new",
       icon: HiLocationMarker,
       title: t("dashboard.page.newLocalSeoAudit"),
       description: t("dashboard.page.newLocalSeoAuditDesc"),

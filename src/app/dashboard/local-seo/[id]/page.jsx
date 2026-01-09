@@ -61,7 +61,7 @@ export default function GeoAuditResultsPage() {
             <h2 className="text-xl font-semibold text-gray-900 mb-2">{t("dashboard.localSeoAudit.view.failedToLoadAudit")}</h2>
             <p className="text-gray-600 mb-6">{handleError(error) || t("dashboard.localSeoAudit.view.errorLoadingAudit")}</p>
             <button
-              onClick={() => router.push("/dashboard/geo-audit")}
+              onClick={() => router.push("/dashboard/local-seo")}
               className="px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
             >
               {t("dashboard.localSeoAudit.view.backToAudits")}

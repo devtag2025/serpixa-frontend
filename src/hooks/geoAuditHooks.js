@@ -33,7 +33,7 @@ export function useRunGeoAudit() {
       // Invalidate the list query to refetch audits
       queryClient.invalidateQueries({ queryKey: geoAuditKeys.lists() });
       // Navigate to the audit detail page
-      router.push(`/dashboard/geo-audit/${data.audit._id}`);
+      router.push(`/dashboard/local-seo/${data.audit._id}`);
     },
     onError: (error) => {
       const message = handleError(error);

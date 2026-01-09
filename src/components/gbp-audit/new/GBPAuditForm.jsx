@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { HiOfficeBuilding, HiLink, HiGlobe } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
-import LocaleSelect from "@/components/common/LocaleSelect";
+import GBPAuditLocaleSelect from "./GBPAuditLocaleSelect";
 import { isValidUrlFormat } from "@/utils/urlNormalizer";
 
 export default function GBPAuditForm({ onSubmit, isPending }) {
@@ -98,7 +98,7 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
         {/* <label className="block text-sm font-semibold text-gray-900 mb-2">
           {t("dashboard.gbpAudit.form.locale")} <span className="text-gray-400">({t("dashboard.common.optional")})</span>
         </label> */}
-        <LocaleSelect register={register} />
+        <GBPAuditLocaleSelect register={register} />
         <p className="mt-2 text-xs text-gray-500">
           {t("dashboard.gbpAudit.form.localeHelp")}
         </p>
