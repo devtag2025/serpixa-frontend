@@ -17,7 +17,7 @@ export default function GeoAuditListHeader({ audits }) {
             <p className="text-sm text-gray-600">{t("dashboard.localSeoAudit.list.subtitle")}</p>
           </div>
           <button
-            onClick={() => router.push("/dashboard/geo-audit/new")}
+            onClick={() => router.push("/dashboard/local-seo/new")}
             className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium text-sm shadow-sm"
           >
             <HiPlus className="w-4 h-4" />

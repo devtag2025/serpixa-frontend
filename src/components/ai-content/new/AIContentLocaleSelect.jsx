@@ -8,14 +8,14 @@ import CustomDropdown from "@/components/common/CustomDropdown";
 const aiContentLocales = [
   { 
     value: 'fr', 
-    label: 'French', 
+    label: 'Français', 
     countryCode: 'FR',
     language: 'French',
     country: 'FR'
   },
   { 
     value: 'nl', 
-    label: 'Dutch', 
+    label: 'Nederlands', 
     countryCode: 'NL',
     language: 'Dutch',
     country: 'NL'

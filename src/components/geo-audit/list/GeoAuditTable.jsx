@@ -54,7 +54,7 @@ export default function GeoAuditTable({ audits, onDelete }) {
                 return (
                   <tr
                     key={audit._id}
-                    onClick={() => router.push(`/dashboard/geo-audit/${audit._id}`)}
+                    onClick={() => router.push(`/dashboard/local-seo/${audit._id}`)}
                     className={`cursor-pointer transition-colors ${
                       index % 2 === 0 ? "bg-white hover:bg-gray-50" : "bg-gray-50/50 hover:bg-gray-50"
                     }`}
@@ -101,7 +101,7 @@ export default function GeoAuditTable({ audits, onDelete }) {
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            router.push(`/dashboard/geo-audit/${audit._id}`);
+                            router.push(`/dashboard/local-seo/${audit._id}`);
                           }}
                           className="p-2 text-gray-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
                           title={t("dashboard.localSeoAudit.view.viewAudit")}

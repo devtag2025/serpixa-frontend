@@ -89,7 +89,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/dashboard/geo-audit" className="text-white/80 hover:text-white text-sm transition-colors">
+                <Link href="/dashboard/local-seo" className="text-white/80 hover:text-white text-sm transition-colors">
                   {t("landing.footer.localSeoAudit")}
                 </Link>
               </li>

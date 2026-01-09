@@ -102,7 +102,7 @@ export default function GeoAuditListPage() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{t("dashboard.localSeoAudit.list.noAudits")}</h3>
                 <p className="text-gray-600 mb-6">{t("dashboard.localSeoAudit.list.noAuditsDescription")}</p>
                 <button
-                  onClick={() => router.push("/dashboard/geo-audit/new")}
+                  onClick={() => router.push("/dashboard/local-seo/new")}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
                 >
                   <HiPlus className="w-5 h-5" />

@@ -71,8 +71,8 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
       icon: HiLocationMarker,
       label: t("dashboard.sidebar.localSeoAudits"),
       submenu: [
-        { label: t("dashboard.sidebar.newAudit"), href: "/dashboard/geo-audit/new" },
-        { label: t("dashboard.sidebar.history"), href: "/dashboard/geo-audit" },
+        { label: t("dashboard.sidebar.newAudit"), href: "/dashboard/local-seo/new" },
+        { label: t("dashboard.sidebar.history"), href: "/dashboard/local-seo" },
       ],
     },
     {

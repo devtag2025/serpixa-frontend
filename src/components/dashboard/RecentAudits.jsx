@@ -30,7 +30,7 @@ export default function RecentAudits({ audits = [], viewAllLink = "/dashboard/re
       case "seo":
         return `/dashboard/seo-audit/${audit.id}`;
       case "geo":
-        return `/dashboard/geo-audit/${audit.id}`;
+        return `/dashboard/local-seo/${audit.id}`;
       case "gbp":
         return `/dashboard/gbp-audit/${audit.id}`;
       default:
