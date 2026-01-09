@@ -18,7 +18,7 @@ export default function GeoAuditStats({ audit }) {
           <div className={`p-1.5 sm:p-2.5 rounded-lg ${scoreColors.bg}`}>
             <HiLightningBolt className={`w-4 h-4 sm:w-5 sm:h-5 ${scoreColors.text}`} />
           </div>
-          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.visibilityScore")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.visibilityScore")}</span>
         </div>
         <div className="flex items-baseline gap-1 sm:gap-2 mb-2">
           <span className={`text-xl sm:text-2xl lg:text-3xl font-bold ${scoreColors.text}`}>{audit.localVisibilityScore || 0}</span>
@@ -38,7 +38,7 @@ export default function GeoAuditStats({ audit }) {
           <div className="p-1.5 sm:p-2.5 rounded-lg bg-purple-50">
             <HiUsers className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
           </div>
-          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.competitors")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.competitors")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">{totalCompetitors}</span>
@@ -51,7 +51,7 @@ export default function GeoAuditStats({ audit }) {
           <div className="p-1.5 sm:p-2.5 rounded-lg bg-red-50">
             <HiExclamationCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600" />
           </div>
-          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.napIssues")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.napIssues")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">{napIssuesCount}</span>
@@ -64,7 +64,7 @@ export default function GeoAuditStats({ audit }) {
           <div className="p-1.5 sm:p-2.5 rounded-lg bg-blue-50">
             <HiExclamationCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
           </div>
-          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.recommendations")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.recommendations")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">{totalRecommendations}</span>

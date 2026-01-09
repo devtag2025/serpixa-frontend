@@ -66,7 +66,7 @@ export default function Pricing() {
       limitItems.push(`${limits.seo_audits} ${t("landing.pricing.seoAudits")}${perMonth}`);
     }
     if (limits?.geo_audits && limits.geo_audits > 0) {
-      limitItems.push(`${limits.geo_audits} ${t("landing.pricing.geoAudits")}${perMonth}`);
+      limitItems.push(`${limits.geo_audits} ${t("landing.pricing.localSeoAudits")}${perMonth}`);
     }
     if (limits?.gbp_audits && limits.gbp_audits > 0) {
       limitItems.push(`${limits.gbp_audits} ${t("landing.pricing.gbpAudits")}${perMonth}`);
@@ -92,7 +92,7 @@ export default function Pricing() {
       creditItems.push(`${credits.seo_audits} ${t("landing.pricing.seoAudits")}`);
     }
     if (credits?.geo_audits && credits.geo_audits > 0) {
-      creditItems.push(`${credits.geo_audits} ${t("landing.pricing.geoAudits")}`);
+      creditItems.push(`${credits.geo_audits} ${t("landing.pricing.localSeoAudits")}`);
     }
     if (credits?.gbp_audits && credits.gbp_audits > 0) {
       creditItems.push(`${credits.gbp_audits} ${t("landing.pricing.gbpAudits")}`);
@@ -107,11 +107,13 @@ export default function Pricing() {
   // Get translated plan name or description
   const getPlanTranslation = (planName, type = 'name') => {
     // Map database plan names to translation keys
+    // Note: Supports both old "Extra 10 GEO Audits" and new "Extra 10 Local SEO Audits" during transition
     const planKeyMap = {
       'Starter Plan': 'plans.starterPlan',
       'Premium Plan': 'plans.premiumPlan',
       'Extra 10 SEO Audits': 'plans.extra10SeoAudits',
-      'Extra 10 GEO Audits': 'plans.extra10GeoAudits',
+      'Extra 10 GEO Audits': 'plans.extra10LocalSeoAudits', // Old name - maps to Local SEO translation
+      'Extra 10 Local SEO Audits': 'plans.extra10LocalSeoAudits', // New name
       'Extra 5 GBP Audits': 'plans.extra5GbpAudits',
       'Extra 50 AI Generations': 'plans.extra50AiGenerations',
     };

@@ -41,7 +41,7 @@ export default function BusinessInfo({ businessInfo, onCopyToClipboard }) {
                   <button
                     onClick={() => onCopyToClipboard(businessInfo.phone, "Phone")}
                     className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
-                    title={t("dashboard.geoAudit.view.copyPhone")}
+                    title={t("dashboard.localSeoAudit.view.copyPhone")}
                   >
                     <HiClipboardCopy className="w-3.5 h-3.5" />
                   </button>
@@ -103,7 +103,7 @@ export default function BusinessInfo({ businessInfo, onCopyToClipboard }) {
                   )}
                   {businessInfo.reviewCount !== undefined && (
                     <span className="text-sm text-gray-600">
-                      ({businessInfo.reviewCount} {t("dashboard.geoAudit.view.reviews")})
+                      ({businessInfo.reviewCount} {t("dashboard.localSeoAudit.view.reviews")})
                     </span>
                   )}
                 </div>

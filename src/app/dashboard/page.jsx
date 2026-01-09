@@ -40,8 +40,8 @@ export default function Dashboard() {
     {
       href: "/dashboard/geo-audit/new",
       icon: HiLocationMarker,
-      title: t("dashboard.page.newGeoAudit"),
-      description: t("dashboard.page.newGeoAuditDesc"),
+      title: t("dashboard.page.newLocalSeoAudit"),
+      description: t("dashboard.page.newLocalSeoAuditDesc"),
       gradient: "from-green-500 to-emerald-600",
       textColor: "#10b981", // Green
     },

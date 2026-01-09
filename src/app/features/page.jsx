@@ -34,13 +34,13 @@ export default function FeaturesPage() {
     },
     {
       icon: HiLocationMarker,
-      titleKey: "landing.featuresPage.geoAudit.title",
-      descriptionKey: "landing.featuresPage.geoAudit.description",
+      titleKey: "landing.featuresPage.localSeoAudit.title",
+      descriptionKey: "landing.featuresPage.localSeoAudit.description",
       features: [
-        "landing.featuresPage.geoAudit.feature1",
-        "landing.featuresPage.geoAudit.feature2",
-        "landing.featuresPage.geoAudit.feature3",
-        "landing.featuresPage.geoAudit.feature4"
+        "landing.featuresPage.localSeoAudit.feature1",
+        "landing.featuresPage.localSeoAudit.feature2",
+        "landing.featuresPage.localSeoAudit.feature3",
+        "landing.featuresPage.localSeoAudit.feature4"
       ],
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50"

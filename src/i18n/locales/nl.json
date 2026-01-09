@@ -39,11 +39,12 @@
       "trustedTitle": "Serpixa is ontworpen voor:",
       "trustedSubtitle": "Bedoeld voor teams en bedrijven die afhankelijk zijn van hun online zichtbaarheid.",
       "trustedAudience": {
-        "1": "KMO’s",
+        "1": "KMO's",
         "2": "Zelfstandigen",
         "3": "Marketingbureaus",
         "4": "Elk bedrijf dat afhankelijk is van zijn online zichtbaarheid"
       },
+      "finalStatement": "Geen SEO-expert nodig om goede keuzes te maken.",
       "startTrial": "Aan de slag"
     },
     "pricing": {
@@ -108,7 +109,7 @@
     },
     "reportPreview": {
       "badge": "Rapporten",
-      "title": "Heldere, leesbare rapporten die uw klanten echt begrijpen",
+      "title": "Heldere, leesbare rapporten",
       "subtitle": "Zodra uw audit is voltooid, genereert Serpixa een duidelijk en gemakkelijk te lezen rapport dat u direct met uw klant kunt delen.",
       "valueProposition": "Dit is een van de belangrijkste sterke punten van Serpixa. Het zet complexe SEO-gegevens om in eenvoudige, actiegerichte inzichten zodat iedereen snel kan zien wat er mis is, waarom het belangrijk is en wat de volgende stap is.",
       "benefits": {
@@ -128,18 +129,26 @@
   "badge": "FAQ",
   "title": "Veelgestelde vragen",
   "subtitle": "Alles wat u moet weten over Serpixa",
-  "question1": "Waarom verschijnt mijn website niet op Google?",
-  "answer1": "Omdat Google uw pagina vergelijkt met die van uw concurrenten. Serpixa laat precies zien waar het verschil zit en wat verbeterd moet worden.",
+  "question1": "Hoe begin ik?",
+  "answer1": "Maak een account aan, kies tussen het Starter Pack of Premium Pack en start direct met uw eerste audit. Het platform is ontworpen om eenvoudig en intuïtief te gebruiken.",
   "question2": "Vervangt Serpixa een SEO-expert?",
   "answer2": "Nee. Serpixa helpt u sneller betere beslissingen te nemen. Het vereenvoudigt analyses en helpt bij het prioriteren van acties.",
   "question3": "Wat is het verschil tussen Semrush en Serpixa?",
   "answer3": "Semrush levert veel data. Serpixa geeft een duidelijke beslissing voor één specifieke pagina, met concrete en uitvoerbare acties.",
   "question4": "Is SEO nog steeds nuttig met AI?",
-  "answer4": "Ja. AI-systemen vertrouwen op duidelijke, gestructureerde en betrouwbare content. Serpixa helpt bij het maken van pagina’s die begrijpelijk zijn voor Google en AI-assistenten.",
+  "answer4": "Ja. AI-systemen vertrouwen op duidelijke, gestructureerde en betrouwbare content. Serpixa helpt bij het maken van pagina's die begrijpelijk zijn voor Google en AI-assistenten.",
   "question5": "Welke plannen biedt u aan?",
   "answer5": "We bieden twee hoofdplannen aan: Starter Pack en Premium Pack. Het Starter Pack is ideaal om te starten met SEO-audits, terwijl het Premium Pack geavanceerde functies, meer audits en AI-generaties bevat. Beide plannen geven toegang tot alle kernfuncties.",
-  "question6": "Hoe begin ik?",
-  "answer6": "Maak een account aan, kies tussen het Starter Pack of Premium Pack en start direct met uw eerste audit. Het platform is ontworpen om eenvoudig en intuïtief te gebruiken."
+  "question6": "Waarom verschijnt mijn website niet op Google?",
+  "answer6": "Omdat Google uw pagina vergelijkt met die van uw concurrenten. Serpixa laat precies zien waar het verschil zit en wat verbeterd moet worden.",
+  "question7": "Hoe nauwkeurig zijn de SEO-auditresultaten?",
+  "answer7": "Onze audits analyseren echte zoekmachinegegevens om u te tonen waar uw pagina staat. We controleren zoekwoordrankings, on-page elementen en technische problemen om u een duidelijk beeld te geven van wat verbeterd moet worden.",
+  "question8": "Kan ik mijn abonnement op elk moment opzeggen?",
+  "answer8": "Ja, u kunt uw abonnement op elk moment opzeggen. Er zijn geen langetermijncontracten en u behoudt toegang tot het einde van uw factureringsperiode.",
+  "question9": "Wat maakt uw AI-contentgeneratie anders?",
+  "answer9": "Onze AI-content is specifiek getraind voor SEO-optimalisatie. Het genereert content met de juiste zoekwoorddichtheid, meta-tags, FAQ-secties en CTAs - allemaal geoptimaliseerd voor zoekmachines met behoud van hoge kwaliteit.",
+  "question10": "Kan een sterke lokale positionering (lokale SEO-audit) uw zichtbaarheid in AI-antwoorden verbeteren?",
+  "answer10": "Ja. Door uw lokale aanwezigheid te versterken, verbetert een lokale SEO-audit de geografische signalen die zoekmachines gebruiken om relevante bedrijven binnen een specifieke regio te identificeren. Wanneer gebruikers lokale vragen stellen, kunnen deze signalen ook worden benut in geautomatiseerde of verrijkte antwoorden, waaronder antwoorden via door AI ondersteunde interfaces. Een lokale SEO-audit garandeert geen automatische vermelding door een AI, maar legt wel de basis voor een sterke lokale zichtbaarheid, die tegenwoordig onmisbaar is in een steeds meer conversationeel zoekecosysteem."
 },
 
     "cta": {
@@ -219,7 +228,7 @@
         },
         "professionalReports": {
           "title": "Professionele rapporten",
-          "description": "Genereer klantklare PDF-rapporten met uw branding. Imponeer klanten met gedetailleerde inzichten, visuele grafieken en actiegerichte aanbevelingen."
+          "description": "Genereer exporteerbare PDF-rapporten met alle essentiële inzichten. Deel duidelijke, gedetailleerde informatie met iedereen."
         },
         "actionableInsights": {
           "title": "Actiegerichte inzichten",
@@ -363,7 +372,7 @@
         "subtitle": "Meer tools om u te helpen slagen",
         "professionalReports": {
        "title": "Professionele rapporten",
-"description": "Genereer PDF-rapporten die klaar zijn om met klanten te delen, met alle essentiële inzichten. Bied uw klanten duidelijke en gedetailleerde informatie."
+"description": "Genereer exporteerbare PDF-rapporten met alle essentiële inzichten. Deel duidelijke, gedetailleerde informatie met iedereen."
 
         },
         "seoAnalysis": {
@@ -404,7 +413,7 @@
       "ourStory": {
         "title": "Ons verhaal",
         "paragraph1": "Serpixa is ontstaan uit een eenvoudige observatie: SEO-tools waren ofwel te complex voor kleine bedrijven of te duur voor groeiende bedrijven. We zagen een gat in de markt voor een platform dat krachtige analyses combineert met gebruiksgemak.",
-        "paragraph2": "We streven ernaar SEO-professionals en bedrijven te helpen hun zoekzichtbaarheid te verbeteren. Ons platform maakt gebruik van moderne technologie en kwalitatieve databronnen om actiegerichte inzichten te leveren.",
+        "paragraph2": "Wij streven ernaar bedrijven te helpen hun zichtbaarheid te verbeteren. Ons platform maakt gebruik van moderne technologie en kwalitatieve databronnen om actiegerichte inzichten te leveren.",
         "paragraph3": "Serpixa is ontworpen voor gebruikers van alle groottes, van solo-ondernemers tot agentschappen, allemaal verenigd door één doel: betere zoekrankings bereiken en hun online aanwezigheid laten groeien.",
         "mission": {
           "title": "Onze missie",
@@ -553,7 +562,7 @@
     "sidebar": {
       "dashboard": "Dashboard",
       "seoAudits": "SEO-audits",
-      "geoAudits": "GEO-audits",
+      "localSeoAudits": "Local SEO-audits",
       "gbpAudits": "GBP-audits",
       "aiContent": "AI-inhoud",
       "reports": "Rapporten",
@@ -617,6 +626,7 @@
       "newAudit": "Nieuwe audit",
       "reRunAudit": "Audit opnieuw uitvoeren",
       "exportPdf": "PDF exporteren",
+      "exporting": "Exporteren...",
       "generating": "Genereren...",
       "delete": "Verwijderen",
       "view": "Bekijken",
@@ -670,10 +680,10 @@
         "seoAuditDeleteSuccess": "Audit succesvol verwijderd",
         "seoAuditDeleteError": "Verwijderen van audit mislukt",
         "seoAuditRunError": "Uitvoeren van SEO-audit mislukt",
-        "geoAuditCompletedSuccess": "Geo-audit succesvol voltooid!",
-        "geoAuditDeleteSuccess": "Audit succesvol verwijderd",
-        "geoAuditDeleteError": "Verwijderen van audit mislukt",
-        "geoAuditRunError": "Uitvoeren van Geo-audit mislukt",
+        "localSeoAuditCompletedSuccess": "Local SEO-audit succesvol voltooid!",
+        "localSeoAuditDeleteSuccess": "Audit succesvol verwijderd",
+        "localSeoAuditDeleteError": "Verwijderen van audit mislukt",
+        "localSeoAuditRunError": "Uitvoeren van Local SEO-audit mislukt",
         "gbpAuditCompletedSuccess": "GBP-audit succesvol voltooid!",
         "gbpAuditDeleteSuccess": "Audit succesvol verwijderd",
         "gbpAuditDeleteError": "Verwijderen van audit mislukt",
@@ -818,12 +828,12 @@
         "failedToLoadAudit": "Audit laden mislukt",
         "errorLoadingAudit": "Er is een fout opgetreden bij het laden van de audit",
         "backToAudits": "Terug naar audits",
-        "auditFailed": "Audit mislukt"
+      "auditFailed": "Audit mislukt"
       }
     },
-    "geoAudit": {
+    "localSeoAudit": {
       "new": {
-        "title": "Nieuwe GEO-audit",
+        "title": "Nieuwe Local SEO-audit",
         "subtitle": "Analyseer lokale zoekzichtbaarheid en concurrentielandschap",
         "whatWillBeAnalyzed": "Wat wordt er geanalyseerd?",
         "localVisibility": "Lokale zichtbaarheidsscore en rankings",
@@ -843,12 +853,12 @@
         "countryHelp": "Landnaam",
         "businessName": "Bedrijfsnaam",
         "businessNamePlaceholder": "bijv. Mijn Restaurant",
-        "businessNameHelp": "Optioneel: Uw bedrijfsnaam voor beter gericht",
+        "businessNameHelp": "Optioneel: uw bedrijfsnaam voor betere targeting",
         "googleDomain": "Google-domein",
         "googleDomainHelp": "Selecteer het Google-domein voor uw doelmarkt",
         "googleDomainPlaceholder": "Google-domein selecteren",
         "cityHelpDetailed": "De stad waar u lokale zoekresultaten wilt analyseren (bijv. \"New York\", \"Brussel\", \"Parijs\")",
-        "countryHelpDetailed": "Het land voor lokale zoekanalyse (gebruikt als stad niet is opgegeven, bijv. \"Verenigde Staten\", \"België\")",
+        "countryHelpDetailed": "Selecteer het land waar u lokale zoekresultaten wilt analyseren",
         "businessNameHelpDetailed": "Laat leeg om alle concurrenten te zien. Indien opgegeven, vinden we uw bedrijf in de resultaten.",
         "keywordHelpDetailed": "De zoekterm die u wilt analyseren voor lokale resultaten",
         "showAdvanced": "Geavanceerde opties weergeven",
@@ -857,11 +867,11 @@
         "locale": "Locale",
         "localeHelp": "Selecteer de locale voor de audit",
         "device": "Apparaat",
-        "runAudit": "GEO-audit uitvoeren",
+        "runAudit": "Local SEO-audit uitvoeren",
         "runningAudit": "Audit wordt uitgevoerd..."
       },
       "view": {
-        "title": "GEO-auditresultaten",
+        "title": "Local SEO-auditresultaten",
         "localVisibilityScore": "Lokale zichtbaarheidsscore",
         "totalCompetitors": "Totaal aantal concurrenten",
         "totalRecommendations": "Totaal aantal aanbevelingen",
@@ -907,11 +917,11 @@
         "deleteAudit": "Audit verwijderen"
       },
       "list": {
-        "title": "GEO-audits",
-        "subtitle": "Bekijk en beheer uw GEO-auditgeschiedenis",
+        "title": "Local SEO-audits",
+        "subtitle": "Bekijk en beheer uw Local SEO-auditgeschiedenis",
         "searchPlaceholder": "Zoeken op bedrijfsnaam...",
         "noAudits": "Nog geen audits",
-        "noAuditsDescription": "Begin met het maken van uw eerste GEO-audit",
+        "noAuditsDescription": "Begin met het maken van uw eerste Local SEO-audit",
         "createNewAudit": "Nieuwe audit maken",
         "totalAudits": "Totaal aantal audits",
         "avgVisibility": "Gemiddelde zichtbaarheid",
@@ -934,10 +944,10 @@
         "businessName": "Bedrijfsnaam",
         "businessNamePlaceholder": "bijv. Mijn Restaurant",
         "businessNameHelp": "Optioneel als GBP-link is opgegeven",
-        "businessNameHelpDetailed": "De naam van uw bedrijf zoals deze verschijnt op Google Business-profiel",
+        "businessNameHelpDetailed": "De naam van uw bedrijf zoals deze verschijnt op Google Business-profiel (optioneel)",
         "gbpLink": "GBP-link",
         "gbpLinkPlaceholder": "https://www.google.com/maps/place/...",
-        "gbpLinkHelp": "Directe link naar uw Google Business-profiel (optioneel, maar helpt uw bedrijf sneller te vinden)",
+        "gbpLinkHelp": "Directe link naar uw Google Business-profiel (vereist)",
         "gbpLinkOptional": "Optioneel als bedrijfsnaam is opgegeven",
         "location": "Locatie",
         "locationPlaceholder": "bijv. Verenigde Staten, New York",
@@ -951,6 +961,7 @@
         "runAudit": "GBP-audit uitvoeren",
         "runningAudit": "Audit wordt uitgevoerd...",
         "businessNameOrGbpRequired": "Bedrijfsnaam of GBP-link is vereist",
+        "gbpLinkRequired": "GBP-link is vereist",
         "validUrlRequired": "Voer een geldige URL in"
       },
       "list": {
@@ -1200,6 +1211,7 @@
     "hidePassword": "Wachtwoord verbergen"
   },
   "navbar": {
+    "home": "Home",
     "whySerpixa": "Waarom Serpixa",
     "aboutUs": "Over ons",
     "features": "Functies",

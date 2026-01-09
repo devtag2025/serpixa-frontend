@@ -90,10 +90,24 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto text-center">
-        {/* Main Headline */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Main Headline - Split into 3 lines */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight drop-shadow-sm">
-          {t("landing.hero.title")}
+          {(() => {
+            const title = t("landing.hero.title");
+            // Split by ". " and add period back to each sentence
+            const sentences = title.split(". ").filter(s => s.trim().length > 0);
+            return sentences.map((sentence, index) => {
+              const trimmed = sentence.trim();
+              const hasPeriod = trimmed.endsWith(".");
+              return (
+                <span key={index}>
+                  {trimmed}{!hasPeriod && "."}
+                  {index < sentences.length - 1 && <br />}
+                </span>
+              );
+            });
+          })()}
         </h1>
 
         {/* Sub-headline */}

@@ -44,6 +44,7 @@
         "3": "Marketing agencies",
         "4": "Any business that depends on its online visibility"
       },
+      "finalStatement": "No need to be an SEO expert to make great choices.",
       "startTrial": "Get Started"
     },
     "pricing": {
@@ -61,7 +62,7 @@
       "needMore": "Need more? Upgrade with add-ons!",
       "enhancePlan": "Enhance your plan with powerful add-ons",
       "seoAudits": "SEO Audits",
-      "geoAudits": "GEO Audits",
+      "localSeoAudits": "Local SEO Audits",
       "gbpAudits": "GBP Audits",
       "aiGenerations": "AI Generations",
       "searchesPerMonth": "Searches per month",
@@ -83,9 +84,9 @@
         "name": "Extra 10 SEO Audits",
         "description": "One-time purchase of 10 additional SEO audits"
       },
-      "extra10GeoAudits": {
-        "name": "Extra 10 GEO Audits",
-        "description": "One-time purchase of 10 additional GEO audits"
+      "extra10LocalSeoAudits": {
+        "name": "Extra 10 Local SEO Audits",
+        "description": "One-time purchase of 10 additional Local SEO audits"
       },
       "extra5GbpAudits": {
         "name": "Extra 5 GBP Audits",
@@ -108,7 +109,7 @@
     },
     "reportPreview": {
       "badge": "Reports",
-      "title": "Clear, readable reports your clients will actually understand",
+      "title": "Clear, readable reports",
       "subtitle": "Once your audit is complete, Serpixa generates a clear, easy-to-read report that you can share directly with your client.",
       "valueProposition": "This is one of Serpixa’s key strengths. It turns complex SEO data into simple, action-oriented insights so anyone can quickly see what is wrong, why it matters, and what to do next.",
       "benefits": {
@@ -128,18 +129,26 @@
   "badge": "FAQ",
   "title": "Frequently Asked Questions",
   "subtitle": "Everything you need to know about Serpixa",
-  "question1": "Why doesn’t my website appear on Google?",
-  "answer1": "Because Google compares your page to those of your competitors. Serpixa shows exactly where the gap is and what needs to be improved.",
+  "question1": "How do I get started?",
+  "answer1": "Simply create an account, choose between the Starter Pack or Premium Pack, and start running your first audit. The platform is designed to be intuitive and easy to use from day one.",
   "question2": "Does Serpixa replace an SEO expert?",
   "answer2": "No. Serpixa helps you make better decisions faster. It simplifies analysis and prioritizes actions.",
-  "question3": "What’s the difference between Semrush and Serpixa?",
+  "question3": "What's the difference between Semrush and Serpixa?",
   "answer3": "Semrush provides a large amount of data. Serpixa delivers a clear decision for a specific page, with concrete and actionable steps.",
   "question4": "Is SEO still useful with AI?",
   "answer4": "Yes. AI systems rely on content that is clear, structured, and credible. Serpixa helps create pages that are understandable by Google and AI assistants.",
   "question5": "What plans do you offer?",
   "answer5": "We offer two main plans: Starter Pack and Premium Pack. The Starter Pack is ideal for getting started with SEO audits, while the Premium Pack includes advanced features, more audits, and AI generations. Both plans include access to all core features.",
-  "question6": "How do I get started?",
-  "answer6": "Simply create an account, choose between the Starter Pack or Premium Pack, and start running your first audit. The platform is designed to be intuitive and easy to use from day one."
+  "question6": "Why doesn't my website appear on Google?",
+  "answer6": "Because Google compares your page to those of your competitors. Serpixa shows exactly where the gap is and what needs to be improved.",
+  "question7": "How accurate are the SEO audit results?",
+  "answer7": "Our audits analyze real search engine data to show you where your page stands. We check keyword rankings, on-page elements, and technical issues to give you a clear picture of what needs improvement.",
+  "question8": "Can I cancel my subscription anytime?",
+  "answer8": "Yes, you can cancel your subscription at any time. There are no long-term contracts, and you'll continue to have access until the end of your billing period.",
+  "question9": "What makes your AI content generation different?",
+  "answer9": "Our AI content is specifically trained for SEO optimization. It generates content with proper keyword density, meta tags, FAQ sections, and CTAs - all optimized for search engines while maintaining high quality.",
+  "question10": "Can strong local positioning (Local SEO Audit) improve your visibility in AI-generated answers?",
+  "answer10": "Yes. By strengthening your local presence, a Local SEO Audit improves the geographic signals that search engines use to identify relevant businesses in a specific area. When users ask local questions, these signals can also be leveraged in automated or enriched responses, including those delivered through AI-assisted interfaces. A Local SEO Audit does not guarantee automatic citation by an AI, but it lays the foundation for strong local visibility, which is now essential in an increasingly conversational search ecosystem."
 },
 
     "cta": {
@@ -179,7 +188,7 @@
       "products": "Products",
       "seoAudit": "SEO Audit",
       "gbpAudit": "GBP Audit",
-      "geoAudit": "GEO Audit",
+      "localSeoAudit": "Local SEO Audit",
       "aiContent": "AI Content",
       "copyright": "© 2024 Serpixa. All rights reserved.",
       "privacy": "Privacy Policy",
@@ -211,7 +220,7 @@
         "subtitle": "Everything you need to succeed with SEO, all in one place",
         "timeSaving": {
           "title": "Save Hours of Work",
-          "description": "Run complete SEO, GEO, and GBP audits in minutes instead of hours. Automate repetitive tasks and focus on what matters growing your business."
+          "description": "Run complete SEO, Local SEO, and GBP audits in minutes instead of hours. Automate repetitive tasks and focus on what matters growing your business."
         },
         "allInOne": {
           "title": "All-in-One Platform",
@@ -219,7 +228,7 @@
         },
         "professionalReports": {
           "title": "Professional Reports",
-          "description": "Generate client-ready PDF reports with all the essential insights. Share clear, detailed information with your clients."
+          "description": "Generate exportable PDF reports with all the essential insights. Share clear, detailed information with anyone."
         },
         "actionableInsights": {
           "title": "Actionable Insights",
@@ -241,8 +250,8 @@
           "title": "SEO Audit",
           "description": "Complete website analysis with on-page SEO insights, competitor rankings, keyword optimization, and technical SEO checks. Get a comprehensive SEO score and detailed recommendations."
         },
-        "geoAudit": {
-          "title": "GEO Audit",
+        "localSeoAudit": {
+          "title": "Local SEO Audit",
           "description": "Analyze local search visibility with competitor analysis, citation recommendations, and NAP consistency checks. Understand your local market position and improve your visibility."
         },
         "gbpAudit": {
@@ -320,8 +329,8 @@
         "feature3": "Technical SEO checks and recommendations",
         "feature4": "Competitor analysis and ranking insights"
       },
-      "geoAudit": {
-        "title": "GEO Audit",
+      "localSeoAudit": {
+        "title": "Local SEO Audit",
         "description": "Analyze your local search visibility and understand your position in the local market. Get insights on competitors, citations, and NAP consistency.",
         "feature1": "Local visibility score and rankings",
         "feature2": "Nearby competitor analysis with ratings and reviews",
@@ -363,7 +372,7 @@
         "subtitle": "More tools to help you succeed",
         "professionalReports": {
          "title": "Professional Reports",
-"description": "Generate client-ready PDF reports with all the essential insights. Share clear, detailed information with your clients."
+"description": "Generate exportable PDF reports with all the essential insights. Share clear, detailed information with anyone."
 
         },
         "seoAnalysis": {
@@ -402,7 +411,7 @@
       "ourStory": {
         "title": "Our Story",
         "paragraph1": "Serpixa was born from a simple observation: SEO tools were either too complex for small businesses or too expensive for growing companies. We saw a gap in the market for a platform that combines powerful analytics with ease of use.",
-        "paragraph2": "We aim to help SEO professionals and businesses improve their search visibility. Our platform uses modern technology and quality data sources to deliver actionable insights.",
+        "paragraph2": "We aim to help businesses improve their visibility. Our platform uses modern technology and quality data sources to deliver actionable insights.",
         "paragraph3": "Serpixa is designed for users of all sizes, from solo entrepreneurs to agencies, all united by one goal: achieving better search rankings and growing their online presence.",
         "mission": {
           "title": "Our Mission",
@@ -492,8 +501,8 @@
       "available": "Available",
       "newSeoAudit": "New SEO Audit",
       "newSeoAuditDesc": "Analyze website SEO performance",
-      "newGeoAudit": "New GEO Audit",
-      "newGeoAuditDesc": "Check local search visibility",
+      "newLocalSeoAudit": "New Local SEO Audit",
+      "newLocalSeoAuditDesc": "Check local search visibility",
       "newGbpAudit": "New GBP Audit",
       "newGbpAuditDesc": "Audit Google Business Profile",
       "aiContent": "AI Content",
@@ -513,7 +522,7 @@
       "remaining": "remaining",
       "noCredits": "No credits available",
       "buyMore": "Buy More Extras",
-      "buyMoreDescription": "Enhance your plan with additional credits for SEO, GEO, GBP audits, and AI content generation.",
+      "buyMoreDescription": "Enhance your plan with additional credits for SEO, Local SEO, GBP audits, and AI content generation.",
       "noAddonsAvailable": "No addons available at the moment",
       "historyNote": "Purchase history is displayed for reference. Actual purchase records may vary."
     },
@@ -551,7 +560,7 @@
     "sidebar": {
       "dashboard": "Dashboard",
       "seoAudits": "SEO Audits",
-      "geoAudits": "GEO Audits",
+      "localSeoAudits": "Local SEO Audits",
       "gbpAudits": "GBP Audits",
       "aiContent": "AI Content",
       "reports": "Reports",
@@ -615,6 +624,7 @@
       "newAudit": "New Audit",
       "reRunAudit": "Re-run Audit",
       "exportPdf": "Export PDF",
+      "exporting": "Exporting...",
       "generating": "Generating...",
       "delete": "Delete",
       "view": "View",
@@ -668,10 +678,10 @@
         "seoAuditDeleteSuccess": "Audit deleted successfully",
         "seoAuditDeleteError": "Failed to delete audit",
         "seoAuditRunError": "Failed to run SEO audit",
-        "geoAuditCompletedSuccess": "Geo audit completed successfully!",
-        "geoAuditDeleteSuccess": "Audit deleted successfully",
-        "geoAuditDeleteError": "Failed to delete audit",
-        "geoAuditRunError": "Failed to run Geo audit",
+        "localSeoAuditCompletedSuccess": "Local SEO audit completed successfully!",
+        "localSeoAuditDeleteSuccess": "Audit deleted successfully",
+        "localSeoAuditDeleteError": "Failed to delete audit",
+        "localSeoAuditRunError": "Failed to run Local SEO audit",
         "gbpAuditCompletedSuccess": "GBP audit completed successfully!",
         "gbpAuditDeleteSuccess": "Audit deleted successfully",
         "gbpAuditDeleteError": "Failed to delete audit",
@@ -819,9 +829,9 @@
         "auditFailed": "Audit Failed"
       }
     },
-    "geoAudit": {
+    "localSeoAudit": {
       "new": {
-        "title": "New GEO Audit",
+        "title": "New Local SEO Audit",
         "subtitle": "Analyze local search visibility and competitor landscape",
         "whatWillBeAnalyzed": "What will be analyzed?",
         "localVisibility": "Local visibility score and rankings",
@@ -846,7 +856,7 @@
         "googleDomainHelp": "Select the Google domain for your target market",
         "googleDomainPlaceholder": "Select Google Domain",
         "cityHelpDetailed": "The city where you want to analyze local search results (e.g., \"New York\", \"Brussels\", \"Paris\")",
-        "countryHelpDetailed": "The country for local search analysis (used if city is not provided, e.g., \"United States\", \"Belgium\")",
+        "countryHelpDetailed": "Select the country where you want to analyze local search results",
         "businessNameHelpDetailed": "Leave blank to see all competitors. If provided, we'll find your business in the results.",
         "keywordHelpDetailed": "The search term you want to analyze for local results",
         "showAdvanced": "Show Advanced Options",
@@ -855,11 +865,11 @@
         "locale": "Locale",
         "localeHelp": "Select the locale for the audit",
         "device": "Device",
-        "runAudit": "Run GEO Audit",
+        "runAudit": "Run Local SEO Audit",
         "runningAudit": "Running Audit..."
       },
       "view": {
-        "title": "GEO Audit Results",
+        "title": "Local SEO Audit Results",
         "localVisibilityScore": "Local Visibility Score",
         "totalCompetitors": "Total Competitors",
         "totalRecommendations": "Total Recommendations",
@@ -905,11 +915,11 @@
         "deleteAudit": "Delete Audit"
       },
       "list": {
-        "title": "GEO Audits",
-        "subtitle": "View and manage your GEO audit history",
+        "title": "Local SEO Audits",
+        "subtitle": "View and manage your Local SEO audit history",
         "searchPlaceholder": "Search by business name...",
         "noAudits": "No audits yet",
-        "noAuditsDescription": "Get started by creating your first GEO audit",
+        "noAuditsDescription": "Get started by creating your first Local SEO audit",
         "createNewAudit": "Create New Audit",
         "totalAudits": "Total Audits",
         "avgVisibility": "Avg Visibility",
@@ -932,10 +942,10 @@
         "businessName": "Business Name",
         "businessNamePlaceholder": "e.g., My Restaurant",
         "businessNameHelp": "Optional if GBP Link provided",
-        "businessNameHelpDetailed": "The name of your business as it appears on Google Business Profile",
+        "businessNameHelpDetailed": "The name of your business as it appears on Google Business Profile (optional)",
         "gbpLink": "GBP Link",
         "gbpLinkPlaceholder": "https://www.google.com/maps/place/...",
-        "gbpLinkHelp": "Direct link to your Google Business Profile (optional, but helps find your business faster)",
+        "gbpLinkHelp": "Direct link to your Google Business Profile (required)",
         "gbpLinkOptional": "Optional if Business Name provided",
         "location": "Location",
         "locationPlaceholder": "e.g., United States, New York",
@@ -949,6 +959,7 @@
         "runAudit": "Run GBP Audit",
         "runningAudit": "Running Audit...",
         "businessNameOrGbpRequired": "Business name or GBP link is required",
+        "gbpLinkRequired": "GBP Link is required",
         "validUrlRequired": "Please enter a valid URL"
       },
       "list": {
@@ -1205,6 +1216,7 @@
     "hidePassword": "Hide password"
   },
   "navbar": {
+    "home": "Home",
     "whySerpixa": "Why Serpixa",
     "aboutUs": "About Us",
     "features": "Features",

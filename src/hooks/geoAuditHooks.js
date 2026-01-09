@@ -29,7 +29,7 @@ export function useRunGeoAudit() {
     mutationFn: GeoAuditService.runAudit,
     onSuccess: (response) => {
       const { data } = handleResponse(response);
-      toast.success(t("dashboard.common.toast.geoAuditCompletedSuccess"));
+      toast.success(t("dashboard.common.toast.localSeoAuditCompletedSuccess"));
       // Invalidate the list query to refetch audits
       queryClient.invalidateQueries({ queryKey: geoAuditKeys.lists() });
       // Navigate to the audit detail page
@@ -37,7 +37,7 @@ export function useRunGeoAudit() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || t("dashboard.common.toast.geoAuditRunError"));
+      toast.error(message || t("dashboard.common.toast.localSeoAuditRunError"));
     },
   });
 }
@@ -113,7 +113,7 @@ export function useDeleteGeoAudit() {
   return useMutation({
     mutationFn: GeoAuditService.deleteAudit,
     onSuccess: (response, auditId) => {
-      toast.success(t("dashboard.common.toast.geoAuditDeleteSuccess"));
+      toast.success(t("dashboard.common.toast.localSeoAuditDeleteSuccess"));
       // Remove the specific audit from cache
       queryClient.removeQueries({ queryKey: geoAuditKeys.detail(auditId) });
       // Invalidate the list to refetch
@@ -121,7 +121,7 @@ export function useDeleteGeoAudit() {
     },
     onError: (error) => {
       const message = handleError(error);
-      toast.error(message || t("dashboard.common.toast.geoAuditDeleteError"));
+      toast.error(message || t("dashboard.common.toast.localSeoAuditDeleteError"));
     },
   });
 }
@@ -140,7 +140,7 @@ export function useDownloadGeoAuditPDF() {
       const url = window.URL.createObjectURL(blob.data);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `geo-audit-${auditId}.pdf`;
+      link.download = `local-seo-audit-${auditId}.pdf`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

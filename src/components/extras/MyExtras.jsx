@@ -23,7 +23,7 @@ const CREDIT_TYPES = [
   },
   {
     key: "geo_audits",
-    label: "dashboard.sidebar.geoAudits",
+    label: "dashboard.sidebar.localSeoAudits",
     icon: HiLocationMarker,
     color: "#10b981",
   },

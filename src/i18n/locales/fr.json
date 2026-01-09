@@ -44,6 +44,7 @@
         "3": "les agences marketing",
         "4": "toute entreprise qui dépend de sa visibilité en ligne"
       },
+      "finalStatement": "Pas besoin d'être un expert SEO pour faire les bons choix.",
       "startTrial": "Commencer"
     },
     "pricing": {
@@ -108,7 +109,7 @@
     },
     "reportPreview": {
       "badge": "Rapports",
-      "title": "Des rapports clairs et lisibles que vos clients comprendront réellement",
+      "title": "Des rapports clairs et lisibles",
       "subtitle": "Une fois votre audit terminé, Serpixa génère un rapport clair et facile à lire que vous pouvez partager directement avec votre client.",
       "valueProposition": "C’est l’un des principaux atouts de Serpixa. Il transforme des données SEO complexes en informations simples et exploitables afin que chacun puisse comprendre rapidement ce qui ne va pas, pourquoi c’est important et quelles actions entreprendre.",
       "benefits": {
@@ -128,18 +129,26 @@
   "badge": "FAQ",
   "title": "Questions fréquemment posées",
   "subtitle": "Tout ce que vous devez savoir sur Serpixa",
-  "question1": "Pourquoi mon site n’apparaît pas sur Google ?",
-  "answer1": "Parce que Google compare votre page à celles de vos concurrents. Serpixa montre précisément où se situe l’écart et quoi améliorer.",
+  "question1": "Comment commencer ?",
+  "answer1": "Il suffit de créer un compte, de choisir entre le Starter Pack ou le Premium Pack, puis de lancer votre premier audit. L'interface est conçue pour être simple et intuitive dès le départ.",
   "question2": "Serpixa remplace-t-il un expert SEO ?",
-  "answer2": "Non. Serpixa aide à prendre de meilleures décisions plus rapidement. Il simplifie l’analyse et priorise les actions.",
+  "answer2": "Non. Serpixa aide à prendre de meilleures décisions plus rapidement. Il simplifie l'analyse et priorise les actions.",
   "question3": "Quelle est la différence avec Semrush ?",
   "answer3": "Semrush fournit beaucoup de données. Serpixa fournit une décision claire sur une page précise, avec des actions concrètes.",
-  "question4": "Le SEO est-il encore utile avec l’IA ?",
-  "answer4": "Oui. Les IA s’appuient sur des contenus clairs, structurés et crédibles. Serpixa aide à créer des pages compréhensibles par Google et les assistants IA.",
+  "question4": "Le SEO est-il encore utile avec l'IA ?",
+  "answer4": "Oui. Les IA s'appuient sur des contenus clairs, structurés et crédibles. Serpixa aide à créer des pages compréhensibles par Google et les assistants IA.",
   "question5": "Quels plans proposez-vous ?",
-  "answer5": "Nous proposons deux plans principaux : Starter Pack et Premium Pack. Le Starter Pack est idéal pour débuter avec les audits SEO, tandis que le Premium Pack inclut des fonctionnalités avancées, plus d’audits et des générations IA. Tous les plans donnent accès aux fonctionnalités essentielles.",
-  "question6": "Comment commencer ?",
-  "answer6": "Il suffit de créer un compte, de choisir entre le Starter Pack ou le Premium Pack, puis de lancer votre premier audit. L’interface est conçue pour être simple et intuitive dès le départ."
+  "answer5": "Nous proposons deux plans principaux : Starter Pack et Premium Pack. Le Starter Pack est idéal pour débuter avec les audits SEO, tandis que le Premium Pack inclut des fonctionnalités avancées, plus d'audits et des générations IA. Tous les plans donnent accès aux fonctionnalités essentielles.",
+  "question6": "Pourquoi mon site n'apparaît pas sur Google ?",
+  "answer6": "Parce que Google compare votre page à celles de vos concurrents. Serpixa montre précisément où se situe l'écart et quoi améliorer.",
+  "question7": "Quelle est la précision des résultats d'audit SEO ?",
+  "answer7": "Nos audits analysent les données réelles des moteurs de recherche pour vous montrer où se situe votre page. Nous vérifions les classements de mots-clés, les éléments on-page et les problèmes techniques pour vous donner une image claire de ce qui doit être amélioré.",
+  "question8": "Puis-je annuler mon abonnement à tout moment ?",
+  "answer8": "Oui, vous pouvez annuler votre abonnement à tout moment. Il n'y a pas de contrats à long terme, et vous continuerez à avoir accès jusqu'à la fin de votre période de facturation.",
+  "question9": "Qu'est-ce qui rend votre génération de contenu IA différente ?",
+  "answer9": "Notre contenu IA est spécifiquement formé pour l'optimisation SEO. Il génère du contenu avec une densité de mots-clés appropriée, des balises meta, des sections FAQ et des appels à l'action - le tout optimisé pour les moteurs de recherche tout en maintenant une haute qualité.",
+  "question10": "Un bon positionnement local (Audit SEO Local) peut-il renforcer votre visibilité dans les réponses IA ?",
+  "answer10": "Oui. En renforçant votre présence locale, l'Audit Local SEO améliore les signaux géographiques que les moteurs de recherche utilisent pour identifier les acteurs pertinents d'une zone donnée. Lorsque des utilisateurs posent des questions locales, ces signaux peuvent également être exploités dans des réponses automatisées ou enrichies, y compris via des interfaces assistées par IA. L'Audit Local SEO ne promet pas une citation automatique par une IA, mais il pose les bases d'une visibilité locale solide, aujourd'hui indispensable dans un écosystème de recherche de plus en plus conversationnel."
 },
 
 
@@ -220,7 +229,7 @@
         },
         "professionalReports": {
           "title": "Rapports professionnels",
-          "description": "Générez des rapports PDF prêts pour les clients avec votre branding. Impressionnez les clients avec des insights détaillés, des graphiques visuels et des recommandations actionnables."
+          "description": "Générez des rapports PDF exportables avec toutes les informations essentielles. Partagez des informations claires et détaillées avec n'importe qui."
         },
         "actionableInsights": {
           "title": "Insights actionnables",
@@ -364,7 +373,7 @@
         "subtitle": "Plus d'outils pour vous aider à réussir",
         "professionalReports": {
         "title": "Rapports professionnels",
-"description": "Générez des rapports PDF prêts à être partagés, avec toutes les informations essentielles. Fournissez à vos clients des données claires et détaillées."
+"description": "Générez des rapports PDF exportables avec toutes les informations essentielles. Partagez des informations claires et détaillées avec n'importe qui."
 
         },
         "seoAnalysis": {
@@ -405,7 +414,7 @@
       "ourStory": {
         "title": "Notre histoire",
         "paragraph1": "Serpixa est né d'une observation simple : les outils SEO étaient soit trop complexes pour les petites entreprises, soit trop chers pour les entreprises en croissance. Nous avons vu un vide dans le marché pour une plateforme qui combine des analyses puissantes avec la facilité d'utilisation.",
-        "paragraph2": "Nous visons à aider les professionnels SEO et les entreprises à améliorer leur visibilité de recherche. Notre plateforme utilise une technologie moderne et des sources de données de qualité pour fournir des insights actionnables.",
+        "paragraph2": "Nous visons à aider les entreprises à améliorer leur visibilité. Notre plateforme utilise une technologie moderne et des sources de données de qualité pour fournir des insights actionnables.",
         "paragraph3": "Serpixa est conçu pour les utilisateurs de toutes tailles, des entrepreneurs individuels aux agences, tous unis par un objectif : obtenir de meilleurs classements de recherche et développer leur présence en ligne.",
         "mission": {
           "title": "Notre mission",
@@ -554,7 +563,7 @@
     "sidebar": {
       "dashboard": "Tableau de bord",
       "seoAudits": "Audits SEO",
-      "geoAudits": "Audits GEO",
+      "localSeoAudits": "Audits SEO locaux",
       "gbpAudits": "Audits GBP",
       "aiContent": "Contenu IA",
       "reports": "Rapports",
@@ -618,6 +627,7 @@
       "newAudit": "Nouvel audit",
       "reRunAudit": "Relancer l'audit",
       "exportPdf": "Exporter PDF",
+      "exporting": "Exportation...",
       "generating": "Génération...",
       "delete": "Supprimer",
       "view": "Voir",
@@ -671,10 +681,10 @@
         "seoAuditDeleteSuccess": "Audit supprimé avec succès",
         "seoAuditDeleteError": "Échec de la suppression de l'audit",
         "seoAuditRunError": "Échec de l'exécution de l'audit SEO",
-        "geoAuditCompletedSuccess": "Audit Geo terminé avec succès !",
-        "geoAuditDeleteSuccess": "Audit supprimé avec succès",
-        "geoAuditDeleteError": "Échec de la suppression de l'audit",
-        "geoAuditRunError": "Échec de l'exécution de l'audit Geo",
+        "localSeoAuditCompletedSuccess": "Audit SEO local terminé avec succès !",
+        "localSeoAuditDeleteSuccess": "Audit supprimé avec succès",
+        "localSeoAuditDeleteError": "Échec de la suppression de l'audit",
+        "localSeoAuditRunError": "Échec de l'exécution de l'audit SEO local",
         "gbpAuditCompletedSuccess": "Audit GBP terminé avec succès !",
         "gbpAuditDeleteSuccess": "Audit supprimé avec succès",
         "gbpAuditDeleteError": "Échec de la suppression de l'audit",
@@ -819,12 +829,12 @@
         "failedToLoadAudit": "Échec du chargement de l'audit",
         "errorLoadingAudit": "Une erreur s'est produite lors du chargement de l'audit",
         "backToAudits": "Retour aux audits",
-        "auditFailed": "Échec de l'audit"
+      "auditFailed": "Échec de l'audit"
       }
     },
-    "geoAudit": {
+    "localSeoAudit": {
       "new": {
-        "title": "Nouvel audit GEO",
+        "title": "Nouvel audit SEO local",
         "subtitle": "Analysez la visibilité de recherche locale et le paysage concurrentiel",
         "whatWillBeAnalyzed": "Que sera analysé ?",
         "localVisibility": "Score de visibilité locale et classements",
@@ -849,7 +859,7 @@
         "googleDomainHelp": "Sélectionnez le domaine Google pour votre marché cible",
         "googleDomainPlaceholder": "Sélectionner le domaine Google",
         "cityHelpDetailed": "La ville où vous souhaitez analyser les résultats de recherche locale (ex. \"New York\", \"Bruxelles\", \"Paris\")",
-        "countryHelpDetailed": "Le pays pour l'analyse de recherche locale (utilisé si la ville n'est pas fournie, ex. \"États-Unis\", \"Belgique\")",
+        "countryHelpDetailed": "Sélectionnez le pays où vous souhaitez analyser les résultats de recherche locale",
         "businessNameHelpDetailed": "Laissez vide pour voir tous les concurrents. Si fourni, nous trouverons votre entreprise dans les résultats.",
         "keywordHelpDetailed": "Le terme de recherche que vous souhaitez analyser pour les résultats locaux",
         "showAdvanced": "Afficher les options avancées",
@@ -858,15 +868,15 @@
         "locale": "Paramètres régionaux",
         "localeHelp": "Sélectionnez les paramètres régionaux pour l'audit",
         "device": "Appareil",
-        "runAudit": "Lancer l'audit GEO",
+        "runAudit": "Lancer l'audit SEO local",
         "runningAudit": "Audit en cours..."
       },
       "list": {
-        "title": "Audits GEO",
-        "subtitle": "Consultez et gérez votre historique d'audits GEO",
+        "title": "Audits SEO locaux",
+        "subtitle": "Consultez et gérez votre historique d'audits SEO locaux",
         "searchPlaceholder": "Rechercher par nom d'entreprise...",
         "noAudits": "Aucun audit pour le moment",
-        "noAuditsDescription": "Commencez par créer votre premier audit GEO",
+        "noAuditsDescription": "Commencez par créer votre premier audit SEO local",
         "createNewAudit": "Créer un nouvel audit",
         "totalAudits": "Total des audits",
         "avgVisibility": "Visibilité moyenne",
@@ -874,7 +884,7 @@
         "completed": "Complété"
       },
       "view": {
-        "title": "Résultats de l'audit GEO",
+        "title": "Résultats de l'audit SEO local",
         "localVisibilityScore": "Score de visibilité locale",
         "totalCompetitors": "Total des concurrents",
         "totalRecommendations": "Total des recommandations",
@@ -935,10 +945,10 @@
         "businessName": "Nom de l'entreprise",
         "businessNamePlaceholder": "ex. Mon Restaurant",
         "businessNameHelp": "Optionnel si le lien GBP est fourni",
-        "businessNameHelpDetailed": "Le nom de votre entreprise tel qu'il apparaît sur le profil Google Business",
+        "businessNameHelpDetailed": "Le nom de votre entreprise tel qu'il apparaît sur le profil Google Business (optionnel)",
         "gbpLink": "Lien GBP",
         "gbpLinkPlaceholder": "https://www.google.com/maps/place/...",
-        "gbpLinkHelp": "Lien direct vers votre profil Google Business (optionnel, mais aide à trouver votre entreprise plus rapidement)",
+        "gbpLinkHelp": "Lien direct vers votre profil Google Business (requis)",
         "gbpLinkOptional": "Optionnel si le nom de l'entreprise est fourni",
         "location": "Localisation",
         "locationPlaceholder": "ex. États-Unis, New York",
@@ -952,6 +962,7 @@
         "runAudit": "Lancer l'audit GBP",
         "runningAudit": "Audit en cours...",
         "businessNameOrGbpRequired": "Le nom de l'entreprise ou le lien GBP est requis",
+        "gbpLinkRequired": "Le lien GBP est requis",
         "validUrlRequired": "Veuillez entrer une URL valide"
       },
       "list": {
@@ -1201,6 +1212,7 @@
     "hidePassword": "Masquer le mot de passe"
   },
   "navbar": {
+    "home": "Accueil",
     "whySerpixa": "Pourquoi Serpixa",
     "aboutUs": "À propos de nous",
     "features": "Fonctionnalités",

@@ -99,14 +99,14 @@ export default function GeoAuditListPage() {
             {isEmpty ? (
               <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-12 text-center">
                 <HiLocationMarker className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{t("dashboard.geoAudit.list.noAudits")}</h3>
-                <p className="text-gray-600 mb-6">{t("dashboard.geoAudit.list.noAuditsDescription")}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{t("dashboard.localSeoAudit.list.noAudits")}</h3>
+                <p className="text-gray-600 mb-6">{t("dashboard.localSeoAudit.list.noAuditsDescription")}</p>
                 <button
                   onClick={() => router.push("/dashboard/geo-audit/new")}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
                 >
                   <HiPlus className="w-5 h-5" />
-                  <span>{t("dashboard.geoAudit.list.createNewAudit")}</span>
+                  <span>{t("dashboard.localSeoAudit.list.createNewAudit")}</span>
                 </button>
               </div>
             ) : (
@@ -116,7 +116,7 @@ export default function GeoAuditListPage() {
                   <div className="relative">
                     <input
                       type="text"
-                      placeholder={t("dashboard.geoAudit.list.searchPlaceholder")}
+                      placeholder={t("dashboard.localSeoAudit.list.searchPlaceholder")}
                       value={searchQuery}
                       onChange={handleSearchChange}
                       className="w-full px-4 py-2.5 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"

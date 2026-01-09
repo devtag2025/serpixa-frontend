@@ -13,13 +13,67 @@ const translationsCache = {};
 
 const I18nContext = createContext();
 
+// Supported locales
+const supportedLocales = ['en', 'fr', 'nl'];
+
+// Map browser language to supported locale
+const getBrowserLocale = () => {
+  if (typeof window === "undefined") return null;
+  
+  // Get browser language (e.g., "fr-FR", "nl-NL", "en-US", "fr", "nl")
+  const browserLang = navigator.language || navigator.userLanguage;
+  
+  if (!browserLang) return null;
+  
+  // Extract base language code (e.g., "fr" from "fr-FR")
+  const baseLang = browserLang.split('-')[0].toLowerCase();
+  
+  // Check if base language is supported
+  if (supportedLocales.includes(baseLang)) {
+    return baseLang;
+  }
+  
+  // Check full language code (e.g., "fr-FR", "nl-NL")
+  const fullLang = browserLang.toLowerCase();
+  if (supportedLocales.includes(fullLang)) {
+    return fullLang;
+  }
+  
+  // Try to map common variations
+  const langMap = {
+    'fr-be': 'fr',
+    'nl-be': 'nl',
+    'fr-ca': 'fr',
+    'fr-ch': 'fr',
+    'nl-nl': 'nl',
+    'fr-fr': 'fr',
+  };
+  
+  if (langMap[fullLang]) {
+    return langMap[fullLang];
+  }
+  
+  return null;
+};
+
 export function I18nProvider({ children, locale: initialLocale = "en" }) {
-  // Initialize locale from localStorage if available (client-side only)
+  // Initialize locale from localStorage, browser language, or fallback to initialLocale
   const getInitialLocale = () => {
     if (typeof window !== "undefined") {
+      // Priority 1: Check localStorage (user's saved preference)
       const savedLocale = localStorage.getItem("locale");
-      return savedLocale || initialLocale;
+      if (savedLocale && supportedLocales.includes(savedLocale)) {
+        return savedLocale;
+      }
+      
+      // Priority 2: Detect browser language (only on first visit)
+      const browserLocale = getBrowserLocale();
+      if (browserLocale) {
+        return browserLocale;
+      }
     }
+    
+    // Priority 3: Fallback to initialLocale (default: "en")
     return initialLocale;
   };
 

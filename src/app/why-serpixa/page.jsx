@@ -66,8 +66,8 @@ export default function WhySerpixaPage() {
     },
     {
       icon: HiOfficeBuilding,
-      titleKey: "landing.whySerpixa.whatYouGet.geoAudit.title",
-      descriptionKey: "landing.whySerpixa.whatYouGet.geoAudit.description",
+      titleKey: "landing.whySerpixa.whatYouGet.localSeoAudit.title",
+      descriptionKey: "landing.whySerpixa.whatYouGet.localSeoAudit.description",
       color: "from-purple-500 to-purple-600"
     },
     {
@@ -371,9 +371,9 @@ export default function WhySerpixaPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               {t("landing.whySerpixa.whyChoose.title")}
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            {/* <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               {t("landing.whySerpixa.whyChoose.subtitle")}
-            </p>
+            </p> */}
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">

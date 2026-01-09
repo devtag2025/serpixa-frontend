@@ -20,7 +20,7 @@ export default function RecommendationsTable({ recommendations }) {
   return (
     <div className="mb-4 sm:mb-6 bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm overflow-hidden">
       <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-gray-200 sticky top-0 bg-white z-10">
-        <h2 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900">{t("dashboard.geoAudit.view.recommendations")}</h2>
+        <h2 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900">{t("dashboard.localSeoAudit.view.recommendations")}</h2>
       </div>
       
       {/* Mobile Card View */}

@@ -12,17 +12,14 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
-  const gbpLink = watch("gbpLink");
-  const businessName = watch("businessName");
-
   const handleFormSubmit = (data) => {
     const payload = {
-      businessName: data.businessName?.trim() || null,
-      gbpLink: data.gbpLink?.trim() || null,
+      // Only include businessName if it has a value (don't send null)
+      ...(data.businessName?.trim() && { businessName: data.businessName.trim() }),
+      gbpLink: data.gbpLink?.trim(), // Required, always include
       ...(data.locale && { locale: data.locale }),
     };
 
@@ -34,7 +31,7 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
       {/* Business Name */}
       <div>
         <label className="block text-sm font-semibold text-gray-900 mb-2">
-          {t("dashboard.gbpAudit.form.businessName")} 
+          {t("dashboard.gbpAudit.form.businessName")} <span className="text-gray-400">({t("dashboard.common.optional")})</span>
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -44,12 +41,6 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
             type="text"
             placeholder={t("dashboard.gbpAudit.form.businessNamePlaceholder")}
             {...register("businessName", {
-              validate: (value) => {
-                if (!value && !gbpLink) {
-                  return t("dashboard.gbpAudit.form.businessNameOrGbpRequired");
-                }
-                return true;
-              },
               maxLength: {
                 value: 200,
                 message: t("dashboard.gbpAudit.form.businessName") + " must be less than 200 characters",
@@ -71,7 +62,7 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
       {/* GBP Link */}
       <div>
         <label className="block text-sm font-semibold text-gray-900 mb-2">
-          {t("dashboard.gbpAudit.form.gbpLink")} 
+          {t("dashboard.gbpAudit.form.gbpLink")} <span className="text-red-500">*</span>
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -81,12 +72,10 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
             type="text"
             placeholder={t("dashboard.gbpAudit.form.gbpLinkPlaceholder")}
             {...register("gbpLink", {
+              required: t("dashboard.gbpAudit.form.gbpLinkRequired") || "GBP Link is required",
               validate: (value) => {
-                if (!value && !businessName) {
-                  return t("dashboard.gbpAudit.form.businessNameOrGbpRequired");
-                }
                 if (value && !isValidUrlFormat(value)) {
-                  return t("dashboard.gbpAudit.form.validUrlRequired") + " (e.g., example.com, www.example.com, or https://example.com)";
+                  return t("dashboard.gbpAudit.form.validUrlRequired") + " (e.g., https://www.google.com/maps/place/...)";
                 }
                 return true;
               },

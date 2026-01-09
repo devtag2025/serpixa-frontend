@@ -25,6 +25,11 @@ export default function Navbar() {
 
   const navLinks = [
     {
+      label: t("navbar.home"),
+      href: "/",
+      hasDropdown: false,
+    },
+    {
       label: t("navbar.whySerpixa"),
       href: "/why-serpixa",
       hasDropdown: false,
@@ -87,8 +92,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
+          {/* Logo - Left */}
+          <div className="flex items-center justify-start flex-shrink-0 md:pr-15">
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
                 <svg
@@ -111,18 +116,18 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-6">
+          {/* Desktop Navigation - Center */}
+          <div className="hidden md:flex md:items-center md:justify-center md:flex-1 md:gap-x-4 lg:gap-x-6 xl:gap-x-8">
             {navLinks.map((link) => (
               <div key={link.label} className="relative group">
                 {link.hasDropdown ? (
-                  <button
+                  <Link
                     onClick={() => toggleDropdown(link.label)}
-                    className="flex items-center text-gray-700 hover:text-primary font-medium text-sm transition-colors"
+                    className="flex items-center text-gray-700 hover:text-primary font-medium text-sm transition-colors whitespace-nowrap"
                   >
                     {link.label}
                     <svg
-                      className="ml-1 w-4 h-4"
+                      className="ml-1 w-4 h-4 flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -134,11 +139,11 @@ export default function Navbar() {
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
-                  </button>
+                  </Link>
                 ) : (
                   <Link
                     href={link.href}
-                    className={`flex items-center font-medium text-sm transition-colors ${
+                    className={`flex items-center font-medium text-sm transition-colors whitespace-nowrap ${
                       isActiveLink(link.href)
                         ? "text-primary"
                         : "text-gray-700 hover:text-gray-900"
@@ -166,8 +171,8 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right Side Actions */}
-          <div className="hidden md:flex md:items-center md:space-x-4">
+          {/* Right Side Actions - Right */}
+          <div className="hidden md:flex md:items-center md:justify-end md:space-x-4 md:flex-shrink-0">
             <LanguageSwitcher />
             {isLoading ? (
               <div className="w-8 h-8 border-2 border-gray-300 border-t-primary rounded-full animate-spin"></div>
@@ -235,7 +240,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Actions - Language Switcher and Menu Button */}
-          <div className="md:hidden flex items-center space-x-3">
+          <div className="md:hidden flex items-center justify-end space-x-3">
             <LanguageSwitcher />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

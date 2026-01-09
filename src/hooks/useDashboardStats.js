@@ -36,7 +36,7 @@ const transformCredits = (creditsData, t) => {
       icon: HiSearch,
     },
     {
-      title: t("dashboard.sidebar.geoAudits"),
+      title: t("dashboard.sidebar.localSeoAudits"),
       used: credits.geo?.used || 0,
       total: credits.geo?.available || 0,
       remaining: credits.geo?.remaining || 0,

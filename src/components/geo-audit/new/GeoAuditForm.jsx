@@ -1,22 +1,36 @@
 "use client";
-// import { useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { HiSearch, HiLocationMarker, HiGlobe, HiOfficeBuilding, HiLink } from "react-icons/hi";
+import { HiSearch, HiLocationMarker, HiOfficeBuilding } from "react-icons/hi";
 // import { HiDeviceMobile } from "react-icons/hi"; // Used in commented advanced options
 import { useTranslation } from "@/i18n/context";
+import LocalSeoCountrySelect from "./LocalSeoCountrySelect";
 
 export default function GeoAuditForm({ onSubmit, isPending }) {
   const { t } = useTranslation();
-  // const [showAdvanced, setShowAdvanced] = useState(false);
   const {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm();
 
-  // const googleDomain = watch("googleDomain"); // Commented out - domain is now auto-set based on language
   const country = watch("country");
+
+  // Map countries to their Google domains
+  const countryToGoogleDomain = {
+    'France': '.fr',
+    'Belgium': '.be',
+    'Netherlands': '.nl',
+  };
+
+  // Automatically set Google domain when country changes
+  useEffect(() => {
+    if (country && countryToGoogleDomain[country]) {
+      setValue("googleDomain", countryToGoogleDomain[country], { shouldValidate: true });
+    }
+  }, [country, setValue]);
 
   // Map Google domains to countries (kept for reference)
   // const domainToCountry = {
@@ -93,7 +107,7 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
         {/* Keyword */}
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-2">
-            {t("dashboard.geoAudit.form.keyword")} <span className="text-red-500">*</span>
+            {t("dashboard.localSeoAudit.form.keyword")} <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -101,12 +115,12 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
             </div>
             <input
               type="text"
-              placeholder={t("dashboard.geoAudit.form.keywordPlaceholder")}
+              placeholder={t("dashboard.localSeoAudit.form.keywordPlaceholder")}
               {...register("keyword", {
-                required: t("dashboard.geoAudit.form.keyword") + " is required",
+                required: t("dashboard.localSeoAudit.form.keyword") + " is required",
                 maxLength: {
                   value: 200,
-                  message: t("dashboard.geoAudit.form.keyword") + " must be less than 200 characters",
+                  message: t("dashboard.localSeoAudit.form.keyword") + " must be less than 200 characters",
                 },
               })}
               className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
@@ -118,14 +132,14 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
             </p>
           )}
           <p className="mt-2 text-xs text-gray-500">
-            {t("dashboard.geoAudit.form.keywordHelpDetailed")}
+            {t("dashboard.localSeoAudit.form.keywordHelpDetailed")}
           </p>
         </div>
 
         {/* Business Name */}
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-2">
-            {t("dashboard.geoAudit.form.businessName")} <span className="text-gray-400">({t("dashboard.common.optional")})</span>
+            {t("dashboard.localSeoAudit.form.businessName")} <span className="text-gray-400">({t("dashboard.common.optional")})</span>
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -133,11 +147,11 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
             </div>
             <input
               type="text"
-              placeholder={t("dashboard.geoAudit.form.businessNamePlaceholder")}
+              placeholder={t("dashboard.localSeoAudit.form.businessNamePlaceholder")}
               {...register("businessName", {
                 maxLength: {
                   value: 200,
-                  message: t("dashboard.geoAudit.form.businessName") + " must be less than 200 characters",
+                  message: t("dashboard.localSeoAudit.form.businessName") + " must be less than 200 characters",
                 },
               })}
               className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
@@ -149,7 +163,7 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
             </p>
           )}
           <p className="mt-2 text-xs text-gray-500">
-            {t("dashboard.geoAudit.form.businessNameHelpDetailed")}
+            {t("dashboard.localSeoAudit.form.businessNameHelpDetailed")}
           </p>
         </div>
       </div>
@@ -159,7 +173,7 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
         {/* City */}
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-2">
-            {t("dashboard.geoAudit.form.city")} <span className="text-red-500">*</span>
+            {t("dashboard.localSeoAudit.form.city")} <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -167,12 +181,12 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
             </div>
             <input
               type="text"
-              placeholder={t("dashboard.geoAudit.form.cityPlaceholder")}
+              placeholder={t("dashboard.localSeoAudit.form.cityPlaceholder")}
               {...register("city", {
-                required: t("dashboard.geoAudit.form.city") + " is required",
+                required: t("dashboard.localSeoAudit.form.city") + " is required",
                 maxLength: {
                   value: 200,
-                  message: t("dashboard.geoAudit.form.city") + " must be less than 200 characters",
+                  message: t("dashboard.localSeoAudit.form.city") + " must be less than 200 characters",
                 },
               })}
               className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
@@ -184,71 +198,31 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
             </p>
           )}
           <p className="mt-2 text-xs text-gray-500">
-            {t("dashboard.geoAudit.form.cityHelpDetailed")}
+            {t("dashboard.localSeoAudit.form.cityHelpDetailed")}
           </p>
         </div>
 
         {/* Country */}
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-2">
-            {t("dashboard.geoAudit.form.country")} <span className="text-red-500">*</span>
+            {t("dashboard.localSeoAudit.form.country")} <span className="text-red-500">*</span>
           </label>
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <HiGlobe className="h-5 w-5 text-gray-400" />
-            </div>
-            <input
-              type="text"
-              placeholder={t("dashboard.geoAudit.form.countryPlaceholder")}
-              {...register("country", {
-                required: t("dashboard.geoAudit.form.country") + " is required",
-                maxLength: {
-                  value: 200,
-                  message: t("dashboard.geoAudit.form.country") + " must be less than 200 characters",
-                },
-              })}
-              className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
-            />
-          </div>
+          <LocalSeoCountrySelect
+            register={register}
+            defaultValue=""
+            className="w-full"
+          />
           {errors.country && (
             <p className="mt-2 text-sm text-red-600">
               {errors.country.message}
             </p>
           )}
           <p className="mt-2 text-xs text-gray-500">
-            {t("dashboard.geoAudit.form.countryHelpDetailed")}
+            {t("dashboard.localSeoAudit.form.countryHelpDetailed")}
           </p>
         </div>
       </div>
 
-      {/* Row 3: Google Domain */}
-      <div>
-        <label className="block text-sm font-semibold text-gray-900 mb-2">
-          {t("dashboard.geoAudit.form.googleDomain")}
-        </label>
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <HiLink className="h-5 w-5 text-gray-400" />
-          </div>
-          <select
-            {...register("googleDomain")}
-            className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 bg-white"
-          >
-            <option value="">{t("dashboard.geoAudit.form.googleDomainPlaceholder")}</option>
-            <option value=".be">.be (Belgium)</option>
-            <option value=".fr">.fr (France)</option>
-            <option value=".nl">.nl (Netherlands)</option>
-          </select>
-        </div>
-        {errors.googleDomain && (
-          <p className="mt-2 text-sm text-red-600">
-            {errors.googleDomain.message}
-          </p>
-        )}
-        <p className="mt-2 text-xs text-gray-500">
-          {t("dashboard.geoAudit.form.googleDomainHelp")}
-        </p>
-      </div>
 
       {/* Advanced Options - Commented out */}
       {/* 
@@ -258,7 +232,7 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
           onClick={() => setShowAdvanced(!showAdvanced)}
           className="text-sm font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
         >
-          {showAdvanced ? t("dashboard.geoAudit.form.hideAdvanced") : t("dashboard.geoAudit.form.showAdvanced")}
+          {showAdvanced ? t("dashboard.localSeoAudit.form.hideAdvanced") : t("dashboard.localSeoAudit.form.showAdvanced")}
           <span className="ml-1">{showAdvanced ? "−" : "+"}</span>
         </button>
 
@@ -266,7 +240,7 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
           <div className="mt-4 space-y-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
             <div>
               <label className="block text-sm font-semibold text-gray-900 mb-2">
-                {t("dashboard.geoAudit.form.device")}
+                {t("dashboard.localSeoAudit.form.device")}
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -283,7 +257,7 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
               </select>
               </div>
               <p className="mt-2 text-xs text-gray-500">
-                {t("dashboard.geoAudit.form.deviceHelp") || "Select the device type for the audit"}
+                {t("dashboard.localSeoAudit.form.deviceHelp") || "Select the device type for the audit"}
               </p>
             </div>
           </div>
@@ -319,12 +293,12 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 />
               </svg>
-              <span>{t("dashboard.geoAudit.form.runningAudit")}</span>
+              <span>{t("dashboard.localSeoAudit.form.runningAudit")}</span>
             </>
           ) : (
             <>
               <HiSearch className="h-5 w-5" />
-              <span>{t("dashboard.geoAudit.form.runAudit")}</span>
+              <span>{t("dashboard.localSeoAudit.form.runAudit")}</span>
             </>
           )}
         </button>
