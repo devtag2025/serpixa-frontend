@@ -129,18 +129,26 @@
   "badge": "FAQ",
   "title": "Frequently Asked Questions",
   "subtitle": "Everything you need to know about Serpixa",
-  "question1": "Why doesn’t my website appear on Google?",
-  "answer1": "Because Google compares your page to those of your competitors. Serpixa shows exactly where the gap is and what needs to be improved.",
+  "question1": "How do I get started?",
+  "answer1": "Simply create an account, choose between the Starter Pack or Premium Pack, and start running your first audit. The platform is designed to be intuitive and easy to use from day one.",
   "question2": "Does Serpixa replace an SEO expert?",
   "answer2": "No. Serpixa helps you make better decisions faster. It simplifies analysis and prioritizes actions.",
-  "question3": "What’s the difference between Semrush and Serpixa?",
+  "question3": "What's the difference between Semrush and Serpixa?",
   "answer3": "Semrush provides a large amount of data. Serpixa delivers a clear decision for a specific page, with concrete and actionable steps.",
   "question4": "Is SEO still useful with AI?",
   "answer4": "Yes. AI systems rely on content that is clear, structured, and credible. Serpixa helps create pages that are understandable by Google and AI assistants.",
   "question5": "What plans do you offer?",
   "answer5": "We offer two main plans: Starter Pack and Premium Pack. The Starter Pack is ideal for getting started with SEO audits, while the Premium Pack includes advanced features, more audits, and AI generations. Both plans include access to all core features.",
-  "question6": "How do I get started?",
-  "answer6": "Simply create an account, choose between the Starter Pack or Premium Pack, and start running your first audit. The platform is designed to be intuitive and easy to use from day one."
+  "question6": "Why doesn't my website appear on Google?",
+  "answer6": "Because Google compares your page to those of your competitors. Serpixa shows exactly where the gap is and what needs to be improved.",
+  "question7": "How accurate are the SEO audit results?",
+  "answer7": "Our audits analyze real search engine data to show you where your page stands. We check keyword rankings, on-page elements, and technical issues to give you a clear picture of what needs improvement.",
+  "question8": "Can I cancel my subscription anytime?",
+  "answer8": "Yes, you can cancel your subscription at any time. There are no long-term contracts, and you'll continue to have access until the end of your billing period.",
+  "question9": "What makes your AI content generation different?",
+  "answer9": "Our AI content is specifically trained for SEO optimization. It generates content with proper keyword density, meta tags, FAQ sections, and CTAs - all optimized for search engines while maintaining high quality.",
+  "question10": "Can strong local positioning (Local SEO Audit) improve your visibility in AI-generated answers?",
+  "answer10": "Yes. By strengthening your local presence, a Local SEO Audit improves the geographic signals that search engines use to identify relevant businesses in a specific area. When users ask local questions, these signals can also be leveraged in automated or enriched responses, including those delivered through AI-assisted interfaces. A Local SEO Audit does not guarantee automatic citation by an AI, but it lays the foundation for strong local visibility, which is now essential in an increasingly conversational search ecosystem."
 },
 
     "cta": {
@@ -220,7 +228,7 @@
         },
         "professionalReports": {
           "title": "Professional Reports",
-          "description": "Generate client-ready PDF reports with all the essential insights. Share clear, detailed information with your clients."
+          "description": "Generate exportable PDF reports with all the essential insights. Share clear, detailed information with anyone."
         },
         "actionableInsights": {
           "title": "Actionable Insights",
@@ -364,7 +372,7 @@
         "subtitle": "More tools to help you succeed",
         "professionalReports": {
          "title": "Professional Reports",
-"description": "Generate client-ready PDF reports with all the essential insights. Share clear, detailed information with your clients."
+"description": "Generate exportable PDF reports with all the essential insights. Share clear, detailed information with anyone."
 
         },
         "seoAnalysis": {

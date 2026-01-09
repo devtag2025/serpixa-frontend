@@ -129,18 +129,26 @@
   "badge": "FAQ",
   "title": "Questions fréquemment posées",
   "subtitle": "Tout ce que vous devez savoir sur Serpixa",
-  "question1": "Pourquoi mon site n’apparaît pas sur Google ?",
-  "answer1": "Parce que Google compare votre page à celles de vos concurrents. Serpixa montre précisément où se situe l’écart et quoi améliorer.",
+  "question1": "Comment commencer ?",
+  "answer1": "Il suffit de créer un compte, de choisir entre le Starter Pack ou le Premium Pack, puis de lancer votre premier audit. L'interface est conçue pour être simple et intuitive dès le départ.",
   "question2": "Serpixa remplace-t-il un expert SEO ?",
-  "answer2": "Non. Serpixa aide à prendre de meilleures décisions plus rapidement. Il simplifie l’analyse et priorise les actions.",
+  "answer2": "Non. Serpixa aide à prendre de meilleures décisions plus rapidement. Il simplifie l'analyse et priorise les actions.",
   "question3": "Quelle est la différence avec Semrush ?",
   "answer3": "Semrush fournit beaucoup de données. Serpixa fournit une décision claire sur une page précise, avec des actions concrètes.",
-  "question4": "Le SEO est-il encore utile avec l’IA ?",
-  "answer4": "Oui. Les IA s’appuient sur des contenus clairs, structurés et crédibles. Serpixa aide à créer des pages compréhensibles par Google et les assistants IA.",
+  "question4": "Le SEO est-il encore utile avec l'IA ?",
+  "answer4": "Oui. Les IA s'appuient sur des contenus clairs, structurés et crédibles. Serpixa aide à créer des pages compréhensibles par Google et les assistants IA.",
   "question5": "Quels plans proposez-vous ?",
-  "answer5": "Nous proposons deux plans principaux : Starter Pack et Premium Pack. Le Starter Pack est idéal pour débuter avec les audits SEO, tandis que le Premium Pack inclut des fonctionnalités avancées, plus d’audits et des générations IA. Tous les plans donnent accès aux fonctionnalités essentielles.",
-  "question6": "Comment commencer ?",
-  "answer6": "Il suffit de créer un compte, de choisir entre le Starter Pack ou le Premium Pack, puis de lancer votre premier audit. L’interface est conçue pour être simple et intuitive dès le départ."
+  "answer5": "Nous proposons deux plans principaux : Starter Pack et Premium Pack. Le Starter Pack est idéal pour débuter avec les audits SEO, tandis que le Premium Pack inclut des fonctionnalités avancées, plus d'audits et des générations IA. Tous les plans donnent accès aux fonctionnalités essentielles.",
+  "question6": "Pourquoi mon site n'apparaît pas sur Google ?",
+  "answer6": "Parce que Google compare votre page à celles de vos concurrents. Serpixa montre précisément où se situe l'écart et quoi améliorer.",
+  "question7": "Quelle est la précision des résultats d'audit SEO ?",
+  "answer7": "Nos audits analysent les données réelles des moteurs de recherche pour vous montrer où se situe votre page. Nous vérifions les classements de mots-clés, les éléments on-page et les problèmes techniques pour vous donner une image claire de ce qui doit être amélioré.",
+  "question8": "Puis-je annuler mon abonnement à tout moment ?",
+  "answer8": "Oui, vous pouvez annuler votre abonnement à tout moment. Il n'y a pas de contrats à long terme, et vous continuerez à avoir accès jusqu'à la fin de votre période de facturation.",
+  "question9": "Qu'est-ce qui rend votre génération de contenu IA différente ?",
+  "answer9": "Notre contenu IA est spécifiquement formé pour l'optimisation SEO. Il génère du contenu avec une densité de mots-clés appropriée, des balises meta, des sections FAQ et des appels à l'action - le tout optimisé pour les moteurs de recherche tout en maintenant une haute qualité.",
+  "question10": "Un bon positionnement local (Audit SEO Local) peut-il renforcer votre visibilité dans les réponses IA ?",
+  "answer10": "Oui. En renforçant votre présence locale, l'Audit Local SEO améliore les signaux géographiques que les moteurs de recherche utilisent pour identifier les acteurs pertinents d'une zone donnée. Lorsque des utilisateurs posent des questions locales, ces signaux peuvent également être exploités dans des réponses automatisées ou enrichies, y compris via des interfaces assistées par IA. L'Audit Local SEO ne promet pas une citation automatique par une IA, mais il pose les bases d'une visibilité locale solide, aujourd'hui indispensable dans un écosystème de recherche de plus en plus conversationnel."
 },
 
 
@@ -221,7 +229,7 @@
         },
         "professionalReports": {
           "title": "Rapports professionnels",
-          "description": "Générez des rapports PDF prêts pour les clients avec votre branding. Impressionnez les clients avec des insights détaillés, des graphiques visuels et des recommandations actionnables."
+          "description": "Générez des rapports PDF exportables avec toutes les informations essentielles. Partagez des informations claires et détaillées avec n'importe qui."
         },
         "actionableInsights": {
           "title": "Insights actionnables",
@@ -365,7 +373,7 @@
         "subtitle": "Plus d'outils pour vous aider à réussir",
         "professionalReports": {
         "title": "Rapports professionnels",
-"description": "Générez des rapports PDF prêts à être partagés, avec toutes les informations essentielles. Fournissez à vos clients des données claires et détaillées."
+"description": "Générez des rapports PDF exportables avec toutes les informations essentielles. Partagez des informations claires et détaillées avec n'importe qui."
 
         },
         "seoAnalysis": {
