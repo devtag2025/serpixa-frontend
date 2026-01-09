@@ -16,6 +16,31 @@ export default function PlanCard({
 }) {
   const { t } = useTranslation();
 
+  // Map plan names to translation keys
+  const getPlanTranslationKey = (planName) => {
+    const planNameLower = planName?.toLowerCase() || "";
+    if (planNameLower.includes("starter")) {
+      return "landing.plans.starterPlan";
+    } else if (planNameLower.includes("premium")) {
+      return "landing.plans.premiumPlan";
+    }
+    return null;
+  };
+
+  // Get translated description, fallback to backend description
+  const getPlanDescription = () => {
+    const translationKey = getPlanTranslationKey(plan.name);
+    if (translationKey) {
+      const translated = t(`${translationKey}.description`);
+      // If translation exists and is not the same as the key, use it
+      if (translated && !translated.startsWith("landing.plans")) {
+        return translated;
+      }
+    }
+    // Fallback to backend description
+    return plan.description;
+  };
+
   // Format features/limits for display
   const formatFeatures = (limits) => {
     if (!limits) return [];
@@ -89,8 +114,8 @@ export default function PlanCard({
       </h3>
 
       {/* Description */}
-      {plan.description && (
-        <p className="text-sm text-gray-600 mb-4 sm:mb-6">{plan.description}</p>
+      {getPlanDescription() && (
+        <p className="text-sm text-gray-600 mb-4 sm:mb-6">{getPlanDescription()}</p>
       )}
 
       {/* Price */}

@@ -15,14 +15,52 @@ export default function AddonCard({
 }) {
   const { t } = useTranslation();
 
+  // Map addon names to translation keys
+  const getAddonTranslationKey = (addonName) => {
+    const nameLower = addonName?.toLowerCase() || "";
+    if (nameLower.includes("extra 10 seo audits") || nameLower.includes("10 seo")) {
+      return "landing.plans.extra10SeoAudits";
+    } else if (nameLower.includes("extra 10 local seo") || nameLower.includes("10 local seo")) {
+      return "landing.plans.extra10LocalSeoAudits";
+    } else if (nameLower.includes("extra 5 gbp") || nameLower.includes("5 gbp")) {
+      return "landing.plans.extra5GbpAudits";
+    } else if (nameLower.includes("extra 50 ai") || nameLower.includes("50 ai")) {
+      return "landing.plans.extra50AiGenerations";
+    }
+    return null;
+  };
+
+  // Get translated name and description, fallback to backend values
+  const getAddonName = () => {
+    const translationKey = getAddonTranslationKey(addon.name);
+    if (translationKey) {
+      const translated = t(`${translationKey}.name`);
+      if (translated && !translated.startsWith("landing.plans")) {
+        return translated;
+      }
+    }
+    return addon.name;
+  };
+
+  const getAddonDescription = () => {
+    const translationKey = getAddonTranslationKey(addon.name);
+    if (translationKey) {
+      const translated = t(`${translationKey}.description`);
+      if (translated && !translated.startsWith("landing.plans")) {
+        return translated;
+      }
+    }
+    return addon.description;
+  };
+
   return (
     <div className="group bg-white rounded-lg sm:rounded-2xl p-4 sm:p-6 border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 hover:border-primary/30">
       <h4 className="text-lg sm:text-xl text-start font-bold text-gray-900 mb-3 sm:mb-4 break-words">
-        {addon.name}
+        {getAddonName()}
       </h4>
 
-      {addon.description && (
-        <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 break-words">{addon.description}</p>
+      {getAddonDescription() && (
+        <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 break-words">{getAddonDescription()}</p>
       )}
 
       <div className="mb-4 sm:mb-6">
