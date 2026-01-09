@@ -44,6 +44,7 @@
         "3": "les agences marketing",
         "4": "toute entreprise qui dépend de sa visibilité en ligne"
       },
+      "finalStatement": "Pas besoin d'être un expert SEO pour faire les bons choix.",
       "startTrial": "Commencer"
     },
     "pricing": {
@@ -108,7 +109,7 @@
     },
     "reportPreview": {
       "badge": "Rapports",
-      "title": "Des rapports clairs et lisibles que vos clients comprendront réellement",
+      "title": "Des rapports clairs et lisibles",
       "subtitle": "Une fois votre audit terminé, Serpixa génère un rapport clair et facile à lire que vous pouvez partager directement avec votre client.",
       "valueProposition": "C’est l’un des principaux atouts de Serpixa. Il transforme des données SEO complexes en informations simples et exploitables afin que chacun puisse comprendre rapidement ce qui ne va pas, pourquoi c’est important et quelles actions entreprendre.",
       "benefits": {
@@ -405,7 +406,7 @@
       "ourStory": {
         "title": "Notre histoire",
         "paragraph1": "Serpixa est né d'une observation simple : les outils SEO étaient soit trop complexes pour les petites entreprises, soit trop chers pour les entreprises en croissance. Nous avons vu un vide dans le marché pour une plateforme qui combine des analyses puissantes avec la facilité d'utilisation.",
-        "paragraph2": "Nous visons à aider les professionnels SEO et les entreprises à améliorer leur visibilité de recherche. Notre plateforme utilise une technologie moderne et des sources de données de qualité pour fournir des insights actionnables.",
+        "paragraph2": "Nous visons à aider les entreprises à améliorer leur visibilité. Notre plateforme utilise une technologie moderne et des sources de données de qualité pour fournir des insights actionnables.",
         "paragraph3": "Serpixa est conçu pour les utilisateurs de toutes tailles, des entrepreneurs individuels aux agences, tous unis par un objectif : obtenir de meilleurs classements de recherche et développer leur présence en ligne.",
         "mission": {
           "title": "Notre mission",
@@ -554,7 +555,7 @@
     "sidebar": {
       "dashboard": "Tableau de bord",
       "seoAudits": "Audits SEO",
-      "geoAudits": "Audits GEO",
+      "localSeoAudits": "Audits SEO locaux",
       "gbpAudits": "Audits GBP",
       "aiContent": "Contenu IA",
       "reports": "Rapports",
@@ -618,6 +619,7 @@
       "newAudit": "Nouvel audit",
       "reRunAudit": "Relancer l'audit",
       "exportPdf": "Exporter PDF",
+      "exporting": "Exportation...",
       "generating": "Génération...",
       "delete": "Supprimer",
       "view": "Voir",
@@ -671,10 +673,10 @@
         "seoAuditDeleteSuccess": "Audit supprimé avec succès",
         "seoAuditDeleteError": "Échec de la suppression de l'audit",
         "seoAuditRunError": "Échec de l'exécution de l'audit SEO",
-        "geoAuditCompletedSuccess": "Audit Geo terminé avec succès !",
-        "geoAuditDeleteSuccess": "Audit supprimé avec succès",
-        "geoAuditDeleteError": "Échec de la suppression de l'audit",
-        "geoAuditRunError": "Échec de l'exécution de l'audit Geo",
+        "localSeoAuditCompletedSuccess": "Audit SEO local terminé avec succès !",
+        "localSeoAuditDeleteSuccess": "Audit supprimé avec succès",
+        "localSeoAuditDeleteError": "Échec de la suppression de l'audit",
+        "localSeoAuditRunError": "Échec de l'exécution de l'audit SEO local",
         "gbpAuditCompletedSuccess": "Audit GBP terminé avec succès !",
         "gbpAuditDeleteSuccess": "Audit supprimé avec succès",
         "gbpAuditDeleteError": "Échec de la suppression de l'audit",
@@ -819,12 +821,12 @@
         "failedToLoadAudit": "Échec du chargement de l'audit",
         "errorLoadingAudit": "Une erreur s'est produite lors du chargement de l'audit",
         "backToAudits": "Retour aux audits",
-        "auditFailed": "Échec de l'audit"
+      "auditFailed": "Échec de l'audit"
       }
     },
-    "geoAudit": {
+    "localSeoAudit": {
       "new": {
-        "title": "Nouvel audit GEO",
+        "title": "Nouvel audit SEO local",
         "subtitle": "Analysez la visibilité de recherche locale et le paysage concurrentiel",
         "whatWillBeAnalyzed": "Que sera analysé ?",
         "localVisibility": "Score de visibilité locale et classements",
@@ -849,7 +851,7 @@
         "googleDomainHelp": "Sélectionnez le domaine Google pour votre marché cible",
         "googleDomainPlaceholder": "Sélectionner le domaine Google",
         "cityHelpDetailed": "La ville où vous souhaitez analyser les résultats de recherche locale (ex. \"New York\", \"Bruxelles\", \"Paris\")",
-        "countryHelpDetailed": "Le pays pour l'analyse de recherche locale (utilisé si la ville n'est pas fournie, ex. \"États-Unis\", \"Belgique\")",
+        "countryHelpDetailed": "Sélectionnez le pays où vous souhaitez analyser les résultats de recherche locale",
         "businessNameHelpDetailed": "Laissez vide pour voir tous les concurrents. Si fourni, nous trouverons votre entreprise dans les résultats.",
         "keywordHelpDetailed": "Le terme de recherche que vous souhaitez analyser pour les résultats locaux",
         "showAdvanced": "Afficher les options avancées",
@@ -858,15 +860,15 @@
         "locale": "Paramètres régionaux",
         "localeHelp": "Sélectionnez les paramètres régionaux pour l'audit",
         "device": "Appareil",
-        "runAudit": "Lancer l'audit GEO",
+        "runAudit": "Lancer l'audit SEO local",
         "runningAudit": "Audit en cours..."
       },
       "list": {
-        "title": "Audits GEO",
-        "subtitle": "Consultez et gérez votre historique d'audits GEO",
+        "title": "Audits SEO locaux",
+        "subtitle": "Consultez et gérez votre historique d'audits SEO locaux",
         "searchPlaceholder": "Rechercher par nom d'entreprise...",
         "noAudits": "Aucun audit pour le moment",
-        "noAuditsDescription": "Commencez par créer votre premier audit GEO",
+        "noAuditsDescription": "Commencez par créer votre premier audit SEO local",
         "createNewAudit": "Créer un nouvel audit",
         "totalAudits": "Total des audits",
         "avgVisibility": "Visibilité moyenne",
@@ -874,7 +876,7 @@
         "completed": "Complété"
       },
       "view": {
-        "title": "Résultats de l'audit GEO",
+        "title": "Résultats de l'audit SEO local",
         "localVisibilityScore": "Score de visibilité locale",
         "totalCompetitors": "Total des concurrents",
         "totalRecommendations": "Total des recommandations",
@@ -935,10 +937,10 @@
         "businessName": "Nom de l'entreprise",
         "businessNamePlaceholder": "ex. Mon Restaurant",
         "businessNameHelp": "Optionnel si le lien GBP est fourni",
-        "businessNameHelpDetailed": "Le nom de votre entreprise tel qu'il apparaît sur le profil Google Business",
+        "businessNameHelpDetailed": "Le nom de votre entreprise tel qu'il apparaît sur le profil Google Business (optionnel)",
         "gbpLink": "Lien GBP",
         "gbpLinkPlaceholder": "https://www.google.com/maps/place/...",
-        "gbpLinkHelp": "Lien direct vers votre profil Google Business (optionnel, mais aide à trouver votre entreprise plus rapidement)",
+        "gbpLinkHelp": "Lien direct vers votre profil Google Business (requis)",
         "gbpLinkOptional": "Optionnel si le nom de l'entreprise est fourni",
         "location": "Localisation",
         "locationPlaceholder": "ex. États-Unis, New York",
@@ -952,6 +954,7 @@
         "runAudit": "Lancer l'audit GBP",
         "runningAudit": "Audit en cours...",
         "businessNameOrGbpRequired": "Le nom de l'entreprise ou le lien GBP est requis",
+        "gbpLinkRequired": "Le lien GBP est requis",
         "validUrlRequired": "Veuillez entrer une URL valide"
       },
       "list": {
@@ -1201,6 +1204,7 @@
     "hidePassword": "Masquer le mot de passe"
   },
   "navbar": {
+    "home": "Accueil",
     "whySerpixa": "Pourquoi Serpixa",
     "aboutUs": "À propos de nous",
     "features": "Fonctionnalités",

@@ -10,9 +10,9 @@ export default function GeoAuditHeader({ audit, onDownloadPDF, isDownloadingPDF 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
           <div className="flex-1 min-w-0">
-            <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">{t("dashboard.geoAudit.view.title")}</h1>
+            <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">{t("dashboard.localSeoAudit.view.title")}</h1>
             <div className="space-y-1">
-              <p className="text-xs sm:text-sm font-medium text-gray-900 break-words">{audit.businessName || t("dashboard.geoAudit.view.businessName")}</p>
+              <p className="text-xs sm:text-sm font-medium text-gray-900 break-words">{audit.businessName || t("dashboard.localSeoAudit.view.businessName")}</p>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
                 <HiLocationMarker className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
                 <span className="break-words">{audit.location}</span>
@@ -28,7 +28,7 @@ export default function GeoAuditHeader({ audit, onDownloadPDF, isDownloadingPDF 
               {isDownloadingPDF ? (
                 <>
                   <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  <span>{t("dashboard.common.generating")}</span>
+                  <span>{t("dashboard.common.exporting")}</span>
                 </>
               ) : (
                 <>

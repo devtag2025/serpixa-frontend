@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form";
 import { HiSparkles } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
-import LocaleSelect from "@/components/common/LocaleSelect";
+import AIContentLocaleSelect from "./AIContentLocaleSelect";
 
 export default function ContentGenerationForm({ onSubmit, isPending }) {
   const { t } = useTranslation();
@@ -55,7 +55,7 @@ export default function ContentGenerationForm({ onSubmit, isPending }) {
         {/* <label className="block text-sm font-semibold text-gray-900 mb-2">
           {t("dashboard.aiContent.form.locale")} <span className="text-gray-400">({t("dashboard.common.optional")})</span>
         </label> */}
-        <LocaleSelect register={register} />
+        <AIContentLocaleSelect register={register} />
         <p className="mt-2 text-xs text-gray-500">
           {t("dashboard.aiContent.form.localeHelp")}
         </p>

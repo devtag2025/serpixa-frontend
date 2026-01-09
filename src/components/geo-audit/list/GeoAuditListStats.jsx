@@ -18,7 +18,7 @@ export default function GeoAuditListStats({ audits }) {
           <div className="p-2 rounded-lg bg-blue-50">
             <HiLocationMarker className="w-4 h-4 text-blue-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.list.totalAudits")}</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.list.totalAudits")}</span>
         </div>
         <p className="text-2xl font-bold text-gray-900">{totalAudits}</p>
       </div>
@@ -28,7 +28,7 @@ export default function GeoAuditListStats({ audits }) {
           <div className="p-2 rounded-lg bg-emerald-50">
             <HiLightningBolt className="w-4 h-4 text-emerald-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.list.avgVisibility")}</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.list.avgVisibility")}</span>
         </div>
         <p className="text-2xl font-bold text-gray-900">{avgScore}</p>
       </div>
@@ -38,7 +38,7 @@ export default function GeoAuditListStats({ audits }) {
           <div className="p-2 rounded-lg bg-purple-50">
             <HiUsers className="w-4 h-4 text-purple-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.list.totalCompetitors")}</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.list.totalCompetitors")}</span>
         </div>
         <p className="text-2xl font-bold text-gray-900">{totalCompetitors}</p>
       </div>
@@ -48,7 +48,7 @@ export default function GeoAuditListStats({ audits }) {
           <div className="p-2 rounded-lg bg-amber-50">
             <HiClock className="w-4 h-4 text-amber-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.list.completed")}</span>
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.list.completed")}</span>
         </div>
         <p className="text-2xl font-bold text-gray-900">{completedAudits}</p>
       </div>

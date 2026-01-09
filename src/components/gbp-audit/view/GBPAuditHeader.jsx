@@ -30,7 +30,7 @@ export default function GBPAuditHeader({ audit, onDownloadPDF, isDownloadingPDF 
               {isDownloadingPDF ? (
                 <>
                   <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  <span>{t("dashboard.common.generating")}</span>
+                  <span>{t("dashboard.common.exporting")}</span>
                 </>
               ) : (
                 <>

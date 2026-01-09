@@ -141,7 +141,7 @@ export default function CustomDropdown({
                     <div
                       key={option.value}
                       onClick={() => !isDisabled && handleSelect(option.value)}
-                      className={isDisabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}
+                      className={isDisabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer group"}
                     >
                       {renderOption(option, isSelected)}
                     </div>

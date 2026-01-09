@@ -19,16 +19,16 @@ export default function GeoAuditTable({ audits, onDelete }) {
                 <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.common.score")}</span>
               </th>
               <th className="px-6 py-3 text-left">
-                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.business")}</span>
+                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.business")}</span>
               </th>
               <th className="px-6 py-3 text-left">
                 <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.common.keyword")}</span>
               </th>
               <th className="px-6 py-3 text-left">
-                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.location")}</span>
+                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.location")}</span>
               </th>
               <th className="px-6 py-3 text-left">
-                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.competitors")}</span>
+                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.competitors")}</span>
               </th>
               <th className="px-6 py-3 text-left">
                 <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.common.status")}</span>
@@ -104,7 +104,7 @@ export default function GeoAuditTable({ audits, onDelete }) {
                             router.push(`/dashboard/geo-audit/${audit._id}`);
                           }}
                           className="p-2 text-gray-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
-                          title={t("dashboard.geoAudit.view.viewAudit")}
+                          title={t("dashboard.localSeoAudit.view.viewAudit")}
                         >
                           <HiEye className="w-4 h-4" />
                         </button>
@@ -114,7 +114,7 @@ export default function GeoAuditTable({ audits, onDelete }) {
                             onDelete(audit._id, e);
                           }}
                           className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                          title={t("dashboard.geoAudit.view.deleteAudit")}
+                          title={t("dashboard.localSeoAudit.view.deleteAudit")}
                         >
                           <HiTrash className="w-4 h-4" />
                         </button>

@@ -58,13 +58,13 @@ export default function GeoAuditResultsPage() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-4">
               <HiXCircle className="w-8 h-8 text-red-600" />
             </div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">{t("dashboard.geoAudit.view.failedToLoadAudit")}</h2>
-            <p className="text-gray-600 mb-6">{handleError(error) || t("dashboard.geoAudit.view.errorLoadingAudit")}</p>
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">{t("dashboard.localSeoAudit.view.failedToLoadAudit")}</h2>
+            <p className="text-gray-600 mb-6">{handleError(error) || t("dashboard.localSeoAudit.view.errorLoadingAudit")}</p>
             <button
               onClick={() => router.push("/dashboard/geo-audit")}
               className="px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
             >
-              {t("dashboard.geoAudit.view.backToAudits")}
+              {t("dashboard.localSeoAudit.view.backToAudits")}
             </button>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function GeoAuditResultsPage() {
                 <div className="flex items-start gap-2 sm:gap-3">
                   <HiXCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-sm sm:text-base font-semibold text-red-900 mb-1">{t("dashboard.geoAudit.view.auditFailed")}</h3>
+                    <h3 className="text-sm sm:text-base font-semibold text-red-900 mb-1">{t("dashboard.localSeoAudit.view.auditFailed")}</h3>
                     <p className="text-xs sm:text-sm text-red-700 break-words">{audit.error_message}</p>
                   </div>
                 </div>

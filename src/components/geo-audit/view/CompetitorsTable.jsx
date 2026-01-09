@@ -9,7 +9,7 @@ export default function CompetitorsTable({ competitors }) {
   return (
     <div className="mb-4 sm:mb-6 bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm overflow-hidden">
       <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-gray-200">
-        <h2 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900">{t("dashboard.geoAudit.view.nearbyCompetitors")}</h2>
+        <h2 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900">{t("dashboard.localSeoAudit.view.nearbyCompetitors")}</h2>
       </div>
       
       {/* Mobile Card View */}
@@ -40,7 +40,7 @@ export default function CompetitorsTable({ competitors }) {
             <div className="space-y-2">
               <div>
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
-                  {t("dashboard.geoAudit.view.name")}
+                  {t("dashboard.localSeoAudit.view.name")}
                 </p>
                 <p className="text-sm font-medium text-gray-900">{competitor.name || "—"}</p>
               </div>
@@ -48,25 +48,25 @@ export default function CompetitorsTable({ competitors }) {
                 <div className="grid grid-cols-1 gap-2 text-xs sm:text-sm">
                   {competitor.reviews !== null && competitor.reviews !== undefined && (
                     <div>
-                      <span className="text-gray-500">{t("dashboard.geoAudit.view.reviews")}: </span>
+                      <span className="text-gray-500">{t("dashboard.localSeoAudit.view.reviews")}: </span>
                       <span className="text-gray-700">{competitor.reviews || 0}</span>
                     </div>
                   )}
                   {competitor.distance && (
                     <div>
-                      <span className="text-gray-500">{t("dashboard.geoAudit.view.distance")}: </span>
+                      <span className="text-gray-500">{t("dashboard.localSeoAudit.view.distance")}: </span>
                       <span className="text-gray-700">{competitor.distance}</span>
                     </div>
                   )}
                   {competitor.address && (
                     <div>
-                      <span className="text-gray-500">{t("dashboard.geoAudit.view.address")}: </span>
+                      <span className="text-gray-500">{t("dashboard.localSeoAudit.view.address")}: </span>
                       <span className="text-gray-700 break-words">{competitor.address}</span>
                     </div>
                   )}
                   {competitor.phone && (
                     <div>
-                      <span className="text-gray-500">{t("dashboard.geoAudit.view.phone")}: </span>
+                      <span className="text-gray-500">{t("dashboard.localSeoAudit.view.phone")}: </span>
                       <span className="text-gray-700">{competitor.phone}</span>
                     </div>
                   )}
@@ -79,7 +79,7 @@ export default function CompetitorsTable({ competitors }) {
                         className="text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t("dashboard.geoAudit.view.visit")}
+                        {t("dashboard.localSeoAudit.view.visit")}
                         <HiExternalLink className="w-3.5 h-3.5" />
                       </a>
                     </div>
@@ -97,13 +97,13 @@ export default function CompetitorsTable({ competitors }) {
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.seoAudit.view.rank")}</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.name")}</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.rating")}</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.reviews")}</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.distance")}</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.address")}</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.phone")}</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.website")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.name")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.rating")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.reviews")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.distance")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.address")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.phone")}</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.website")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -158,7 +158,7 @@ export default function CompetitorsTable({ competitors }) {
                       className="text-sm text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {t("dashboard.geoAudit.view.visit")}
+                      {t("dashboard.localSeoAudit.view.visit")}
                       <HiExternalLink className="w-3.5 h-3.5" />
                     </a>
                   ) : (

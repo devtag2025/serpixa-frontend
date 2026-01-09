@@ -65,7 +65,7 @@ export default function BuyMoreExtras() {
     if (credits?.geo_audits && credits.geo_audits > 0) {
       creditItems.push({
         type: "geo_audits",
-        label: t("landing.pricing.geoAudits"),
+        label: t("landing.pricing.localSeoAudits"),
         value: credits.geo_audits,
       });
     }

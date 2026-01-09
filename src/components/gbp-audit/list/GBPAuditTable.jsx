@@ -19,7 +19,7 @@ export default function GBPAuditTable({ audits, onDelete }) {
                 <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.common.score")}</span>
               </th>
               <th className="px-6 py-3 text-left">
-                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.geoAudit.view.business")}</span>
+                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.business")}</span>
               </th>
               <th className="px-6 py-3 text-left">
                 <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.gbpAudit.view.recommendations")}</span>

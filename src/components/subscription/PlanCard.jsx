@@ -29,7 +29,7 @@ export default function PlanCard({
     }
     if (limits.geo_audits) {
       features.push({
-        label: t("landing.pricing.geoAudits"),
+        label: t("landing.pricing.localSeoAudits"),
         value: limits.geo_audits,
       });
     }

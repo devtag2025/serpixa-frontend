@@ -13,8 +13,8 @@ export default function GeoAuditListHeader({ audits }) {
       <div className="max-w-7xl mx-auto px-6 py-6">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h1 className="text-2xl font-semibold text-gray-900 mb-1">{t("dashboard.geoAudit.list.title")}</h1>
-            <p className="text-sm text-gray-600">{t("dashboard.geoAudit.list.subtitle")}</p>
+            <h1 className="text-2xl font-semibold text-gray-900 mb-1">{t("dashboard.localSeoAudit.list.title")}</h1>
+            <p className="text-sm text-gray-600">{t("dashboard.localSeoAudit.list.subtitle")}</p>
           </div>
           <button
             onClick={() => router.push("/dashboard/geo-audit/new")}
