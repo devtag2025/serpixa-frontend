@@ -362,7 +362,7 @@
         "benefits": {
           "title": "Benefits"
         },
-        "feature1": "Complete UI translation in French and Dutch",
+        "feature1": "Full interface in French and Dutch",
         "feature2": "Localized email notifications and reports",
         "feature3": "Regional language support (Belgian French & Dutch)",
         "feature4": "Easy language switching with persistent preferences"
@@ -954,7 +954,7 @@
         "languageCodeHelp": "Language code for the business information",
         "locale": "Locale",
         "localePlaceholder": "Select language",
-        "localeHelp": "Select the locale for the audit",
+        "localeHelp": "Select the language for the audit",
         "showAdvanced": "Show Advanced Options",
         "hideAdvanced": "Hide Advanced Options",
         "runAudit": "Run GBP Audit",
@@ -1040,7 +1040,7 @@
         "keywordPlaceholder": "e.g., best seo tools",
         "keywordHelp": "Enter the primary keyword for content generation",
         "locale": "Locale",
-        "localeHelp": "Select the locale for content generation",
+        "localeHelp": "Select the language for content generation",
         "generateContent": "Generate Content",
         "generating": "Generating..."
       },

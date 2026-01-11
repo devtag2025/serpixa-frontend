@@ -49,10 +49,10 @@ export default function ReportPreview() {
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Text column */}
           <div>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+            <p className="text-gray-700 text-base md:text-xl leading-relaxed mt-3 mb-8">
               {t("landing.reportPreview.valueProposition")}
             </p>
 
@@ -62,7 +62,7 @@ export default function ReportPreview() {
                   <div className="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-blue-600 text-xs font-semibold text-white shadow-blue">
                     {idx}
                   </div>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                  <p className="text-gray-700 text-sm md:text-lg leading-relaxed">
                     {t(`landing.reportPreview.benefits.${idx}`)}
                   </p>
                 </li>

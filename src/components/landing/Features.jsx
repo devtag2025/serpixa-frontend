@@ -105,8 +105,12 @@ export default function Features() {
             {/* Audience list - Vertical, centered, one per line */}
             <div className="flex flex-col items-center gap-4 mb-8">
               {[1, 2, 3, 4].map((index) => (
-                <div key={index} className="text-lg text-white">
-                  {t(`landing.features.trustedAudience.${index}`)}
+                <div key={index} className="flex items-center gap-3 text-lg text-white">
+                  <svg className="w-3 h-3 text-red-500 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0L12 6L0 12V0Z" />
+                  </svg>
+                  {/* <span className="w-3 h-3 text-red-500 font-bold  pt-3 flex items-center justify-center text-3xl leading-none">*</span> */}
+                  <span>{t(`landing.features.trustedAudience.${index}`)}</span>
                 </div>
               ))}
             </div>
