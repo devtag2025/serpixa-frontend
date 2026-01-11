@@ -362,7 +362,7 @@
         "benefits": {
           "title": "Voordelen"
         },
-        "feature1": "Volledige UI-vertaling in Frans en Nederlands",
+        "feature1": "Volledige interface in het Frans en Nederlands.",
         "feature2": "Gelokaliseerde e-mailnotificaties en rapporten",
         "feature3": "Regionale taalondersteuning (Belgisch Frans & Nederlands)",
         "feature4": "Eenvoudige taalwisseling met persistente voorkeuren"
@@ -524,7 +524,7 @@
       "remaining": "resterend",
       "noCredits": "Geen credits beschikbaar",
       "buyMore": "Meer extras kopen",
-      "buyMoreDescription": "Verbeter uw plan met extra credits voor SEO, GEO, GBP audits en AI-contentgeneratie.",
+      "buyMoreDescription": "Verbeter uw plan met extra credits voor SEO, Local SEO, GBP audits en AI-contentgeneratie.",
       "noAddonsAvailable": "Er zijn momenteel geen add-ons beschikbaar",
       "historyNote": "Aankoopgeschiedenis wordt weergegeven als referentie. Werkelijke aankoopgegevens kunnen variëren."
     },
@@ -956,7 +956,7 @@
         "languageCodeHelp": "Taalcode voor de bedrijfsinformatie",
         "locale": "Locale",
         "localePlaceholder": "Selecteer taal",
-        "localeHelp": "Selecteer de locale voor de audit",
+        "localeHelp": "Selecteer de taal voor de audit",
         "showAdvanced": "Geavanceerde opties weergeven",
         "hideAdvanced": "Geavanceerde opties verbergen",
         "runAudit": "GBP-audit uitvoeren",
@@ -1035,7 +1035,7 @@
         "keywordPlaceholder": "bijv. beste seo-tools",
         "keywordHelp": "Voer het primaire zoekwoord in voor inhoudsgeneratie",
         "locale": "Locale",
-        "localeHelp": "Selecteer de locale voor inhoudsgeneratie",
+        "localeHelp": "Selecteer de taal voor het genereren van inhoud",
         "generateContent": "Inhoud genereren",
         "generating": "Genereren..."
       },

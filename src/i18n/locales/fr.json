@@ -39,10 +39,10 @@
       "trustedTitle": "Serpixa est conçu pour :",
       "trustedSubtitle": "Pensé pour les équipes et entreprises qui dépendent de leur visibilité en ligne.",
       "trustedAudience": {
-        "1": "les PME",
-        "2": "les indépendants",
-        "3": "les agences marketing",
-        "4": "toute entreprise qui dépend de sa visibilité en ligne"
+        "1": "Les PME",
+        "2": "Les indépendants",
+        "3": "Les agences marketing",
+        "4": "Toute entreprise qui dépend de sa visibilité en ligne"
       },
       "finalStatement": "Pas besoin d'être un expert SEO pour faire les bons choix.",
       "startTrial": "Commencer"
@@ -363,7 +363,7 @@
         "benefits": {
           "title": "Avantages"
         },
-        "feature1": "Traduction complète de l'interface en français et néerlandais",
+        "feature1": "Interface complète en français et néerlandais. ",
         "feature2": "Notifications et rapports par e-mail localisés",
         "feature3": "Support linguistique régional (français et néerlandais belges)",
         "feature4": "Changement de langue facile avec préférences persistantes"
@@ -525,7 +525,7 @@
       "remaining": "restants",
       "noCredits": "Aucun crédit disponible",
       "buyMore": "Acheter plus d'extras",
-      "buyMoreDescription": "Améliorez votre plan avec des crédits supplémentaires pour les audits SEO, GEO, GBP et la génération de contenu IA.",
+      "buyMoreDescription": "Améliorez votre plan avec des crédits supplémentaires pour les audits SEO, Local SEO, GBP et la génération de contenu IA.",
       "noAddonsAvailable": "Aucun module complémentaire disponible pour le moment",
       "historyNote": "L'historique des achats est affiché à titre de référence. Les enregistrements d'achat réels peuvent varier."
     },
@@ -957,7 +957,7 @@
         "languageCodeHelp": "Code de langue pour les informations de l'entreprise",
         "locale": "Paramètres régionaux",
         "localePlaceholder": "Sélectionner la langue",
-        "localeHelp": "Sélectionnez les paramètres régionaux pour l'audit",
+        "localeHelp": "Sélectionnez la langue pour l’audit",
         "showAdvanced": "Afficher les options avancées",
         "hideAdvanced": "Masquer les options avancées",
         "runAudit": "Lancer l'audit GBP",
@@ -1036,7 +1036,7 @@
         "keywordPlaceholder": "ex. meilleurs outils seo",
         "keywordHelp": "Entrez le mot-clé principal pour la génération de contenu",
         "locale": "Paramètres régionaux",
-        "localeHelp": "Sélectionnez les paramètres régionaux pour la génération de contenu",
+        "localeHelp": "Sélectionnez la langue pour la génération du contenu",
         "generateContent": "Générer le contenu",
         "generating": "Génération..."
       },
