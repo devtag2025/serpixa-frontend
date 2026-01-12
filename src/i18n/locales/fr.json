@@ -191,9 +191,10 @@
       "gbpAudit": "Audit GBP",
       "localSeoAudit": "Audit SEO local",
       "aiContent": "Contenu IA",
-      "copyright": "© 2024 Serpixa. Tous droits réservés.",
+      "copyright": "© {year} Serpixa. Tous droits réservés.",
       "privacy": "Politique de confidentialité",
-      "terms": "Conditions d'utilisation"
+      "terms": "Conditions d'utilisation",
+      "cookies": "Politique de cookies"
     },
     "whySerpixa": {
       "hero": {
@@ -1223,6 +1224,117 @@
     "signIn": "Se connecter",
     "signUp": "S'inscrire",
     "startFreeTrial": "Commencer"
+  },
+  "legal": {
+    "terms": {
+      "title": "Conditions Générales d'Utilisation et de Vente",
+      "article1": {
+        "title": "Article 1 – Identité de l'éditeur",
+        "content": "Le site Serpixa est édité par :\n\nDénomination sociale : Glow Mark SRL\nForme juridique : Société à responsabilité limitée (SRL)\nSiège social : Merksemsesteenweg 112, Belgique\nNuméro d'entreprise / TVA : BE1019405662\nAdresse e-mail : info@serpixa.eu\n\nConformément à la directive 2000/31/CE, ces informations constituent les mentions légales obligatoires."
+      },
+      "article2": {
+        "title": "Article 2 – Objet",
+        "content": "Les présentes conditions régissent l'accès et l'utilisation de la plateforme Serpixa, qui propose :\n\n• un logiciel SaaS,\n• des outils SEO automatisés,\n• des services d'assistance et de conseil SEO,\n• des contenus générés par intelligence artificielle servant de base à l'optimisation."
+      },
+      "article3": {
+        "title": "Article 3 – Accès au service",
+        "content": "L'accès à Serpixa est :\n\n• soit payant par abonnement mensuel,\n• soit payant via des achats uniques de fonctionnalités ou crédits supplémentaires.\n\nCertaines fonctionnalités peuvent être limitées ou conditionnées à un paiement."
+      },
+      "article4": {
+        "title": "Article 4 – Utilisateurs",
+        "content": "Le service est accessible :\n\n• aux particuliers,\n• aux professionnels.\n\nL'utilisateur déclare disposer de la capacité juridique nécessaire.\nAucune utilisation n'est autorisée par des mineurs sans l'accord d'un représentant légal."
+      },
+      "article5": {
+        "title": "Article 5 – Création de compte",
+        "content": "La création d'un compte nécessite la fourniture d'informations exactes.\nL'utilisateur est seul responsable de la confidentialité de ses identifiants."
+      },
+      "article6": {
+        "title": "Article 6 – Paiement",
+        "content": "Les paiements sont traités via Stripe, prestataire de paiement sécurisé.\n\nAbonnements : facturation mensuelle\nAchats uniques : paiement ponctuel\n\nAucun remboursement n'est accordé, conformément à l'article VI.53 du Code de droit économique belge et à l'article 16 de la directive 2011/83/UE (contenu numérique immédiatement accessible)."
+      },
+      "article7": {
+        "title": "Article 7 – Absence de garantie de résultats",
+        "content": "Serpixa est soumis à une obligation de moyens, et non de résultat.\n\nLes outils et contenus fournis :\n\n• visent à améliorer l'optimisation SEO,\n• ne garantissent aucun positionnement, aucun trafic, ni aucun résultat commercial."
+      },
+      "article8": {
+        "title": "Article 8 – Contenus générés par IA",
+        "content": "Les textes générés par intelligence artificielle :\n\n• constituent une base de travail,\n• doivent être vérifiés, adaptés et validés par l'utilisateur.\n\nSerpixa décline toute responsabilité en cas d'utilisation directe sans relecture."
+      },
+      "article9": {
+        "title": "Article 9 – Suspension ou résiliation",
+        "content": "Glow Mark SRL se réserve le droit de :\n\n• suspendre ou supprimer un compte,\n• en cas d'abus, fraude, usage illégal ou violation des présentes conditions."
+      },
+      "article10": {
+        "title": "Article 10 – Responsabilité",
+        "content": "La responsabilité de Glow Mark SRL est limitée aux dommages directs, à l'exclusion de tout dommage indirect, perte de chiffre d'affaires ou perte de données, conformément au droit belge."
+      },
+      "article11": {
+        "title": "Article 11 – Droit applicable et juridiction compétente",
+        "content": "Les présentes conditions sont régies par le droit belge.\n\nEn cas de litige :\n\n• les tribunaux belges sont compétents,\n• sans préjudice des règles impératives applicables aux consommateurs au sein de l'UE (Règlement Rome I – CE n°593/2008)."
+      }
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité (RGPD)",
+      "section1": {
+        "title": "1. Responsable du traitement",
+        "content": "Glow Mark SRL est responsable du traitement des données personnelles collectées via Serpixa.\nContact : info@serpixa.eu"
+      },
+      "section2": {
+        "title": "2. Données collectées",
+        "content": "Conformément au RGPD (art. 4 et 6), Serpixa collecte :\n\n• nom,\n• adresse e-mail,\n• adresse IP,\n• données de paiement (via Stripe uniquement),\n• données SEO analysées ou importées par l'utilisateur."
+      },
+      "section3": {
+        "title": "3. Finalités du traitement",
+        "content": "Les données sont utilisées pour :\n\n• la création et gestion de compte,\n• la facturation,\n• le support client,\n• la communication marketing (si consentement)."
+      },
+      "section4": {
+        "title": "4. Base légale",
+        "content": "Les traitements reposent sur :\n\n• l'exécution contractuelle (art. 6.1.b RGPD),\n• le consentement (art. 6.1.a),\n• l'obligation légale (art. 6.1.c)."
+      },
+      "section5": {
+        "title": "5. Outils tiers",
+        "content": "Serpixa utilise :\n\n• Stripe (paiement),\n• Google Analytics 4 (statistiques),\n• Google Search Console,\n• autres API techniques nécessaires au service."
+      },
+      "section6": {
+        "title": "6. Conservation des données",
+        "content": "Durées proposées (conformes CEPD) :\n\n• données de compte : 5 ans après la fin de la relation\n• données de facturation : 7 ans (obligation comptable)\n• données marketing : 3 ans après dernier contact"
+      },
+      "section7": {
+        "title": "7. Transfert hors UE",
+        "content": "Les données sont hébergées sur des serveurs situés dans l'Union européenne.\nAucun transfert hors UE n'est effectué à ce jour."
+      },
+      "section8": {
+        "title": "8. Droits des utilisateurs",
+        "content": "Conformément aux articles 15 à 22 RGPD, l'utilisateur dispose des droits :\n\n• accès,\n• rectification,\n• suppression,\n• limitation,\n• opposition,\n• portabilité.\n\nDemande via : info@serpixa.eu"
+      },
+      "section9": {
+        "title": "9. DPO",
+        "content": "Aucun délégué à la protection des données n'a été désigné (non obligatoire dans ce cas – art. 37 RGPD)."
+      }
+    },
+    "cookies": {
+      "title": "Politique de Cookies (UE)",
+      "section1": {
+        "title": "1. Définition",
+        "content": "Un cookie est un fichier déposé sur le terminal de l'utilisateur lors de la navigation."
+      },
+      "section2": {
+        "title": "2. Cookies utilisés",
+        "content": "Serpixa utilise :\n\n• cookies techniques (obligatoires),\n• cookies analytiques (Google Analytics 4),\n• cookies marketing (le cas échéant)."
+      },
+      "section3": {
+        "title": "3. Consentement",
+        "content": "Conformément à :\n\n• la directive ePrivacy,\n• la CNIL (2020),\n• l'arrêt CJUE Planet49,\n\nle dépôt de cookies non essentiels nécessite un consentement explicite.\nCe consentement est géré via CookieYes."
+      },
+      "section4": {
+        "title": "4. Gestion des cookies",
+        "content": "L'utilisateur peut :\n\n• accepter,\n• refuser,\n• retirer son consentement à tout moment."
+      },
+      "section5": {
+        "title": "5. Durée de conservation",
+        "content": "Les cookies sont conservés pour une durée maximale de 13 mois, conformément aux recommandations européennes."
+      }
+    }
   }
 }
 

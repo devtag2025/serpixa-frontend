@@ -190,9 +190,10 @@
       "gbpAudit": "GBP Audit",
       "localSeoAudit": "Lokale SEO Audit",
       "aiContent": "AI Content",
-      "copyright": "© 2024 Serpixa. Alle rechten voorbehouden.",
+      "copyright": "© {year} Serpixa. Alle rechten voorbehouden.",
       "privacy": "Privacybeleid",
-      "terms": "Servicevoorwaarden"
+      "terms": "Servicevoorwaarden",
+      "cookies": "Cookiebeleid"
     },
     "whySerpixa": {
       "hero": {
@@ -1222,6 +1223,117 @@
     "signIn": "Inloggen",
     "signUp": "Aanmelden",
     "startFreeTrial": "Aan de slag"
+  },
+  "legal": {
+    "terms": {
+      "title": "Algemene Gebruiks- en Verkoopsvoorwaarden",
+      "article1": {
+        "title": "Artikel 1 – Identiteit van de uitgever",
+        "content": "De website Serpixa wordt uitgegeven door:\n\nBedrijfsnaam: Glow Mark SRL\nRechtsvorm: Besloten Vennootschap (SRL)\nMaatschappelijke zetel: Merksemsesteenweg 112, België\nOndernemingsnummer / BTW: BE1019405662\nE-mailadres: info@serpixa.eu\n\nOvereenkomstig Richtlijn 2000/31/EG vormen deze gegevens de verplichte wettelijke vermeldingen."
+      },
+      "article2": {
+        "title": "Artikel 2 – Doel",
+        "content": "Deze voorwaarden regelen de toegang tot en het gebruik van het Serpixa-platform, dat het volgende aanbiedt:\n\n• SaaS-software,\n• Geautomatiseerde SEO-tools,\n• SEO-ondersteuning en adviesdiensten,\n• Door kunstmatige intelligentie gegenereerde content als basis voor optimalisatie."
+      },
+      "article3": {
+        "title": "Artikel 3 – Toegang tot de dienst",
+        "content": "De toegang tot Serpixa is:\n\n• ofwel betalend via een maandabonnement,\n• ofwel betalend via eenmalige aankopen van functies of extra credits.\n\nBepaalde functies kunnen beperkt zijn of afhankelijk van betaling."
+      },
+      "article4": {
+        "title": "Artikel 4 – Gebruikers",
+        "content": "De dienst is toegankelijk voor:\n\n• particulieren,\n• professionals.\n\nDe gebruiker verklaart over de vereiste rechtsbekwaamheid te beschikken.\nGebruik door minderjarigen is enkel toegestaan met toestemming van een wettelijke vertegenwoordiger."
+      },
+      "article5": {
+        "title": "Artikel 5 – Accountregistratie",
+        "content": "Voor het aanmaken van een account moeten correcte en actuele gegevens worden verstrekt.\nDe gebruiker is als enige verantwoordelijk voor de vertrouwelijkheid van zijn inloggegevens."
+      },
+      "article6": {
+        "title": "Artikel 6 – Betaling",
+        "content": "Betalingen worden verwerkt via Stripe, een beveiligde betalingsdienstverlener.\n\nAbonnementen: maandelijkse facturatie\nEenmalige aankopen: eenmalige betaling\n\nEr wordt geen terugbetaling verleend, overeenkomstig artikel VI.53 van het Belgisch Wetboek van Economisch Recht en artikel 16 van Richtlijn 2011/83/EU (digitale inhoud die onmiddellijk toegankelijk is)."
+      },
+      "article7": {
+        "title": "Artikel 7 – Geen resultaatgarantie",
+        "content": "Serpixa is onderworpen aan een middelenverbintenis, geen resultaatsverbintenis.\n\nDe aangeboden tools en inhoud:\n\n• zijn bedoeld om SEO-optimalisatie te verbeteren,\n• garanderen geen ranking, verkeer of commercieel resultaat."
+      },
+      "article8": {
+        "title": "Artikel 8 – Door AI gegenereerde inhoud",
+        "content": "Door kunstmatige intelligentie gegenereerde teksten:\n\n• vormen een werkbasis,\n• moeten door de gebruiker worden nagelezen, aangepast en gevalideerd.\n\nSerpixa aanvaardt geen aansprakelijkheid bij rechtstreeks gebruik zonder controle."
+      },
+      "article9": {
+        "title": "Artikel 9 – Opschorting of beëindiging",
+        "content": "Glow Mark SRL behoudt zich het recht voor om een account op te schorten of te verwijderen in geval van:\n\n• misbruik,\n• fraude,\n• illegaal gebruik,\n• schending van deze voorwaarden."
+      },
+      "article10": {
+        "title": "Artikel 10 – Aansprakelijkheid",
+        "content": "De aansprakelijkheid van Glow Mark SRL is beperkt tot directe schade en sluit indirecte schade, omzetverlies of dataverlies uit, overeenkomstig het Belgisch recht."
+      },
+      "article11": {
+        "title": "Artikel 11 – Toepasselijk recht en bevoegde rechtbank",
+        "content": "Deze voorwaarden worden beheerst door het Belgisch recht.\n\nBij geschillen zijn de Belgische rechtbanken bevoegd, onverminderd de dwingende consumentenbeschermingsregels binnen de EU (Rome I-Verordening – EG nr. 593/2008)."
+      }
+    },
+    "privacy": {
+      "title": "Privacybeleid (AVG / GDPR)",
+      "section1": {
+        "title": "1. Verwerkingsverantwoordelijke",
+        "content": "Glow Mark SRL is verantwoordelijk voor de verwerking van persoonsgegevens die via Serpixa worden verzameld.\nContact: info@serpixa.eu"
+      },
+      "section2": {
+        "title": "2. Verzamelde gegevens",
+        "content": "Overeenkomstig de AVG (art. 4 en 6) verzamelt Serpixa:\n\n• naam,\n• e-mailadres,\n• IP-adres,\n• betalingsgegevens (uitsluitend via Stripe),\n• SEO-gegevens geanalyseerd of geïmporteerd door de gebruiker."
+      },
+      "section3": {
+        "title": "3. Doeleinden van de verwerking",
+        "content": "De gegevens worden gebruikt voor:\n\n• accountbeheer,\n• facturatie,\n• klantenondersteuning,\n• marketingcommunicatie (mits toestemming)."
+      },
+      "section4": {
+        "title": "4. Rechtsgrond",
+        "content": "De verwerking is gebaseerd op:\n\n• contractuele uitvoering (art. 6.1.b AVG),\n• toestemming (art. 6.1.a AVG),\n• wettelijke verplichtingen (art. 6.1.c AVG)."
+      },
+      "section5": {
+        "title": "5. Derde partijen",
+        "content": "Serpixa maakt gebruik van:\n\n• Stripe (betalingen),\n• Google Analytics 4 (statistieken),\n• Google Search Console,\n• andere technische API's noodzakelijk voor de dienst."
+      },
+      "section6": {
+        "title": "6. Bewaartermijnen",
+        "content": "Accountgegevens: 5 jaar na einde van de relatie\nFacturatiegegevens: 7 jaar (boekhoudkundige verplichting)\nMarketinggegevens: 3 jaar na laatste contact"
+      },
+      "section7": {
+        "title": "7. Doorgifte buiten de EU",
+        "content": "De gegevens worden gehost op servers binnen de Europese Unie.\nEr vindt momenteel geen doorgifte buiten de EU plaats."
+      },
+      "section8": {
+        "title": "8. Rechten van gebruikers",
+        "content": "Overeenkomstig artikelen 15 tot 22 AVG beschikt de gebruiker over het recht op:\n\n• inzage,\n• correctie,\n• verwijdering,\n• beperking,\n• bezwaar,\n• overdraagbaarheid.\n\nAanvragen via: info@serpixa.eu"
+      },
+      "section9": {
+        "title": "9. Functionaris voor gegevensbescherming",
+        "content": "Er werd geen functionaris voor gegevensbescherming aangesteld (niet verplicht in dit geval – art. 37 AVG)."
+      }
+    },
+    "cookies": {
+      "title": "Cookiebeleid (EU)",
+      "section1": {
+        "title": "1. Definitie",
+        "content": "Een cookie is een bestand dat op het apparaat van de gebruiker wordt geplaatst tijdens het browsen."
+      },
+      "section2": {
+        "title": "2. Gebruikte cookies",
+        "content": "Serpixa gebruikt:\n\n• technische cookies (verplicht),\n• analytische cookies (Google Analytics 4),\n• marketingcookies (indien van toepassing)."
+      },
+      "section3": {
+        "title": "3. Toestemming",
+        "content": "Overeenkomstig:\n\n• de ePrivacy-richtlijn,\n• CNIL-richtlijnen (2020),\n• het arrest Planet49 van het Hof van Justitie van de EU,\n\nvereist het plaatsen van niet-essentiële cookies uitdrukkelijke toestemming.\nDeze toestemming wordt beheerd via CookieYes."
+      },
+      "section4": {
+        "title": "4. Cookiebeheer",
+        "content": "De gebruiker kan:\n\n• cookies accepteren,\n• cookies weigeren,\n• zijn toestemming op elk moment intrekken."
+      },
+      "section5": {
+        "title": "5. Bewaartermijn",
+        "content": "Cookies worden maximaal 13 maanden bewaard, conform Europese aanbevelingen."
+      }
+    }
   }
 }
 
