@@ -1,7 +1,7 @@
 "use client";
 import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 
 /**
  * ProtectedRoute component using TanStack Query
@@ -15,15 +15,15 @@ import { useEffect } from "react";
  */
 export default function ProtectedRoute({ children }) {
   const { data: user, isLoading, isError, error } = useAuth();
-  const router = useRouter();
+  const { push } = useLocalizedRouter();
 
   useEffect(() => {
     // Only redirect if we're sure the user is not authenticated
     // isError with 401 means not authenticated
     if (isError && error?.response?.status === 401) {
-      router.push("/login");
+      push("/login");
     }
-  }, [isError, error, router]);
+  }, [isError, error, push]);
 
   // Show loading state while checking authentication
   if (isLoading) {

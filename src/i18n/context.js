@@ -57,41 +57,79 @@ const getBrowserLocale = () => {
 };
 
 export function I18nProvider({ children, locale: initialLocale = "en" }) {
-  // Initialize locale from localStorage, browser language, or fallback to initialLocale
-  const getInitialLocale = () => {
-    if (typeof window !== "undefined") {
-      // Priority 1: Check localStorage (user's saved preference)
-      const savedLocale = localStorage.getItem("locale");
-      if (savedLocale && supportedLocales.includes(savedLocale)) {
-        return savedLocale;
+  console.log("[I18nProvider] Rendered with initialLocale:", initialLocale);
+  
+  // Use locale from URL (passed from layout) - sync with prop changes
+  const [locale, setLocale] = useState(initialLocale);
+  // Initialize translations from cache if available (prevents blocking on language switch)
+  const [translations, setTranslations] = useState(() => translationsCache[initialLocale] || null);
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(!!translationsCache[initialLocale]);
+  const [isLoading, setIsLoading] = useState(!translationsCache[initialLocale]);
+
+  console.log("[I18nProvider] Current locale state:", locale, "initialLocale prop:", initialLocale);
+
+  // Update locale when prop changes (e.g., URL changes from /en/... to /fr/...)
+  useEffect(() => {
+    if (initialLocale !== locale) {
+      console.log("[I18nProvider] Locale prop changed! Updating state:", locale, "->", initialLocale);
+      
+      // If new locale translations are in cache, set them immediately (no blocking)
+      if (translationsCache[initialLocale]) {
+        setTranslations(translationsCache[initialLocale]);
+        setIsLoading(false);
       }
       
-      // Priority 2: Detect browser language (only on first visit)
-      const browserLocale = getBrowserLocale();
-      if (browserLocale) {
-        return browserLocale;
-      }
+      setLocale(initialLocale);
     }
-    
-    // Priority 3: Fallback to initialLocale (default: "en")
-    return initialLocale;
-  };
+  }, [initialLocale, locale]);
 
-  const [locale, setLocale] = useState(() => getInitialLocale());
-  const [translations, setTranslations] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  // Preload all languages in parallel on mount (Solution 3)
+  useEffect(() => {
+    console.log("[I18nProvider] Preloading all languages...");
+    const preloadAllLanguages = async () => {
+      const loadPromises = supportedLocales.map(async (lang) => {
+        if (!translationsCache[lang]) {
+          try {
+            const loader = translationLoaders[lang];
+            const module = await loader();
+            translationsCache[lang] = module.default || module;
+            console.log(`[I18nProvider] Preloaded translations for: ${lang}`);
+          } catch (error) {
+            console.error(`[I18nProvider] Failed to preload ${lang}:`, error);
+          }
+        }
+      });
+      
+      await Promise.all(loadPromises);
+      console.log("[I18nProvider] All languages preloaded");
+    };
+    
+    preloadAllLanguages();
+  }, []); // Only run once on mount
 
   // Load translations for the current locale
   useEffect(() => {
-    const loadTranslations = async () => {
-      // Check cache first
-      if (translationsCache[locale]) {
-        setTranslations(translationsCache[locale]);
-        setIsLoading(false);
-        return;
+    console.log("[I18nProvider] Loading translations for locale:", locale);
+    
+    // Check cache FIRST - if cached, use immediately (synchronous, no loading state)
+    if (translationsCache[locale]) {
+      console.log("[I18nProvider] Using cached translations for locale:", locale);
+      setTranslations(translationsCache[locale]);
+      setIsLoading(false);
+      if (!hasLoadedOnce) {
+        setHasLoadedOnce(true);
       }
+      return;
+    }
 
-      // Load from cache or fetch
+    // Only set loading state on initial load (first time), not on language switches
+    // Since all languages are preloaded, they should be in cache when switching
+    if (!hasLoadedOnce) {
+      setIsLoading(true);
+    }
+    console.log("[I18nProvider] Fetching translations for locale:", locale);
+    
+    const loadTranslations = async () => {
       try {
         const loader = translationLoaders[locale] || translationLoaders.en;
         const module = await loader();
@@ -100,35 +138,28 @@ export function I18nProvider({ children, locale: initialLocale = "en" }) {
         // Cache the translations
         translationsCache[locale] = loadedTranslations;
         setTranslations(loadedTranslations);
+        console.log("[I18nProvider] Successfully loaded translations for locale:", locale);
       } catch (error) {
-        console.error(`Failed to load translations for locale: ${locale}`, error);
+        console.error(`[I18nProvider] Failed to load translations for locale: ${locale}`, error);
         // Fallback to English if available
         if (locale !== 'en' && translationsCache.en) {
           setTranslations(translationsCache.en);
         }
       } finally {
         setIsLoading(false);
+        if (!hasLoadedOnce) {
+          setHasLoadedOnce(true);
+        }
       }
     };
 
     loadTranslations();
-  }, [locale]);
+  }, [locale, hasLoadedOnce]);
 
-  // Preload English as fallback (non-blocking)
-  useEffect(() => {
-    if (!translationsCache.en) {
-      translationLoaders.en().then((module) => {
-        translationsCache.en = module.default || module;
-      });
-    }
-  }, []);
-
+  // Change locale by redirecting to new URL (handled by LanguageSwitcher)
   const changeLocale = (newLocale) => {
-    setLocale(newLocale);
-    setIsLoading(true);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("locale", newLocale);
-    }
+    // This is a no-op here - language switching is handled by URL changes
+    // Keep for backward compatibility but LanguageSwitcher will handle URL changes
   };
 
   // Memoize context value to prevent unnecessary re-renders
@@ -196,4 +227,3 @@ export function useTranslation() {
 
   return { t, isLoading };
 }
-

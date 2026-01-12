@@ -1,6 +1,7 @@
 "use client";
-import Link from "next/link";
+import LocalizedLink from "@/components/common/LocalizedLink";
 import { usePathname } from "next/navigation";
+import { removeLocaleFromPath } from "@/utils/localizedLinks";
 
 /**
  * SidebarItem - Individual menu item component
@@ -18,8 +19,9 @@ export default function SidebarItem({
   onNavigate,
 }) {
   const pathname = usePathname();
-  const isActive = href && pathname === href;
-  const hasActiveSubmenu = submenu?.some((item) => pathname === item.href);
+  const pathWithoutLocale = pathname ? removeLocaleFromPath(pathname) : "";
+  const isActive = href && pathWithoutLocale === href;
+  const hasActiveSubmenu = submenu?.some((item) => pathWithoutLocale === item.href);
 
   // If item has submenu, render as button with toggle
   if (submenu) {
@@ -61,18 +63,18 @@ export default function SidebarItem({
         {isOpen && isExpanded && (
           <div className="mt-1 ml-4 space-y-1">
             {submenu.map((item, index) => (
-              <Link
+              <LocalizedLink
                 key={index}
                 href={item.href}
                 onClick={onNavigate}
                 className={`block px-4 py-2 text-sm rounded-lg transition-colors ${
-                  pathname === item.href
+                  pathWithoutLocale === item.href
                     ? "bg-primary/10 text-primary font-medium"
                     : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                 }`}
               >
                 {item.label}
-              </Link>
+              </LocalizedLink>
             ))}
           </div>
         )}
@@ -82,7 +84,7 @@ export default function SidebarItem({
 
   // Simple link item
   return (
-    <Link
+    <LocalizedLink
       href={href}
       onClick={onNavigate}
       className={`flex items-center ${
@@ -96,7 +98,7 @@ export default function SidebarItem({
     >
       {Icon && <Icon className="w-5 h-5 flex-shrink-0" />}
       {isExpanded && <span className="whitespace-nowrap">{label}</span>}
-    </Link>
+    </LocalizedLink>
   );
 }
 

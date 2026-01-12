@@ -1,17 +1,19 @@
 "use client";
-import Link from "next/link";
+import LocalizedLink from "@/components/common/LocalizedLink";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth, useLogout } from "@/hooks/useAuth";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "@/i18n/context";
+import { removeLocaleFromPath } from "@/utils/localizedLinks";
 
 export default function Navbar() {
   const pathname = usePathname();
   const { t } = useTranslation();
   
-  // Hide navbar on dashboard pages
-  if (pathname?.startsWith("/dashboard")) {
+  // Hide navbar on dashboard pages (check pathname without locale)
+  const pathWithoutLocale = pathname ? removeLocaleFromPath(pathname) : "";
+  if (pathWithoutLocale?.startsWith("/dashboard")) {
     return null;
   }
 
@@ -21,7 +23,7 @@ export default function Navbar() {
   const { data: user, isLoading } = useAuth();
   const { mutate: logout } = useLogout();
 
-  const isActiveLink = (href) => pathname === href;
+  const isActiveLink = (href) => pathWithoutLocale === href;
 
   const navLinks = [
     {
@@ -94,7 +96,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo - Left */}
           <div className="flex items-center justify-start flex-shrink-0 md:pr-15">
-            <Link href="/" className="flex items-center space-x-2">
+            <LocalizedLink href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
                 <svg
                   className="w-5 h-5 text-white"
@@ -113,7 +115,7 @@ export default function Navbar() {
               <span className="text-xl font-semibold text-gray-900">
                 Serpixa
               </span>
-            </Link>
+            </LocalizedLink>
           </div>
 
           {/* Desktop Navigation - Center */}
@@ -121,7 +123,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <div key={link.label} className="relative group">
                 {link.hasDropdown ? (
-                  <Link
+                  <LocalizedLink
                     onClick={() => toggleDropdown(link.label)}
                     className="flex items-center text-gray-700 hover:text-primary font-medium text-sm transition-colors whitespace-nowrap"
                   >
@@ -139,9 +141,9 @@ export default function Navbar() {
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
-                  </Link>
+                  </LocalizedLink>
                 ) : (
-                  <Link
+                  <LocalizedLink
                     href={link.href}
                     className={`flex items-center font-medium text-sm transition-colors whitespace-nowrap ${
                       isActiveLink(link.href)
@@ -150,20 +152,20 @@ export default function Navbar() {
                     }`}
                   >
                     {link.label}
-                  </Link>
+                  </LocalizedLink>
                 )}
 
                 {/* Dropdown Menu */}
                 {link.hasDropdown && dropdownOpen === link.label && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50">
                     {link.items?.map((item, index) => (
-                      <Link
+                      <LocalizedLink
                         key={index}
                         href="#"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                       >
                         {item}
-                      </Link>
+                      </LocalizedLink>
                     ))}
                   </div>
                 )}
@@ -178,12 +180,12 @@ export default function Navbar() {
               <div className="w-8 h-8 border-2 border-gray-300 border-t-primary rounded-full animate-spin"></div>
             ) : user ? (
               <div className="flex items-center space-x-4">
-                <Link
+                <LocalizedLink
                   href="/dashboard"
                   className="text-gray-700 hover:text-gray-900 font-medium text-sm"
                 >
                   {t("navbar.dashboard")}
-                </Link>
+                </LocalizedLink>
                 <div className="relative group">
                   <button className="flex items-center space-x-2 text-gray-700 hover:text-gray-900">
                     <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
@@ -206,12 +208,12 @@ export default function Navbar() {
                     </svg>
                   </button>
                   <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                    <Link
+                    <LocalizedLink
                       href="/dashboard"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                     >
                       {t("navbar.profile")}
-                    </Link>
+                    </LocalizedLink>
                     <button
                       onClick={() => logout()}
                       className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
@@ -223,18 +225,18 @@ export default function Navbar() {
               </div>
             ) : (
               <>
-                <Link
+                <LocalizedLink
                   href="/login"
                   className="px-4 py-2 text-sm font-medium text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
                 >
                   {t("navbar.signIn")}
-                </Link>
-                <Link
+                </LocalizedLink>
+                <LocalizedLink
                   href="/signup"
                   className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary/90 transition-colors"
                 >
                  {t("navbar.signUp")}
-                </Link>
+                </LocalizedLink>
               </>
             )}
           </div>
@@ -303,7 +305,7 @@ export default function Navbar() {
       >
               {/* Drawer Header */}
               <div className="flex items-center justify-between p-4 border-b border-gray-200">
-                <Link
+                <LocalizedLink
                   href="/"
                   className="flex items-center space-x-2"
                   onClick={() => setMobileMenuOpen(false)}
@@ -326,7 +328,7 @@ export default function Navbar() {
                   <span className="text-xl font-semibold text-gray-900">
                     Serpixa
                   </span>
-                </Link>
+                </LocalizedLink>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
@@ -354,7 +356,7 @@ export default function Navbar() {
                 <div className="px-4 py-6 space-y-1">
                   {navLinks.map((link) => (
                     <div key={link.label}>
-                      <Link
+                      <LocalizedLink
                         href={link.href}
                         className={`block px-4 py-3 font-medium text-base rounded-lg transition-colors ${
                           isActiveLink(link.href)
@@ -364,18 +366,18 @@ export default function Navbar() {
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.label}
-                      </Link>
+                      </LocalizedLink>
                       {link.hasDropdown && link.items && (
                         <div className="pl-4 mt-1 space-y-1">
                           {link.items.map((item, index) => (
-                            <Link
+                            <LocalizedLink
                               key={index}
                               href="#"
                               className="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 text-sm rounded-lg transition-colors"
                               onClick={() => setMobileMenuOpen(false)}
                             >
                               {item}
-                            </Link>
+                            </LocalizedLink>
                           ))}
                         </div>
                       )}
@@ -391,13 +393,13 @@ export default function Navbar() {
                     </div>
                   ) : user ? (
                     <>
-                      <Link
+                      <LocalizedLink
                         href="/dashboard"
                         className="block w-full px-4 py-3 text-sm font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 text-center transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t("navbar.dashboard")}
-                      </Link>
+                      </LocalizedLink>
                       <div className="flex items-center space-x-3 px-4 py-2">
                         <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                           <span className="text-primary font-semibold text-sm">
@@ -427,20 +429,20 @@ export default function Navbar() {
                     </>
                   ) : (
                     <>
-                      <Link
+                      <LocalizedLink
                         href="/login"
                         className="block w-full px-4 py-3 text-sm font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 text-center transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t("navbar.signIn")}
-                      </Link>
-                      <Link
+                      </LocalizedLink>
+                      <LocalizedLink
                         href="/signup"
                         className="block w-full px-4 py-3 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 text-center transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t("navbar.signUp")}
-                      </Link>
+                      </LocalizedLink>
                     </>
                   )}
                 </div>
