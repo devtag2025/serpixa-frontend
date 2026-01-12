@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+import LocalizedLink from "@/components/common/LocalizedLink";
+import { removeLocaleFromPath } from "@/utils/localizedLinks";
 import {
   HiHome,
   HiSearch,
@@ -40,6 +41,9 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
   
   // Computed: sidebar is expanded if not collapsed OR if hovered (when collapsed)
   const isExpanded = !isCollapsed || isHovered;
+  
+  // Remove locale prefix for pathname comparison
+  const pathWithoutLocale = pathname ? removeLocaleFromPath(pathname) : "";
 
   // Toggle submenu open/close
   const toggleMenu = (menuKey) => {
@@ -139,7 +143,7 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
   // Auto-open submenu if current path matches any submenu item
   const shouldOpenMenu = (item) => {
     if (!item.submenu) return false;
-    return item.submenu.some((subItem) => pathname === subItem.href);
+    return item.submenu.some((subItem) => pathWithoutLocale === subItem.href);
   };
 
   // Load collapsed state from localStorage on mount
@@ -192,7 +196,7 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
       >
         {/* Mobile Header with Close Button */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
-          <Link 
+          <LocalizedLink 
             href="/" 
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer"
           >
@@ -214,7 +218,7 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
             <span className="text-xl font-semibold text-gray-900 whitespace-nowrap">
               Serpixa
             </span>
-          </Link>
+          </LocalizedLink>
           <button
             onClick={onMobileClose}
             className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
@@ -275,7 +279,7 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
         >
           <div className="flex-1 overflow-y-auto p-4">
             {/* Logo/Brand */}
-            <Link 
+            <LocalizedLink 
               href="/" 
               className={`flex items-center ${isExpanded ? "space-x-2" : "justify-center"} mb-8 px-4 hover:opacity-80 transition-opacity cursor-pointer`}
             >
@@ -299,7 +303,7 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
                   Serpixa
                 </span>
               )}
-            </Link>
+            </LocalizedLink>
 
           {/* Navigation Menu */}
           <nav className="space-y-1">

@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Footer from "@/components/landing/Footer";
+import { removeLocaleFromPath } from "@/utils/localizedLinks";
 
 // Routes where we don't want to show the marketing footer
 const HIDDEN_ROUTES = [
@@ -18,8 +19,11 @@ export default function ConditionalFooter() {
 
   if (!pathname) return null;
 
+  // Remove locale prefix to check routes
+  const pathWithoutLocale = removeLocaleFromPath(pathname);
+
   const shouldHide = HIDDEN_ROUTES.some((route) =>
-    pathname === route || pathname.startsWith(`${route}/`)
+    pathWithoutLocale === route || pathWithoutLocale.startsWith(`${route}/`)
   );
 
   if (shouldHide) return null;

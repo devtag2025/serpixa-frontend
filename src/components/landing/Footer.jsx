@@ -1,15 +1,17 @@
 "use client";
-import Link from "next/link";
+import LocalizedLink from "@/components/common/LocalizedLink";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "@/i18n/context";
 import { HiHome, HiSearch, HiChartBar, HiSparkles } from "react-icons/hi";
+import { removeLocaleFromPath } from "@/utils/localizedLinks";
 
 export default function Footer() {
   const pathname = usePathname();
   const { t } = useTranslation();
 
-  // Hide footer on dashboard pages
-  if (pathname?.startsWith("/dashboard")) {
+  // Hide footer on dashboard pages (check pathname without locale)
+  const pathWithoutLocale = pathname ? removeLocaleFromPath(pathname) : "";
+  if (pathWithoutLocale?.startsWith("/dashboard")) {
     return null;
   }
 
@@ -52,24 +54,24 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="text-white/80 hover:text-white text-sm transition-colors">
+                  <LocalizedLink href="/" className="text-white/80 hover:text-white text-sm transition-colors">
                     {t("landing.footer.home")}
-                  </Link>
+                  </LocalizedLink>
                 </li>
                 <li>
-                  <Link href="/why-serpixa" className="text-white/80 hover:text-white text-sm transition-colors">
+                  <LocalizedLink href="/why-serpixa" className="text-white/80 hover:text-white text-sm transition-colors">
                     {t("landing.footer.whySerpixa")}
-                  </Link>
+                  </LocalizedLink>
                 </li>
                 <li>
-                  <Link href="/about-us" className="text-white/80 hover:text-white text-sm transition-colors">
+                  <LocalizedLink href="/about-us" className="text-white/80 hover:text-white text-sm transition-colors">
                     {t("landing.footer.aboutUs")}
-                  </Link>
+                  </LocalizedLink>
                 </li>
                 <li>
-                  <Link href="/features" className="text-white/80 hover:text-white text-sm transition-colors">
+                  <LocalizedLink href="/features" className="text-white/80 hover:text-white text-sm transition-colors">
                     {t("landing.footer.features")}
-                  </Link>
+                  </LocalizedLink>
                 </li>
               </ul>
             </div>
@@ -81,24 +83,24 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/dashboard/seo-audit" className="text-white/80 hover:text-white text-sm transition-colors">
+                  <LocalizedLink href="/dashboard/seo-audit" className="text-white/80 hover:text-white text-sm transition-colors">
                     {t("landing.footer.seoAudit")}
-                  </Link>
+                  </LocalizedLink>
                 </li>
                 <li>
-                  <Link href="/dashboard/gbp-audit" className="text-white/80 hover:text-white text-sm transition-colors">
+                  <LocalizedLink href="/dashboard/gbp-audit" className="text-white/80 hover:text-white text-sm transition-colors">
                     {t("landing.footer.gbpAudit")}
-                  </Link>
+                  </LocalizedLink>
                 </li>
                 <li>
-                  <Link href="/dashboard/local-seo" className="text-white/80 hover:text-white text-sm transition-colors">
+                  <LocalizedLink href="/dashboard/local-seo" className="text-white/80 hover:text-white text-sm transition-colors">
                     {t("landing.footer.localSeoAudit")}
-                  </Link>
+                  </LocalizedLink>
                 </li>
                 <li>
-                  <Link href="/dashboard/ai-content" className="text-white/80 hover:text-white text-sm transition-colors">
+                  <LocalizedLink href="/dashboard/ai-content" className="text-white/80 hover:text-white text-sm transition-colors">
                     {t("landing.footer.aiContent")}
-                  </Link>
+                  </LocalizedLink>
                 </li>
               </ul>
             </div>
@@ -112,15 +114,15 @@ export default function Footer() {
               {t("landing.footer.copyright", { year: new Date().getFullYear() })}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-              <Link href="/terms" className="text-white/70 hover:text-white text-xs transition-colors">
+              <LocalizedLink href="/terms" className="text-white/70 hover:text-white text-xs transition-colors">
                 {t("landing.footer.terms")}
-              </Link>
-              <Link href="/privacy" className="text-white/70 hover:text-white text-xs transition-colors">
+              </LocalizedLink>
+              <LocalizedLink href="/privacy" className="text-white/70 hover:text-white text-xs transition-colors">
                 {t("landing.footer.privacy")}
-              </Link>
-              <Link href="/cookies" className="text-white/70 hover:text-white text-xs transition-colors">
+              </LocalizedLink>
+              <LocalizedLink href="/cookies" className="text-white/70 hover:text-white text-xs transition-colors">
                 {t("landing.footer.cookies")}
-              </Link>
+              </LocalizedLink>
             </div>
           </div>
         </div>

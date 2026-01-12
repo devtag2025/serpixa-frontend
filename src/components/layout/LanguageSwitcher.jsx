@@ -2,9 +2,13 @@
 import { useI18n } from "@/i18n/context";
 import { headerLocaleNames, localeNames } from "@/i18n/config";
 import { useState, useRef, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { localizePath, removeLocaleFromPath } from "@/utils/localizedLinks";
 
 export default function LanguageSwitcher() {
-  const { locale, changeLocale } = useI18n();
+  const { locale } = useI18n();
+  const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -25,7 +29,22 @@ export default function LanguageSwitcher() {
   }, []);
 
   const handleLocaleChange = (newLocale) => {
-    changeLocale(newLocale);
+    console.log("[LanguageSwitcher] handleLocaleChange called:", { currentLocale: locale, newLocale, pathname });
+    
+    if (newLocale === locale) {
+      console.log("[LanguageSwitcher] Same locale, closing dropdown");
+      setIsOpen(false);
+      return;
+    }
+    
+    // Remove current locale from pathname and add new locale
+    const pathWithoutLocale = removeLocaleFromPath(pathname);
+    const newPath = localizePath(pathWithoutLocale, newLocale);
+    
+    console.log("[LanguageSwitcher] Navigating:", { from: pathname, to: newPath, pathWithoutLocale });
+    
+    // Navigate to new URL with different locale
+    router.push(newPath);
     setIsOpen(false);
   };
 

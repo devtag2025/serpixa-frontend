@@ -1,9 +1,9 @@
 "use client";
 import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { authKeys } from "@/hooks/useAuth";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 
 /**
  * PublicRoute component - redirects authenticated users away from public pages
@@ -13,7 +13,7 @@ import { authKeys } from "@/hooks/useAuth";
  */
 export default function PublicRoute({ children, redirectTo = "/dashboard" }) {
   const { data: user, isLoading } = useAuth();
-  const router = useRouter();
+  const { push } = useLocalizedRouter();
   const queryClient = useQueryClient();
 
   // Check if we have cached data (even if it's an error state)
@@ -24,9 +24,9 @@ export default function PublicRoute({ children, redirectTo = "/dashboard" }) {
   useEffect(() => {
     // If user is authenticated, redirect away from public pages
     if (user && !isLoading) {
-      router.push(redirectTo);
+      push(redirectTo);
     }
-  }, [user, isLoading, router, redirectTo]);
+  }, [user, isLoading, push, redirectTo]);
 
   // Show loading ONLY if there's no cached data at all (true initial load)
   // If we have cached data (even error), skip loading to prevent flash
