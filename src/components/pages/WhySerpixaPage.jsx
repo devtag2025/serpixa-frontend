@@ -371,9 +371,6 @@ export default function WhySerpixaPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               {t("landing.whySerpixa.whyChoose.title")}
             </h2>
-            {/* <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              {t("landing.whySerpixa.whyChoose.subtitle")}
-            </p> */}
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -419,9 +416,6 @@ export default function WhySerpixaPage() {
               {t("landing.whySerpixa.cta.viewPricing")}
             </Link>
           </div>
-          {/* <p className="mt-8 text-gray-500 text-sm">
-            {t("landing.whySerpixa.cta.trustText")}
-          </p> */}
         </div>
       </section>
     </div>

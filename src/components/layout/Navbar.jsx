@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth, useLogout } from "@/hooks/useAuth";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useTranslation } from "@/i18n/context";
-import { removeLocaleFromPath } from "@/utils/localizedLinks";
+import { useTranslation, useI18n } from "@/i18n/context";
+import { removeLocaleFromPath, getLocaleFromPathname } from "@/utils/localizedLinks";
+import { getEnglishSlug, shouldUseTranslatedSlug } from "@/lib/slugMap";
 
 export default function Navbar() {
   const pathname = usePathname();
   const { t } = useTranslation();
+  const { locale } = useI18n();
   
   // Hide navbar on dashboard pages (check pathname without locale)
   const pathWithoutLocale = pathname ? removeLocaleFromPath(pathname) : "";
@@ -23,7 +25,23 @@ export default function Navbar() {
   const { data: user, isLoading } = useAuth();
   const { mutate: logout } = useLogout();
 
-  const isActiveLink = (href) => pathWithoutLocale === href;
+  const isActiveLink = (href) => {
+    // Remove leading slash for comparison
+    const normalizedHref = href.replace(/^\/+/, '');
+    const normalizedPath = pathWithoutLocale.replace(/^\/+/, '');
+    
+    // If both are empty (home page), they match
+    if (!normalizedHref && !normalizedPath) return true;
+    
+    // For marketing/legal pages with translated URLs, we need to compare English slugs
+    if (normalizedPath && shouldUseTranslatedSlug(normalizedPath)) {
+      const englishSlug = getEnglishSlug(normalizedPath, locale);
+      return englishSlug === normalizedHref;
+    }
+    
+    // For other pages (home, etc.), direct comparison
+    return normalizedPath === normalizedHref;
+  };
 
   const navLinks = [
     {
