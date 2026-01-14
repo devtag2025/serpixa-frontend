@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { slugMap, getTranslatedSlug, getEnglishSlug } from '@/lib/slugMap';
 
 const locales = ['en', 'fr', 'nl'];
 const defaultLocale = 'en';
@@ -37,6 +38,29 @@ export function middleware(request) {
   );
 
   if (pathnameHasLocale) {
+    const pathSegments = pathname.split('/').filter(Boolean);
+    const locale = pathSegments[0];
+    const slug = pathSegments[1];
+    
+    // Backward compatibility: Redirect old English slugs to translated slugs for marketing/legal pages
+    if (slug && locale !== 'en') {
+      // Check if this is an English slug that should be translated
+      const englishSlug = slug; // Current slug in URL
+      
+      // Check if this English slug exists in slugMap
+      if (slugMap[englishSlug]) {
+        // Get the translated slug for this locale
+        const translatedSlug = getTranslatedSlug(englishSlug, locale);
+        
+        // If translated slug is different from current slug, redirect
+        if (translatedSlug && translatedSlug !== slug) {
+          const newPathname = `/${locale}/${translatedSlug}${pathSegments.slice(2).length > 0 ? '/' + pathSegments.slice(2).join('/') : ''}`;
+          const newUrl = new URL(newPathname, request.url);
+          return NextResponse.redirect(newUrl, 301); // Permanent redirect for SEO
+        }
+      }
+    }
+    
     return NextResponse.next();
   }
 
