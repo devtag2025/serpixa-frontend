@@ -4,6 +4,7 @@ import { headerLocaleNames, localeNames } from "@/i18n/config";
 import { useState, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { localizePath, removeLocaleFromPath } from "@/utils/localizedLinks";
+import { getEnglishSlug } from "@/lib/slugMap";
 
 export default function LanguageSwitcher() {
   const { locale } = useI18n();
@@ -37,11 +38,39 @@ export default function LanguageSwitcher() {
       return;
     }
     
-    // Remove current locale from pathname and add new locale
+    // Remove current locale from pathname
     const pathWithoutLocale = removeLocaleFromPath(pathname);
-    const newPath = localizePath(pathWithoutLocale, newLocale);
     
-    console.log("[LanguageSwitcher] Navigating:", { from: pathname, to: newPath, pathWithoutLocale });
+    // Extract the first segment (slug)
+    const segments = pathWithoutLocale.split('/').filter(Boolean);
+    const firstSegment = segments[0] || '';
+    
+    // Convert translated slug to English slug if needed
+    let pathToLocalize = pathWithoutLocale;
+    
+    if (firstSegment) {
+      // Try to convert current slug (which might be in current locale) to English slug
+      const englishSlug = getEnglishSlug(firstSegment, locale);
+      
+      if (englishSlug) {
+        // This was a translated slug, convert it to English
+        segments[0] = englishSlug;
+        pathToLocalize = '/' + segments.join('/');
+      }
+      // If englishSlug is null, it means firstSegment is already English or not in slugMap
+      // In that case, we can proceed with the path as-is
+    }
+    
+    // Now localize the path (which will translate English slug to new locale's slug)
+    const newPath = localizePath(pathToLocalize, newLocale);
+    
+    console.log("[LanguageSwitcher] Navigating:", { 
+      from: pathname, 
+      to: newPath, 
+      pathWithoutLocale,
+      pathToLocalize,
+      firstSegment 
+    });
     
     // Navigate to new URL with different locale
     router.push(newPath);
