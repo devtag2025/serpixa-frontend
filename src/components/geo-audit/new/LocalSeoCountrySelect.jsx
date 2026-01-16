@@ -8,7 +8,7 @@ import { useTranslation } from "@/i18n/context";
 const localSeoCountries = [
   { 
     value: 'France', 
-    label: 'Français', 
+    label: 'France', 
     countryCode: 'FR',
   },
   { 
@@ -18,7 +18,7 @@ const localSeoCountries = [
   },
   { 
     value: 'Netherlands', 
-    label: 'Nederlands', 
+    label: 'Netherlands', 
     countryCode: 'NL',
   },
 ];

@@ -69,7 +69,8 @@ export function middleware(request) {
   const locale = getLocaleFromAcceptLanguage(acceptLanguage);
   
   request.nextUrl.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
+  // Use 301 (permanent redirect) for SEO - tells search engines this is the canonical URL
+  return NextResponse.redirect(request.nextUrl, 301);
 }
 
 export const config = {
