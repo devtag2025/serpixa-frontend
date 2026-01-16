@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,13 +18,16 @@ export const metadata = {
 };
 
 /**
- * Root Layout - Minimal layout that only provides HTML structure
+ * Root Layout - Provides HTML structure with dynamic locale
  * All UI components (Navbar, Footer) are in [locale]/layout.js
- * since all routes are now under [locale] segment
  */
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  // Get locale from header set by middleware
+  const headersList = await headers();
+  const locale = headersList.get('x-locale') || 'en';
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
