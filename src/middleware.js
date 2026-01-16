@@ -61,7 +61,10 @@ export function middleware(request) {
       }
     }
     
-    return NextResponse.next();
+     // Set locale header for root layout to read
+     const response = NextResponse.next();
+     response.headers.set('x-locale', locale);
+     return response;
   }
 
   // Detect locale from browser's Accept-Language header
