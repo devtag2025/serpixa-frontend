@@ -1,10 +1,13 @@
 import Script from "next/script";
+import { notFound } from "next/navigation";
 import ReactQueryProvider from "@/lib/react-query-provider";
 import ToastProvider from "@/lib/toastProvider";
 import { I18nProvider } from "@/i18n/context";
 import TranslationBlocker from "@/components/common/TranslationBlocker";
 import Navbar from "@/components/layout/Navbar";
 import ConditionalFooter from "@/components/layout/ConditionalFooter";
+
+const locales = ["en", "fr", "nl"];
 
 export const metadata = {
   title: "Serpixa",
@@ -15,6 +18,11 @@ export default async function LocaleLayout({ children, params }) {
   // In Next.js 15, params is a Promise and must be awaited
   const resolvedParams = await params;
   const locale = resolvedParams?.locale || 'en';
+  
+  // Validate locale - return 404 for invalid locales
+  if (!locales.includes(locale)) {
+    notFound();
+  }
   
   console.log("[LocaleLayout] Rendered with locale from params:", locale, "resolvedParams:", resolvedParams);
 
