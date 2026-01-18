@@ -56,15 +56,22 @@ const getBrowserLocale = () => {
   return null;
 };
 
-export function I18nProvider({ children, locale: initialLocale = "en" }) {
+export function I18nProvider({ children, locale: initialLocale = "en", initialTranslations = null }) {
   console.log("[I18nProvider] Rendered with initialLocale:", initialLocale);
+  
+  // Cache initial translations if provided (from server-side)
+  if (initialTranslations && !translationsCache[initialLocale]) {
+    translationsCache[initialLocale] = initialTranslations;
+  }
   
   // Use locale from URL (passed from layout) - sync with prop changes
   const [locale, setLocale] = useState(initialLocale);
-  // Initialize translations from cache if available (prevents blocking on language switch)
-  const [translations, setTranslations] = useState(() => translationsCache[initialLocale] || null);
-  const [hasLoadedOnce, setHasLoadedOnce] = useState(!!translationsCache[initialLocale]);
-  const [isLoading, setIsLoading] = useState(!translationsCache[initialLocale]);
+  // Initialize translations from prop (server-side) or cache if available (prevents blocking on language switch)
+  const [translations, setTranslations] = useState(() => 
+    initialTranslations || translationsCache[initialLocale] || null
+  );
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(!!(initialTranslations || translationsCache[initialLocale]));
+  const [isLoading, setIsLoading] = useState(!(initialTranslations || translationsCache[initialLocale]));
 
   console.log("[I18nProvider] Current locale state:", locale, "initialLocale prop:", initialLocale);
 

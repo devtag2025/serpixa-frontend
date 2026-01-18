@@ -7,7 +7,18 @@ import TranslationBlocker from "@/components/common/TranslationBlocker";
 import Navbar from "@/components/layout/Navbar";
 import ConditionalFooter from "@/components/layout/ConditionalFooter";
 
+// Import translations for server-side rendering
+import enTranslations from "@/i18n/locales/en.json";
+import frTranslations from "@/i18n/locales/fr.json";
+import nlTranslations from "@/i18n/locales/nl.json";
+
 const locales = ["en", "fr", "nl"];
+
+const translationsMap = {
+  en: enTranslations,
+  fr: frTranslations,
+  nl: nlTranslations,
+};
 
 export const metadata = {
   title: "Serpixa",
@@ -24,6 +35,9 @@ export default async function LocaleLayout({ children, params }) {
     notFound();
   }
   
+  // Get translations for this locale (server-side)
+  const initialTranslations = translationsMap[locale] || translationsMap.en;
+  
   console.log("[LocaleLayout] Rendered with locale from params:", locale, "resolvedParams:", resolvedParams);
 
   return (
@@ -36,7 +50,7 @@ export default async function LocaleLayout({ children, params }) {
         strategy="afterInteractive"
       />
       
-      <I18nProvider locale={locale}>
+      <I18nProvider locale={locale} initialTranslations={initialTranslations}>
         <TranslationBlocker>
           <ReactQueryProvider>
             <ToastProvider />
