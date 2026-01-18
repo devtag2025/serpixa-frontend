@@ -67,6 +67,13 @@ export function middleware(request) {
      return response;
   }
 
+  // For root path (/), let app/page.js handle the redirect server-side
+  // This provides better SEO as it's a real route file
+  if (pathname === '/') {
+    return NextResponse.next();
+  }
+
+  // For other paths without locale, redirect to locale-prefixed version
   // Detect locale from browser's Accept-Language header
   const acceptLanguage = request.headers.get('accept-language');
   const locale = getLocaleFromAcceptLanguage(acceptLanguage);
