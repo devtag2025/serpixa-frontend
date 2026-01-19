@@ -19,9 +19,9 @@ export default function TabNavigation({ activeTab, onTabChange }) {
   ];
 
   return (
-    <div className="border-b border-gray-200 bg-white">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-        <nav className="flex space-x-1 sm:space-x-2" aria-label="Tabs">
+    <div className="">
+      <div className="max-w-7xl  py-2 p-2  mx-auto px-3 sm:px-4 lg:px-8">
+        <nav className="flex space-x-1 sm:space-x-2 " aria-label="Tabs">
           {tabs.map((tab) => (
             <button
               key={tab.id}

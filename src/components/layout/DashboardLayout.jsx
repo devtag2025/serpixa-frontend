@@ -3,6 +3,7 @@ import { useState } from "react";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import Sidebar from "./Sidebar";
 import DashboardTopBar from "./DashboardTopBar";
+import DashboardBackground from "./DashboardBackground";
 
 /**
  * DashboardLayout - Reusable layout wrapper for all dashboard pages
@@ -25,7 +26,10 @@ export default function DashboardLayout({ children }) {
 
   return (
     <ProtectedRoute>
-      <div className="min-h-screen bg-gray-50 flex">
+      <div className="min-h-screen flex relative">
+        {/* Dashboard Background */}
+        <DashboardBackground />
+        
         {/* Mobile Backdrop Overlay */}
         {isMobileSidebarOpen && (
           <div
@@ -40,10 +44,10 @@ export default function DashboardLayout({ children }) {
           onMobileClose={closeMobileSidebar}
         />
 
-        <div className="flex-1 flex flex-col lg:ml-0">
+        <div className="flex-1 flex flex-col lg:ml-0 relative z-10">
           <DashboardTopBar onMenuClick={toggleMobileSidebar} />
           {/* Content area */}
-          <main className="flex-1 overflow-y-auto bg-gray-50">
+          <main className="flex-1  overflow-y-auto">
             {children}
           </main>
         </div>

@@ -95,7 +95,7 @@ export default function GBPAuditListPage() {
       <GBPAuditListHeader audits={audits} />
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         {isEmpty ? (
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-12 text-center">
             <HiOfficeBuilding className="w-16 h-16 text-gray-400 mx-auto mb-4" />

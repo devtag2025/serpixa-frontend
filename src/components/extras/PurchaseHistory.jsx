@@ -1,6 +1,7 @@
 "use client";
 import { useTranslation } from "@/i18n/context";
 import { HiCheckCircle, HiCalendar } from "react-icons/hi";
+import { formatEuropeanDate } from "@/utils/dateFormatter";
 
 /**
  * PurchaseHistory - Dummy purchase history component
@@ -48,11 +49,7 @@ export default function PurchaseHistory({ extras }) {
   }
 
   const formatDate = (date) => {
-    return new Intl.DateTimeFormat("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    }).format(date);
+    return formatEuropeanDate(date, { shortMonth: true });
   };
 
   return (

@@ -8,6 +8,7 @@ import {
   HiXCircle,
   HiClock,
 } from "react-icons/hi";
+import { formatEuropeanDate } from "@/utils/dateFormatter";
 
 /**
  * CurrentSubscriptionCard - Displays current subscription information
@@ -107,7 +108,7 @@ export default function CurrentSubscriptionCard() {
   };
 
   return (
-    <div className="bg-white rounded-lg sm:rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
+    <div className="bg-white/80 backdrop-blur-sm rounded-lg sm:rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
         <div className="flex-1">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
@@ -150,7 +151,7 @@ export default function CurrentSubscriptionCard() {
                     : t("dashboard.subscription.renewsOn")}
                 </p>
                 <p className="text-lg font-semibold text-gray-900">
-                  {new Date(current_period_end).toLocaleDateString()}
+                  {formatEuropeanDate(current_period_end)}
                 </p>
               </div>
             </div>

@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useCurrentSubscription } from "@/hooks/useSubscription";
 import { useQueryClient } from "@tanstack/react-query";
+import { formatEuropeanDate } from "@/utils/dateFormatter";
 
 function CheckoutSuccessContent() {
   const router = useRouter();
@@ -70,7 +71,7 @@ function CheckoutSuccessContent() {
                 <p className="text-gray-700">{subscription.plan?.name}</p>
                 {subscription.current_period_end && (
                   <p className="text-sm text-gray-600 mt-1">
-                    Next billing: {new Date(subscription.current_period_end).toLocaleDateString()}
+                    Next billing: {formatEuropeanDate(subscription.current_period_end)}
                   </p>
                 )}
               </div>

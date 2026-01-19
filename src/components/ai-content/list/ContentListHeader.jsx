@@ -8,9 +8,9 @@ export default function ContentListHeader() {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-6">
-        <div className="flex items-center justify-between">
+    <div className=" border-b border-gray-200 sticky top-0 z-40 ">
+      <div className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white/90 backdrop-blur-sm shadow-sm rounded-xl py-4 p-2 border border-gray-100 flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-semibold text-gray-900 mb-1">
               {t("dashboard.sidebar.aiContent")}

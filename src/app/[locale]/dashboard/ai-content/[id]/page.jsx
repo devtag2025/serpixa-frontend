@@ -16,6 +16,7 @@ import { handleError } from "@/utils/handleError";
 import { useTranslation } from "@/i18n/context";
 import { toast } from "react-hot-toast";
 import { useAIContent, useDeleteAIContent } from "@/hooks/aiContentHooks";
+import { formatEuropeanDateTime } from "@/utils/dateFormatter";
 
 export default function AIContentViewPage() {
   const { id } = useParams();
@@ -132,7 +133,7 @@ export default function AIContentViewPage() {
 
   return (
     <DashboardLayout>
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-full">
+      <div className="min-h-full">
           {/* SEO Disclaimer Banner */}
           <div className="bg-primary border-b border-primary/20 opacity-0 animate-fadeInSlideDown animation-delay-2000">
           <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-2 sm:py-3">
@@ -198,7 +199,7 @@ export default function AIContentViewPage() {
 
             {/* Generated Info */}
             <div className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-gray-200 p-3 sm:p-4 text-center text-xs sm:text-sm text-gray-500">
-              {t("dashboard.aiContent.view.generatedAt")}: {new Date(content.createdAt || Date.now()).toLocaleString()}
+              {t("dashboard.aiContent.view.generatedAt")}: {formatEuropeanDateTime(content.createdAt || Date.now())}
             </div>
           </div>
         </div>
