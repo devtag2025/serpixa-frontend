@@ -4,6 +4,7 @@ import { HiEye, HiTrash, HiLocationMarker } from "react-icons/hi";
 import { getScoreColor } from "@/utils/colors";
 import { getStatusColor } from "@/utils/colors";
 import { useTranslation } from "@/i18n/context";
+import { formatEuropeanDate } from "@/utils/dateFormatter";
 
 export default function GeoAuditTable({ audits, onDelete }) {
   const router = useRouter();
@@ -89,11 +90,7 @@ export default function GeoAuditTable({ audits, onDelete }) {
                     </td>
                     <td className="px-6 py-4">
                       <span className="text-sm text-gray-600">
-                        {new Date(audit.createdAt).toLocaleDateString("en-US", {
-                          month: "short",
-                          day: "numeric",
-                          year: "numeric",
-                        })}
+                        {formatEuropeanDate(audit.createdAt, { shortMonth: true })}
                       </span>
                     </td>
                     <td className="px-6 py-4">

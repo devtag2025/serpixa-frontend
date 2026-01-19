@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { HiEye, HiTrash } from "react-icons/hi";
 import { getScoreColor } from "@/utils/colors";
 import { useTranslation } from "@/i18n/context";
+import { formatEuropeanDate } from "@/utils/dateFormatter";
 
 export default function ContentTable({ contents, onDelete }) {
   const router = useRouter();
@@ -71,7 +72,7 @@ export default function ContentTable({ contents, onDelete }) {
                     </td>
                     <td className="px-6 py-4">
                       <span className="text-sm text-gray-600">
-                        {new Date(content.createdAt).toLocaleDateString()}
+                        {formatEuropeanDate(content.createdAt)}
                       </span>
                     </td>
                     <td className="px-6 py-4">

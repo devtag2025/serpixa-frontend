@@ -1,6 +1,7 @@
 "use client";
 import { HiClipboardCopy } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
+import { formatEuropeanDate } from "@/utils/dateFormatter";
 
 export default function AuditInfo({ audit, onCopyToClipboard }) {
   const { t } = useTranslation();
@@ -33,11 +34,7 @@ export default function AuditInfo({ audit, onCopyToClipboard }) {
         <div>
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{t("dashboard.common.date")}</p>
           <p className="text-sm text-gray-900">
-            {new Date(audit.createdAt).toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })}
+            {formatEuropeanDate(audit.createdAt, { longMonth: true })}
           </p>
         </div>
         <div>

@@ -41,7 +41,7 @@ export default function DashboardTopBar({ onMenuClick = () => {} }) {
   };
 
   return (
-    <header className="sticky top-0 h-14 bg-white border-b border-gray-200 z-50">
+    <header className="sticky top-0 h-14 bg-white/80 backdrop-blur-sm border-b border-gray-200 z-50">
       <div className="h-full flex items-center px-4 sm:px-6 lg:px-8">
         {/* Mobile Menu Button */}
         <button

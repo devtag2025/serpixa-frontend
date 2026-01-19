@@ -267,7 +267,7 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
         <aside
           className={`${
             isExpanded ? "w-64" : "w-16"
-          } bg-white border-r border-gray-200 shadow-md h-screen sticky top-0 flex flex-col transition-all duration-300 ease-in-out`}
+          } bg-white/90 backdrop-blur-sm border-r border-gray-200 shadow-md h-screen sticky top-0 flex flex-col transition-all duration-300 ease-in-out`}
           onMouseEnter={() => {
             if (isCollapsed) {
               setIsHovered(true);

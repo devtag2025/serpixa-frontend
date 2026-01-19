@@ -99,11 +99,11 @@ export default function Dashboard() {
 
   return (
     <DashboardLayout>
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-full">
+      <div className="min-h-full">
         {/* Header */}
-        <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex items-center justify-between">
+        <div className=" backdrop-blur-sm border-b border-gray-200/50 ">
+          <div className="max-w-7xl  mx-auto px-2 sm:px-6 lg:px-8 py-2">
+            <div className=" bg-white/70 backdrop-blur-sm rounded-xl py-4 p-2 shadow-sm border border-gray-100 flex items-center justify-between">
               <div>
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                   {t("dashboard.page.welcomeBack")}{user?.name ? `, ${user.name.split(" ")[0]}` : ""}! 👋
@@ -120,10 +120,10 @@ export default function Dashboard() {
         </div>
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
           {/* Credits Section */}
-          <div className="mb-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">
+          <div className="mb-2">
+            <h2 className="text-xl px-1 font-bold text-gray-900 mb-2">
               {t("dashboard.page.yourCredits")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -135,7 +135,7 @@ export default function Dashboard() {
 
           {/* Quick Actions */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">
+            <h2 className="text-xl font-bold text-gray-900 mb-2">
               {t("dashboard.page.quickActions")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
