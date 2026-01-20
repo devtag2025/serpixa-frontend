@@ -7,6 +7,7 @@ import SEOAuditListHeader from "@/components/seo-audit/list/SEOAuditListHeader";
 import SEOAuditTable from "@/components/seo-audit/list/SEOAuditTable";
 import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
 import Pagination from "@/components/common/Pagination";
+import RouteLoader from "@/components/common/RouteLoader";
 import { useTranslation } from "@/i18n/context";
 import { useSEOAudits, useDeleteSEOAudit } from "@/hooks/seoAuditHooks";
 import { handleError } from "@/utils/handleError";
@@ -52,10 +53,7 @@ export default function SEOAuditListPage() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
-            <p className="mt-4 text-gray-600 font-medium">Loading audits...</p>
-          </div>
+          <RouteLoader />
         </div>
       </DashboardLayout>
     );

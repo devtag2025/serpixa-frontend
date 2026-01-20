@@ -12,6 +12,7 @@ import ContentPreview from "@/components/ai-content/view/ContentPreview";
 import FAQSection from "@/components/ai-content/view/FAQSection";
 import CTASection from "@/components/ai-content/view/CTASection";
 import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
+import RouteLoader from "@/components/common/RouteLoader";
 import { handleError } from "@/utils/handleError";
 import { useTranslation } from "@/i18n/context";
 import { toast } from "react-hot-toast";
@@ -99,10 +100,7 @@ export default function AIContentViewPage() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading content...</p>
-          </div>
+          <RouteLoader />
         </div>
       </DashboardLayout>
     );

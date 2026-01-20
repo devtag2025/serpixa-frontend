@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import DashboardLayout from "@/components/layout/DashboardLayout";
+import RouteLoader from "@/components/common/RouteLoader";
 import { SEOAuditService } from "@/services/seoAuditService";
 import { handleError } from "@/utils/handleError";
 import { toast } from "react-hot-toast";
@@ -60,10 +61,7 @@ export default function SEOAuditResultsPage() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
-            <p className="mt-4 text-gray-600 font-medium">Loading audit results...</p>
-          </div>
+          <RouteLoader />
         </div>
       </DashboardLayout>
     );

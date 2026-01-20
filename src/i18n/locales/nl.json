@@ -598,6 +598,7 @@
       "messageMinLength": "Bericht moet minimaal 10 tekens bevatten",
       "messageMaxLength": "Bericht moet minder dan 2000 tekens bevatten",
       "send": "Bericht verzenden",
+      "sending": "Verzenden...",
       "messageSentSuccess": "Uw bericht is verzonden! Een agent zal binnen 24 uur antwoorden."
     },
     "profile": {

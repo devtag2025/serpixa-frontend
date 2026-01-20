@@ -4,6 +4,7 @@ import CreditCard from "@/components/dashboard/CreditCard";
 import ActionButton from "@/components/dashboard/ActionButton";
 import RecentAudits from "@/components/dashboard/RecentAudits";
 import OverviewStats from "@/components/dashboard/OverviewStats";
+import RouteLoader from "@/components/common/RouteLoader";
 import { useAuth } from "@/hooks/useAuth";
 import { useDashboard } from "@/hooks/useDashboardStats";
 import { useTranslation } from "@/i18n/context";
@@ -70,10 +71,7 @@ export default function Dashboard() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
-            <p className="mt-4 text-gray-600 font-medium">Loading dashboard...</p>
-          </div>
+          <RouteLoader />
         </div>
       </DashboardLayout>
     );

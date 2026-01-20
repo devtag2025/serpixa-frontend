@@ -1,11 +1,15 @@
 "use client";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { HiX, HiMail, HiChatAlt } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
 import { toast } from "react-hot-toast";
+import { SupportService } from "@/services/supportService";
+import { handleError } from "@/utils/handleError";
 
 export default function SupportModal({ isOpen, onClose }) {
   const { t } = useTranslation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -13,20 +17,22 @@ export default function SupportModal({ isOpen, onClose }) {
     reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    // TODO: Implement support email submission
-    console.log("Support form data:", data);
-    
-    // Show success toast message
-    toast.success(t("dashboard.support.messageSentSuccess"));
-    
-    // Reset form after submission
-    reset();
-    
-    // Close modal after a short delay to allow user to see the toast
-    setTimeout(() => {
-      onClose();
-    }, 500);
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    try {
+      await SupportService.submitSupportRequest({
+        subject: data.subject,
+        email: data.email,
+        message: data.message,
+      });
+      toast.success(t("dashboard.support.messageSentSuccess"));
+      reset();
+      setTimeout(() => onClose(), 500);
+    } catch (error) {
+      toast.error(handleError(error));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -169,9 +175,10 @@ export default function SupportModal({ isOpen, onClose }) {
             </button>
             <button
               type="submit"
-              className="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-sm"
+              disabled={isSubmitting}
+              className="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-sm disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              {t("dashboard.support.send")}
+              {isSubmitting ? t("dashboard.support.sending") : t("dashboard.support.send")}
             </button>
           </div>
         </form>

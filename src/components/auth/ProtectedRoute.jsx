@@ -2,6 +2,7 @@
 import { useAuth } from "@/hooks/useAuth";
 import { useEffect } from "react";
 import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
+import RouteLoader from "@/components/common/RouteLoader";
 
 /**
  * ProtectedRoute component using TanStack Query
@@ -29,10 +30,7 @@ export default function ProtectedRoute({ children }) {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
-        </div>
+        <RouteLoader />
       </div>
     );
   }

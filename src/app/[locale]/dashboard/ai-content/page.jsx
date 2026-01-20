@@ -7,6 +7,7 @@ import ContentListHeader from "@/components/ai-content/list/ContentListHeader";
 import ContentTable from "@/components/ai-content/list/ContentTable";
 import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
 import Pagination from "@/components/common/Pagination";
+import RouteLoader from "@/components/common/RouteLoader";
 import { useTranslation } from "@/i18n/context";
 import { useAIContents, useDeleteAIContent } from "@/hooks/aiContentHooks";
 
@@ -56,10 +57,7 @@ export default function AIContentListPage() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
-            <p className="mt-4 text-gray-600 font-medium">Loading content...</p>
-          </div>
+          <RouteLoader />
         </div>
       </DashboardLayout>
     );

@@ -8,6 +8,7 @@ import GBPAuditListHeader from "@/components/gbp-audit/list/GBPAuditListHeader";
 import GBPAuditTable from "@/components/gbp-audit/list/GBPAuditTable";
 import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
 import Pagination from "@/components/common/Pagination";
+import RouteLoader from "@/components/common/RouteLoader";
 import { useTranslation } from "@/i18n/context";
 import { useGBPAudits, useDeleteGBPAudit } from "@/hooks/gbpAuditHooks";
 
@@ -52,10 +53,7 @@ export default function GBPAuditListPage() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
-            <p className="mt-4 text-gray-600 font-medium">Loading audits...</p>
-          </div>
+          <RouteLoader />
         </div>
       </DashboardLayout>
     );
