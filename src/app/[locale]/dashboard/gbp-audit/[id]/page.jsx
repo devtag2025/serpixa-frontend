@@ -9,6 +9,7 @@ import BusinessInfo from "@/components/gbp-audit/view/BusinessInfo";
 import Checklist from "@/components/gbp-audit/view/Checklist";
 import AuditInfo from "@/components/gbp-audit/view/AuditInfo";
 import RecommendationsTable from "@/components/gbp-audit/view/RecommendationsTable";
+import RouteLoader from "@/components/common/RouteLoader";
 import { useGBPAuditRaw, useDownloadGBPAuditPDF } from "@/hooks/gbpAuditHooks";
 
 export default function GBPAuditResultsPage() {
@@ -36,10 +37,7 @@ export default function GBPAuditResultsPage() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
-            <p className="mt-4 text-gray-600 font-medium">Loading audit results...</p>
-          </div>
+          <RouteLoader />
         </div>
       </DashboardLayout>
     );

@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import DashboardLayout from "@/components/layout/DashboardLayout";
+import RouteLoader from "@/components/common/RouteLoader";
 import { useAuth, useUpdateProfile } from "@/hooks/useAuth";
 import { useDashboard } from "@/hooks/useDashboardStats";
 import { useTranslation } from "@/i18n/context";
@@ -49,10 +50,7 @@ export default function ProfilePage() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)]">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary/30 border-t-primary"></div>
-            <p className="mt-4 text-gray-600 font-medium">Loading profile...</p>
-          </div>
+          <RouteLoader />
         </div>
       </DashboardLayout>
     );
