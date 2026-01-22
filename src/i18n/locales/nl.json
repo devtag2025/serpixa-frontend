@@ -863,6 +863,10 @@
         "countryHelpDetailed": "Selecteer het land waar u lokale zoekresultaten wilt analyseren",
         "businessNameHelpDetailed": "Laat leeg om alle concurrenten te zien. Indien opgegeven, vinden we uw bedrijf in de resultaten.",
         "keywordHelpDetailed": "De zoekterm die u wilt analyseren voor lokale resultaten",
+        "region": "Regio/Staat/Provincie",
+        "regionPlaceholder": "Begin met typen om te zoeken...",
+        "regionHelp": "Optioneel: Naam van staat, provincie of regio",
+        "selectCountryFirst": "Selecteer eerst een land",
         "showAdvanced": "Geavanceerde opties weergeven",
         "hideAdvanced": "Geavanceerde opties verbergen",
         "language": "Taal",
@@ -1033,6 +1037,9 @@
         "seoOptimized": "SEO-geoptimaliseerd met zoekwoorddichtheidsanalyse"
       },
       "form": {
+        "topic": "Onderwerp",
+        "topicPlaceholder": "bijv. Hoe de SEO van een website verbeteren",
+        "topicHelp": "Voer het hoofdonderwerp in voor inhoudsgeneratie",
         "keyword": "Zoekwoord",
         "keywordPlaceholder": "bijv. beste seo-tools",
         "keywordHelp": "Voer het primaire zoekwoord in voor inhoudsgeneratie",
@@ -1070,8 +1077,12 @@
         "regenerate": "Opnieuw genereren",
         "exportHtml": "HTML exporteren",
         "exportPdf": "PDF exporteren",
+        "exportingPdf": "Exporteren",
+        "pdfExported": "PDF succesvol geëxporteerd!",
+        "pdfExportError": "PDF exporteren mislukt",
         "copyAllHtml": "Alle HTML kopiëren",
         "generatedAt": "Gegenereerd op",
+        "topic": "Onderwerp",
         "keyword": "Zoekwoord",
         "locale": "Locale",
         "headings": "Koppen",
@@ -1335,6 +1346,21 @@
         "content": "Cookies worden maximaal 13 maanden bewaard, conform Europese aanbevelingen."
       }
     }
+  },
+  "checkout": {
+    "processing": "Uw betaling wordt verwerkt...",
+    "confirmingSubscription": "Even geduld terwijl we uw abonnement bevestigen.",
+    "confirmingAddon": "Even geduld terwijl we uw credits toevoegen.",
+    "paymentSuccessful": "Betaling geslaagd!",
+    "subscriptionActivated": "Uw abonnement is geactiveerd. U heeft nu toegang tot alle premium functies.",
+    "creditsAdded": "Uw credits zijn toegevoegd aan uw account.",
+    "addonPurchased": "Addon gekocht",
+    "creditsReceived": "Ontvangen credits:",
+    "yourPlan": "Uw plan:",
+    "nextBilling": "Volgende facturering:",
+    "goToDashboard": "Naar dashboard",
+    "viewCredits": "Bekijk uw credits",
+    "backToHome": "Terug naar home"
   }
 }
 

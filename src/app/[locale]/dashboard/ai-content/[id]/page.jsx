@@ -18,12 +18,14 @@ import { useTranslation } from "@/i18n/context";
 import { toast } from "react-hot-toast";
 import { useAIContent, useDeleteAIContent } from "@/hooks/aiContentHooks";
 import { formatEuropeanDateTime } from "@/utils/dateFormatter";
+import { ContentService } from "@/services/contentService";
 
 export default function AIContentViewPage() {
   const { id } = useParams();
   const router = useRouter();
   const { t } = useTranslation();
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [isExportingPDF, setIsExportingPDF] = useState(false);
 
   // Fetch content by ID
   const { data: content, isLoading, error } = useAIContent(id);
@@ -63,6 +65,46 @@ export default function AIContentViewPage() {
 
   const handleRegenerate = () => {
     router.push("/dashboard/ai-content/new");
+  };
+
+  const handleExportPDF = async () => {
+    if (!content) return;
+    
+    setIsExportingPDF(true);
+    try {
+      const response = await ContentService.downloadPDF(id);
+      
+      // Create blob from response
+      const blob = new Blob([response.data], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      
+      // Create download link
+      const a = document.createElement('a');
+      a.href = url;
+      
+      // Generate filename
+      const keywordSlug = content.keyword
+        ? content.keyword.toLowerCase().replace(/[^a-z0-9]+/g, '-').substring(0, 20)
+        : 'content';
+      const topicSlug = content.topic
+        ? content.topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').substring(0, 20)
+        : 'topic';
+      const dateStr = new Date(content.createdAt).toISOString().split('T')[0];
+      a.download = `ai-content-${topicSlug}-${keywordSlug}-${dateStr}.pdf`;
+      
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      toast.success(t("dashboard.aiContent.view.pdfExported"));
+    } catch (err) {
+      console.error("Failed to export PDF:", err);
+      const message = handleError(err);
+      toast.error(message || t("dashboard.aiContent.view.pdfExportError"));
+    } finally {
+      setIsExportingPDF(false);
+    }
   };
 
   const handleCopyAllHTML = async () => {
@@ -145,11 +187,12 @@ export default function AIContentViewPage() {
           content={content}
           onRegenerate={handleRegenerate}
           onExportHTML={handleExportHTML}
-          onExportPDF={() => toast.info("PDF export coming soon!")}
+          onExportPDF={handleExportPDF}
           onCopyAllHTML={handleCopyAllHTML}
           onDelete={handleDelete}
           isExporting={false}
           isDeleting={isDeleting}
+          isExportingPDF={isExportingPDF}
         />
 
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8">

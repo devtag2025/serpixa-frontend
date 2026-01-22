@@ -60,6 +60,7 @@ export default function NewAIContentPage() {
     const backendLocale = mapI18nLocaleToBackendLocale(formLocale);
     
     generateContent({
+      topic: formData.topic.trim(),
       keyword: formData.keyword.trim(),
       locale: backendLocale,
     });
