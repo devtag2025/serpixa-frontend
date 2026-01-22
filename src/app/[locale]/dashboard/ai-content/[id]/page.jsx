@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import ContentHeader from "@/components/ai-content/view/ContentHeader";
 import SEOStats from "@/components/ai-content/view/SEOStats";
@@ -22,7 +23,7 @@ import { ContentService } from "@/services/contentService";
 
 export default function AIContentViewPage() {
   const { id } = useParams();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [isExportingPDF, setIsExportingPDF] = useState(false);

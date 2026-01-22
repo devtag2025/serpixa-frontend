@@ -1,10 +1,10 @@
 "use client";
 import { HiPlus } from "react-icons/hi";
-import { useRouter } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import { useTranslation } from "@/i18n/context";
 
 export default function ContentListHeader() {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
 
   return (

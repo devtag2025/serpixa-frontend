@@ -1,12 +1,13 @@
 "use client";
 import { Suspense, useEffect } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import { HiCheckCircle, HiXCircle } from "react-icons/hi";
 import { useVerifyEmail } from "@/hooks/useAuth";
 
 function VerifyEmailContent() {
   const searchParams = useSearchParams();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const token = searchParams.get("token");
   const { mutate: verifyEmail, isPending, isSuccess, isError } = useVerifyEmail();
 

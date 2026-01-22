@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import { HiSearch, HiLocationMarker, HiOfficeBuilding } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
 
@@ -9,7 +9,7 @@ import { useTranslation } from "@/i18n/context";
  */
 export default function RecentAudits({ audits = [], viewAllLink = "/dashboard/reports" }) {
   const { t } = useTranslation();
-  const router = useRouter();
+  const router = useLocalizedRouter();
 
   const getAuditIcon = (type) => {
     switch (type?.toLowerCase()) {

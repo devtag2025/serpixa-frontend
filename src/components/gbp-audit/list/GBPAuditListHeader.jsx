@@ -1,11 +1,11 @@
 "use client";
 import { HiPlus } from "react-icons/hi";
-import { useRouter } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import GBPAuditListStats from "./GBPAuditListStats";
 import { useTranslation } from "@/i18n/context";
 
 export default function GBPAuditListHeader({ audits }) {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
 
   return (

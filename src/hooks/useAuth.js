@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import { AuthService } from "@/services/authService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
@@ -42,7 +42,7 @@ export function useAuth() {
 
 export function useRegister() {
   const queryClient = useQueryClient();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { locale: currentLocale } = useI18n();
   const { t } = useTranslation();
 
@@ -104,7 +104,7 @@ export function useLogin() {
 
 export function useLogout() {
   const queryClient = useQueryClient();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
 
   return useMutation({
@@ -169,7 +169,7 @@ export function useResetPassword() {
 }
 
 export function useVerifyEmail() {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const queryClient = useQueryClient();
   const { t } = useTranslation();
 

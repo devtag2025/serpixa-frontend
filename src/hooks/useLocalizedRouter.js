@@ -1,42 +1,29 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
-import { useI18n } from "@/i18n/context";
-import { localizePath, getLocaleFromPathname } from "@/utils/localizedLinks";
+import { useRouter, useParams } from "next/navigation";
+import { localizePath } from "@/utils/localizedLinks";
 
 /**
- * Hook to get locale-aware navigation functions and current locale
+ * A custom hook that wraps Next.js useRouter to automatically add locale prefix
+ * to navigation methods (push, replace).
+ * 
+ * This ensures that programmatic navigation preserves the current locale.
+ * 
+ * Usage:
+ * const router = useLocalizedRouter();
+ * router.push("/dashboard/seo-audit"); // Automatically becomes /fr/dashboard/seo-audit if locale is fr
+ * 
+ * @returns {Object} Router object with localized push and replace methods
  */
 export function useLocalizedRouter() {
   const router = useRouter();
-  const pathname = usePathname();
-  const { locale } = useI18n();
-  
-  /**
-   * Get localized path for a given route
-   */
-  const getLocalizedPath = (path) => {
-    return localizePath(path, locale);
-  };
-  
-  /**
-   * Navigate to a localized path
-   */
-  const push = (path) => {
-    router.push(getLocalizedPath(path));
-  };
-  
-  /**
-   * Replace current route with localized path
-   */
-  const replace = (path) => {
-    router.replace(getLocalizedPath(path));
-  };
-  
+  const params = useParams();
+  const locale = params?.locale || 'en';
+
   return {
+    ...router,
+    push: (path, options) => router.push(localizePath(path, locale), options),
+    replace: (path, options) => router.replace(localizePath(path, locale), options),
+    // Expose the locale for convenience
     locale,
-    pathname,
-    push,
-    replace,
-    getLocalizedPath,
   };
 }

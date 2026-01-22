@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import RouteLoader from "@/components/common/RouteLoader";
 import { SEOAuditService } from "@/services/seoAuditService";
@@ -19,7 +20,7 @@ import CompetitorsTable from "@/components/seo-audit/view/CompetitorsTable";
 
 export default function SEOAuditResultsPage() {
   const params = useParams();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const auditId = params.id;
   const [isDownloadingPDF, setIsDownloadingPDF] = useState(false);
   const { t } = useTranslation();

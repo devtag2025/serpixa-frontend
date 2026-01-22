@@ -1,11 +1,11 @@
 "use client";
 import { HiPlus } from "react-icons/hi";
-import { useRouter } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import GeoAuditListStats from "./GeoAuditListStats";
 import { useTranslation } from "@/i18n/context";
 
 export default function GeoAuditListHeader({ audits }) {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
 
   return (

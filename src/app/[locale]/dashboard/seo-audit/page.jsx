@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import { HiPlus, HiDocumentReport } from "react-icons/hi";
 import SEOAuditListHeader from "@/components/seo-audit/list/SEOAuditListHeader";
@@ -13,7 +13,7 @@ import { useSEOAudits, useDeleteSEOAudit } from "@/hooks/seoAuditHooks";
 import { handleError } from "@/utils/handleError";
 
 export default function SEOAuditListPage() {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
