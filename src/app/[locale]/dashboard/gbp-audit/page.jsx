@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import { handleError } from "@/utils/handleError";
 import { HiPlus, HiOfficeBuilding } from "react-icons/hi";
@@ -13,7 +13,7 @@ import { useTranslation } from "@/i18n/context";
 import { useGBPAudits, useDeleteGBPAudit } from "@/hooks/gbpAuditHooks";
 
 export default function GBPAuditListPage() {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);

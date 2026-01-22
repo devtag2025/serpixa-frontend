@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import { handleError } from "@/utils/handleError";
 import ContentListHeader from "@/components/ai-content/list/ContentListHeader";
@@ -12,7 +12,7 @@ import { useTranslation } from "@/i18n/context";
 import { useAIContents, useDeleteAIContent } from "@/hooks/aiContentHooks";
 
 export default function AIContentListPage() {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);

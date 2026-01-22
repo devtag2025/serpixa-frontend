@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import { GBPAuditService } from "@/services/gbpAuditService";
 import { handleError } from "@/utils/handleError";
 import { handleResponse } from "@/utils/handleResponse";
@@ -22,7 +22,7 @@ export const gbpAuditKeys = {
  */
 export function useRunGBPAudit() {
   const queryClient = useQueryClient();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
 
   return useMutation({

@@ -172,7 +172,7 @@ function CheckoutSuccessContent() {
               </Link>
               {isAddonPurchase && (
                 <Link
-                  href="/dashboard/extras"
+                  href="/dashboard/subscription"
                   className="block w-full py-3 px-6 bg-blue-50 text-blue-700 rounded-md font-medium hover:bg-blue-100 transition-colors"
                 >
                   {t("checkout.viewCredits") || "View Your Credits"}

@@ -1,5 +1,6 @@
 "use client";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import { handleError } from "@/utils/handleError";
 import { HiXCircle } from "react-icons/hi";
@@ -14,7 +15,7 @@ import { useGBPAuditRaw, useDownloadGBPAuditPDF } from "@/hooks/gbpAuditHooks";
 
 export default function GBPAuditResultsPage() {
   const params = useParams();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const auditId = params.id;
 
   const { data, isLoading, isError, error } = useGBPAuditRaw(auditId);

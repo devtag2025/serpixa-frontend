@@ -1,12 +1,12 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import { HiEye, HiTrash } from "react-icons/hi";
 import { getScoreColor } from "@/utils/colors";
 import { useTranslation } from "@/i18n/context";
 import { formatEuropeanDate } from "@/utils/dateFormatter";
 
 export default function ContentTable({ contents, onDelete }) {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
 
   return (

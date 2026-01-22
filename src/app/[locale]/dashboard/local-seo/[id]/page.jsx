@@ -1,5 +1,6 @@
 "use client";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import { useLocalizedRouter } from "@/hooks/useLocalizedRouter";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import { handleError } from "@/utils/handleError";
 import { toast } from "react-hot-toast";
@@ -18,7 +19,7 @@ import { useGeoAudit, useDownloadGeoAuditPDF } from "@/hooks/geoAuditHooks";
 
 export default function GeoAuditResultsPage() {
   const params = useParams();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const auditId = params.id;
   const { t } = useTranslation();
 
