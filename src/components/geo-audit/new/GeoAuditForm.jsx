@@ -230,12 +230,9 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
           <AutocompleteInput
             label={t("dashboard.localSeoAudit.form.city")}
             value={watch("city") || ""}
-            onChange={(value, suggestion) => {
+            onChange={(value) => {
               setValue("city", value);
-              // If a city is selected and it has region info, auto-fill region
-              if (suggestion && suggestion.adminName1 && !region) {
-                setValue("region", suggestion.adminName1);
-              }
+              // Region is optional - do not auto-populate
             }}
             onSearch={handleCitySearch}
             placeholder={t("dashboard.localSeoAudit.form.cityPlaceholder")}
