@@ -136,13 +136,13 @@ export default function ListsSection({ htmlContent }) {
         <table className="w-full min-w-[600px]">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide w-16">
                 #
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide w-20">
                 {t("dashboard.aiContent.view.type")}
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide w-20">
                 {t("dashboard.aiContent.view.items")}
               </th>
               <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">
@@ -158,10 +158,10 @@ export default function ListsSection({ htmlContent }) {
               
               return (
               <tr key={list.id} className={index % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
-                <td className="px-6 py-4 text-sm font-medium text-gray-900">
+                <td className="px-6 py-4 text-sm font-medium text-gray-900 align-top">
                   {list.id}
                 </td>
-                <td className="px-6 py-4">
+                <td className="px-6 py-4 align-top">
                   <span className={`inline-flex px-2.5 py-1 rounded-md text-xs font-semibold ${
                     list.type === "unordered" 
                       ? "bg-blue-100 text-blue-700" 
@@ -170,37 +170,37 @@ export default function ListsSection({ htmlContent }) {
                     {list.type === "unordered" ? "UL" : "OL"}
                   </span>
                 </td>
-                <td className="px-6 py-4 text-sm text-gray-700">
+                <td className="px-6 py-4 text-sm text-gray-700 align-top">
                   {list.itemCount}
                 </td>
                 <td className="px-6 py-4">
-                    <div>
-                  <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
-                        {displayItems.map((item, idx) => (
-                      <li key={idx} className="truncate max-w-md">{item}</li>
-                    ))}
-                      </ul>
-                      {hasMoreItems && (
-                        <button
-                          onClick={() => toggleList(list.id)}
-                          className="mt-2 flex items-center gap-1 text-primary hover:text-primary/80 transition-colors text-xs font-medium"
-                        >
-                          {isListExpanded ? (
-                            <>
-                              <span>{t("dashboard.aiContent.view.showLess") || "Show less"}</span>
-                              <HiChevronUp className="w-3 h-3" />
-                            </>
-                          ) : (
-                            <>
-                              <span>
-                                {t("dashboard.aiContent.view.showMore") || "Show"} {list.items.length - 3} {t("dashboard.aiContent.view.moreItems") || "more items"}
-                              </span>
-                              <HiChevronDown className="w-3 h-3" />
-                            </>
+                  <div>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                      {displayItems.map((item, idx) => (
+                        <li key={idx} className="break-words">{item}</li>
+                      ))}
+                    </ul>
+                    {hasMoreItems && (
+                      <button
+                        onClick={() => toggleList(list.id)}
+                        className="mt-2 flex items-center gap-1 text-primary hover:text-primary/80 transition-colors text-xs font-medium"
+                      >
+                        {isListExpanded ? (
+                          <>
+                            <span>{t("dashboard.aiContent.view.showLess") || "Show less"}</span>
+                            <HiChevronUp className="w-3 h-3" />
+                          </>
+                        ) : (
+                          <>
+                            <span>
+                              {t("dashboard.aiContent.view.showMore") || "Show"} {list.items.length - 3} {t("dashboard.aiContent.view.moreItems") || "more items"}
+                            </span>
+                            <HiChevronDown className="w-3 h-3" />
+                          </>
+                        )}
+                      </button>
                     )}
-                        </button>
-                      )}
-                    </div>
+                  </div>
                 </td>
               </tr>
               );

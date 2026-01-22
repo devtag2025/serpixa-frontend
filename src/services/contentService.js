@@ -5,5 +5,6 @@ export const ContentService = {
   getContentById: (contentId) => api.get(`/claude/content/${contentId}`),
   getUserContent: (params) => api.get("/claude/content", { params }),
   deleteContent: (contentId) => api.delete(`/claude/content/${contentId}`),
+  downloadPDF: (contentId) => api.get(`/claude/content/${contentId}/pdf`, { responseType: 'blob' }),
 };
 

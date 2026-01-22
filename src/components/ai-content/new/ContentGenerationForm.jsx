@@ -1,6 +1,6 @@
 "use client";
 import { useForm } from "react-hook-form";
-import { HiSparkles } from "react-icons/hi";
+import { HiSparkles, HiDocumentText } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
 import AIContentLocaleSelect from "./AIContentLocaleSelect";
 
@@ -14,6 +14,42 @@ export default function ContentGenerationForm({ onSubmit, isPending }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      {/* Topic */}
+      <div>
+        <label className="block text-sm font-semibold text-gray-900 mb-2">
+          {t("dashboard.aiContent.form.topic")} <span className="text-red-500">*</span>
+        </label>
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <HiDocumentText className="h-5 w-5 text-gray-400" />
+          </div>
+          <input
+            type="text"
+            placeholder={t("dashboard.aiContent.form.topicPlaceholder")}
+            {...register("topic", {
+              required: t("dashboard.aiContent.form.topic") + " is required",
+              minLength: {
+                value: 3,
+                message: "Topic must be at least 3 characters",
+              },
+              maxLength: {
+                value: 200,
+                message: "Topic must be less than 200 characters",
+              },
+            })}
+            className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
+          />
+        </div>
+        {errors.topic && (
+          <p className="mt-2 text-sm text-red-600">
+            {errors.topic.message}
+          </p>
+        )}
+        <p className="mt-2 text-xs text-gray-500">
+          {t("dashboard.aiContent.form.topicHelp")}
+        </p>
+      </div>
+
       {/* Keyword */}
       <div>
         <label className="block text-sm font-semibold text-gray-900 mb-2">

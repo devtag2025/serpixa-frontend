@@ -16,6 +16,9 @@ export const SubscriptionService = {
   // Create checkout session (protected)
   createCheckout: (data) => api.post("/subscriptions/checkout", data),
 
+  // Get checkout session details (for success page)
+  getCheckoutSession: (sessionId) => api.get(`/subscriptions/checkout/${sessionId}`),
+
   // Create billing portal session (protected)
   createPortalSession: () => api.post("/subscriptions/portal"),
 };

@@ -1,10 +1,11 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { HiSearch, HiLocationMarker, HiOfficeBuilding } from "react-icons/hi";
-// import { HiDeviceMobile } from "react-icons/hi"; // Used in commented advanced options
 import { useTranslation } from "@/i18n/context";
 import LocalSeoCountrySelect from "./LocalSeoCountrySelect";
+import AutocompleteInput from "@/components/common/AutocompleteInput";
+import { searchRegions, searchCities } from "@/services/geoNamesService";
 
 export default function GeoAuditForm({ onSubmit, isPending }) {
   const { t } = useTranslation();
@@ -17,6 +18,7 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
   } = useForm();
 
   const country = watch("country");
+  const region = watch("region");
 
   // Map countries to their Google domains
   const countryToGoogleDomain = {
@@ -32,25 +34,19 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
     }
   }, [country, setValue]);
 
-  // Map Google domains to countries (kept for reference)
-  // const domainToCountry = {
-  //   ".be": "Belgium",
-  //   ".fr": "France",
-  //   ".nl": "Netherlands",
-  // };
+  // Clear region and city when country changes
+  useEffect(() => {
+    setValue("region", "");
+    setValue("city", "");
+  }, [country, setValue]);
 
-  // Update country when domain changes (commented out)
-  // const handleDomainChange = (e) => {
-  //   const domain = e.target.value;
-  //   if (domain && domainToCountry[domain]) {
-  //     // This will be handled by react-hook-form's watch
-  //   }
-  // };
+  // Clear city when region changes (optional - user might want to keep it)
+  // useEffect(() => {
+  //   setValue("city", "");
+  // }, [region, setValue]);
 
   /**
    * Automatically determine locale based on country
-   * For Belgium, France, Netherlands: use their specific locale
-   * For all other countries: default to English
    */
   const getLocaleFromCountry = (country) => {
     if (!country) return 'en';
@@ -58,43 +54,49 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
     const countryLower = country.toLowerCase().trim();
     
     const countryLocaleMap = {
-      'belgium': 'fr_be',      // Belgium defaults to French
-      'france': 'fr_fr',       // France uses French
-      'netherlands': 'nl_nl',  // Netherlands uses Dutch
+      'belgium': 'fr_be',
+      'france': 'fr_fr',
+      'netherlands': 'nl_nl',
     };
     
-    return countryLocaleMap[countryLower] || 'en'; // Default to English for any other country
+    return countryLocaleMap[countryLower] || 'en';
   };
+
+  // Search function for regions
+  const handleRegionSearch = useCallback(async (query) => {
+    if (!country) return [];
+    return await searchRegions(query, country);
+  }, [country]);
+
+  // Search function for cities
+  const handleCitySearch = useCallback(async (query) => {
+    if (!country) return [];
+    return await searchCities(query, country, region);
+  }, [country, region]);
 
   const handleFormSubmit = (data) => {
     // Convert googleDomain from ".be" format to "google.be" format
     let normalizedGoogleDomain = null;
     if (data.googleDomain) {
       if (data.googleDomain.startsWith('.')) {
-        // Convert ".be" to "google.be"
-        const tld = data.googleDomain.substring(1); // Remove the dot
+        const tld = data.googleDomain.substring(1);
         normalizedGoogleDomain = `google.${tld}`;
       } else {
-        // Already in correct format or use as is
         normalizedGoogleDomain = data.googleDomain;
       }
     }
 
-    // Automatically determine locale based on country
-    const country = data.country.trim();
-    const locale = getLocaleFromCountry(country);
+    const countryValue = data.country.trim();
+    const locale = getLocaleFromCountry(countryValue);
 
     const payload = {
       keyword: data.keyword.trim(),
       city: data.city.trim(),
-      country: country,
-      locale: locale, // Add locale to payload
-      // Only include businessName if it has a value (omit if empty)
+      country: countryValue,
+      locale: locale,
       ...(data.businessName?.trim() && { businessName: data.businessName.trim() }),
-      // Only include googleDomain if it has a value (omit if empty)
+      ...(data.region?.trim() && { region: data.region.trim() }),
       ...(normalizedGoogleDomain && { googleDomain: normalizedGoogleDomain }),
-      // Only include language if it has a value (omit if empty)
-      ...(data.language && { language: data.language }),
     };
 
     onSubmit(payload);
@@ -168,41 +170,8 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
         </div>
       </div>
 
-      {/* Row 2: City and Country */}
+      {/* Row 2: Country (First - required for other fields) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* City */}
-        <div>
-          <label className="block text-sm font-semibold text-gray-900 mb-2">
-            {t("dashboard.localSeoAudit.form.city")} <span className="text-red-500">*</span>
-          </label>
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <HiLocationMarker className="h-5 w-5 text-gray-400" />
-            </div>
-            <input
-              type="text"
-              placeholder={t("dashboard.localSeoAudit.form.cityPlaceholder")}
-              {...register("city", {
-                required: t("dashboard.localSeoAudit.form.city") + " is required",
-                maxLength: {
-                  value: 200,
-                  message: t("dashboard.localSeoAudit.form.city") + " must be less than 200 characters",
-                },
-              })}
-              className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 placeholder-gray-400"
-            />
-          </div>
-          {errors.city && (
-            <p className="mt-2 text-sm text-red-600">
-              {errors.city.message}
-            </p>
-          )}
-          <p className="mt-2 text-xs text-gray-500">
-            {t("dashboard.localSeoAudit.form.cityHelpDetailed")}
-          </p>
-        </div>
-
-        {/* Country */}
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-2">
             {t("dashboard.localSeoAudit.form.country")} <span className="text-red-500">*</span>
@@ -221,49 +190,92 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
             {t("dashboard.localSeoAudit.form.countryHelpDetailed")}
           </p>
         </div>
-      </div>
 
-
-      {/* Advanced Options - Commented out */}
-      {/* 
-      <div>
-        <button
-          type="button"
-          onClick={() => setShowAdvanced(!showAdvanced)}
-          className="text-sm font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
-        >
-          {showAdvanced ? t("dashboard.localSeoAudit.form.hideAdvanced") : t("dashboard.localSeoAudit.form.showAdvanced")}
-          <span className="ml-1">{showAdvanced ? "−" : "+"}</span>
-        </button>
-
-        {showAdvanced && (
-          <div className="mt-4 space-y-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
-            <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">
-                {t("dashboard.localSeoAudit.form.device")}
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <HiDeviceMobile className="h-5 w-5 text-gray-400" />
-                </div>
-              <select
-                {...register("device")}
-                  className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-gray-900 bg-white"
-                defaultValue="desktop"
+        {/* Region (Optional - with autocomplete) */}
+        <div>
+          <AutocompleteInput
+            label={t("dashboard.localSeoAudit.form.region") || "Region/State/Province"}
+            value={region || ""}
+            onChange={(value) => setValue("region", value)}
+            onSearch={handleRegionSearch}
+            placeholder={t("dashboard.localSeoAudit.form.regionPlaceholder") || "Start typing to search..."}
+            disabled={!country}
+            helpText={
+              !country 
+                ? (t("dashboard.localSeoAudit.form.selectCountryFirst") || "Select a country first")
+                : (t("dashboard.localSeoAudit.form.regionHelp") || "Optional: State, province, or region name")
+            }
+            icon={<HiLocationMarker className="h-5 w-5 text-gray-400" />}
+            getSuggestionValue={(item) => item.name || item.displayName}
+            renderSuggestion={(item, isHighlighted) => (
+              <div
+                className={`px-4 py-2 cursor-pointer transition-colors ${
+                  isHighlighted
+                    ? "bg-primary text-white"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
               >
-                <option value="desktop">Desktop</option>
-                <option value="mobile">Mobile</option>
-                <option value="tablet">Tablet</option>
-              </select>
+                <span className="font-medium">{item.name}</span>
               </div>
-              <p className="mt-2 text-xs text-gray-500">
-                {t("dashboard.localSeoAudit.form.deviceHelp") || "Select the device type for the audit"}
-              </p>
-            </div>
-          </div>
-        )}
+            )}
+          />
+          {/* Hidden input for form registration */}
+          <input type="hidden" {...register("region")} />
+        </div>
       </div>
-      */}
+
+      {/* Row 3: City (Required - with autocomplete) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <AutocompleteInput
+            label={t("dashboard.localSeoAudit.form.city")}
+            value={watch("city") || ""}
+            onChange={(value, suggestion) => {
+              setValue("city", value);
+              // If a city is selected and it has region info, auto-fill region
+              if (suggestion && suggestion.adminName1 && !region) {
+                setValue("region", suggestion.adminName1);
+              }
+            }}
+            onSearch={handleCitySearch}
+            placeholder={t("dashboard.localSeoAudit.form.cityPlaceholder")}
+            required
+            disabled={!country}
+            error={errors.city?.message}
+            helpText={
+              !country 
+                ? (t("dashboard.localSeoAudit.form.selectCountryFirst") || "Select a country first")
+                : (t("dashboard.localSeoAudit.form.cityHelpDetailed"))
+            }
+            icon={<HiLocationMarker className="h-5 w-5 text-gray-400" />}
+            getSuggestionValue={(item) => item.name}
+            renderSuggestion={(item, isHighlighted) => (
+              <div
+                className={`px-4 py-2 cursor-pointer transition-colors ${
+                  isHighlighted
+                    ? "bg-primary text-white"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                <div className="font-medium">{item.name}</div>
+                {item.adminName1 && (
+                  <div className={`text-sm ${isHighlighted ? "text-white/80" : "text-gray-500"}`}>
+                    {item.adminName1}
+                    {item.population > 0 && ` • Pop: ${item.population.toLocaleString()}`}
+                  </div>
+                )}
+              </div>
+            )}
+          />
+          {/* Hidden input for form registration and validation */}
+          <input 
+            type="hidden" 
+            {...register("city", {
+              required: t("dashboard.localSeoAudit.form.city") + " is required",
+            })} 
+          />
+        </div>
+      </div>
 
       {/* Submit Button */}
       <div className="pt-4">
@@ -306,4 +318,3 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
     </form>
   );
 }
-

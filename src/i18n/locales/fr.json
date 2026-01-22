@@ -864,6 +864,10 @@
         "countryHelpDetailed": "Sélectionnez le pays où vous souhaitez analyser les résultats de recherche locale",
         "businessNameHelpDetailed": "Laissez vide pour voir tous les concurrents. Si fourni, nous trouverons votre entreprise dans les résultats.",
         "keywordHelpDetailed": "Le terme de recherche que vous souhaitez analyser pour les résultats locaux",
+        "region": "Région/État/Province",
+        "regionPlaceholder": "Commencez à taper pour rechercher...",
+        "regionHelp": "Optionnel: Nom de l'état, de la province ou de la région",
+        "selectCountryFirst": "Sélectionnez d'abord un pays",
         "showAdvanced": "Afficher les options avancées",
         "hideAdvanced": "Masquer les options avancées",
         "language": "Langue",
@@ -1034,6 +1038,9 @@
         "seoOptimized": "Optimisé SEO avec analyse de densité de mots-clés"
       },
       "form": {
+        "topic": "Sujet",
+        "topicPlaceholder": "ex. Comment améliorer le SEO d'un site web",
+        "topicHelp": "Entrez le sujet principal pour la génération de contenu",
         "keyword": "Mot-clé",
         "keywordPlaceholder": "ex. meilleurs outils seo",
         "keywordHelp": "Entrez le mot-clé principal pour la génération de contenu",
@@ -1071,8 +1078,12 @@
         "regenerate": "Régénérer",
         "exportHtml": "Exporter HTML",
         "exportPdf": "Exporter PDF",
+        "exportingPdf": "Exportation",
+        "pdfExported": "PDF exporté avec succès !",
+        "pdfExportError": "Échec de l'exportation PDF",
         "copyAllHtml": "Copier tout le HTML",
         "generatedAt": "Généré le",
+        "topic": "Sujet",
         "keyword": "Mot-clé",
         "locale": "Locale",
         "headings": "En-têtes",
@@ -1336,6 +1347,21 @@
         "content": "Les cookies sont conservés pour une durée maximale de 13 mois, conformément aux recommandations européennes."
       }
     }
+  },
+  "checkout": {
+    "processing": "Traitement de votre paiement...",
+    "confirmingSubscription": "Veuillez patienter pendant que nous confirmons votre abonnement.",
+    "confirmingAddon": "Veuillez patienter pendant que nous ajoutons vos crédits.",
+    "paymentSuccessful": "Paiement réussi !",
+    "subscriptionActivated": "Votre abonnement a été activé. Vous pouvez maintenant accéder à toutes les fonctionnalités premium.",
+    "creditsAdded": "Vos crédits ont été ajoutés à votre compte.",
+    "addonPurchased": "Addon acheté",
+    "creditsReceived": "Crédits reçus :",
+    "yourPlan": "Votre plan :",
+    "nextBilling": "Prochaine facturation :",
+    "goToDashboard": "Aller au tableau de bord",
+    "viewCredits": "Voir vos crédits",
+    "backToHome": "Retour à l'accueil"
   }
 }
 

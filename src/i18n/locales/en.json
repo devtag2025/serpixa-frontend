@@ -861,6 +861,10 @@
         "countryHelpDetailed": "Select the country where you want to analyze local search results",
         "businessNameHelpDetailed": "Leave blank to see all competitors. If provided, we'll find your business in the results.",
         "keywordHelpDetailed": "The search term you want to analyze for local results",
+        "region": "Region/State/Province",
+        "regionPlaceholder": "Start typing to search...",
+        "regionHelp": "Optional: State, province, or region name",
+        "selectCountryFirst": "Select a country first",
         "showAdvanced": "Show Advanced Options",
         "hideAdvanced": "Hide Advanced Options",
         "language": "Language",
@@ -1038,6 +1042,9 @@
         "seoOptimized": "SEO-optimized with keyword density analysis"
       },
       "form": {
+        "topic": "Topic",
+        "topicPlaceholder": "e.g., How to improve website SEO",
+        "topicHelp": "Enter the main topic or subject for content generation",
         "keyword": "Keyword",
         "keywordPlaceholder": "e.g., best seo tools",
         "keywordHelp": "Enter the primary keyword for content generation",
@@ -1075,8 +1082,12 @@
         "regenerate": "Regenerate",
         "exportHtml": "Export HTML",
         "exportPdf": "Export PDF",
+        "exportingPdf": "Exporting",
+        "pdfExported": "PDF exported successfully!",
+        "pdfExportError": "Failed to export PDF",
         "copyAllHtml": "Copy All HTML",
         "generatedAt": "Generated at",
+        "topic": "Topic",
         "keyword": "Keyword",
         "locale": "Locale",
         "headings": "Headings",
@@ -1340,6 +1351,21 @@
         "content": "Cookies are stored for a maximum period of 13 months, in line with European recommendations."
       }
     }
+  },
+  "checkout": {
+    "processing": "Processing your payment...",
+    "confirmingSubscription": "Please wait while we confirm your subscription.",
+    "confirmingAddon": "Please wait while we add your credits.",
+    "paymentSuccessful": "Payment Successful!",
+    "subscriptionActivated": "Your subscription has been activated. You can now access all premium features.",
+    "creditsAdded": "Your credits have been added to your account.",
+    "addonPurchased": "Addon Purchased",
+    "creditsReceived": "Credits received:",
+    "yourPlan": "Your Plan:",
+    "nextBilling": "Next billing:",
+    "goToDashboard": "Go to Dashboard",
+    "viewCredits": "View Your Credits",
+    "backToHome": "Back to Home"
   }
 }
 
