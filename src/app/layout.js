@@ -15,11 +15,7 @@ export const metadata = {
   title: "Serpixa",
   description: "All the tools you need to perfect your SEO and AI visibility",
   icons: {
-    icon: [
-      { url: '/serpixa-icon.png', type: 'image/png' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
+    icon: '/serpixa-icon.png',
     shortcut: '/serpixa-icon.png',
     apple: '/serpixa-icon.png',
   },
