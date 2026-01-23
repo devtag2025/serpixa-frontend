@@ -35,8 +35,8 @@ export default function AIContentLocaleSelect({ register, defaultValue, classNam
   const [selectedLocale, setSelectedLocale] = useState(defaultLocale);
   const hiddenInputRef = useRef(null);
 
-  // Register the hidden input with react-hook-form
-  const { onChange, onBlur, name, ref } = register("locale", {
+  // Register the hidden input with react-hook-form - use "language" field name
+  const { onChange, onBlur, name, ref } = register("language", {
     value: defaultLocale,
   });
 
@@ -56,7 +56,7 @@ export default function AIContentLocaleSelect({ register, defaultValue, classNam
     if (hiddenInputRef.current && onChange) {
       const event = {
         target: {
-          name: "locale",
+          name: "language",
           value: selectedLocale,
         },
       };
@@ -116,7 +116,7 @@ export default function AIContentLocaleSelect({ register, defaultValue, classNam
                 </span>
               </>
             ) : (
-              <span className="text-gray-500">Select locale</span>
+              <span className="text-gray-500">Select language</span>
             )}
           </div>
           <svg
@@ -198,7 +198,7 @@ export default function AIContentLocaleSelect({ register, defaultValue, classNam
         options={options}
         value={selectedLocale}
         onChange={(value) => setSelectedLocale(value)}
-        placeholder="Select locale"
+        placeholder="Select language"
         className="w-full"
         trigger={customTrigger}
         menuClassName="w-full"
