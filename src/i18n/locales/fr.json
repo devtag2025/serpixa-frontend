@@ -122,6 +122,8 @@
       "alt1": "Rapport d’audit SEO Serpixa montrant le score et les principaux problèmes",
       "alt2": "Section de rapport Serpixa avec vérifications détaillées et statuts",
       "alt3": "Liste de recommandations Serpixa avec priorités et actions",
+      "alt4": "Vue d'ensemble du rapport Serpixa avec analyse SEO complète",
+      "alt5": "Vue détaillée du rapport Serpixa avec informations exploitables",
       "urlHint": "app.serpixa.com/rapport-audit",
       "indicatorLabel": "Afficher la diapositive de rapport {{index}}"
     },
