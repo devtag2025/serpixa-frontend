@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import LocalizedLink from "@/components/common/LocalizedLink";
 import { removeLocaleFromPath } from "@/utils/localizedLinks";
 import {
@@ -198,26 +199,18 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <LocalizedLink 
             href="/" 
-            className="flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer"
+            className="flex items-center hover:opacity-80 transition-opacity cursor-pointer"
           >
-            <div className="w-8 h-8 bg-primary rounded flex items-center justify-center flex-shrink-0">
-              <svg
-                className="w-5 h-5 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
+            <div className="relative w-32 h-10 flex-shrink-0">
+              <Image
+                src="/serpixa-logo.png"
+                alt="Serpixa Logo"
+                fill
+                className="object-contain"
+                sizes="128px"
+                priority
+              />
             </div>
-            <span className="text-xl font-semibold text-gray-900 whitespace-nowrap">
-              Serpixa
-            </span>
           </LocalizedLink>
           <button
             onClick={onMobileClose}
@@ -281,28 +274,18 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
             {/* Logo/Brand */}
             <LocalizedLink 
               href="/" 
-              className={`flex items-center ${isExpanded ? "space-x-2" : "justify-center"} mb-8 px-4 hover:opacity-80 transition-opacity cursor-pointer`}
+              className={`flex items-center ${isExpanded ? "justify-start" : "justify-center"} mb-8 px-4 hover:opacity-80 transition-opacity cursor-pointer`}
             >
-              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center flex-shrink-0">
-                <svg
-                  className="w-5 h-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+              <div className={`relative flex-shrink-0 ${isExpanded ? "w-32 h-10" : "w-12 h-12"}`}>
+                <Image
+                  src="/serpixa-logo.png"
+                  alt="Serpixa Logo"
+                  fill
+                  className="object-contain"
+                  sizes={isExpanded ? "128px" : "48px"}
+                  priority
+                />
               </div>
-              {isExpanded && (
-                <span className="text-xl font-semibold text-gray-900 whitespace-nowrap">
-                  Serpixa
-                </span>
-              )}
             </LocalizedLink>
 
           {/* Navigation Menu */}

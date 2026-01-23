@@ -2,6 +2,7 @@
 import LocalizedLink from "@/components/common/LocalizedLink";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { useAuth, useLogout } from "@/hooks/useAuth";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation, useI18n } from "@/i18n/context";
@@ -114,25 +115,17 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo - Left */}
           <div className="flex items-center justify-start flex-shrink-0 md:pr-15">
-            <LocalizedLink href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+            <LocalizedLink href="/" className="flex items-center">
+              <div className="relative w-32 h-10 sm:w-40 sm:h-12 flex-shrink-0">
+                <Image
+                  src="/serpixa-logo.png"
+                  alt="Serpixa Logo"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 128px, 160px"
+                  priority
+                />
               </div>
-              <span className="text-xl font-semibold text-gray-900">
-                Serpixa
-              </span>
             </LocalizedLink>
           </div>
 
@@ -325,27 +318,19 @@ export default function Navbar() {
               <div className="flex items-center justify-between p-4 border-b border-gray-200">
                 <LocalizedLink
                   href="/"
-                  className="flex items-center space-x-2"
+                  className="flex items-center"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
+                  <div className="relative w-32 h-10 sm:w-40 sm:h-12 flex-shrink-0">
+                    <Image
+                      src="/serpixa-logo.png"
+                      alt="Serpixa Logo"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 128px, 160px"
+                      priority
+                    />
                   </div>
-                  <span className="text-xl font-semibold text-gray-900">
-                    Serpixa
-                  </span>
                 </LocalizedLink>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
