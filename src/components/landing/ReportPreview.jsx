@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "@/i18n/context";
 
 const SLIDES = [
-  { src: "/report-pt-1.jpg", altKey: "landing.reportPreview.alt1" },
-  { src: "/report-pt-2.jpg", altKey: "landing.reportPreview.alt2" },
-  { src: "/report-pt-3.jpg", altKey: "landing.reportPreview.alt3" },
+  { src: "/seo-report-1.png", altKey: "landing.reportPreview.alt1" },
+  { src: "/seo-report-2.png", altKey: "landing.reportPreview.alt2" },
+  { src: "/seo-report-3.png", altKey: "landing.reportPreview.alt3" },
+  { src: "/seo-report-4.png", altKey: "landing.reportPreview.alt4" },
+  { src: "/seo-report-5.png", altKey: "landing.reportPreview.alt5" },
 ];
 
 const DISPLAY_DURATION_MS = 7000;
@@ -89,7 +91,7 @@ export default function ReportPreview() {
               </div>
 
               {/* Carousel container */}
-              <div className="relative aspect-[16/10] bg-slate-900 overflow-hidden">
+              <div className="relative aspect-[16/10] bg-gray-100 overflow-hidden">
                 {SLIDES.map((slide, index) => {
                   const isActive = index === activeIndex;
                   return (
@@ -103,9 +105,10 @@ export default function ReportPreview() {
                         src={slide.src}
                         alt={t(slide.altKey)}
                         fill
-                        className="object-cover"
+                        className="object-contain"
                         sizes="(min-width: 1024px) 480px, 100vw"
                         priority={index === 0}
+                        quality={90}
                       />
                     </div>
                   );
