@@ -75,7 +75,7 @@ export function useRegister() {
 
 export function useLogin() {
   const queryClient = useQueryClient();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { t } = useTranslation();
 
   return useMutation({
@@ -150,7 +150,7 @@ export function useForgotPassword() {
 }
 
 export function useResetPassword() {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const { locale } = useI18n();
   const { t } = useTranslation();
 
