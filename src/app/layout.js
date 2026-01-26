@@ -15,11 +15,31 @@ export const metadata = {
   title: "Serpixa",
   description: "All the tools you need to perfect your SEO and AI visibility",
   icons: {
-    icon: '/serpixa-icon.png',
+    icon: [
+      { url: '/serpixa-icon.png', type: 'image/png' },
+    ],
     shortcut: '/serpixa-icon.png',
-    apple: '/serpixa-icon.png',
+    apple: [
+      { url: '/serpixa-icon.png', type: 'image/png' },
+    ],
   },
   openGraph: {
+    title: "Serpixa",
+    description: "All the tools you need to perfect your SEO and AI visibility",
+    images: [
+      {
+        url: '/serpixa-logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Serpixa - SEO and AI Visibility Tools',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Serpixa",
+    description: "All the tools you need to perfect your SEO and AI visibility",
     images: ['/serpixa-logo.png'],
   },
 };
