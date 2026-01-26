@@ -2,8 +2,9 @@
 import LocalizedLink from "@/components/common/LocalizedLink";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "@/i18n/context";
-import { HiHome, HiSearch, HiChartBar, HiSparkles } from "react-icons/hi";
 import { removeLocaleFromPath } from "@/utils/localizedLinks";
+import Image from "next/image";
+import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -37,12 +38,50 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="md:flex-1 md:max-w-md">
             <div className="flex items-center gap-2 mb-4">
-              <HiSparkles className="w-6 h-6 text-white" />
+              <div className="w-7 h-7 flex-shrink-0">
+                <Image
+                  src="/serpixa-icon.png"
+                  alt="Serpixa"
+                  width={28}
+                  height={28}
+                  className="object-contain"
+                />
+              </div>
               <span className="text-xl font-bold text-white">Serpixa</span>
             </div>
             <p className="text-white/90 text-sm mb-4">
               {t("landing.footer.description")}
             </p>
+            {/* Social Media Links */}
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.tiktok.com/@serpixa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-white transition-colors"
+                aria-label="TikTok"
+              >
+                <FaTiktok className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/serpixa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <FaInstagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/serpixa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <FaFacebook className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Links Section - Grouped together */}
