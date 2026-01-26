@@ -12,45 +12,45 @@ export default function GeoAuditListStats({ audits }) {
   const completedAudits = audits.filter((a) => a.status === "completed").length;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="p-2 rounded-lg bg-blue-50">
-            <HiLocationMarker className="w-4 h-4 text-blue-600" />
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 shadow-sm">
+        <div className="flex items-center gap-2 sm:gap-3 mb-1.5 sm:mb-2">
+          <div className="p-1.5 sm:p-2 rounded-lg bg-blue-50">
+            <HiLocationMarker className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.list.totalAudits")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide leading-tight">{t("dashboard.localSeoAudit.list.totalAudits")}</span>
         </div>
-        <p className="text-2xl font-bold text-gray-900">{totalAudits}</p>
+        <p className="text-xl sm:text-2xl font-bold text-gray-900">{totalAudits}</p>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="p-2 rounded-lg bg-emerald-50">
-            <HiLightningBolt className="w-4 h-4 text-emerald-600" />
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 shadow-sm">
+        <div className="flex items-center gap-2 sm:gap-3 mb-1.5 sm:mb-2">
+          <div className="p-1.5 sm:p-2 rounded-lg bg-emerald-50">
+            <HiLightningBolt className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.list.avgVisibility")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide leading-tight">{t("dashboard.localSeoAudit.list.avgVisibility")}</span>
         </div>
-        <p className="text-2xl font-bold text-gray-900">{avgScore}</p>
+        <p className="text-xl sm:text-2xl font-bold text-gray-900">{avgScore}</p>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="p-2 rounded-lg bg-purple-50">
-            <HiUsers className="w-4 h-4 text-purple-600" />
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 shadow-sm">
+        <div className="flex items-center gap-2 sm:gap-3 mb-1.5 sm:mb-2">
+          <div className="p-1.5 sm:p-2 rounded-lg bg-purple-50">
+            <HiUsers className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.list.totalCompetitors")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide leading-tight">{t("dashboard.localSeoAudit.list.totalCompetitors")}</span>
         </div>
-        <p className="text-2xl font-bold text-gray-900">{totalCompetitors}</p>
+        <p className="text-xl sm:text-2xl font-bold text-gray-900">{totalCompetitors}</p>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="p-2 rounded-lg bg-amber-50">
-            <HiClock className="w-4 h-4 text-amber-600" />
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 shadow-sm">
+        <div className="flex items-center gap-2 sm:gap-3 mb-1.5 sm:mb-2">
+          <div className="p-1.5 sm:p-2 rounded-lg bg-amber-50">
+            <HiClock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600" />
           </div>
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.list.completed")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide leading-tight">{t("dashboard.localSeoAudit.list.completed")}</span>
         </div>
-        <p className="text-2xl font-bold text-gray-900">{completedAudits}</p>
+        <p className="text-xl sm:text-2xl font-bold text-gray-900">{completedAudits}</p>
       </div>
     </div>
   );

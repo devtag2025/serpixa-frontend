@@ -5,6 +5,7 @@ import DashboardLayout from "@/components/layout/DashboardLayout";
 import { HiPlus, HiDocumentReport } from "react-icons/hi";
 import SEOAuditListHeader from "@/components/seo-audit/list/SEOAuditListHeader";
 import SEOAuditTable from "@/components/seo-audit/list/SEOAuditTable";
+import SEOAuditCardList from "@/components/seo-audit/list/SEOAuditCardList";
 import DeleteConfirmationModal from "@/components/common/DeleteConfirmationModal";
 import Pagination from "@/components/common/Pagination";
 import RouteLoader from "@/components/common/RouteLoader";
@@ -92,55 +93,49 @@ export default function SEOAuditListPage() {
     <DashboardLayout>
       <SEOAuditListHeader audits={audits} />
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
-            {isEmpty ? (
-              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-12 text-center">
-                <HiDocumentReport className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{t("dashboard.seoAudit.list.noAudits")}</h3>
-                <p className="text-gray-600 mb-6">{t("dashboard.seoAudit.list.noAuditsDescription")}</p>
-                <button
-                  onClick={() => router.push("/dashboard/seo-audit/new")}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
-                >
-                  <HiPlus className="w-5 h-5" />
-                  <span>{t("dashboard.seoAudit.list.createNewAudit")}</span>
-                </button>
-              </div>
-            ) : (
-              <>
-                {/* Search Bar */}
-                {/* <div className="mb-6">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      placeholder={t("dashboard.seoAudit.list.searchPlaceholder")}
-                      value={searchQuery}
-                      onChange={handleSearchChange}
-                      className="w-full px-4 py-2.5 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
-                    />
-                    <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div> */}
-
-                <SEOAuditTable audits={audits} onDelete={handleDelete} />
-                {pagination.pages > 1 && (
-                  <Pagination
-                    currentPage={pagination.page || currentPage}
-                    totalPages={pagination.pages || 1}
-                    total={pagination.total || 0}
-                    limit={limit}
-                    onPageChange={handlePageChange}
-                    isLoading={isFetching}
-                  />
-                )}
-              </>
-            )}
+      {/* Main Content - Responsive padding */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 lg:py-8">
+        {isEmpty ? (
+          <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-8 sm:p-12 text-center">
+            <HiDocumentReport className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{t("dashboard.seoAudit.list.noAudits")}</h3>
+            <p className="text-sm sm:text-base text-gray-600 mb-6">{t("dashboard.seoAudit.list.noAuditsDescription")}</p>
+            <button
+              onClick={() => router.push("/dashboard/seo-audit/new")}
+              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium text-sm sm:text-base"
+            >
+              <HiPlus className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span>{t("dashboard.seoAudit.list.createNewAudit")}</span>
+            </button>
           </div>
+        ) : (
+          <>
+            {/* Mobile/Tablet: Card Layout */}
+            <div className="lg:hidden">
+              <SEOAuditCardList audits={audits} onDelete={handleDelete} />
+            </div>
+
+            {/* Desktop: Table Layout */}
+            <div className="hidden lg:block">
+              <SEOAuditTable audits={audits} onDelete={handleDelete} />
+            </div>
+
+            {/* Pagination - Works for both layouts */}
+            {pagination.pages > 1 && (
+              <div className="mt-4 sm:mt-6">
+                <Pagination
+                  currentPage={pagination.page || currentPage}
+                  totalPages={pagination.pages || 1}
+                  total={pagination.total || 0}
+                  limit={limit}
+                  onPageChange={handlePageChange}
+                  isLoading={isFetching}
+                />
+              </div>
+            )}
+          </>
+        )}
+      </div>
 
       {/* Delete Confirmation Modal */}
       <DeleteConfirmationModal

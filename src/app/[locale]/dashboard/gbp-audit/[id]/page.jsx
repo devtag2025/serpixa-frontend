@@ -78,57 +78,57 @@ export default function GBPAuditResultsPage() {
         isDownloadingPDF={isDownloadingPDF}
       />
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
-            {/* Error Alert */}
-            {audit.status === "failed" && audit.error_message && (
-              <div className="mb-6 bg-red-50 border border-red-200 rounded-xl p-4">
-                <div className="flex items-start gap-3">
-                  <HiXCircle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-red-900 mb-1">Audit Failed</h3>
-                    <p className="text-sm text-red-700">{audit.error_message}</p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Not Found Alert */}
-            {audit.status === "not_found" && (
-              <div className="mb-6 bg-amber-50 border border-amber-200 rounded-xl p-4">
-                <div className="flex items-start gap-3">
-                  <HiXCircle className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-amber-900 mb-1">Business Not Found</h3>
-                    <p className="text-sm text-amber-700">
-                      We couldn't find your business on Google Business Profile. Please verify the business name or GBP link.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            <GBPAuditStats audit={audit} />
-
-            {/* Row 1: Checklist | Audit Info */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
-              {/* LEFT SIDE - 8 Columns: Checklist */}
-              <div className="lg:col-span-8">
-                <Checklist checklist={audit.checklist} />
-              </div>
-
-              {/* RIGHT SIDE - 4 Columns: Audit Info */}
-              <div className="lg:col-span-4">
-                <AuditInfo audit={audit} onCopyToClipboard={handleCopyToClipboard} />
+      {/* Main Content - Responsive padding */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8">
+        {/* Error Alert */}
+        {audit.status === "failed" && audit.error_message && (
+          <div className="mb-4 sm:mb-6 bg-red-50 border border-red-200 rounded-xl p-3 sm:p-4">
+            <div className="flex items-start gap-2 sm:gap-3">
+              <HiXCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-sm sm:text-base font-semibold text-red-900 mb-1">Audit Failed</h3>
+                <p className="text-xs sm:text-sm text-red-700 break-words">{audit.error_message}</p>
               </div>
             </div>
-
-            {/* Row 2: Business Information - Full Width */}
-            <BusinessInfo businessInfo={audit.businessInfo} onCopyToClipboard={handleCopyToClipboard} />
-
-            {/* Row 3: Recommendations - Full Width */}
-            <RecommendationsTable recommendations={audit.recommendations} />
           </div>
+        )}
+
+        {/* Not Found Alert */}
+        {audit.status === "not_found" && (
+          <div className="mb-4 sm:mb-6 bg-amber-50 border border-amber-200 rounded-xl p-3 sm:p-4">
+            <div className="flex items-start gap-2 sm:gap-3">
+              <HiXCircle className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-sm sm:text-base font-semibold text-amber-900 mb-1">Business Not Found</h3>
+                <p className="text-xs sm:text-sm text-amber-700">
+                  We couldn't find your business on Google Business Profile. Please verify the business name or GBP link.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <GBPAuditStats audit={audit} />
+
+        {/* Row 1: Checklist | Audit Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 mb-4 sm:mb-6">
+          {/* LEFT SIDE - 8 Columns: Checklist */}
+          <div className="lg:col-span-8">
+            <Checklist checklist={audit.checklist} />
+          </div>
+
+          {/* RIGHT SIDE - 4 Columns: Audit Info */}
+          <div className="lg:col-span-4">
+            <AuditInfo audit={audit} onCopyToClipboard={handleCopyToClipboard} />
+          </div>
+        </div>
+
+        {/* Row 2: Business Information - Full Width */}
+        <BusinessInfo businessInfo={audit.businessInfo} onCopyToClipboard={handleCopyToClipboard} />
+
+        {/* Row 3: Recommendations - Full Width */}
+        <RecommendationsTable recommendations={audit.recommendations} />
+      </div>
     </DashboardLayout>
   );
 }

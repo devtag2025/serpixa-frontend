@@ -127,7 +127,7 @@ export default function HeadingsSection({ htmlContent }) {
               {isExpanded && (
                 <div className="px-3 sm:px-4 lg:px-6 pb-3 sm:pb-4">
                   <div className="overflow-x-auto">
-                    <table className="w-full min-w-[300px]">
+                    <table className="w-full min-w-[270px]">
                       <thead className="bg-gray-50 border-b border-gray-200">
                         <tr>
                           <th className="px-3 sm:px-4 py-2 text-left text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">
