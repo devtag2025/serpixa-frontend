@@ -24,52 +24,63 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="relative py-24 px-4 bg-gradient-to-b from-white via-gray-50 to-white">
+    <section id="features" className="relative py-12 sm:py-16 md:py-24 px-4 bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="w-full max-w-7xl mx-auto">
         {/* Main Headline */}
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wide">{t("landing.features.badge")}</span>
+        <div className="text-center mb-10 md:mb-16">
+          <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-primary/10 rounded-full mb-4 sm:mb-6">
+            <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wide">{t("landing.features.badge")}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
               {t("landing.features.title")}
             </span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
             {t("landing.features.subtitle")}
           </p>
         </div>
 
-        {/* Statistics Grid - 2 rows × 3 columns (exact match to design) */}
-        <div className="grid grid-cols-3 gap-0 mb-24 bg-gradient-to-r from-transparent from-40% via-blue-100 via-50% to-transparent to-60%">
+        {/* Statistics Grid - Responsive: 2 cols on mobile, 3 cols on desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-0 mb-16 md:mb-24 bg-gradient-to-r from-transparent from-40% via-blue-100 via-50% to-transparent to-60%">
           {features.map((feature, index) => {
             const value = t(`${feature.titleKey}.value`);
             const description = t(`${feature.titleKey}.description`);
             
-            // Calculate row and column position (0-based)
-            const row = Math.floor(index / 3);
-            const col = index % 3;
-            const totalRows = Math.ceil(features.length / 3);
-            const isLastRow = row === totalRows - 1;
-            const isLastCol = col === 2; // Always 3 columns
+            // Calculate position for desktop (3 columns)
+            const desktopRow = Math.floor(index / 3);
+            const desktopCol = index % 3;
+            const desktopTotalRows = Math.ceil(features.length / 3);
+            const isDesktopLastRow = desktopRow === desktopTotalRows - 1;
+            const isDesktopLastCol = desktopCol === 2;
+            
+            // Calculate position for mobile (2 columns)
+            const mobileRow = Math.floor(index / 2);
+            const mobileCol = index % 2;
+            const mobileTotalRows = Math.ceil(features.length / 2);
+            const isMobileLastRow = mobileRow === mobileTotalRows - 1;
+            const isMobileLastCol = mobileCol === 1;
             
             return (
               <div
                 key={index}
-                className={`p-8 text-center border-r border-b border-gray-200 ${
-                  isLastCol ? 'border-r-0' : ''
-                } ${
-                  isLastRow ? 'border-b-0' : ''
-                }`}
+                className={`p-4 sm:p-6 md:p-8 text-center border-gray-200
+                  ${/* Mobile borders */''} 
+                  ${isMobileLastCol ? '' : 'border-r'} 
+                  ${isMobileLastRow ? '' : 'border-b'}
+                  ${/* Desktop border overrides */''} 
+                  md:border-r md:border-b
+                  ${isDesktopLastCol ? 'md:border-r-0' : ''} 
+                  ${isDesktopLastRow ? 'md:border-b-0' : ''}
+                `}
               >
                 {/* Value - Dark blue/slate color (matching image) */}
-                <div className="text-5xl md:text-6xl font-bold text-slate-800 mb-3">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-2 md:mb-3">
                   {value}
                 </div>
                 
                 {/* Description - Light gray (matching image) */}
-                <p className="text-base text-gray-500 leading-tight">
+                <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-gray-500 leading-tight break-words hyphens-auto uppercase tracking-wide">
                   {description}
                 </p>
               </div>
@@ -78,7 +89,7 @@ export default function Features() {
         </div>
 
         {/* Audience Section */}
-        <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-12 md:p-16 text-center text-white overflow-hidden">
+        <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 lg:p-16 text-center text-white overflow-hidden">
           {/* Background Pattern - Plus signs */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
@@ -88,35 +99,34 @@ export default function Features() {
           
           <div className="relative z-10 max-w-4xl mx-auto">
             {/* Badge with star icon */}
-            <div className="inline-flex items-center gap-2 mb-6">
-              <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span className="text-gray-300 font-medium text-sm uppercase tracking-wide">
+              <span className="text-gray-300 font-medium text-xs sm:text-sm uppercase tracking-wide">
                 {t("landing.features.trustedBadge")}
               </span>
             </div>
 
             {/* Main heading */}
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
               {t("landing.features.trustedTitle")}
             </h3>
 
             {/* Audience list - Vertical, centered, one per line */}
-            <div className="flex flex-col items-center gap-4 mb-8">
+            <div className="flex flex-col items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
               {[1, 2, 3, 4].map((index) => (
-                <div key={index} className="flex items-center gap-3 text-lg text-white">
-                  <svg className="w-3 h-3 text-red-500 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                <div key={index} className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg text-white">
+                  <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-red-500 fill-current flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0L12 6L0 12V0Z" />
                   </svg>
-                  {/* <span className="w-3 h-3 text-red-500 font-bold  pt-3 flex items-center justify-center text-3xl leading-none">*</span> */}
                   <span>{t(`landing.features.trustedAudience.${index}`)}</span>
                 </div>
               ))}
             </div>
 
             {/* Final statement */}
-            <p className="text-3xl  text-white font-normal">
+            <p className="text-xl sm:text-2xl md:text-3xl text-white font-normal">
               {t("landing.features.finalStatement")}
             </p>
           </div>
