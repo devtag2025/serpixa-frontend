@@ -19,6 +19,9 @@ export const metadata = {
     shortcut: '/serpixa-icon.png',
     apple: '/serpixa-icon.png',
   },
+  openGraph: {
+    images: ['/serpixa-logo.png'],
+  },
 };
 
 /**

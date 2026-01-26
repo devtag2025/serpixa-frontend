@@ -276,13 +276,13 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
               href="/" 
               className={`flex items-center ${isExpanded ? "justify-start" : "justify-center"} mb-8 px-4 hover:opacity-80 transition-opacity cursor-pointer`}
             >
-              <div className={`relative flex-shrink-0 ${isExpanded ? "w-32 h-10" : "w-12 h-12"}`}>
+              <div className={`relative flex-shrink-0 ${isExpanded ? "w-32 h-10" : "w-8 h-8"}`}>
                 <Image
-                  src="/serpixa-logo.png"
-                  alt="Serpixa Logo"
+                  src={isExpanded ? "/serpixa-logo.png" : "/serpixa-icon.png"}
+                  alt="Serpixa"
                   fill
                   className="object-contain"
-                  sizes={isExpanded ? "128px" : "48px"}
+                  sizes={isExpanded ? "128px" : "32px"}
                   priority
                 />
               </div>
