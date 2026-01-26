@@ -116,13 +116,13 @@ export default function Navbar() {
           {/* Logo - Left */}
           <div className="flex items-center justify-start flex-shrink-0 md:pr-15">
             <LocalizedLink href="/" className="flex items-center">
-              <div className="relative w-32 h-10 sm:w-40 sm:h-12 flex-shrink-0">
+              <div className="relative w-40 h-12 sm:w-50 sm:h-12 flex-shrink-0 overflow-hidden rounded-lg">
                 <Image
                   src="/serpixa-logo.png"
                   alt="Serpixa Logo"
                   fill
-                  className="object-contain"
-                  sizes="(max-width: 640px) 128px, 160px"
+                  className="object-cover"
+                  sizes="(max-width: 640px) 160px, 200px"
                   priority
                 />
               </div>
@@ -321,13 +321,13 @@ export default function Navbar() {
                   className="flex items-center"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <div className="relative w-32 h-10 sm:w-40 sm:h-12 flex-shrink-0">
+                  <div className="relative w-40 h-12 flex-shrink-0 overflow-hidden rounded-lg">
                     <Image
                       src="/serpixa-logo.png"
                       alt="Serpixa Logo"
                       fill
-                      className="object-contain"
-                      sizes="(max-width: 640px) 128px, 160px"
+                      className="object-cover"
+                      sizes="160px"
                       priority
                     />
                   </div>
