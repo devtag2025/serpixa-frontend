@@ -55,14 +55,13 @@ export default function NewAIContentPage() {
     // Store keyword for progress modal
     setCurrentKeyword(formData.keyword.trim());
     
-    // Map form locale (i18n format) to backend locale
-    const formLocale = formData.locale || i18nLocale;
-    const backendLocale = mapI18nLocaleToBackendLocale(formLocale);
+    // Get language from form (fr, nl, en) - send as language field
+    const language = formData.language || i18nLocale || 'en';
     
     generateContent({
       topic: formData.topic.trim(),
       keyword: formData.keyword.trim(),
-      locale: backendLocale,
+      language: language, // Send language instead of locale
     });
   };
 
