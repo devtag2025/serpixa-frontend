@@ -98,14 +98,14 @@ export default function RecommendationsTable({ recommendations }) {
   );
 
   return (
-    <div className="mb-6">
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+    <div className="mb-4 sm:mb-6">
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm overflow-hidden">
         {/* Header with Filters Toggle */}
-        <div className="px-6 py-4 border-b border-gray-200">
-          <div className="flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <div>
-              <h2 className="text-lg font-semibold text-gray-900">{t("dashboard.gbpAudit.view.recommendations")}</h2>
-              <p className="text-sm text-gray-500 mt-1">
+              <h2 className="text-base sm:text-lg font-semibold text-gray-900">{t("dashboard.gbpAudit.view.recommendations")}</h2>
+              <p className="text-xs sm:text-sm text-gray-500 mt-0.5 sm:mt-1">
                 {filteredAndSorted.length} {t("dashboard.seoAudit.view.of")} {recommendations.length} {t("dashboard.gbpAudit.view.recommendationsFound")}
               </p>
             </div>
@@ -215,9 +215,73 @@ export default function RecommendationsTable({ recommendations }) {
           </div>
         )}
 
-        {/* Table */}
-        <div className="overflow-x-auto">
-          <table className="w-full">
+        {/* Mobile Card Layout */}
+        <div className="lg:hidden divide-y divide-gray-200">
+          {filteredAndSorted.length === 0 ? (
+            <div className="px-4 py-8 text-center">
+              <p className="text-xs sm:text-sm text-gray-500">{t("dashboard.seoAudit.view.noRecommendationsMatch")}</p>
+            </div>
+          ) : (
+            filteredAndSorted.map((rec, index) => {
+              const priorityColors = getPriorityColor(rec.priority);
+              const impactColors = getImpactColor(rec.impact);
+              const effortColors = getEffortColor(rec.effort);
+
+              return (
+                <div key={index} className="px-4 py-3 sm:py-4 space-y-2 sm:space-y-3">
+                  {/* Header: Priority and Category */}
+                  <div className="flex items-center justify-between gap-2 flex-wrap">
+                    <div className="flex items-center gap-2">
+                      <span className={`w-2 h-2 rounded-full ${priorityColors.dot}`}></span>
+                      <span className={`text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded ${priorityColors.badge}`}>
+                        {priorityColors.label}
+                      </span>
+                    </div>
+                    <span className="text-[10px] sm:text-xs font-medium text-gray-700 px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-100 rounded">
+                      {getCategoryLabel(rec.category)}
+                    </span>
+                  </div>
+
+                  {/* Issue */}
+                  <div>
+                    <p className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-0.5">{t("dashboard.seoAudit.view.issue")}</p>
+                    <p className="text-xs sm:text-sm font-medium text-gray-900">{rec.issue || "—"}</p>
+                  </div>
+
+                  {/* Action */}
+                  <div>
+                    <p className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-0.5">{t("dashboard.gbpAudit.view.action")}</p>
+                    <p className="text-xs sm:text-sm text-gray-700">{rec.action || "—"}</p>
+                  </div>
+
+                  {/* Impact and Effort */}
+                  <div className="flex items-center gap-3 flex-wrap">
+                    {rec.impact && (
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[10px] sm:text-xs text-gray-500">{t("dashboard.seoAudit.view.impact")}:</span>
+                        <span className={`text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 rounded ${impactColors.badge}`}>
+                          {impactColors.label}
+                        </span>
+                      </div>
+                    )}
+                    {rec.effort && (
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[10px] sm:text-xs text-gray-500">{t("dashboard.seoAudit.view.effort")}:</span>
+                        <span className={`text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 rounded ${effortColors.badge}`}>
+                          {effortColors.label}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </div>
+
+        {/* Desktop Table Layout */}
+        <div className="hidden lg:block overflow-x-auto">
+          <table className="w-full min-w-[900px]">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 <SortableHeader label={t("dashboard.gbpAudit.view.priority")} />
@@ -283,7 +347,7 @@ export default function RecommendationsTable({ recommendations }) {
                         <span className="text-sm font-medium text-gray-900">{rec.issue || "—"}</span>
                       </td>
                       <td className="px-6 py-4">
-                        <span className="text-sm text-gray-700 ">{rec.action || "—"}</span>
+                        <span className="text-sm text-gray-700">{rec.action || "—"}</span>
                       </td>
                       <td className="px-6 py-4">
                         {rec.impact && (

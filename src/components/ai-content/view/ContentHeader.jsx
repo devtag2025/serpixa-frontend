@@ -25,22 +25,22 @@ export default function ContentHeader({ content, onRegenerate, onExportHTML, onE
               </span>
             </div>
           </div>
-          <div className="flex h-full items-center gap-2 sm:gap-3 flex-shrink-0">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             {onExportPDF && (
               <button
                 onClick={onExportPDF}
                 disabled={isExportingPDF}
-                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium text-xs sm:text-sm whitespace-nowrap shadow-sm"
+                className="flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium text-xs sm:text-sm shadow-sm flex-1 sm:flex-none min-w-0"
               >
                 {isExportingPDF ? (
                   <>
-                    <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    <span>{t("dashboard.aiContent.view.exportingPdf")}...</span>
+                    <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-white/30 border-t-white rounded-full animate-spin flex-shrink-0"></div>
+                    <span className="truncate">{t("dashboard.aiContent.view.exportingPdf")}...</span>
                   </>
                 ) : (
                   <>
-                    <HiDownload className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    <span>{t("dashboard.aiContent.view.exportPdf")}</span>
+                    <HiDownload className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                    <span className="truncate">{t("dashboard.aiContent.view.exportPdf")}</span>
                   </>
                 )}
               </button>
@@ -48,26 +48,26 @@ export default function ContentHeader({ content, onRegenerate, onExportHTML, onE
             {onCopyAllHTML && (
               <button
                 onClick={onCopyAllHTML}
-                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 text-primary bg-white border border-primary rounded-lg hover:bg-primary/5 transition-colors font-medium text-xs sm:text-sm whitespace-nowrap"
+                className="flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 text-primary bg-white border border-primary rounded-lg hover:bg-primary/5 transition-colors font-medium text-xs sm:text-sm flex-1 sm:flex-none min-w-0"
               >
-                <HiClipboard className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                <span>{t("dashboard.aiContent.view.copyAllHtml")}</span>
+                <HiClipboard className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                <span className="truncate">{t("dashboard.aiContent.view.copyAllHtml")}</span>
               </button>
             )}
             {onDelete && (
               <button
                 onClick={onDelete}
                 disabled={isDeleting}
-                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 text-red-700 bg-white border border-red-300 rounded-lg hover:bg-red-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium text-xs sm:text-sm whitespace-nowrap"
+                className="flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 text-red-700 bg-white border border-red-300 rounded-lg hover:bg-red-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium text-xs sm:text-sm flex-1 sm:flex-none min-w-0"
               >
                 {isDeleting ? (
                   <>
-                    <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-red-300 border-t-red-700 rounded-full animate-spin"></div>
-                    <span>{t("dashboard.common.delete")}...</span>
+                    <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-red-300 border-t-red-700 rounded-full animate-spin flex-shrink-0"></div>
+                    <span className="truncate">{t("dashboard.common.delete")}...</span>
                   </>
                 ) : (
                   <>
-                    <span>{t("dashboard.common.delete")}</span>
+                    <span className="truncate">{t("dashboard.common.delete")}</span>
                   </>
                 )}
               </button>

@@ -13,12 +13,12 @@ export default function GeoAuditStats({ audit }) {
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-6 lg:mb-8">
       {/* Local Visibility Score Card */}
-      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 lg:p-6 shadow-sm">
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 lg:p-6 shadow-sm overflow-hidden">
         <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-          <div className={`p-1.5 sm:p-2.5 rounded-lg ${scoreColors.bg}`}>
+          <div className={`p-1.5 sm:p-2.5 rounded-lg flex-shrink-0 ${scoreColors.bg}`}>
             <HiLightningBolt className={`w-4 h-4 sm:w-5 sm:h-5 ${scoreColors.text}`} />
           </div>
-          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.visibilityScore")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 leading-tight line-clamp-2">{t("dashboard.localSeoAudit.view.visibilityScore")}</span>
         </div>
         <div className="flex items-baseline gap-1 sm:gap-2 mb-2">
           <span className={`text-xl sm:text-2xl lg:text-3xl font-bold ${scoreColors.text}`}>{audit.localVisibilityScore || 0}</span>
@@ -33,12 +33,12 @@ export default function GeoAuditStats({ audit }) {
       </div>
 
       {/* Total Competitors Card */}
-      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 lg:p-6 shadow-sm">
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 lg:p-6 shadow-sm overflow-hidden">
         <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-          <div className="p-1.5 sm:p-2.5 rounded-lg bg-purple-50">
+          <div className="p-1.5 sm:p-2.5 rounded-lg bg-purple-50 flex-shrink-0">
             <HiUsers className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
           </div>
-          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.competitors")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 leading-tight line-clamp-2">{t("dashboard.localSeoAudit.view.competitors")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">{totalCompetitors}</span>
@@ -46,12 +46,12 @@ export default function GeoAuditStats({ audit }) {
       </div>
 
       {/* NAP Issues Card */}
-      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 lg:p-6 shadow-sm">
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 lg:p-6 shadow-sm overflow-hidden">
         <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-          <div className="p-1.5 sm:p-2.5 rounded-lg bg-red-50">
+          <div className="p-1.5 sm:p-2.5 rounded-lg bg-red-50 flex-shrink-0">
             <HiExclamationCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600" />
           </div>
-          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.napIssues")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 leading-tight line-clamp-2">{t("dashboard.localSeoAudit.view.napIssues")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">{napIssuesCount}</span>
@@ -59,12 +59,12 @@ export default function GeoAuditStats({ audit }) {
       </div>
 
       {/* Recommendations Card */}
-      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 lg:p-6 shadow-sm col-span-2 lg:col-span-1">
+      <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 lg:p-6 shadow-sm overflow-hidden">
         <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-          <div className="p-1.5 sm:p-2.5 rounded-lg bg-blue-50">
+          <div className="p-1.5 sm:p-2.5 rounded-lg bg-blue-50 flex-shrink-0">
             <HiExclamationCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
           </div>
-          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">{t("dashboard.localSeoAudit.view.recommendations")}</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 leading-tight line-clamp-2">{t("dashboard.localSeoAudit.view.recommendations")}</span>
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">{totalRecommendations}</span>

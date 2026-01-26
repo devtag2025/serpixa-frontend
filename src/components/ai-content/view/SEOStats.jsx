@@ -8,50 +8,50 @@ export default function SEOStats({ content }) {
   const scoreColor = getScoreColor(content.seoScore || 75);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-6">
       {/* SEO Score */}
-      <div className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6">
-        <div className="flex items-center justify-between mb-2">
-          <div className={`p-2 sm:p-3 rounded-lg ${scoreColor.bg}`}>
-            <HiChartBar className={`w-5 h-5 sm:w-6 sm:h-6 ${scoreColor.text}`} />
+      <div className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-gray-200 p-3 sm:p-4 lg:p-6 overflow-hidden">
+        <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+          <div className={`p-1.5 sm:p-2 lg:p-3 rounded-lg flex-shrink-0 ${scoreColor.bg}`}>
+            <HiChartBar className={`w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 ${scoreColor.text}`} />
           </div>
-          <span className={`text-xl sm:text-2xl font-bold ${scoreColor.text}`}>
-            {content.seoScore || 75}
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 leading-tight line-clamp-2">
+            {t("dashboard.aiContent.view.seoScore")}
           </span>
         </div>
-        <p className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">
-          {t("dashboard.aiContent.view.seoScore")}
-        </p>
+        <span className={`text-xl sm:text-2xl lg:text-3xl font-bold ${scoreColor.text}`}>
+          {content.seoScore || 75}
+        </span>
       </div>
 
       {/* Keyword Density */}
-      <div className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6">
-        <div className="flex items-center justify-between mb-2">
-          <div className="p-2 sm:p-3 rounded-lg bg-blue-50">
-            <HiHashtag className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+      <div className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-gray-200 p-3 sm:p-4 lg:p-6 overflow-hidden">
+        <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+          <div className="p-1.5 sm:p-2 lg:p-3 rounded-lg bg-blue-50 flex-shrink-0">
+            <HiHashtag className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-blue-600" />
           </div>
-          <span className="text-xl sm:text-2xl font-bold text-gray-900">
-            {content.keywordDensity || "N/A"}
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 leading-tight line-clamp-2">
+            {t("dashboard.aiContent.view.keywordDensity")}
           </span>
         </div>
-        <p className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">
-          {t("dashboard.aiContent.view.keywordDensity")}
-        </p>
+        <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
+          {content.keywordDensity || "N/A"}
+        </span>
       </div>
 
       {/* Word Count */}
-      <div className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6">
-        <div className="flex items-center justify-between mb-2">
-          <div className="p-2 sm:p-3 rounded-lg bg-purple-50">
-            <HiDocumentText className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
+      <div className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-gray-200 p-3 sm:p-4 lg:p-6 overflow-hidden col-span-2 sm:col-span-1">
+        <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+          <div className="p-1.5 sm:p-2 lg:p-3 rounded-lg bg-purple-50 flex-shrink-0">
+            <HiDocumentText className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-purple-600" />
           </div>
-          <span className="text-xl sm:text-2xl font-bold text-gray-900">
-            {content.wordCount || 0}
+          <span className="text-[10px] sm:text-xs font-semibold text-gray-500 leading-tight line-clamp-2">
+            {t("dashboard.aiContent.view.wordCount")}
           </span>
         </div>
-        <p className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">
-          {t("dashboard.aiContent.view.wordCount")}
-        </p>
+        <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
+          {content.wordCount || 0}
+        </span>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ export default function SEOAuditTable({ audits, onDelete }) {
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
       <div className="overflow-x-auto">
-        <table className="w-full">
+        <table className="w-full min-w-[900px]">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
               <th className="px-6 py-3 text-left">
@@ -90,7 +90,7 @@ export default function SEOAuditTable({ audits, onDelete }) {
                             <span className="text-sm text-gray-700">{audit.recommendations.length}</span>
                             {criticalHighCount > 0 && criticalHighCount < audit.recommendations.length && (
                               <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-semibold">
-                                {criticalHighCount} {criticalHighCount === 1 ? "Urgent" : "Urgent"}
+                                {criticalHighCount} {t("dashboard.common.urgent")}
                               </span>
                             )}
                           </>

@@ -647,6 +647,7 @@
       "url": "URL",
       "keyword": "Keyword",
       "issues": "Issues",
+      "urgent": "Urgent",
       "noResults": "No results found",
       "copy": "Copy",
       "copied": "Copied",
