@@ -5,6 +5,7 @@ import { useRegister } from "@/hooks/useAuth";
 import PublicRoute from "@/components/auth/PublicRoute";
 import Link from "next/link";
 import { HiUser, HiLockClosed, HiEye, HiEyeOff, HiMail } from "react-icons/hi";
+import Image from "next/image";
 import { useTranslation } from "@/i18n/context";
 import PreferredLanguageSelect from "@/components/common/PreferredLanguageSelect";
 
@@ -66,20 +67,14 @@ export default function SignupPage() {
           <div className="relative z-10 flex flex-col justify-between p-12 text-white">
             {/* Logo */}
             <div className="flex items-center space-x-3 mb-8">
-              <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+              <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center p-1.5">
+                <Image
+                  src="/serpixa-icon.png"
+                  alt="Serpixa"
+                  width={28}
+                  height={28}
+                  className="object-contain"
+                />
               </div>
               <span className="text-2xl font-bold">Serpixa</span>
             </div>

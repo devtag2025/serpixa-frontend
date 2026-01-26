@@ -8,6 +8,7 @@ import PublicRoute from "@/components/auth/PublicRoute";
 import Link from "next/link";
 import { useTranslation } from "@/i18n/context";
 import { HiLockClosed, HiEye, HiEyeOff } from "react-icons/hi";
+import Image from "next/image";
 
 function ResetPasswordContent() {
   const { t } = useTranslation();
@@ -76,20 +77,14 @@ function ResetPasswordContent() {
           <div className="relative z-10 flex flex-col justify-between p-12 text-white">
             {/* Logo */}
             <div className="flex items-center space-x-3 mb-8">
-              <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+              <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center p-1.5">
+                <Image
+                  src="/serpixa-icon.png"
+                  alt="Serpixa"
+                  width={28}
+                  height={28}
+                  className="object-contain"
+                />
               </div>
               <span className="text-2xl font-bold">Serpixa</span>
             </div>
@@ -122,20 +117,14 @@ function ResetPasswordContent() {
             {/* Mobile Logo - Only visible on small screens */}
             <div className="lg:hidden flex items-center justify-center mb-8">
               <Link href="/" className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
+                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center p-1">
+                  <Image
+                    src="/serpixa-icon.png"
+                    alt="Serpixa"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
                 </div>
                 <span className="text-xl font-semibold text-gray-900">Serpixa</span>
               </Link>
