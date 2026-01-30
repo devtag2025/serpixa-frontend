@@ -5,21 +5,40 @@ import CustomDropdown from "@/components/common/CustomDropdown";
 import { useTranslation } from "@/i18n/context";
 import { useI18n } from "@/i18n/context";
 
-// Locale configuration for GBP Audit - Only 3 languages
+// Locale configuration for GBP Audit - Language + Country combinations
 const gbpAuditLocales = [
+  // Belgium
   { 
-    value: 'fr', 
-    label: 'Français', 
+    value: 'fr_be', 
+    label: 'Français (Belgique)', 
+    countryCode: 'BE',
+  },
+  { 
+    value: 'nl_be', 
+    label: 'Nederlands (België)', 
+    countryCode: 'BE',
+  },
+  // France
+  { 
+    value: 'fr_fr', 
+    label: 'Français (France)', 
     countryCode: 'FR',
   },
+  // Netherlands
   { 
-    value: 'nl', 
-    label: 'Nederlands', 
+    value: 'nl_nl', 
+    label: 'Nederlands (Nederland)', 
     countryCode: 'NL',
   },
+  // UK/US English
   { 
-    value: 'en', 
-    label: 'English', 
+    value: 'en_us', 
+    label: 'English (US)', 
+    countryCode: 'US',
+  },
+  { 
+    value: 'en_gb', 
+    label: 'English (UK)', 
     countryCode: 'GB',
   },
 ];
@@ -27,7 +46,18 @@ const gbpAuditLocales = [
 export default function GBPAuditLocaleSelect({ register, defaultValue, className = "" }) {
   const { t } = useTranslation();
   const { locale: currentLocale } = useI18n();
-  const defaultLocale = defaultValue || currentLocale || 'en';
+  
+  // Map browser locale to our locale codes, default to Belgium French
+  const mapLocale = (loc) => {
+    if (!loc) return 'fr_be';
+    const l = loc.toLowerCase();
+    if (l.startsWith('nl')) return l.includes('be') ? 'nl_be' : 'nl_nl';
+    if (l.startsWith('fr')) return l.includes('be') ? 'fr_be' : 'fr_fr';
+    if (l.startsWith('en')) return 'en_us';
+    return 'fr_be'; // Default to Belgium French
+  };
+  
+  const defaultLocale = defaultValue || mapLocale(currentLocale);
   const [selectedLocale, setSelectedLocale] = useState(defaultLocale);
   const hiddenInputRef = useRef(null);
 

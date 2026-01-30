@@ -2,9 +2,51 @@
 import { HiOfficeBuilding, HiLocationMarker, HiPhone, HiGlobe, HiStar, HiClipboardCopy, HiExternalLink, HiClock } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
 
+// Helper function to format time from { hour, minute } to "HH:MM"
+const formatTime = (time) => {
+  if (!time) return "";
+  const hour = time.hour?.toString().padStart(2, "0") || "00";
+  const minute = time.minute?.toString().padStart(2, "0") || "00";
+  return `${hour}:${minute}`;
+};
+
+// Helper function to format a day's hours
+const formatDayHours = (daySchedule) => {
+  if (!daySchedule || daySchedule.length === 0) return null;
+  return daySchedule.map((slot, idx) => (
+    `${formatTime(slot.open)} - ${formatTime(slot.close)}`
+  )).join(", ");
+};
+
+// Day name translations (will use i18n later if needed)
+const dayNames = {
+  monday: "Mon",
+  tuesday: "Tue",
+  wednesday: "Wed",
+  thursday: "Thu",
+  friday: "Fri",
+  saturday: "Sat",
+  sunday: "Sun",
+};
+
+// Extract timetable from various hours formats
+const extractTimetable = (hours) => {
+  if (!hours) return null;
+  // Format: { work_hours: { timetable: {...} } }
+  if (hours.work_hours?.timetable) return hours.work_hours.timetable;
+  // Format: { timetable: {...} }
+  if (hours.timetable) return hours.timetable;
+  // Format: direct day keys { monday: [...], tuesday: [...] }
+  if (hours.monday || hours.tuesday || hours.sunday) return hours;
+  return null;
+};
+
 export default function BusinessInfo({ businessInfo, onCopyToClipboard }) {
   const { t } = useTranslation();
   if (!businessInfo) return null;
+  
+  // Extract timetable from hours
+  const timetable = extractTimetable(businessInfo.hours);
 
   return (
     <div className="mb-4 sm:mb-6 bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm">
@@ -110,12 +152,24 @@ export default function BusinessInfo({ businessInfo, onCopyToClipboard }) {
               </div>
             </div>
           )}
-          {businessInfo.hours && Object.keys(businessInfo.hours).length > 0 && (
-            <div className="flex items-start gap-2 sm:gap-3">
+          {timetable && (
+            <div className="flex items-start gap-2 sm:gap-3 sm:col-span-2 lg:col-span-3">
               <HiClock className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-0.5 flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-0.5 sm:mb-1">{t("dashboard.gbpAudit.view.businessHours")}</p>
-                <p className="text-xs sm:text-sm text-gray-900">{t("dashboard.gbpAudit.view.set")}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 sm:gap-2">
+                  {["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"].map((day) => {
+                    const dayHours = formatDayHours(timetable[day]);
+                    return (
+                      <div key={day} className="flex items-center gap-2 text-xs sm:text-sm">
+                        <span className="font-medium text-gray-700 w-8 sm:w-10">{dayNames[day]}</span>
+                        <span className={dayHours ? "text-gray-900" : "text-gray-400"}>
+                          {dayHours || t("dashboard.gbpAudit.view.closed") || "Closed"}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           )}

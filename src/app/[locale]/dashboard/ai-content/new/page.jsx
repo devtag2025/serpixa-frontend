@@ -1,12 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import ContentGenerationForm from "@/components/ai-content/new/ContentGenerationForm";
 import ContentGenerationProgress from "@/components/ai-content/new/ContentGenerationProgress";
 import { useTranslation, useI18n } from "@/i18n/context";
-import { mapI18nLocaleToBackendLocale } from "@/utils/localeMapper";
 import { useGenerateAIContent } from "@/hooks/aiContentHooks";
-import { useContentGenerationProgress } from "@/hooks/useContentGenerationProgress";
 
 export default function NewAIContentPage() {
   const { t } = useTranslation();
@@ -14,45 +12,8 @@ export default function NewAIContentPage() {
   const { mutate: generateContent, isPending } = useGenerateAIContent();
   const [currentKeyword, setCurrentKeyword] = useState("");
 
-  // Translated status messages for progress
-  const statusMessages = [
-    t("dashboard.aiContent.progress.analyzingKeyword"),
-    t("dashboard.aiContent.progress.generatingSeoContent"),
-    t("dashboard.aiContent.progress.optimizingMetaTags"),
-    t("dashboard.aiContent.progress.structuringContent"),
-    t("dashboard.aiContent.progress.finalizing"),
-  ];
-
-  // Progress hook
-  const {
-    progress,
-    currentStep,
-    startProgress,
-    completeProgress,
-    resetProgress,
-  } = useContentGenerationProgress({ statusMessages });
-
-  // Start progress when generation begins
-  useEffect(() => {
-    if (isPending) {
-      startProgress();
-    }
-  }, [isPending, startProgress]);
-
-  // Complete progress when generation finishes
-  useEffect(() => {
-    if (!isPending && progress > 0 && progress < 100) {
-      completeProgress();
-      // Reset after a brief delay to show 100%
-      const timer = setTimeout(() => {
-        resetProgress();
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [isPending, progress, completeProgress, resetProgress]);
-
   const handleFormSubmit = (formData) => {
-    // Store keyword for progress modal
+    // Store keyword for loader modal
     setCurrentKeyword(formData.keyword.trim());
     
     // Get language from form (fr, nl, en) - send as language field
@@ -67,13 +28,10 @@ export default function NewAIContentPage() {
 
   return (
     <DashboardLayout>
-      {/* Progress Modal */}
+      {/* Simple Loader Modal */}
       <ContentGenerationProgress
-        isOpen={isPending || progress > 0}
+        isOpen={isPending}
         keyword={currentKeyword}
-        progress={progress}
-        currentStep={currentStep}
-        onClose={progress === 100 ? resetProgress : undefined}
       />
 
       <div>

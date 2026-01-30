@@ -17,9 +17,9 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
 
   const handleFormSubmit = (data) => {
     const payload = {
-      // Only include businessName if it has a value (don't send null)
-      ...(data.businessName?.trim() && { businessName: data.businessName.trim() }),
-      gbpLink: data.gbpLink?.trim(), // Required, always include
+      businessName: data.businessName.trim(), // Required
+      // Only include gbpLink if it has a value (optional, helps with accuracy)
+      ...(data.gbpLink?.trim() && { gbpLink: data.gbpLink.trim() }),
       ...(data.locale && { locale: data.locale }),
     };
 
@@ -28,10 +28,10 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
 
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-6">
-      {/* Business Name */}
+      {/* Business Name - REQUIRED */}
       <div>
         <label className="block text-sm font-semibold text-gray-900 mb-2">
-          {t("dashboard.gbpAudit.form.businessName")} <span className="text-gray-400">({t("dashboard.common.optional")})</span>
+          {t("dashboard.gbpAudit.form.businessName")} <span className="text-red-500">*</span>
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -41,6 +41,11 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
             type="text"
             placeholder={t("dashboard.gbpAudit.form.businessNamePlaceholder")}
             {...register("businessName", {
+              required: t("dashboard.gbpAudit.form.businessNameRequired") || "Business name is required",
+              minLength: {
+                value: 2,
+                message: t("dashboard.gbpAudit.form.businessNameMinLength") || "Business name must be at least 2 characters",
+              },
               maxLength: {
                 value: 200,
                 message: t("dashboard.gbpAudit.form.businessName") + " must be less than 200 characters",
@@ -59,10 +64,10 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
         </p>
       </div>
 
-      {/* GBP Link */}
+      {/* GBP Link - OPTIONAL (improves accuracy) */}
       <div>
         <label className="block text-sm font-semibold text-gray-900 mb-2">
-          {t("dashboard.gbpAudit.form.gbpLink")} <span className="text-red-500">*</span>
+          {t("dashboard.gbpAudit.form.gbpLink")} <span className="text-gray-400">({t("dashboard.common.optional")})</span>
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -72,9 +77,8 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
             type="text"
             placeholder={t("dashboard.gbpAudit.form.gbpLinkPlaceholder")}
             {...register("gbpLink", {
-              required: t("dashboard.gbpAudit.form.gbpLinkRequired") || "GBP Link is required",
               validate: (value) => {
-                if (value && !isValidUrlFormat(value)) {
+                if (value && value.trim() && !isValidUrlFormat(value)) {
                   return t("dashboard.gbpAudit.form.validUrlRequired") + " (e.g., https://www.google.com/maps/place/...)";
                 }
                 return true;
@@ -89,7 +93,7 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
           </p>
         )}
         <p className="mt-2 text-xs text-gray-500">
-          {t("dashboard.gbpAudit.form.gbpLinkHelp")}
+          {t("dashboard.gbpAudit.form.gbpLinkHelpOptional") || t("dashboard.gbpAudit.form.gbpLinkHelp")}
         </p>
       </div>
 
