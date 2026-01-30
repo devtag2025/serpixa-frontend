@@ -201,13 +201,13 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
             href="/" 
             className="flex items-center hover:opacity-80 transition-opacity cursor-pointer"
           >
-            <div className="relative w-32 h-10 flex-shrink-0">
+            <div className="relative w-40 h-12 flex-shrink-0 overflow-hidden rounded-lg">
               <Image
                 src="/serpixa-logo.png"
                 alt="Serpixa Logo"
                 fill
-                className="object-contain"
-                sizes="128px"
+                className="object-cover"
+                sizes="160px"
                 priority
               />
             </div>
@@ -276,13 +276,13 @@ export default function Sidebar({ isMobileOpen = false, onMobileClose }) {
               href="/" 
               className={`flex items-center ${isExpanded ? "justify-start" : "justify-center"} mb-8 px-4 hover:opacity-80 transition-opacity cursor-pointer`}
             >
-              <div className={`relative flex-shrink-0 ${isExpanded ? "w-32 h-10" : "w-8 h-8"}`}>
+              <div className={`relative  flex-shrink-0 overflow-hidden ${isExpanded ? "w-50 h-12 rounded-lg" : "w-8 h-8 rounded-xl"}`}>
                 <Image
                   src={isExpanded ? "/serpixa-logo.png" : "/serpixa-icon.png"}
                   alt="Serpixa"
                   fill
-                  className="object-contain"
-                  sizes={isExpanded ? "128px" : "32px"}
+                  className="object-cover"
+                  sizes={isExpanded ? "150px" : "32px"}
                   priority
                 />
               </div>
