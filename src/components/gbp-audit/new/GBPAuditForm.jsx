@@ -1,5 +1,5 @@
 "use client";
-// import { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { HiOfficeBuilding, HiLink, HiGlobe } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
@@ -8,21 +8,27 @@ import { isValidUrlFormat } from "@/utils/urlNormalizer";
 
 export default function GBPAuditForm({ onSubmit, isPending }) {
   const { t } = useTranslation();
+  const [selectedLocale, setSelectedLocale] = useState("en");
   // const [showAdvanced, setShowAdvanced] = useState(false);
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm();
 
   const handleFormSubmit = (data) => {
+    console.log('[GBPAuditForm] Form data before submit:', data);
+    
     const payload = {
       businessName: data.businessName.trim(), // Required
       // Only include gbpLink if it has a value (optional, helps with accuracy)
       ...(data.gbpLink?.trim() && { gbpLink: data.gbpLink.trim() }),
-      ...(data.locale && { locale: data.locale }),
+      // Use the locale from the dropdown component state (fr_be, nl_be, fr_fr, ...)
+      locale: selectedLocale,
     };
 
+    console.log('[GBPAuditForm] Payload to send:', payload);
     onSubmit(payload);
   };
 
@@ -102,7 +108,11 @@ export default function GBPAuditForm({ onSubmit, isPending }) {
         {/* <label className="block text-sm font-semibold text-gray-900 mb-2">
           {t("dashboard.gbpAudit.form.locale")} <span className="text-gray-400">({t("dashboard.common.optional")})</span>
         </label> */}
-        <GBPAuditLocaleSelect register={register} />
+        <GBPAuditLocaleSelect
+          register={register}
+          setValue={setValue}
+          onChangeLocale={setSelectedLocale}
+        />
         <p className="mt-2 text-xs text-gray-500">
           {t("dashboard.gbpAudit.form.localeHelp")}
         </p>

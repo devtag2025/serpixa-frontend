@@ -5,7 +5,7 @@ import { HiSearch, HiLocationMarker, HiOfficeBuilding } from "react-icons/hi";
 import { useTranslation } from "@/i18n/context";
 import LocalSeoCountrySelect from "./LocalSeoCountrySelect";
 import AutocompleteInput from "@/components/common/AutocompleteInput";
-import { searchRegions, searchCities } from "@/services/geoNamesService";
+import { searchCities } from "@/services/geoNamesService";
 
 export default function GeoAuditForm({ onSubmit, isPending }) {
   const { t } = useTranslation();
@@ -18,7 +18,6 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
   } = useForm();
 
   const country = watch("country");
-  const region = watch("region");
 
   // Map countries to their Google domains
   const countryToGoogleDomain = {
@@ -34,9 +33,8 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
     }
   }, [country, setValue]);
 
-  // Clear region and city when country changes
+  // Clear city when country changes
   useEffect(() => {
-    setValue("region", "");
     setValue("city", "");
   }, [country, setValue]);
 
@@ -62,17 +60,11 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
     return countryLocaleMap[countryLower] || 'en';
   };
 
-  // Search function for regions
-  const handleRegionSearch = useCallback(async (query) => {
-    if (!country) return [];
-    return await searchRegions(query, country);
-  }, [country]);
-
   // Search function for cities
   const handleCitySearch = useCallback(async (query) => {
     if (!country) return [];
-    return await searchCities(query, country, region);
-  }, [country, region]);
+    return await searchCities(query, country);
+  }, [country]);
 
   const handleFormSubmit = (data) => {
     // Convert googleDomain from ".be" format to "google.be" format
@@ -91,11 +83,11 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
 
     const payload = {
       keyword: data.keyword.trim(),
+      // City field now holds full DataForSEO location_name from our DB
       city: data.city.trim(),
       country: countryValue,
       locale: locale,
       ...(data.businessName?.trim() && { businessName: data.businessName.trim() }),
-      ...(data.region?.trim() && { region: data.region.trim() }),
       ...(normalizedGoogleDomain && { googleDomain: normalizedGoogleDomain }),
     };
 
@@ -170,9 +162,9 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
         </div>
       </div>
 
-      {/* Row 2: Country (First - required for other fields) */}
+      {/* Row 2: Country */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
+        <div className="md:col-span-2">
           <label className="block text-sm font-semibold text-gray-900 mb-2">
             {t("dashboard.localSeoAudit.form.country")} <span className="text-red-500">*</span>
           </label>
@@ -190,38 +182,6 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
             {t("dashboard.localSeoAudit.form.countryHelpDetailed")}
           </p>
         </div>
-
-        {/* Region (Optional - with autocomplete) */}
-        <div>
-          <AutocompleteInput
-            label={t("dashboard.localSeoAudit.form.region") || "Region/State/Province"}
-            value={region || ""}
-            onChange={(value) => setValue("region", value)}
-            onSearch={handleRegionSearch}
-            placeholder={t("dashboard.localSeoAudit.form.regionPlaceholder") || "Start typing to search..."}
-            disabled={!country}
-            helpText={
-              !country 
-                ? (t("dashboard.localSeoAudit.form.selectCountryFirst") || "Select a country first")
-                : (t("dashboard.localSeoAudit.form.regionHelp") || "Optional: State, province, or region name")
-            }
-            icon={<HiLocationMarker className="h-5 w-5 text-gray-400" />}
-            getSuggestionValue={(item) => item.name || item.displayName}
-            renderSuggestion={(item, isHighlighted) => (
-              <div
-                className={`px-4 py-2 cursor-pointer transition-colors ${
-                  isHighlighted
-                    ? "bg-primary text-white"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
-              >
-                <span className="font-medium">{item.name}</span>
-              </div>
-            )}
-          />
-          {/* Hidden input for form registration */}
-          <input type="hidden" {...register("region")} />
-        </div>
       </div>
 
       {/* Row 3: City (Required - with autocomplete) */}
@@ -232,7 +192,6 @@ export default function GeoAuditForm({ onSubmit, isPending }) {
             value={watch("city") || ""}
             onChange={(value) => {
               setValue("city", value);
-              // Region is optional - do not auto-populate
             }}
             onSearch={handleCitySearch}
             placeholder={t("dashboard.localSeoAudit.form.cityPlaceholder")}

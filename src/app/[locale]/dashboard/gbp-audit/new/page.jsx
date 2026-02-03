@@ -12,9 +12,11 @@ export default function NewGBPAuditPage() {
   const { mutate: runAudit, isPending } = useRunGBPAudit();
 
   const handleFormSubmit = (payload) => {
-    // Map form locale (i18n format) to backend audit locale format
-    const formLocale = payload.locale || i18nLocale;
-    const backendLocale = mapI18nLocaleToAuditLocale(formLocale);
+    // If form already provides a backend-ready locale (fr_be, nl_be, fr_fr, ...),
+    // use it directly. Otherwise, map the current i18n locale.
+    const backendLocale = payload.locale && payload.locale !== "en"
+      ? payload.locale
+      : mapI18nLocaleToAuditLocale(i18nLocale);
     
     // Normalize URL if provided
     const normalizedGbpLink = payload.gbpLink ? normalizeUrl(payload.gbpLink) : null;

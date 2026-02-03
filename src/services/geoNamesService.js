@@ -1,13 +1,14 @@
 /**
- * GeoNames API Service
- * Free geocoding service for location autocomplete
- * API Docs: http://www.geonames.org/export/web-services.html
+ * Location utilities for Geo / Local SEO.
+ *
+ * Originally this file used the external GeoNames API.
+ * For cities we now use our own backend `/locations` endpoint
+ * which reads from the DataForSEO-seeded `Location` collection.
  */
 
-const GEONAMES_USERNAME = 'serpixa';
-const GEONAMES_BASE_URL = 'https://secure.geonames.org';
+import api from "@/lib/api";
 
-// Country codes for supported countries
+// Country codes for supported countries (used for regions / legacy flows)
 const COUNTRY_CODES = {
   'France': 'FR',
   'Belgium': 'BE',
@@ -102,70 +103,32 @@ export const searchRegions = async (query, country) => {
  * @returns {Promise<Array>} Array of city suggestions
  */
 export const searchCities = async (query, country, region = null) => {
+  // We ignore `region` now; filtering is done server-side via full locationName.
   if (!query || query.length < 2 || !country) {
     return [];
   }
 
-  const countryCode = COUNTRY_CODES[country];
-  if (!countryCode) {
-    return [];
-  }
-
   try {
-    const params = new URLSearchParams({
-      name_startsWith: query,
-      country: countryCode,
-      featureClass: 'P', // Populated places (cities, towns, villages)
-      maxRows: 15,
-      username: GEONAMES_USERNAME,
-      type: 'json',
-      orderby: 'population', // Order by population for relevance
+    const response = await api.get("/locations", {
+      params: {
+        country,
+        search: query,
+        limit: 20,
+      },
     });
 
-    const response = await fetch(`${GEONAMES_BASE_URL}/searchJSON?${params.toString()}`);
-    
-    if (!response.ok) {
-      throw new Error('GeoNames API error');
-    }
+    const locations = response.data?.data?.locations || [];
 
-    const data = await response.json();
-    
-    if (data.status) {
-      console.error('GeoNames error:', data.status.message);
-      return [];
-    }
-
-    let results = data.geonames || [];
-
-    // Filter by region if provided
-    if (region && results.length > 0) {
-      const regionLower = region.toLowerCase();
-      const filtered = results.filter(item => {
-        const adminName1 = (item.adminName1 || '').toLowerCase();
-        const adminName2 = (item.adminName2 || '').toLowerCase();
-        return adminName1.includes(regionLower) || 
-               adminName2.includes(regionLower) ||
-               regionLower.includes(adminName1) ||
-               regionLower.includes(adminName2);
-      });
-      
-      // If filtering reduces results too much, include all
-      if (filtered.length >= 3) {
-        results = filtered;
-      }
-    }
-
-    return results.map(item => ({
-      name: item.name || item.toponymName,
-      adminName1: item.adminName1, // Region/State
-      adminName2: item.adminName2, // Province/District
-      countryName: item.countryName,
-      population: item.population,
-      geonameId: item.geonameId,
-      displayName: `${item.name || item.toponymName}${item.adminName1 ? `, ${item.adminName1}` : ''}`,
-    })).slice(0, 10);
+    return locations.map((loc) => ({
+      // Full DataForSEO location_name: "City,Region,Country"
+      name: loc.locationName,
+      adminName1: loc.locationNameParent,
+      countryName: loc.countryIsoCode,
+      population: 0,
+      displayName: loc.locationName,
+    }));
   } catch (error) {
-    console.error('Error fetching cities:', error);
+    console.error("Error fetching cities from locations API:", error);
     return [];
   }
 };

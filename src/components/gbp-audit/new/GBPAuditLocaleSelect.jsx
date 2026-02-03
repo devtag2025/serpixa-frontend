@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import ReactCountryFlag from "react-country-flag";
 import CustomDropdown from "@/components/common/CustomDropdown";
 import { useTranslation } from "@/i18n/context";
@@ -43,7 +43,7 @@ const gbpAuditLocales = [
   },
 ];
 
-export default function GBPAuditLocaleSelect({ register, defaultValue, className = "" }) {
+export default function GBPAuditLocaleSelect({ register, setValue, defaultValue, onChangeLocale, className = "" }) {
   const { t } = useTranslation();
   const { locale: currentLocale } = useI18n();
   
@@ -59,36 +59,35 @@ export default function GBPAuditLocaleSelect({ register, defaultValue, className
   
   const defaultLocale = defaultValue || mapLocale(currentLocale);
   const [selectedLocale, setSelectedLocale] = useState(defaultLocale);
-  const hiddenInputRef = useRef(null);
 
-  // Register the hidden input with react-hook-form
-  const { onChange, onBlur, name, ref } = register("locale", {
-    value: defaultLocale,
-  });
-
-  // Sync refs
+  // Register the field with react-hook-form
   useEffect(() => {
-    if (ref && hiddenInputRef.current) {
-      if (typeof ref === "function") {
-        ref(hiddenInputRef.current);
-      } else {
-        ref.current = hiddenInputRef.current;
-      }
+    if (register) {
+      register("locale");
     }
-  }, [ref]);
+  }, [register]);
 
-  // Update hidden input when selectedLocale changes
+  // Set initial value
   useEffect(() => {
-    if (hiddenInputRef.current && onChange) {
-      const event = {
-        target: {
-          name: "locale",
-          value: selectedLocale,
-        },
-      };
-      onChange(event);
+    if (setValue) {
+      setValue("locale", defaultLocale);
     }
-  }, [selectedLocale, onChange]);
+    if (onChangeLocale) {
+      onChangeLocale(defaultLocale);
+    }
+  }, [setValue, defaultLocale, onChangeLocale]);
+
+  // Update form value when selection changes
+  const handleLocaleChange = (value) => {
+    console.log('[GBPAuditLocaleSelect] Locale changed to:', value);
+    setSelectedLocale(value);
+    if (setValue) {
+      setValue("locale", value);
+    }
+    if (onChangeLocale) {
+      onChangeLocale(value);
+    }
+  };
 
   // Prepare options for CustomDropdown
   const options = gbpAuditLocales.map((locale) => ({
@@ -210,20 +209,11 @@ export default function GBPAuditLocaleSelect({ register, defaultValue, className
 
   return (
     <div className={`relative ${className}`}>
-      {/* Hidden input for react-hook-form */}
-      <input
-        type="hidden"
-        name={name}
-        value={selectedLocale}
-        ref={hiddenInputRef}
-        onBlur={onBlur}
-      />
-      
       {/* Custom Dropdown */}
       <CustomDropdown
         options={options}
         value={selectedLocale}
-        onChange={(value) => setSelectedLocale(value)}
+        onChange={handleLocaleChange}
         placeholder={t("dashboard.gbpAudit.form.localePlaceholder") || "Select language"}
         className="w-full"
         trigger={customTrigger}
