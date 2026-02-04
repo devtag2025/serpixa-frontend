@@ -21,18 +21,14 @@ export const aiContentKeys = {
  */
 export function useGenerateAIContent() {
   const queryClient = useQueryClient();
-  const router = useLocalizedRouter();
   const { t } = useTranslation();
 
   return useMutation({
     mutationFn: ContentService.generateContent,
     onSuccess: (response) => {
-      const { data } = handleResponse(response);
-      toast.success(t("dashboard.common.toast.contentGeneratedSuccess"));
-      // Invalidate the list query to refetch content
+      handleResponse(response);
       queryClient.invalidateQueries({ queryKey: aiContentKeys.lists() });
-      // Navigate to the content detail page
-      router.push(`/dashboard/ai-content/${data.content._id}`);
+      // Intentionally no redirect here; success toast is handled at call site
     },
     onError: (error) => {
       const message = handleError(error);

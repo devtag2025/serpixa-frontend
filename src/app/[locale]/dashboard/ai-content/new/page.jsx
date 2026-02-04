@@ -1,38 +1,34 @@
 "use client";
-import { useState } from "react";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import ContentGenerationForm from "@/components/ai-content/new/ContentGenerationForm";
-import ContentGenerationProgress from "@/components/ai-content/new/ContentGenerationProgress";
+// import ContentGenerationProgress from "@/components/ai-content/new/ContentGenerationProgress"; // Loader commented out: email sent when ready
 import { useTranslation, useI18n } from "@/i18n/context";
 import { useGenerateAIContent } from "@/hooks/aiContentHooks";
+import { toast } from "react-hot-toast";
 
 export default function NewAIContentPage() {
   const { t } = useTranslation();
   const { locale: i18nLocale } = useI18n();
   const { mutate: generateContent, isPending } = useGenerateAIContent();
-  const [currentKeyword, setCurrentKeyword] = useState("");
 
   const handleFormSubmit = (formData) => {
-    // Store keyword for loader modal
-    setCurrentKeyword(formData.keyword.trim());
-    
-    // Get language from form (fr, nl, en) - send as language field
-    const language = formData.language || i18nLocale || 'en';
-    
+    const language = formData.language || i18nLocale || "en";
     generateContent({
       topic: formData.topic.trim(),
       keyword: formData.keyword.trim(),
-      language: language, // Send language instead of locale
+      language,
     });
+
+    // Show email notification toast shortly after user starts generation
+    setTimeout(() => {
+      toast.success(t("dashboard.common.toast.contentGenerationStarted"));
+    }, 1500);
   };
 
   return (
     <DashboardLayout>
-      {/* Simple Loader Modal */}
-      <ContentGenerationProgress
-        isOpen={isPending}
-        keyword={currentKeyword}
-      />
+      {/* Loader commented out: user stays on this page and can keep using the app */}
+      {/* <ContentGenerationProgress isOpen={isPending} keyword={currentKeyword} /> */}
 
       <div>
         {/* Header */}
@@ -93,6 +89,9 @@ export default function NewAIContentPage() {
                     <span>{t("dashboard.aiContent.new.seoOptimized")}</span>
                   </li>
                 </ul>
+                <p className="mt-4 pt-4 border-t border-blue-200 text-sm text-blue-800">
+                  {t("dashboard.aiContent.progress.emailNotification")}
+                </p>
               </div>
             </div>
           </div>

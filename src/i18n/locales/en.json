@@ -676,6 +676,7 @@
       },
       "toast": {
         "contentGeneratedSuccess": "Content generated successfully!",
+        "contentGenerationStarted": "Generation started. You'll receive an email when your content is ready.",
         "contentDeletedSuccess": "Content deleted successfully",
         "contentDeleteError": "Failed to delete content",
         "contentGenerateError": "Failed to generate content",
