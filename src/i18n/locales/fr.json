@@ -679,6 +679,7 @@
       },
       "toast": {
         "contentGeneratedSuccess": "Contenu généré avec succès !",
+        "contentGenerationStarted": "Génération lancée. Vous recevrez un e-mail lorsque votre contenu sera prêt.",
         "contentDeletedSuccess": "Contenu supprimé avec succès",
         "contentDeleteError": "Échec de la suppression du contenu",
         "contentGenerateError": "Échec de la génération du contenu",
