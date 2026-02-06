@@ -678,6 +678,7 @@
       },
       "toast": {
         "contentGeneratedSuccess": "Inhoud succesvol gegenereerd!",
+        "contentGenerationStarted": "Generatie gestart. U ontvangt een e-mail zodra uw inhoud klaar is.",
         "contentDeletedSuccess": "Inhoud succesvol verwijderd",
         "contentDeleteError": "Verwijderen van inhoud mislukt",
         "contentGenerateError": "Genereren van inhoud mislukt",
