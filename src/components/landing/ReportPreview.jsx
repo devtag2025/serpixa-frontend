@@ -8,7 +8,6 @@ const SLIDES = [
   { src: "/seo-report-2.png", altKey: "landing.reportPreview.alt2" },
   { src: "/seo-report-3.png", altKey: "landing.reportPreview.alt3" },
   { src: "/seo-report-4.png", altKey: "landing.reportPreview.alt4" },
-  { src: "/seo-report-5.png", altKey: "landing.reportPreview.alt5" },
 ];
 
 const DISPLAY_DURATION_MS = 7000;
@@ -59,7 +58,7 @@ export default function ReportPreview() {
             </p>
 
             <ul className="space-y-3 md:space-y-4">
-              {[1, 2, 3, 4, 5].map((idx) => (
+              {[1, 2, 3, 4].map((idx) => (
                 <li key={idx} className="flex items-start gap-3">
                   <div className="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-blue-600 text-xs font-semibold text-white shadow-blue">
                     {idx}
