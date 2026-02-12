@@ -1,12 +1,15 @@
 "use client";
-import { HiClipboardCopy } from "react-icons/hi";
+import { useState } from "react";
+import { HiClipboardCopy, HiChevronDown, HiChevronUp, HiInformationCircle } from "react-icons/hi";
 import { getStatusColor } from "@/utils/colors";
 import { useTranslation } from "@/i18n/context";
 import { formatEuropeanDate } from "@/utils/dateFormatter";
 
 export default function AuditInfo({ audit, onCopyToClipboard }) {
   const { t } = useTranslation();
-  
+  const [showVerification, setShowVerification] = useState(false);
+  const verification = audit.keywordAnalysis?.keywordVerification;
+
   return (
     <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm">
       <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-gray-200">
@@ -53,6 +56,31 @@ export default function AuditInfo({ audit, onCopyToClipboard }) {
             {audit.status}
           </span>
         </div>
+
+        {verification && (
+          <div className="pt-2 border-t border-gray-100">
+            <button
+              type="button"
+              onClick={() => setShowVerification((v) => !v)}
+              className="flex items-center gap-2 w-full text-left text-xs font-semibold text-gray-600 hover:text-gray-900"
+            >
+              <HiInformationCircle className="w-4 h-4 flex-shrink-0" />
+              {t("dashboard.seoAudit.view.keywordCountVerification")}
+              {showVerification ? <HiChevronUp className="w-4 h-4 ml-auto" /> : <HiChevronDown className="w-4 h-4 ml-auto" />}
+            </button>
+            {showVerification && (
+              <div className="mt-2 pl-6 space-y-1.5 text-xs text-gray-600">
+                <p className="text-gray-500 italic">{verification.source}</p>
+                <p><span className="font-medium text-gray-700">{t("dashboard.seoAudit.view.occurrencesInRecommendation")}:</span> {verification.keywordOccurrences}</p>
+                <p><span className="font-medium text-gray-700">{t("dashboard.seoAudit.view.wordsAnalyzed")}:</span> {verification.wordCountUsed}</p>
+                {verification.wordCountFromApi != null && (
+                  <p><span className="font-medium text-gray-700">{t("dashboard.seoAudit.view.wordsFromApi")}:</span> {verification.wordCountFromApi}</p>
+                )}
+                <p><span className="font-medium text-gray-700">{t("dashboard.seoAudit.view.textLength")}:</span> {verification.analyzedTextLength} {t("dashboard.seoAudit.view.characters")}</p>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -834,7 +834,12 @@
         "failedToLoadAudit": "Audit laden mislukt",
         "errorLoadingAudit": "Er is een fout opgetreden bij het laden van de audit",
         "backToAudits": "Terug naar audits",
-      "auditFailed": "Audit mislukt"
+        "auditFailed": "Audit mislukt",
+        "keywordCountVerification": "Hoe het zoekwoordenaantal wordt berekend",
+        "occurrencesInRecommendation": "Voorkomens (in geanalyseerde tekst)",
+        "wordsAnalyzed": "Geanalyseerde woorden",
+        "wordsFromApi": "Woordenaantal van API",
+        "textLength": "Lengte geanalyseerde tekst"
       }
     },
     "localSeoAudit": {

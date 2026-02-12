@@ -835,7 +835,12 @@
         "failedToLoadAudit": "Échec du chargement de l'audit",
         "errorLoadingAudit": "Une erreur s'est produite lors du chargement de l'audit",
         "backToAudits": "Retour aux audits",
-      "auditFailed": "Échec de l'audit"
+        "auditFailed": "Échec de l'audit",
+        "keywordCountVerification": "Comment le nombre de mots-clés est calculé",
+        "occurrencesInRecommendation": "Occurrences du mot-clé (dans le texte analysé)",
+        "wordsAnalyzed": "Mots analysés",
+        "wordsFromApi": "Nombre de mots (API)",
+        "textLength": "Longueur du texte analysé"
       }
     },
     "localSeoAudit": {

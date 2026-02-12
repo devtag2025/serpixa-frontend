@@ -832,7 +832,12 @@
         "failedToLoadAudit": "Failed to Load Audit",
         "errorLoadingAudit": "An error occurred while loading the audit",
         "backToAudits": "Back to Audits",
-        "auditFailed": "Audit Failed"
+        "auditFailed": "Audit Failed",
+        "keywordCountVerification": "How keyword count is calculated",
+        "occurrencesInRecommendation": "Keyword occurrences (in analyzed text)",
+        "wordsAnalyzed": "Words analyzed",
+        "wordsFromApi": "Word count from API",
+        "textLength": "Analyzed text length"
       }
     },
     "localSeoAudit": {
