@@ -15,6 +15,7 @@ import SEOAuditStats from "@/components/seo-audit/view/SEOAuditStats";
 import OnPageAnalysis from "@/components/seo-audit/view/OnPageAnalysis";
 import SERPInfo from "@/components/seo-audit/view/SERPInfo";
 import AuditInfo from "@/components/seo-audit/view/AuditInfo";
+import StrengthsCard from "@/components/seo-audit/view/StrengthsCard";
 import RecommendationsTable from "@/components/seo-audit/view/RecommendationsTable";
 import CompetitorsTable from "@/components/seo-audit/view/CompetitorsTable";
 
@@ -131,8 +132,11 @@ export default function SEOAuditResultsPage() {
               </div>
             </div>
 
-            {/* Row 2: Recommendations - Full Width */}
-            <RecommendationsTable recommendations={audit.recommendations} />
+            {/* Strengths (what you're doing well vs top 10) */}
+            <StrengthsCard strengths={audit.checks?.strengths} />
+
+            {/* Row 2: Recommendations - Full Width (gaps + opportunities) */}
+            <RecommendationsTable recommendations={audit.recommendations} audit={audit} />
 
             {/* Row 3: Competitor Analysis - Full Width */}
             <CompetitorsTable competitors={audit.competitors} keyword={audit.keyword} />

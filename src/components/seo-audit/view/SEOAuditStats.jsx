@@ -31,6 +31,14 @@ export default function SEOAuditStats({ audit }) {
             style={{ width: `${audit.score}%` }}
           ></div>
         </div>
+        {audit.keyword && audit.serpInfo?.location && (
+          <p className="text-[10px] sm:text-xs text-gray-500 mt-2">
+            {t("dashboard.seoAudit.view.scoreComparedTo", {
+              keyword: audit.keyword,
+              location: audit.serpInfo.location,
+            })}
+          </p>
+        )}
       </div>
 
       {/* Total Issues Card */}

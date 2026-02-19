@@ -4,7 +4,7 @@ import { getPriorityColor, getImpactColor, getEffortColor } from "@/utils/colors
 import { useTranslation } from "@/i18n/context";
 import { HiFilter, HiX } from "react-icons/hi";
 
-export default function RecommendationsTable({ recommendations }) {
+export default function RecommendationsTable({ recommendations, audit }) {
   const { t } = useTranslation();
   const [showFilters, setShowFilters] = useState(false);
   const [priorityFilter, setPriorityFilter] = useState("all");
@@ -13,6 +13,9 @@ export default function RecommendationsTable({ recommendations }) {
   const [effortFilter, setEffortFilter] = useState("all");
   const [sortBy, setSortBy] = useState("priority");
   const [sortOrder, setSortOrder] = useState("asc");
+
+  const scoreSummary = audit?.checks?.scoreSummary;
+  const hasContext = recommendations?.some((r) => r.context?.trim());
 
   if (!recommendations || recommendations.length === 0) return null;
 
@@ -130,7 +133,7 @@ export default function RecommendationsTable({ recommendations }) {
   return (
     <div className="mb-4 sm:mb-6">
       <div className="bg-white rounded-lg sm:rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-        {/* Header with Filters Toggle */}
+        {/* Header with score context and intro */}
         <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-gray-200">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
             <div>
@@ -151,6 +154,12 @@ export default function RecommendationsTable({ recommendations }) {
                 </span>
               )}
             </button> */}
+          </div>
+          <div className="mt-3 pt-3 border-t border-gray-100">
+            {scoreSummary && (
+              <p className="text-xs sm:text-sm text-gray-600 mb-2">{scoreSummary}</p>
+            )}
+            <p className="text-xs sm:text-sm text-gray-500">{t("dashboard.seoAudit.view.recommendationsIntro")}</p>
           </div>
         </div>
 
@@ -281,7 +290,14 @@ export default function RecommendationsTable({ recommendations }) {
                       </p>
                       <p className="text-sm font-medium text-gray-900">{rec.issue}</p>
                     </div>
-                    
+                    {rec.context?.trim() && (
+                      <div>
+                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
+                          {t("dashboard.seoAudit.view.vsTop10")}
+                        </p>
+                        <p className="text-sm text-gray-600">{rec.context}</p>
+                      </div>
+                    )}
                     <div>
                       <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
                         {t("dashboard.seoAudit.view.description")}
@@ -334,6 +350,13 @@ export default function RecommendationsTable({ recommendations }) {
                     {t("dashboard.seoAudit.view.issue")}
                   </span>
                 </th>
+                {hasContext && (
+                  <th className="px-6 py-3 text-left">
+                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                      {t("dashboard.seoAudit.view.vsTop10")}
+                    </span>
+                  </th>
+                )}
                 <th className="px-6 py-3 text-left">
                   <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
                     {t("dashboard.seoAudit.view.description")}
@@ -354,7 +377,7 @@ export default function RecommendationsTable({ recommendations }) {
             <tbody className="divide-y divide-gray-200">
               {filteredAndSorted.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="px-6 py-12 text-center">
+                  <td colSpan={hasContext ? 7 : 6} className="px-6 py-12 text-center">
                     <p className="text-sm text-gray-500">{t("dashboard.seoAudit.view.noRecommendationsMatch")}</p>
                   </td>
                 </tr>
@@ -385,6 +408,11 @@ export default function RecommendationsTable({ recommendations }) {
                       <td className="px-6 py-4">
                         <span className="text-sm font-medium text-gray-900 break-words">{rec.issue}</span>
                       </td>
+                      {hasContext && (
+                        <td className="px-6 py-4">
+                          <span className="text-sm text-gray-600 break-words">{rec.context || "—"}</span>
+                        </td>
+                      )}
                       <td className="px-6 py-4">
                         <span className="text-sm text-gray-700 break-words">{rec.action}</span>
                       </td>
