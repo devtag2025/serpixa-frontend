@@ -947,7 +947,11 @@
         "business": "Entreprise",
         "avgVisibility": "Visibilité moyenne",
         "viewAudit": "Voir l'audit",
-        "deleteAudit": "Supprimer l'audit"
+        "deleteAudit": "Supprimer l'audit",
+        "yourPosition": "Votre position",
+        "yourPositionInPack": "Votre position dans le pack local",
+        "businessNotInLocationTitle": "Entreprise non trouvée sur cette localisation",
+        "businessNotInLocationBanner": "Votre entreprise n'apparaît pas dans les premiers résultats pour cette localisation. Le score et les recommandations expliquent comment y être visible—ou lancez l'audit pour la localisation réelle de votre entreprise."
       }
     },
     "gbpAudit": {

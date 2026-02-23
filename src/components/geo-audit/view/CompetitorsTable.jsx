@@ -56,7 +56,7 @@ export default function CompetitorsTable({ competitors }) {
                   {hasReviews && (
                     <div>
                       <span className="text-gray-500">{t("dashboard.localSeoAudit.view.reviews")}: </span>
-                      <span className="text-gray-700">{competitor.reviews ?? 0}</span>
+                      <span className="text-gray-700">{Number(competitor.reviews) || 0}</span>
                     </div>
                   )}
                   {competitor.distance && (
@@ -146,7 +146,7 @@ export default function CompetitorsTable({ competitors }) {
                 </td>
                 {hasReviews && (
                   <td className="px-6 py-4">
-                    <span className="text-sm text-gray-700">{competitor.reviews ?? 0}</span>
+                    <span className="text-sm text-gray-700">{Number(competitor.reviews) || 0}</span>
                   </td>
                 )}
                 {hasDistance && (

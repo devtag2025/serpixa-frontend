@@ -932,7 +932,11 @@
         "business": "Business",
         "avgVisibility": "Avg Visibility",
         "viewAudit": "View Audit",
-        "deleteAudit": "Delete Audit"
+        "deleteAudit": "Delete Audit",
+        "yourPosition": "Your position",
+        "yourPositionInPack": "Your position in local pack",
+        "businessNotInLocationTitle": "Business not found in this location",
+        "businessNotInLocationBanner": "Your business was not found in the top results for this location. The score and recommendations explain how to become visible here—or run the audit for your actual business location."
       },
       "list": {
         "title": "Local SEO Audits",

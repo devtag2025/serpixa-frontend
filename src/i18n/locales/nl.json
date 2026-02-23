@@ -934,7 +934,11 @@
         "business": "Bedrijf",
         "avgVisibility": "Gemiddelde zichtbaarheid",
         "viewAudit": "Audit bekijken",
-        "deleteAudit": "Audit verwijderen"
+        "deleteAudit": "Audit verwijderen",
+        "yourPosition": "Uw positie",
+        "yourPositionInPack": "Uw positie in de lokale pack",
+        "businessNotInLocationTitle": "Bedrijf niet gevonden op deze locatie",
+        "businessNotInLocationBanner": "Uw bedrijf werd niet gevonden in de topresultaten voor deze locatie. De score en aanbevelingen leggen uit hoe u hier zichtbaar wordt—of voer de audit uit voor uw feitelijke vestigingslocatie."
       },
       "list": {
         "title": "Local SEO-audits",
