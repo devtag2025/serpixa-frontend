@@ -5,6 +5,7 @@ import { useTranslation, useI18n } from "@/i18n/context";
 import { mapI18nLocaleToAuditLocale } from "@/utils/localeMapper";
 import { useRunSEOAudit } from "@/hooks/seoAuditHooks";
 import { normalizeUrl } from "@/utils/urlNormalizer";
+import { toast } from "react-hot-toast";
 
 export default function NewSEOAuditPage() {
   const { t } = useTranslation();
@@ -26,6 +27,11 @@ export default function NewSEOAuditPage() {
       ...(data.device && { device: data.device }),
     };
     runAudit(payload);
+
+    // Inform user the audit may take a moment and results will arrive by email
+    setTimeout(() => {
+      toast.success(t("dashboard.common.toast.contentGenerationStarted"));
+    }, 1500);
   };
 
   return (
@@ -81,6 +87,9 @@ export default function NewSEOAuditPage() {
                     <span>{t("dashboard.seoAudit.new.competitorAnalysis")}</span>
                   </li>
                 </ul>
+                <p className="mt-4 pt-4 border-t border-blue-200 text-sm text-blue-800">
+                  {t("dashboard.aiContent.progress.emailNotification")}
+                </p>
               </div>
             </div>
           </div>

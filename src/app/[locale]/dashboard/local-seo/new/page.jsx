@@ -3,6 +3,7 @@ import DashboardLayout from "@/components/layout/DashboardLayout";
 import GeoAuditForm from "@/components/geo-audit/new/GeoAuditForm";
 import { useTranslation } from "@/i18n/context";
 import { useRunGeoAudit } from "@/hooks/geoAuditHooks";
+import { toast } from "react-hot-toast";
 
 export default function NewGeoAuditPage() {
   const { t } = useTranslation();
@@ -10,6 +11,11 @@ export default function NewGeoAuditPage() {
 
   const handleFormSubmit = (payload) => {
     runAudit(payload);
+
+    // Inform user the local SEO audit may take a moment and results will arrive by email
+    setTimeout(() => {
+      toast.success(t("dashboard.common.toast.contentGenerationStarted"));
+    }, 1500);
   };
 
   return (
@@ -65,6 +71,9 @@ export default function NewGeoAuditPage() {
                     <span>{t("dashboard.localSeoAudit.new.recommendations")}</span>
                   </li>
                 </ul>
+                <p className="mt-4 pt-4 border-t border-blue-200 text-sm text-blue-800">
+                  {t("dashboard.aiContent.progress.emailNotification")}
+                </p>
               </div>
             </div>
           </div>
